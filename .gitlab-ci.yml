@@ -10,7 +10,7 @@ pages:
     - pip install --upgrade pip
     - pip install -r requirements.txt  # Millor usar requirements.txt
     - mkdocs build --site-dir public
-  artifacts:
+  pages:
     publish: public
   rules:
     - if: $CI_COMMIT_REF_NAME == $CI_DEFAULT_BRANCH
