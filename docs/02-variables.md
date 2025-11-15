@@ -4,16 +4,6 @@
 
 ## Classe 1: Introducció a la Programació i el Pseudocodi
 
-??? question "Quina NO és una característica de la programació estructurada?"
-
-    - [ ] Ús de seqüències
-    - [x] Ús de salts incondicionals (GOTO)
-    - [ ] Ús de seleccions
-    - [ ] Ús d'iteracions
-
-    > **Explicació:** La programació estructurada evita els salts incondicionals (GOTO) i utilitza només tres estructures de control: seqüència, selecció i iteració.
-
-
 ## Objectius d'aprenentatge
 - Entendre el concepte de variable
 - Conèixer els tipus de dades bàsics
