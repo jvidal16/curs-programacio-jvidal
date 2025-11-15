@@ -1,0 +1,16 @@
+image: python:3.11
+
+cache:
+  paths:
+    - .cache/pip
+
+pages:
+  stage: deploy
+  script:
+    - pip install --upgrade pip
+    - pip install -r requirements.txt  # Millor usar requirements.txt
+    - mkdocs build --site-dir public
+  artifacts:
+    publish: public
+  rules:
+    - if: $CI_COMMIT_REF_NAME == $CI_DEFAULT_BRANCH
