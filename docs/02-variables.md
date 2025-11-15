@@ -1,5 +1,6 @@
 # Classe 2: Variables i Tipus de Dades
 
+--8<-- "quizzes/test_bloc1.md"
 
 ## Classe 1: Introducció a la Programació i el Pseudocodi
 

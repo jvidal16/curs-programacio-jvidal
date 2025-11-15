@@ -35,6 +35,8 @@ nav:
     - Setmana 05: 02-prog-estructurada/setmana05.md
     - Setmana 06: 02-prog-estructurada/setmana06.md
     - Setmana 07: 02-prog-estructurada/setmana07.md
+  - Extra:
+    - Problemes d'Entrevistes: 99-problemes-entrevistes.md
 
 theme:
   name: material
@@ -75,9 +77,13 @@ theme:
 extra_css:
   - stylesheets/extra.css
 
+extra_javascript:
+  - javascripts/quiz.js
+
 plugins:
   - search
   - mermaid2
+
 
 # Extensions de Markdown
 markdown_extensions:
@@ -116,7 +122,9 @@ markdown_extensions:
       repo_url_shorthand: true
   - pymdownx.mark
   - pymdownx.smartsymbols
-  - pymdownx.snippets
+  - pymdownx.snippets:
+      base_path: docs
+      check_paths: true
   - pymdownx.superfences:
       custom_fences:
         - name: mermaid
