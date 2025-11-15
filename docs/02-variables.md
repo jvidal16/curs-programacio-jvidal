@@ -1,6 +1,5 @@
 # Classe 2: Variables i Tipus de Dades
 
-# Autoavaluació Bloc 1
 
 ## Classe 1: Introducció a la Programació i el Pseudocodi
 
