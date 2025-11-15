@@ -1,0 +1,133 @@
+site_name: DAM/DAW - Programació
+site_description: Curs complet de Programació
+site_author: Jordi - Professor de Programació
+site_url: https://curs-programacio-jvidal.gitlab.io
+
+nav:
+  - Pseudocodi:
+    - 01. Introducció amb pseudocodi: 01-pseudocodi/c1-intro.md
+    - 02. Variables: 02-variables.md
+    - 03. Expressions: 03-expressions.md
+    - 04. Entrada / Sortida: 04-entrada-sortida.md
+    - 05. Expr. Lògiques / Relacionals: 05-logic-relacional.md
+    - 06. Operadors lògics: 06-operadors-logics.md
+    - 07. Alternativa simple (IF): 07-alternativa-simple.md
+    - 08. Alternativa doble (IF-ELSE): 08-alternativa-doble.md
+    - 09. Alternativa aniuada: 09-alternativa-aniuada.md
+    - 10. Alternativa encadenada: 10-alternativa-encadenada.md
+    - 11. Repetició / Bucles: 11-bucles.md
+    - 12. Repetició / Buble FOR (I): 12-bucle-for.md
+    - 13. Repetició / Bucle FOR (II): 13-bucle-for-2.md
+    - 14. Repetició / WHILE (I): 14-while.md
+    - 15. Repetició / WHILE (II): 15-while-2.md
+    - 16. DO  WHILE / REPEAT: 16-dowhile-repeat.md 
+    - 17. Bucles niuats: 17-bucles-niuats.md 
+    - 18. Decisions i Bucles: 18-decisions-bucles.md
+    - Extra Strings i Structs: 02-prog-estructurada/classe-strings-structs.md
+    - 19. Problemes Integradors: 19-Problemes-integradors.md
+    - 20. Repàs final: 20-repas-final.md
+    - Resum final: resum-final-20.md
+  - Programació Estructurada (Dart):
+    - Setmana 01: 02-prog-estructurada/setmana01.md
+    - Setmana 02: 02-prog-estructurada/setmana02.md
+    - Setmana 03: 02-prog-estructurada/setmana03.md
+    - Setmana 04: 02-prog-estructurada/setmana04.md
+    - Setmana 05: 02-prog-estructurada/setmana05.md
+    - Setmana 06: 02-prog-estructurada/setmana06.md
+    - Setmana 07: 02-prog-estructurada/setmana07.md
+
+theme:
+  name: material
+  logo: images/logo_dam.png
+  favicon: images/logo_dam.png
+  font:
+    text: Raleway
+    code: JetBrains mono
+  palette:
+    - scheme: default
+      primary: indigo
+      accent: indigo
+      toggle:
+        icon: material/brightness-7
+        name: Switch to dark mode
+    - scheme: slate
+      primary: indigo
+      accent: indigo
+      toggle:
+        icon: material/brightness-4
+        name: Switch to light mode
+  features:
+    - navigation.tabs
+    - navigation.instant
+    - navigation.instant.prefetch # reduces flash
+    - navigation.tabs.sticky    # Sticky tabs
+    - navigation.sections
+    - navigation.path           # Breadcrumb navigation
+    - navigation.indexes        # Section indexes
+    - navigation.top            # Back to top button
+    - navigation.footer         # Previous/next in footer
+    - navigation.tracking       # Active link highlighting
+    - toc.integrate
+    - search.suggest
+    - search.highlight
+    - content.code.copy
+
+extra_css:
+  - stylesheets/extra.css
+
+plugins:
+  - search
+  - mermaid2
+
+# Extensions de Markdown
+markdown_extensions:
+  # Bàsiques
+  - abbr
+  - admonition
+  - attr_list
+  - def_list
+  - footnotes
+  - meta
+  - md_in_html
+  
+  # Taula de continguts
+  - toc:
+      permalink: true
+      title: En aquesta pàgina
+  
+  # PyMdown Extensions
+  - pymdownx.arithmatex:
+      generic: true
+  - pymdownx.betterem:
+      smart_enable: all
+  - pymdownx.caret
+  - pymdownx.details
+  - pymdownx.emoji:
+      emoji_index: !!python/name:material.extensions.emoji.twemoji
+      emoji_generator: !!python/name:material.extensions.emoji.to_svg
+  - pymdownx.highlight:
+      anchor_linenums: true
+      line_spans: __span
+      pygments_lang_class: true
+  - pymdownx.inlinehilite
+  - pymdownx.keys
+  - pymdownx.magiclink:
+      normalize_issue_symbols: true
+      repo_url_shorthand: true
+  - pymdownx.mark
+  - pymdownx.smartsymbols
+  - pymdownx.snippets
+  - pymdownx.superfences:
+      custom_fences:
+        - name: mermaid
+          class: mermaid
+          format: !!python/name:pymdownx.superfences.fence_code_format
+  - pymdownx.tabbed:
+      alternate_style: true
+  - pymdownx.tasklist:
+      custom_checkbox: true
+  - pymdownx.tilde
+
+  # Copyright
+copyright: Copyright &copy; 2025 - Curs de Git per a Estudiants
+

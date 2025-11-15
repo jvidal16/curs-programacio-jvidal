@@ -1,0 +1,636 @@
+a la condició**
+2. Si és CERT → executa les instruccions
+3. Si és FALS → surt del bucle
+4. Torna al pas 1
+
+---
+
+## 🔑 Condició de continuació
+
+La condició determina **QUAN continuar**, no quan parar:
+
+```pseudocode
+ALGORISME ComptarEnrera
+VARIABLES
+    comptador: ENTER
+    
+INICI
+    comptador ← 10
+    
+    MENTRE comptador > 0 FER
+        ESCRIURE comptador
+        comptador ← comptador - 1
+    FI_MENTRE
+    
+    ESCRIURE "Foc!"
+FI
+```
+
+**Sortida:**
+```
+10
+9
+8
+...
+2
+1
+Foc!
+```
+
+### ⚠️ Advertència important
+
+**El bucle MENTRE pot no executar-se MAI:**
+
+```pseudocode
+x ← 10
+
+MENTRE x < 5 FER
+    ESCRIURE "Això no es mostrarà"
+FI_MENTRE
+```
+
+Com que `x = 10` i `10 < 5` és FALS, el bucle no s'executa cap vegada.
+
+---
+
+## 🆚 Diferències entre FOR i WHILE
+
+| Aspecte | FOR | WHILE |
+|---------|-----|-------|
+| **Iteracions** | Nombre conegut | Nombre desconegut |
+| **Control** | Variable comptador | Condició booleana |
+| **Ús típic** | Repeticions fixes | Fins que passi alguna cosa |
+| **Inicialització** | Automàtica | Manual |
+| **Pot no executar-se?** | Sí (si rang buit) | Sí (si condició inicial falsa) |
+
+### Exemple comparatiu
+
+**Amb FOR:**
+```pseudocode
+// Mostrar números de l'1 al 5
+PER i ← 1 FINS 5 FER
+    ESCRIURE i
+FI_PER
+```
+
+**Amb WHILE:**
+```pseudocode
+// Mostrar números de l'1 al 5
+i ← 1
+MENTRE i <= 5 FER
+    ESCRIURE i
+    i ← i + 1
+FI_MENTRE
+```
+
+### Quan usar cada un?
+
+**Usa FOR quan:**
+- Saps exactament quantes repeticions necessites
+- Vols recórrer un rang de valors
+- Necessites un comptador
+
+**Usa WHILE quan:**
+- No saps quantes vegades repetiràs
+- La condició de parada depèn de l'usuari o dades externes
+- Necessites més flexibilitat
+
+---
+
+## 🎯 Bucles amb sentinella
+
+Un **valor sentinella** és un valor especial que indica que hem d'acabar el bucle.
+
+### Exemple 1: Sumar números fins a introduir 0
+
+```pseudocode
+ALGORISME SumaAmbSentinella
+VARIABLES
+    numero, suma: ENTER
+    
+INICI
+    suma ← 0
+    
+    ESCRIURE "Introdueix números (0 per acabar):"
+    LLEGIR numero
+    
+    MENTRE numero ≠ 0 FER
+        suma ← suma + numero
+        ESCRIURE "Introdueix un altre número (0 per acabar):"
+        LLEGIR numero
+    FI_MENTRE
+    
+    ESCRIURE "Suma total:", suma
+FI
+```
+
+### Exemple 2: Comptar números positius
+
+```pseudocode
+ALGORISME ComptaPositius
+VARIABLES
+    numero: REAL
+    comptador: ENTER
+    
+INICI
+    comptador ← 0
+    
+    ESCRIURE "Número (-1 per acabar):"
+    LLEGIR numero
+    
+    MENTRE numero ≠ -1 FER
+        SI numero > 0 LLAVORS
+            comptador ← comptador + 1
+        FI_SI
+        
+        ESCRIURE "Número (-1 per acabar):"
+        LLEGIR numero
+    FI_MENTRE
+    
+    ESCRIURE "Has introduït", comptador, "números positius"
+FI
+```
+
+### 💡 Patró comú
+
+```pseudocode
+// 1. Lectura inicial (PRIMING READ)
+LLEGIR valor
+
+// 2. Bucle mentre no sentinella
+MENTRE valor ≠ SENTINELLA FER
+    // Processar valor
+    
+    // 3. Lectura següent valor
+    LLEGIR valor
+FI_MENTRE
+```
+
+---
+
+## 🎨 Diagrama de flux
+
+### Bucle WHILE
+
+```mermaid
+%%{init: {'flowchart': {'curve': 'stepAfter'}}}%%
+flowchart TD
+    A([INICI]) --> B[Inicialitzar variables]
+    B --> C{Condició CERT?}
+    C -->|SÍ| D[Executar instruccions]
+    D --> E[Modificar variables]
+    E --> C
+    C -->|NO| F([FI])
+    
+    style A fill:#e1f5e1
+    style F fill:#ffe1e1
+    style C fill:#fff4e1
+    style D fill:#e1f0ff
+    style E fill:#e1f0ff
+```
+
+---
+
+## ⚠️ Errors comuns
+
+### 1. Bucle infinit
+
+```pseudocode
+// ❌ MAL - Bucle infinit!
+x ← 1
+MENTRE x > 0 FER
+    ESCRIURE x
+    // Oblida incrementar x!
+FI_MENTRE
+```
+
+**Solució:**
+```pseudocode
+// ✅ BONA
+x ← 1
+MENTRE x <= 10 FER
+    ESCRIURE x
+    x ← x + 1  // No oblidar modificar la variable!
+FI_MENTRE
+```
+
+### 2. Oblidar la lectura inicial
+
+```pseudocode
+// ❌ MAL
+suma ← 0
+MENTRE numero ≠ 0 FER  // 'numero' no està inicialitzat!
+    suma ← suma + numero
+    LLEGIR numero
+FI_MENTRE
+```
+
+**Solució:**
+```pseudocode
+// ✅ BÉ
+suma ← 0
+LLEGIR numero  // Lectura inicial!
+MENTRE numero ≠ 0 FER
+    suma ← suma + numero
+    LLEGIR numero
+FI_MENTRE
+```
+
+### 3. Condició incorrecta
+
+```pseudocode
+// ❌ MAL - Volia parar quan x > 10
+x ← 1
+MENTRE x > 10 FER  // Mai s'executarà!
+    ESCRIURE x
+    x ← x + 1
+FI_MENTRE
+```
+
+**Solució:**
+```pseudocode
+// ✅ BÉ
+x ← 1
+MENTRE x <= 10 FER  // Condició de continuació
+    ESCRIURE x
+    x ← x + 1
+FI_MENTRE
+```
+
+---
+
+## 💡 Activitats Pràctiques
+
+### 🎯 Activitat 1: Traça el bucle
+
+Què mostrarà aquest programa?
+
+```pseudocode
+n ← 5
+MENTRE n > 0 FER
+    ESCRIURE n * 2
+    n ← n - 1
+FI_MENTRE
+```
+
+??? success "Solució"
+    ```
+    10
+    8
+    6
+    4
+    2
+    ```
+    
+    | Iteració | n | Condició (n > 0) | Sortida |
+    |----------|---|------------------|---------|
+    | 1 | 5 | CERT | 10 |
+    | 2 | 4 | CERT | 8 |
+    | 3 | 3 | CERT | 6 |
+    | 4 | 2 | CERT | 4 |
+    | 5 | 1 | CERT | 2 |
+    | 6 | 0 | FALS | - |
+
+---
+
+### 🎯 Activitat 2: Converteix FOR a WHILE
+
+Converteix aquest bucle FOR a WHILE:
+
+```pseudocode
+PER i ← 1 FINS 10 FER
+    ESCRIURE i * i
+FI_PER
+```
+
+??? success "Solució"
+    ```pseudocode
+    i ← 1
+    MENTRE i <= 10 FER
+        ESCRIURE i * i
+        i ← i + 1
+    FI_MENTRE
+    ```
+
+---
+
+### 🎯 Activitat 3: Troba l'error
+
+Aquest programa té un error. Quin?
+
+```pseudocode
+suma ← 0
+comptador ← 1
+
+MENTRE comptador <= 5 FER
+    suma ← suma + comptador
+FI_MENTRE
+
+ESCRIURE "Suma:", suma
+```
+
+??? success "Resposta"
+    **Error:** Bucle infinit!
+    
+    Falta incrementar el comptador dins del bucle.
+    
+    **Solució:**
+    ```pseudocode
+    suma ← 0
+    comptador ← 1
+    
+    MENTRE comptador <= 5 FER
+        suma ← suma + comptador
+        comptador ← comptador + 1  // ← Afegir això
+    FI_MENTRE
+    
+    ESCRIURE "Suma:", suma
+    ```
+
+---
+
+### 🎯 Activitat 4: Predicció
+
+Quantes vegades s'executarà aquest bucle?
+
+```pseudocode
+x ← 20
+MENTRE x >= 10 FER
+    ESCRIURE x
+    x ← x - 3
+FI_MENTRE
+```
+
+??? success "Solució"
+    **4 vegades**
+    
+    | Iteració | x inicial | Condició | Sortida | x final |
+    |----------|-----------|----------|---------|---------|
+    | 1 | 20 | 20 >= 10 ✓ | 20 | 17 |
+    | 2 | 17 | 17 >= 10 ✓ | 17 | 14 |
+    | 3 | 14 | 14 >= 10 ✓ | 14 | 11 |
+    | 4 | 11 | 11 >= 10 ✓ | 11 | 8 |
+    | 5 | 8 | 8 >= 10 ✗ | - | - |
+
+---
+
+## 💻 Exercicis de Programació
+
+### Exercici 1: Compte enrere
+
+Crea un programa que demani un número i faci un compte enrere des d'aquest número fins a 0.
+
+??? tip "Ajuda"
+    - Llegeix el número
+    - Usa MENTRE amb condició `>= 0`
+    - Decrementa en cada iteració
+
+??? success "Solució"
+    ```pseudocode
+    ALGORISME CompteEnrere
+    VARIABLES
+        numero: ENTER
+        
+    INICI
+        ESCRIURE "Introdueix un número:"
+        LLEGIR numero
+        
+        MENTRE numero >= 0 FER
+            ESCRIURE numero
+            numero ← numero - 1
+        FI_MENTRE
+        
+        ESCRIURE "Acabat!"
+    FI
+    ```
+
+---
+
+### Exercici 2: Endevina el número
+
+Programa que té un número secret (exemple: 42) i demana a l'usuari que l'endevini.
+
+??? tip "Ajuda"
+    - Defineix el número secret com a constant
+    - Llegeix l'intent de l'usuari
+    - Repeteix mentre no encertin
+    - Mostra missatges d'ajuda (més gran/més petit)
+
+??? success "Solució"
+    ```pseudocode
+    ALGORISME EndevinaNumero
+    CONSTANTS
+        SECRET = 42
+        
+    VARIABLES
+        intents: ENTER
+        
+    INICI
+        ESCRIURE "Endevina el número (entre 1 i 100):"
+        LLEGIR intents
+        
+        MENTRE intents ≠ SECRET FER
+            SI intents < SECRET LLAVORS
+                ESCRIURE "Massa petit! Torna a provar:"
+            SINO
+                ESCRIURE "Massa gran! Torna a provar:"
+            FI_SI
+            
+            LLEGIR intents
+        FI_MENTRE
+        
+        ESCRIURE "Correcte! Has encertat!"
+    FI
+    ```
+
+---
+
+### Exercici 3: Suma amb sentinella
+
+Programa que suma números fins que l'usuari introdueixi -1.
+
+??? tip "Ajuda"
+    - Inicialitza suma a 0
+    - Lectura inicial abans del bucle
+    - Condició: mentre número ≠ -1
+    - Llegir nou número al final del bucle
+
+??? success "Solució"
+    ```pseudocode
+    ALGORISME SumaAmbSentinella
+    VARIABLES
+        numero: REAL
+        suma: REAL
+        
+    INICI
+        suma ← 0
+        
+        ESCRIURE "Introdueix un número (-1 per acabar):"
+        LLEGIR numero
+        
+        MENTRE numero ≠ -1 FER
+            suma ← suma + numero
+            ESCRIURE "Introdueix un altre número (-1 per acabar):"
+            LLEGIR numero
+        FI_MENTRE
+        
+        ESCRIURE "La suma total és:", suma
+    FI
+    ```
+
+---
+
+### Exercici 4: Comptador de positius i negatius
+
+Programa que demana números fins que s'introdueixi 0, i compta quants són positius i quants negatius.
+
+??? tip "Ajuda"
+    - Usa dos comptadors
+    - Sentinella: 0
+    - Dins del bucle, decideix si és positiu o negatiu
+
+??? success "Solució"
+    ```pseudocode
+    ALGORISME ComptaPositiusNegatius
+    VARIABLES
+        numero: REAL
+        positius, negatius: ENTER
+        
+    INICI
+        positius ← 0
+        negatius ← 0
+        
+        ESCRIURE "Introdueix números (0 per acabar):"
+        LLEGIR numero
+        
+        MENTRE numero ≠ 0 FER
+            SI numero > 0 LLAVORS
+                positius ← positius + 1
+            SINO
+                negatius ← negatius + 1
+            FI_SI
+            
+            ESCRIURE "Altre número (0 per acabar):"
+            LLEGIR numero
+        FI_MENTRE
+        
+        ESCRIURE "Números positius:", positius
+        ESCRIURE "Números negatius:", negatius
+    FI
+    ```
+
+---
+
+### Exercici 5: Potències de 2
+
+Mostra totes les potències de 2 menors que 1000.
+
+??? tip "Ajuda"
+    - Comença amb potencia = 1
+    - Mentre potencia < 1000
+    - Multiplica per 2 en cada iteració
+
+??? success "Solució"
+    ```pseudocode
+    ALGORISME PotenciesDe2
+    VARIABLES
+        potencia: ENTER
+        
+    INICI
+        potencia ← 1
+        
+        ESCRIURE "Potències de 2 menors que 1000:"
+        
+        MENTRE potencia < 1000 FER
+            ESCRIURE potencia
+            potencia ← potencia * 2
+        FI_MENTRE
+    FI
+    ```
+    
+    **Sortida:**
+    ```
+    1
+    2
+    4
+    8
+    16
+    32
+    64
+    128
+    256
+    512
+    ```
+
+---
+
+## 🎓 Resum de la classe
+
+### Conceptes clau
+
+1. **WHILE** és per bucles amb nombre **desconegut** d'iteracions
+2. La **condició** s'avalua **abans** de cada iteració
+3. El bucle pot **no executar-se mai** si la condició inicial és falsa
+4. Cal **modificar** les variables per evitar bucles infinits
+5. Els **valors sentinella** serveixen per marcar el final de l'entrada
+
+### Patró bàsic WHILE
+
+```pseudocode
+// 1. Inicialitzar
+variable ← valor_inicial
+
+// 2. Bucle
+MENTRE condició FER
+    // Processar
+    
+    // 3. Modificar variable (IMPORTANT!)
+    variable ← nou_valor
+FI_MENTRE
+```
+
+### Patró amb sentinella
+
+```pseudocode
+// 1. Lectura inicial
+LLEGIR valor
+
+// 2. Bucle
+MENTRE valor ≠ SENTINELLA FER
+    // Processar valor
+    
+    // 3. Nova lectura
+    LLEGIR valor
+FI_MENTRE
+```
+
+---
+
+## 🔗 Navegació
+
+- ⬅️ [Classe 13: Bucle FOR (II)](bloc4_classe13.md)
+- ➡️ [Classe 15: Bucle WHILE (II)](bloc4_classe15.md)
+- 🏠 [Torna a l'índex](index.md)
+
+---
+
+## 📚 Recursos addicionals
+
+### Per practicar més
+
+1. Modifica l'exercici "Endevina el número" per comptar els intents
+2. Crea un programa que calculi la mitjana de números introduïts (sentinella: -1)
+3. Programa que mostri la taula de multiplicar d'un número amb WHILE
+4. Calculadora simple que funcioni fins que l'usuari introdueixi 'S' per sortir
+
+### Reptes
+
+🌟 **Repte 1:** Programa que calculi el MCD (Màxim Comú Divisor) de dos números usant l'algorisme d'Euclides amb WHILE.
+
+🌟 **Repte 2:** Crea un programa que demani números i mostri el màxim i el mínim (sentinella: 0).
+
+---
+
+**Recorda:** El bucle WHILE és la teva eina quan **no saps quantes vegades** has de repetir alguna cosa!
+
+💪 Practica molt amb sentinelles, són molt usades en programació real!
