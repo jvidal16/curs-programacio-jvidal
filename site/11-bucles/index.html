@@ -1,0 +1,2356 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Curs complet de Programació">
+      
+      
+        <meta name="author" content="Jordi - Professor de Programació">
+      
+      
+        <link rel="canonical" href="https://curs-programacio-jvidal.gitlab.io/11-bucles/">
+      
+      
+        <link rel="prev" href="../10-alternativa-encadenada/">
+      
+      
+        <link rel="next" href="../12-bucle-for/">
+      
+      
+      <link rel="icon" href="../images/logo_dam_v2.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.23">
+    
+    
+      
+        <title>11. Repetició / Bucles - DAM/DAW - Programació</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.84d31ad4.min.css">
+      
+        
+        <link rel="stylesheet" href="../assets/stylesheets/palette.06af60db.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway:300,300i,400,400i,700,700i%7CJetBrains+mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Raleway";--md-code-font:"JetBrains mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../stylesheets/extra.css">
+    
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#classe-11-introduccio-als-bucles" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow md-header--lifted" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href=".." title="DAM/DAW - Programació" class="md-header__button md-logo" aria-label="DAM/DAW - Programació" data-md-component="logo">
+      
+  <img src="../images/logo_dam.png" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            DAM/DAW - Programació
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              11. Repetició / Bucles
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12s-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+    
+      
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+    
+  
+  
+    
+    
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="../01-pseudocodi/c1-intro/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  Pseudocodi
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../02-prog-estructurada/setmana01/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  Programació Estructurada (Dart)
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../99-problemes-entrevistes/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  Extra
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../05-poo/motivacio-poo/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  POO
+
+        </a>
+      </li>
+    
+  
+
+      
+    </ul>
+  </div>
+</nav>
+    
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+  
+
+<nav class="md-nav md-nav--primary md-nav--lifted md-nav--integrated" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="DAM/DAW - Programació" class="md-nav__button md-logo" aria-label="DAM/DAW - Programació" data-md-component="logo">
+      
+  <img src="../images/logo_dam.png" alt="logo">
+
+    </a>
+    DAM/DAW - Programació
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_1" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_1" id="__nav_1_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    Pseudocodi
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_1_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_1">
+            <span class="md-nav__icon md-icon"></span>
+            Pseudocodi
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../01-pseudocodi/c1-intro/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    01. Introducció amb pseudocodi
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../02-variables/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    02. Variables
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../03-expressions/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    03. Expressions
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../04-entrada-sortida/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    04. Entrada / Sortida
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../05-logic-relacional/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    05. Expr. Lògiques / Relacionals
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../06-operadors-logics/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    06. Operadors lògics
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../07-alternativa-simple/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    07. Alternativa simple (IF)
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../08-alternativa-doble/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    08. Alternativa doble (IF-ELSE)
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../09-alternativa-aniuada/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    09. Alternativa aniuada
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../10-alternativa-encadenada/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    10. Alternativa encadenada
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    11. Repetició / Bucles
+    
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    11. Repetició / Bucles
+    
+  </span>
+  
+
+      </a>
+      
+        
+
+  
+
+<nav class="md-nav md-nav--secondary" aria-label="En aquesta pàgina">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      En aquesta pàgina
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#objectius-daprenentatge" class="md-nav__link">
+    <span class="md-ellipsis">
+      Objectius d'aprenentatge
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#1-que-es-un-bucle" class="md-nav__link">
+    <span class="md-ellipsis">
+      1. Què és un Bucle?
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="1. Què és un Bucle?">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#per-que-necessitem-bucles" class="md-nav__link">
+    <span class="md-ellipsis">
+      Per què necessitem bucles?
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-components-dun-bucle" class="md-nav__link">
+    <span class="md-ellipsis">
+      2. Components d'un Bucle
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="2. Components d&#39;un Bucle">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#exemple-visual" class="md-nav__link">
+    <span class="md-ellipsis">
+      Exemple visual
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-tipus-de-bucles" class="md-nav__link">
+    <span class="md-ellipsis">
+      3. Tipus de Bucles
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="3. Tipus de Bucles">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#31-bucles-determinats-for" class="md-nav__link">
+    <span class="md-ellipsis">
+      3.1 Bucles Determinats (FOR)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#32-bucles-indeterminats-while" class="md-nav__link">
+    <span class="md-ellipsis">
+      3.2 Bucles Indeterminats (WHILE)
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4-comparacio-for-vs-while" class="md-nav__link">
+    <span class="md-ellipsis">
+      4. Comparació: FOR vs WHILE
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5-quan-utilitzar-cada-bucle" class="md-nav__link">
+    <span class="md-ellipsis">
+      5. Quan Utilitzar Cada Bucle?
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="5. Quan Utilitzar Cada Bucle?">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#usa-for-quan" class="md-nav__link">
+    <span class="md-ellipsis">
+      Usa FOR quan:
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#usa-while-quan" class="md-nav__link">
+    <span class="md-ellipsis">
+      Usa WHILE quan:
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#6-conceptes-importants" class="md-nav__link">
+    <span class="md-ellipsis">
+      6. Conceptes Importants
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="6. Conceptes Importants">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#61-bucle-infinit" class="md-nav__link">
+    <span class="md-ellipsis">
+      6.1 Bucle Infinit
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#62-condicio-de-sortida" class="md-nav__link">
+    <span class="md-ellipsis">
+      6.2 Condició de Sortida
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#activitats-practiques" class="md-nav__link">
+    <span class="md-ellipsis">
+      💡 Activitats Pràctiques
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="💡 Activitats Pràctiques">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#activitat-1-identifica-el-tipus-de-bucle" class="md-nav__link">
+    <span class="md-ellipsis">
+      🎯 Activitat 1: Identifica el tipus de bucle
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#activitat-2-traca-el-bucle" class="md-nav__link">
+    <span class="md-ellipsis">
+      🎯 Activitat 2: Traça el bucle
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#activitat-3-detecta-lerror" class="md-nav__link">
+    <span class="md-ellipsis">
+      🎯 Activitat 3: Detecta l'error
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#activitat-4-completa-el-codi" class="md-nav__link">
+    <span class="md-ellipsis">
+      🎯 Activitat 4: Completa el codi
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#exercicis-de-reflexio" class="md-nav__link">
+    <span class="md-ellipsis">
+      💻 Exercicis de Reflexió
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="💻 Exercicis de Reflexió">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#exercici-1-disseny-dalgorisme" class="md-nav__link">
+    <span class="md-ellipsis">
+      Exercici 1: Disseny d'algorisme
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#exercici-2-pseudocodi-basic" class="md-nav__link">
+    <span class="md-ellipsis">
+      Exercici 2: Pseudocodi bàsic
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#exercici-3-identificacio-derrors" class="md-nav__link">
+    <span class="md-ellipsis">
+      Exercici 3: Identificació d'errors
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#deures" class="md-nav__link">
+    <span class="md-ellipsis">
+      🏠 Deures
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#resum" class="md-nav__link">
+    <span class="md-ellipsis">
+      📝 Resum
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#autoavaluacio" class="md-nav__link">
+    <span class="md-ellipsis">
+      🤔 Autoavaluació
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../12-bucle-for/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    12. Repetició / Buble FOR (I)
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../13-bucle-for-2/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    13. Repetició / Bucle FOR (II)
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../14-while/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    14. Repetició / WHILE (I)
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../15-while-2/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    15. Repetició / WHILE (II)
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../16-dowhile-repeat/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    16. DO  WHILE / REPEAT
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../17-bucles-niuats/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    17. Bucles niuats
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../18-decisions-bucles/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    18. Decisions i Bucles
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../02-prog-estructurada/classe-strings-structs/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Extra Strings i Structs
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../19-Problemes-integradors/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    19. Problemes Integradors
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../20-repas-final/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    20. Repàs final
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../resum-final-20/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Resum final
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Programació Estructurada (Dart)
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            Programació Estructurada (Dart)
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../02-prog-estructurada/setmana01/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Setmana 01
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../02-prog-estructurada/setmana02/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Setmana 02
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../02-prog-estructurada/setmana03/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Setmana 03
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../02-prog-estructurada/setmana04/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Setmana 04
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../02-prog-estructurada/setmana05/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Setmana 05
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../02-prog-estructurada/setmana06/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Setmana 06
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../02-prog-estructurada/setmana07/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Setmana 07
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Extra
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            Extra
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../99-problemes-entrevistes/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Problemes d'Entrevistes
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    POO
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            POO
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../05-poo/motivacio-poo/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Motivació
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../05-poo/fase-index/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Índex
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../05-poo/fase1/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Fase 01
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../05-poo/fase2/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Fase 02
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../05-poo/fase3/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Fase 03
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../05-poo/fase4/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Fase 04
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="classe-11-introduccio-als-bucles">Classe 11: Introducció als Bucles<a class="headerlink" href="#classe-11-introduccio-als-bucles" title="Permanent link">&para;</a></h1>
+<h2 id="objectius-daprenentatge">Objectius d'aprenentatge<a class="headerlink" href="#objectius-daprenentatge" title="Permanent link">&para;</a></h2>
+<ul>
+<li>Comprendre el concepte d'iteració</li>
+<li>Distingir entre bucles determinats i indeterminats</li>
+<li>Identificar quan utilitzar cada tipus de bucle</li>
+<li>Entendre l'estructura general dels bucles</li>
+</ul>
+<hr />
+<h2 id="1-que-es-un-bucle">1. Què és un Bucle?<a class="headerlink" href="#1-que-es-un-bucle" title="Permanent link">&para;</a></h2>
+<div class="admonition note">
+<p class="admonition-title">Definició</p>
+<p>Un <strong>bucle</strong> (o iteració) és una estructura de control que permet <strong>repetir</strong> un bloc d'instruccions múltiples vegades.</p>
+</div>
+<h3 id="per-que-necessitem-bucles">Per què necessitem bucles?<a class="headerlink" href="#per-que-necessitem-bucles" title="Permanent link">&para;</a></h3>
+<p>Sense bucles:
+<div class="language-text highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>ESCRIURE &quot;Hola&quot;
+</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>ESCRIURE &quot;Hola&quot;
+</span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>ESCRIURE &quot;Hola&quot;
+</span><span id="__span-0-4"><a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a>ESCRIURE &quot;Hola&quot;
+</span><span id="__span-0-5"><a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a>ESCRIURE &quot;Hola&quot;
+</span></code></pre></div></p>
+<p>Amb bucles:
+<div class="language-text highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>PER i ← 1 FINS 5 FER
+</span><span id="__span-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>    ESCRIURE &quot;Hola&quot;
+</span><span id="__span-1-3"><a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a>FI_PER
+</span></code></pre></div></p>
+<hr />
+<h2 id="2-components-dun-bucle">2. Components d'un Bucle<a class="headerlink" href="#2-components-dun-bucle" title="Permanent link">&para;</a></h2>
+<p>Tot bucle té tres elements essencials:</p>
+<div class="admonition info">
+<p class="admonition-title">Elements d'un bucle</p>
+<ol>
+<li><strong>Inicialització</strong>: Preparar les variables abans del bucle</li>
+<li><strong>Condició</strong>: Determinar quan s'ha de repetir el bucle</li>
+<li><strong>Actualització</strong>: Modificar variables per apropar-se a la fi del bucle</li>
+</ol>
+</div>
+<h3 id="exemple-visual">Exemple visual<a class="headerlink" href="#exemple-visual" title="Permanent link">&para;</a></h3>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>i ← 1                    // 1. Inicialització
+</span><span id="__span-2-2"><a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a>
+</span><span id="__span-2-3"><a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a>MENTRE i ≤ 5 FER         // 2. Condició
+</span><span id="__span-2-4"><a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a>    ESCRIURE i
+</span><span id="__span-2-5"><a id="__codelineno-2-5" name="__codelineno-2-5" href="#__codelineno-2-5"></a>    i ← i + 1            // 3. Actualització
+</span><span id="__span-2-6"><a id="__codelineno-2-6" name="__codelineno-2-6" href="#__codelineno-2-6"></a>FI_MENTRE
+</span></code></pre></div>
+<hr />
+<h2 id="3-tipus-de-bucles">3. Tipus de Bucles<a class="headerlink" href="#3-tipus-de-bucles" title="Permanent link">&para;</a></h2>
+<h3 id="31-bucles-determinats-for">3.1 Bucles Determinats (FOR)<a class="headerlink" href="#31-bucles-determinats-for" title="Permanent link">&para;</a></h3>
+<div class="admonition tip">
+<p class="admonition-title">Bucles determinats</p>
+<p>Sabem <strong>exactament</strong> quantes vegades es repetirà el bucle.</p>
+</div>
+<p><strong>Característiques:</strong>
+- Número d'iteracions conegut abans de començar
+- Usen una variable comptador
+- Ideal per recórrer seqüències</p>
+<p><strong>Exemples d'ús:</strong>
+- Mostrar els números de l'1 al 10
+- Calcular la taula de multiplicar del 7
+- Processar 20 notes d'alumnes</p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>// Mostrar números de l&#39;1 al 10
+</span><span id="__span-3-2"><a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a>PER i ← 1 FINS 10 FER
+</span><span id="__span-3-3"><a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a>    ESCRIURE i
+</span><span id="__span-3-4"><a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a>FI_PER
+</span></code></pre></div>
+<hr />
+<h3 id="32-bucles-indeterminats-while">3.2 Bucles Indeterminats (WHILE)<a class="headerlink" href="#32-bucles-indeterminats-while" title="Permanent link">&para;</a></h3>
+<div class="admonition tip">
+<p class="admonition-title">Bucles indeterminats</p>
+<p><strong>No sabem</strong> quantes vegades es repetirà el bucle (depèn d'una condició).</p>
+</div>
+<p><strong>Característiques:</strong>
+- Número d'iteracions desconegut
+- Depenen d'una condició que pot canviar
+- Ideal per validacions i esperes</p>
+<p><strong>Exemples d'ús:</strong>
+- Validar una contrasenya fins que sigui correcta
+- Llegir dades fins que l'usuari vulgui sortir
+- Buscar un element en una llista</p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>// Llegir números fins que introdueixin 0
+</span><span id="__span-4-2"><a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a>numero ← 1
+</span><span id="__span-4-3"><a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a>MENTRE numero ≠ 0 FER
+</span><span id="__span-4-4"><a id="__codelineno-4-4" name="__codelineno-4-4" href="#__codelineno-4-4"></a>    ESCRIURE &quot;Introdueix un número (0 per sortir):&quot;
+</span><span id="__span-4-5"><a id="__codelineno-4-5" name="__codelineno-4-5" href="#__codelineno-4-5"></a>    LLEGIR numero
+</span><span id="__span-4-6"><a id="__codelineno-4-6" name="__codelineno-4-6" href="#__codelineno-4-6"></a>FI_MENTRE
+</span></code></pre></div>
+<hr />
+<h2 id="4-comparacio-for-vs-while">4. Comparació: FOR vs WHILE<a class="headerlink" href="#4-comparacio-for-vs-while" title="Permanent link">&para;</a></h2>
+<table>
+<thead>
+<tr>
+<th>Característica</th>
+<th>FOR (Determinat)</th>
+<th>WHILE (Indeterminat)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Iteracions</td>
+<td>Conegudes</td>
+<td>Desconegudes</td>
+</tr>
+<tr>
+<td>Variable comptador</td>
+<td>Automàtica</td>
+<td>Manual</td>
+</tr>
+<tr>
+<td>Ús típic</td>
+<td>Recórrer rangs</td>
+<td>Condicions dinàmiques</td>
+</tr>
+<tr>
+<td>Exemple</td>
+<td>"Repeteix 10 vegades"</td>
+<td>"Repeteix fins que..."</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="5-quan-utilitzar-cada-bucle">5. Quan Utilitzar Cada Bucle?<a class="headerlink" href="#5-quan-utilitzar-cada-bucle" title="Permanent link">&para;</a></h2>
+<h3 id="usa-for-quan">Usa FOR quan:<a class="headerlink" href="#usa-for-quan" title="Permanent link">&para;</a></h3>
+<div class="tabbed-set tabbed-alternate" data-tabs="1:3"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio" /><input id="__tabbed_1_2" name="__tabbed_1" type="radio" /><input id="__tabbed_1_3" name="__tabbed_1" type="radio" /><div class="tabbed-labels"><label for="__tabbed_1_1">✅ Situació 1</label><label for="__tabbed_1_2">✅ Situació 2</label><label for="__tabbed_1_3">✅ Situació 3</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<p>Saps exactament quantes vegades has de repetir
+<div class="language-text highlight"><pre><span></span><code><span id="__span-5-1"><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a>// Mostrar la taula del 5
+</span><span id="__span-5-2"><a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a>PER i ← 1 FINS 10 FER
+</span><span id="__span-5-3"><a id="__codelineno-5-3" name="__codelineno-5-3" href="#__codelineno-5-3"></a>    ESCRIURE &quot;5 x&quot;, i, &quot;=&quot;, 5 * i
+</span><span id="__span-5-4"><a id="__codelineno-5-4" name="__codelineno-5-4" href="#__codelineno-5-4"></a>FI_PER
+</span></code></pre></div></p>
+</div>
+<div class="tabbed-block">
+<p>Necessites un comptador que varia
+<div class="language-text highlight"><pre><span></span><code><span id="__span-6-1"><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a>// Comptar enrere des de 10
+</span><span id="__span-6-2"><a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a>PER i ← 10 FINS 1 PAS -1 FER
+</span><span id="__span-6-3"><a id="__codelineno-6-3" name="__codelineno-6-3" href="#__codelineno-6-3"></a>    ESCRIURE i
+</span><span id="__span-6-4"><a id="__codelineno-6-4" name="__codelineno-6-4" href="#__codelineno-6-4"></a>FI_PER
+</span></code></pre></div></p>
+</div>
+<div class="tabbed-block">
+<p>Has de processar un número fix d'elements
+<div class="language-text highlight"><pre><span></span><code><span id="__span-7-1"><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a>// Llegir 5 notes
+</span><span id="__span-7-2"><a id="__codelineno-7-2" name="__codelineno-7-2" href="#__codelineno-7-2"></a>PER i ← 1 FINS 5 FER
+</span><span id="__span-7-3"><a id="__codelineno-7-3" name="__codelineno-7-3" href="#__codelineno-7-3"></a>    ESCRIURE &quot;Nota&quot;, i, &quot;:&quot;
+</span><span id="__span-7-4"><a id="__codelineno-7-4" name="__codelineno-7-4" href="#__codelineno-7-4"></a>    LLEGIR nota
+</span><span id="__span-7-5"><a id="__codelineno-7-5" name="__codelineno-7-5" href="#__codelineno-7-5"></a>FI_PER
+</span></code></pre></div></p>
+</div>
+</div>
+</div>
+<hr />
+<h3 id="usa-while-quan">Usa WHILE quan:<a class="headerlink" href="#usa-while-quan" title="Permanent link">&para;</a></h3>
+<div class="tabbed-set tabbed-alternate" data-tabs="2:3"><input checked="checked" id="__tabbed_2_1" name="__tabbed_2" type="radio" /><input id="__tabbed_2_2" name="__tabbed_2" type="radio" /><input id="__tabbed_2_3" name="__tabbed_2" type="radio" /><div class="tabbed-labels"><label for="__tabbed_2_1">✅ Situació 1</label><label for="__tabbed_2_2">✅ Situació 2</label><label for="__tabbed_2_3">✅ Situació 3</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<p>No saps quantes vegades cal repetir
+<div class="language-text highlight"><pre><span></span><code><span id="__span-8-1"><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a>// Validar contrasenya
+</span><span id="__span-8-2"><a id="__codelineno-8-2" name="__codelineno-8-2" href="#__codelineno-8-2"></a>MENTRE contrasenya ≠ &quot;correcta&quot; FER
+</span><span id="__span-8-3"><a id="__codelineno-8-3" name="__codelineno-8-3" href="#__codelineno-8-3"></a>    ESCRIURE &quot;Contrasenya:&quot;
+</span><span id="__span-8-4"><a id="__codelineno-8-4" name="__codelineno-8-4" href="#__codelineno-8-4"></a>    LLEGIR contrasenya
+</span><span id="__span-8-5"><a id="__codelineno-8-5" name="__codelineno-8-5" href="#__codelineno-8-5"></a>FI_MENTRE
+</span></code></pre></div></p>
+</div>
+<div class="tabbed-block">
+<p>La condició de sortida és complexa
+<div class="language-text highlight"><pre><span></span><code><span id="__span-9-1"><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a>// Joc: endevinar un número
+</span><span id="__span-9-2"><a id="__codelineno-9-2" name="__codelineno-9-2" href="#__codelineno-9-2"></a>MENTRE intent ≠ numeroSecret I intents &lt; 5 FER
+</span><span id="__span-9-3"><a id="__codelineno-9-3" name="__codelineno-9-3" href="#__codelineno-9-3"></a>    ESCRIURE &quot;Endevina el número:&quot;
+</span><span id="__span-9-4"><a id="__codelineno-9-4" name="__codelineno-9-4" href="#__codelineno-9-4"></a>    LLEGIR intent
+</span><span id="__span-9-5"><a id="__codelineno-9-5" name="__codelineno-9-5" href="#__codelineno-9-5"></a>    intents ← intents + 1
+</span><span id="__span-9-6"><a id="__codelineno-9-6" name="__codelineno-9-6" href="#__codelineno-9-6"></a>FI_MENTRE
+</span></code></pre></div></p>
+</div>
+<div class="tabbed-block">
+<p>Depens d'entrada de l'usuari
+<div class="language-text highlight"><pre><span></span><code><span id="__span-10-1"><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a>// Menú amb sortida
+</span><span id="__span-10-2"><a id="__codelineno-10-2" name="__codelineno-10-2" href="#__codelineno-10-2"></a>MENTRE opcio ≠ 0 FER
+</span><span id="__span-10-3"><a id="__codelineno-10-3" name="__codelineno-10-3" href="#__codelineno-10-3"></a>    ESCRIURE &quot;1. Opció A&quot;
+</span><span id="__span-10-4"><a id="__codelineno-10-4" name="__codelineno-10-4" href="#__codelineno-10-4"></a>    ESCRIURE &quot;0. Sortir&quot;
+</span><span id="__span-10-5"><a id="__codelineno-10-5" name="__codelineno-10-5" href="#__codelineno-10-5"></a>    LLEGIR opcio
+</span><span id="__span-10-6"><a id="__codelineno-10-6" name="__codelineno-10-6" href="#__codelineno-10-6"></a>FI_MENTRE
+</span></code></pre></div></p>
+</div>
+</div>
+</div>
+<hr />
+<h2 id="6-conceptes-importants">6. Conceptes Importants<a class="headerlink" href="#6-conceptes-importants" title="Permanent link">&para;</a></h2>
+<h3 id="61-bucle-infinit">6.1 Bucle Infinit<a class="headerlink" href="#61-bucle-infinit" title="Permanent link">&para;</a></h3>
+<div class="admonition warning">
+<p class="admonition-title">Perill: Bucle infinit</p>
+<p>Un bucle que <strong>mai acaba</strong> perquè la condició sempre és certa.</p>
+</div>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-11-1"><a id="__codelineno-11-1" name="__codelineno-11-1" href="#__codelineno-11-1"></a>// ❌ MAL - Bucle infinit
+</span><span id="__span-11-2"><a id="__codelineno-11-2" name="__codelineno-11-2" href="#__codelineno-11-2"></a>i ← 1
+</span><span id="__span-11-3"><a id="__codelineno-11-3" name="__codelineno-11-3" href="#__codelineno-11-3"></a>MENTRE i ≤ 10 FER
+</span><span id="__span-11-4"><a id="__codelineno-11-4" name="__codelineno-11-4" href="#__codelineno-11-4"></a>    ESCRIURE i
+</span><span id="__span-11-5"><a id="__codelineno-11-5" name="__codelineno-11-5" href="#__codelineno-11-5"></a>    // Oblida incrementar i!
+</span><span id="__span-11-6"><a id="__codelineno-11-6" name="__codelineno-11-6" href="#__codelineno-11-6"></a>FI_MENTRE
+</span></code></pre></div>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-12-1"><a id="__codelineno-12-1" name="__codelineno-12-1" href="#__codelineno-12-1"></a>// ✅ BÉ - Bucle correcte
+</span><span id="__span-12-2"><a id="__codelineno-12-2" name="__codelineno-12-2" href="#__codelineno-12-2"></a>i ← 1
+</span><span id="__span-12-3"><a id="__codelineno-12-3" name="__codelineno-12-3" href="#__codelineno-12-3"></a>MENTRE i ≤ 10 FER
+</span><span id="__span-12-4"><a id="__codelineno-12-4" name="__codelineno-12-4" href="#__codelineno-12-4"></a>    ESCRIURE i
+</span><span id="__span-12-5"><a id="__codelineno-12-5" name="__codelineno-12-5" href="#__codelineno-12-5"></a>    i ← i + 1    // Incrementa i
+</span><span id="__span-12-6"><a id="__codelineno-12-6" name="__codelineno-12-6" href="#__codelineno-12-6"></a>FI_MENTRE
+</span></code></pre></div>
+<hr />
+<h3 id="62-condicio-de-sortida">6.2 Condició de Sortida<a class="headerlink" href="#62-condicio-de-sortida" title="Permanent link">&para;</a></h3>
+<div class="admonition tip">
+<p class="admonition-title">Condició de sortida</p>
+<p>Sempre ha d'haver-hi una manera de <strong>sortir</strong> del bucle.</p>
+</div>
+<p><strong>Preguntes a fer-se:</strong>
+- ✅ La condició pot esdevenir falsa?
+- ✅ Les variables de la condició es modifiquen dins el bucle?
+- ✅ Hi ha un límit màxim d'iteracions?</p>
+<hr />
+<h2 id="activitats-practiques">💡 Activitats Pràctiques<a class="headerlink" href="#activitats-practiques" title="Permanent link">&para;</a></h2>
+<h3 id="activitat-1-identifica-el-tipus-de-bucle">🎯 Activitat 1: Identifica el tipus de bucle<a class="headerlink" href="#activitat-1-identifica-el-tipus-de-bucle" title="Permanent link">&para;</a></h3>
+<p>Per a cada situació, indica si utilitzaries FOR o WHILE:</p>
+<ol>
+<li>Mostrar els números parells del 2 al 20</li>
+<li>Demanar la contrasenya fins que sigui correcta</li>
+<li>Calcular el factorial de 5</li>
+<li>Llegir números fins que s'introdueixi un negatiu</li>
+<li>Mostrar els dies de la setmana</li>
+<li>Sumar números fins que la suma superi 100</li>
+</ol>
+<details class="success">
+<summary>Solucions</summary>
+<ol>
+<li><strong>FOR</strong> - Sabem que són 10 números</li>
+<li><strong>WHILE</strong> - No sabem quantes vegades fallaran</li>
+<li><strong>FOR</strong> - Sabem que són 5 multiplicacions</li>
+<li><strong>WHILE</strong> - No sabem quants números introduiran</li>
+<li><strong>FOR</strong> - Sabem que són 7 dies</li>
+<li><strong>WHILE</strong> - No sabem quants números caldrà sumar</li>
+</ol>
+</details>
+<hr />
+<h3 id="activitat-2-traca-el-bucle">🎯 Activitat 2: Traça el bucle<a class="headerlink" href="#activitat-2-traca-el-bucle" title="Permanent link">&para;</a></h3>
+<p>Què mostrarà aquest codi?</p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-13-1"><a id="__codelineno-13-1" name="__codelineno-13-1" href="#__codelineno-13-1"></a>comptador ← 1
+</span><span id="__span-13-2"><a id="__codelineno-13-2" name="__codelineno-13-2" href="#__codelineno-13-2"></a>MENTRE comptador ≤ 3 FER
+</span><span id="__span-13-3"><a id="__codelineno-13-3" name="__codelineno-13-3" href="#__codelineno-13-3"></a>    ESCRIURE &quot;Iteració:&quot;, comptador
+</span><span id="__span-13-4"><a id="__codelineno-13-4" name="__codelineno-13-4" href="#__codelineno-13-4"></a>    comptador ← comptador + 1
+</span><span id="__span-13-5"><a id="__codelineno-13-5" name="__codelineno-13-5" href="#__codelineno-13-5"></a>FI_MENTRE
+</span><span id="__span-13-6"><a id="__codelineno-13-6" name="__codelineno-13-6" href="#__codelineno-13-6"></a>ESCRIURE &quot;Fi&quot;
+</span></code></pre></div>
+<details class="success">
+<summary>Solució</summary>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-14-1"><a id="__codelineno-14-1" name="__codelineno-14-1" href="#__codelineno-14-1"></a>Iteració: 1
+</span><span id="__span-14-2"><a id="__codelineno-14-2" name="__codelineno-14-2" href="#__codelineno-14-2"></a>Iteració: 2
+</span><span id="__span-14-3"><a id="__codelineno-14-3" name="__codelineno-14-3" href="#__codelineno-14-3"></a>Iteració: 3
+</span><span id="__span-14-4"><a id="__codelineno-14-4" name="__codelineno-14-4" href="#__codelineno-14-4"></a>Fi
+</span></code></pre></div>
+</details>
+<hr />
+<h3 id="activitat-3-detecta-lerror">🎯 Activitat 3: Detecta l'error<a class="headerlink" href="#activitat-3-detecta-lerror" title="Permanent link">&para;</a></h3>
+<p>Aquest bucle té un problema. Quin?</p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-15-1"><a id="__codelineno-15-1" name="__codelineno-15-1" href="#__codelineno-15-1"></a>PER i ← 1 FINS 5 FER
+</span><span id="__span-15-2"><a id="__codelineno-15-2" name="__codelineno-15-2" href="#__codelineno-15-2"></a>    ESCRIURE &quot;Número:&quot;, i
+</span><span id="__span-15-3"><a id="__codelineno-15-3" name="__codelineno-15-3" href="#__codelineno-15-3"></a>    i ← i + 1
+</span><span id="__span-15-4"><a id="__codelineno-15-4" name="__codelineno-15-4" href="#__codelineno-15-4"></a>FI_PER
+</span></code></pre></div>
+<details class="success">
+<summary>Resposta</summary>
+<p><strong>Error:</strong> No s'ha d'incrementar manualment <code>i</code> dins d'un bucle FOR.
+El bucle FOR ja gestiona automàticament l'increment.</p>
+<p>Correcte:
+<div class="language-text highlight"><pre><span></span><code><span id="__span-16-1"><a id="__codelineno-16-1" name="__codelineno-16-1" href="#__codelineno-16-1"></a>PER i ← 1 FINS 5 FER
+</span><span id="__span-16-2"><a id="__codelineno-16-2" name="__codelineno-16-2" href="#__codelineno-16-2"></a>    ESCRIURE &quot;Número:&quot;, i
+</span><span id="__span-16-3"><a id="__codelineno-16-3" name="__codelineno-16-3" href="#__codelineno-16-3"></a>FI_PER
+</span></code></pre></div></p>
+</details>
+<hr />
+<h3 id="activitat-4-completa-el-codi">🎯 Activitat 4: Completa el codi<a class="headerlink" href="#activitat-4-completa-el-codi" title="Permanent link">&para;</a></h3>
+<p>Completa aquest bucle per mostrar els múltiples de 3 fins a 30:</p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-17-1"><a id="__codelineno-17-1" name="__codelineno-17-1" href="#__codelineno-17-1"></a>PER i ← ___ FINS ___ PAS ___ FER
+</span><span id="__span-17-2"><a id="__codelineno-17-2" name="__codelineno-17-2" href="#__codelineno-17-2"></a>    ESCRIURE i
+</span><span id="__span-17-3"><a id="__codelineno-17-3" name="__codelineno-17-3" href="#__codelineno-17-3"></a>FI_PER
+</span></code></pre></div>
+<details class="success">
+<summary>Solució</summary>
+<p><div class="language-text highlight"><pre><span></span><code><span id="__span-18-1"><a id="__codelineno-18-1" name="__codelineno-18-1" href="#__codelineno-18-1"></a>PER i ← 3 FINS 30 PAS 3 FER
+</span><span id="__span-18-2"><a id="__codelineno-18-2" name="__codelineno-18-2" href="#__codelineno-18-2"></a>    ESCRIURE i
+</span><span id="__span-18-3"><a id="__codelineno-18-3" name="__codelineno-18-3" href="#__codelineno-18-3"></a>FI_PER
+</span></code></pre></div>
+O també:
+<div class="language-text highlight"><pre><span></span><code><span id="__span-19-1"><a id="__codelineno-19-1" name="__codelineno-19-1" href="#__codelineno-19-1"></a>PER i ← 1 FINS 10 FER
+</span><span id="__span-19-2"><a id="__codelineno-19-2" name="__codelineno-19-2" href="#__codelineno-19-2"></a>    ESCRIURE i * 3
+</span><span id="__span-19-3"><a id="__codelineno-19-3" name="__codelineno-19-3" href="#__codelineno-19-3"></a>FI_PER
+</span></code></pre></div></p>
+</details>
+<hr />
+<h2 id="exercicis-de-reflexio">💻 Exercicis de Reflexió<a class="headerlink" href="#exercicis-de-reflexio" title="Permanent link">&para;</a></h2>
+<h3 id="exercici-1-disseny-dalgorisme">Exercici 1: Disseny d'algorisme<a class="headerlink" href="#exercici-1-disseny-dalgorisme" title="Permanent link">&para;</a></h3>
+<p>Per a cada problema, decideix quin tipus de bucle utilitzaries i per què:</p>
+<p><strong>a) Llegir 10 temperatures i calcular la mitjana</strong></p>
+<details class="success">
+<summary>Resposta</summary>
+<p><strong>FOR</strong> - Sabem que són exactament 10 temperatures.</p>
+</details>
+<p><strong>b) Llegir temperatures fins que l'usuari introdueixi -999</strong></p>
+<details class="success">
+<summary>Resposta</summary>
+<p><strong>WHILE</strong> - No sabem quantes temperatures introduirà l'usuari.</p>
+</details>
+<p><strong>c) Mostrar el compte enrere d'un coet (10, 9, 8, ..., 1, 0)</strong></p>
+<details class="success">
+<summary>Resposta</summary>
+<p><strong>FOR</strong> amb pas -1 - Sabem que són 11 números en ordre descendent.</p>
+</details>
+<p><strong>d) Validar que un número estigui entre 1 i 100</strong></p>
+<details class="success">
+<summary>Resposta</summary>
+<p><strong>WHILE</strong> - No sabem quantes vegades l'usuari introduirà un valor incorrecte.</p>
+</details>
+<hr />
+<h3 id="exercici-2-pseudocodi-basic">Exercici 2: Pseudocodi bàsic<a class="headerlink" href="#exercici-2-pseudocodi-basic" title="Permanent link">&para;</a></h3>
+<p>Escriu pseudocodi per:</p>
+<p><strong>a) Mostrar "Hola" 7 vegades</strong></p>
+<details class="success">
+<summary>Solució</summary>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-20-1"><a id="__codelineno-20-1" name="__codelineno-20-1" href="#__codelineno-20-1"></a>PER i ← 1 FINS 7 FER
+</span><span id="__span-20-2"><a id="__codelineno-20-2" name="__codelineno-20-2" href="#__codelineno-20-2"></a>    ESCRIURE &quot;Hola&quot;
+</span><span id="__span-20-3"><a id="__codelineno-20-3" name="__codelineno-20-3" href="#__codelineno-20-3"></a>FI_PER
+</span></code></pre></div>
+</details>
+<p><strong>b) Llegir un número fins que sigui positiu</strong></p>
+<details class="success">
+<summary>Solució</summary>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-21-1"><a id="__codelineno-21-1" name="__codelineno-21-1" href="#__codelineno-21-1"></a>numero ← -1
+</span><span id="__span-21-2"><a id="__codelineno-21-2" name="__codelineno-21-2" href="#__codelineno-21-2"></a>MENTRE numero ≤ 0 FER
+</span><span id="__span-21-3"><a id="__codelineno-21-3" name="__codelineno-21-3" href="#__codelineno-21-3"></a>    ESCRIURE &quot;Introdueix un número positiu:&quot;
+</span><span id="__span-21-4"><a id="__codelineno-21-4" name="__codelineno-21-4" href="#__codelineno-21-4"></a>    LLEGIR numero
+</span><span id="__span-21-5"><a id="__codelineno-21-5" name="__codelineno-21-5" href="#__codelineno-21-5"></a>FI_MENTRE
+</span></code></pre></div>
+</details>
+<hr />
+<h3 id="exercici-3-identificacio-derrors">Exercici 3: Identificació d'errors<a class="headerlink" href="#exercici-3-identificacio-derrors" title="Permanent link">&para;</a></h3>
+<p>Troba l'error en cada bucle:</p>
+<p><strong>a)</strong>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-22-1"><a id="__codelineno-22-1" name="__codelineno-22-1" href="#__codelineno-22-1"></a>PER i ← 5 FINS 1 FER
+</span><span id="__span-22-2"><a id="__codelineno-22-2" name="__codelineno-22-2" href="#__codelineno-22-2"></a>    ESCRIURE i
+</span><span id="__span-22-3"><a id="__codelineno-22-3" name="__codelineno-22-3" href="#__codelineno-22-3"></a>FI_PER
+</span></code></pre></div></p>
+<details class="success">
+<summary>Resposta</summary>
+<p><strong>Error:</strong> Intenta anar de 5 a 1 sense especificar PAS -1.
+No es farà cap iteració.</p>
+<p>Correcte:
+<div class="language-text highlight"><pre><span></span><code><span id="__span-23-1"><a id="__codelineno-23-1" name="__codelineno-23-1" href="#__codelineno-23-1"></a>PER i ← 5 FINS 1 PAS -1 FER
+</span><span id="__span-23-2"><a id="__codelineno-23-2" name="__codelineno-23-2" href="#__codelineno-23-2"></a>    ESCRIURE i
+</span><span id="__span-23-3"><a id="__codelineno-23-3" name="__codelineno-23-3" href="#__codelineno-23-3"></a>FI_PER
+</span></code></pre></div></p>
+</details>
+<p><strong>b)</strong>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-24-1"><a id="__codelineno-24-1" name="__codelineno-24-1" href="#__codelineno-24-1"></a>x ← 0
+</span><span id="__span-24-2"><a id="__codelineno-24-2" name="__codelineno-24-2" href="#__codelineno-24-2"></a>MENTRE x &lt; 5 FER
+</span><span id="__span-24-3"><a id="__codelineno-24-3" name="__codelineno-24-3" href="#__codelineno-24-3"></a>    ESCRIURE x
+</span><span id="__span-24-4"><a id="__codelineno-24-4" name="__codelineno-24-4" href="#__codelineno-24-4"></a>FI_MENTRE
+</span></code></pre></div></p>
+<details class="success">
+<summary>Resposta</summary>
+<p><strong>Error:</strong> Bucle infinit. <code>x</code> mai s'incrementa.</p>
+<p>Correcte:
+<div class="language-text highlight"><pre><span></span><code><span id="__span-25-1"><a id="__codelineno-25-1" name="__codelineno-25-1" href="#__codelineno-25-1"></a>x ← 0
+</span><span id="__span-25-2"><a id="__codelineno-25-2" name="__codelineno-25-2" href="#__codelineno-25-2"></a>MENTRE x &lt; 5 FER
+</span><span id="__span-25-3"><a id="__codelineno-25-3" name="__codelineno-25-3" href="#__codelineno-25-3"></a>    ESCRIURE x
+</span><span id="__span-25-4"><a id="__codelineno-25-4" name="__codelineno-25-4" href="#__codelineno-25-4"></a>    x ← x + 1
+</span><span id="__span-25-5"><a id="__codelineno-25-5" name="__codelineno-25-5" href="#__codelineno-25-5"></a>FI_MENTRE
+</span></code></pre></div></p>
+</details>
+<hr />
+<h2 id="deures">🏠 Deures<a class="headerlink" href="#deures" title="Permanent link">&para;</a></h2>
+<ol>
+<li>
+<p><strong>Reflexió:</strong> Escriu 3 exemples de la vida real on utilitzaries un bucle determinat i 3 on utilitzaries un indeterminat.</p>
+</li>
+<li>
+<p><strong>Anàlisi:</strong> Per a cada situació, indica FOR o WHILE i justifica:</p>
+</li>
+<li>Processar les notes de 25 alumnes</li>
+<li>Esperar que l'usuari introdueixi "sí" o "no"</li>
+<li>Mostrar la seqüència de Fibonacci fins al número 10</li>
+<li>Llegir dades fins que l'usuari escrigui "fi"</li>
+<li>
+<p>Comptar de 100 a 1</p>
+</li>
+<li>
+<p><strong>Investigació:</strong> Busca informació sobre altres tipus de bucles (DO-WHILE, REPEAT-UNTIL) i explica com funcionen.</p>
+</li>
+<li>
+<p><strong>Disseny:</strong> Descriu amb paraules (sense codi) com faries un programa que:</p>
+</li>
+<li>Llegeixi números fins que la suma superi 1000</li>
+<li>Mostri tots els números parells entre 1 i 50</li>
+</ol>
+<hr />
+<h2 id="resum">📝 Resum<a class="headerlink" href="#resum" title="Permanent link">&para;</a></h2>
+<div class="admonition summary">
+<p class="admonition-title">Conceptes clau</p>
+<ul>
+<li>✅ Els bucles permeten repetir blocs de codi</li>
+<li>✅ <strong>FOR</strong>: bucles determinats (iteracions conegudes)</li>
+<li>✅ <strong>WHILE</strong>: bucles indeterminats (iteracions desconegudes)</li>
+<li>✅ Tot bucle necessita: inicialització, condició i actualització</li>
+<li>✅ Evita bucles infinits assegurant que la condició pot esdevenir falsa</li>
+</ul>
+</div>
+<hr />
+<h2 id="autoavaluacio">🤔 Autoavaluació<a class="headerlink" href="#autoavaluacio" title="Permanent link">&para;</a></h2>
+<div class="admonition question">
+<p class="admonition-title">Pregunta 1</p>
+<p>Quin tipus de bucle és més adequat per mostrar els números de l'1 al 100?</p>
+<p>a) WHILE<br />
+b) FOR<br />
+c) Qualsevol dels dos<br />
+d) Cap dels dos</p>
+</div>
+<details class="success">
+<summary>Resposta</summary>
+<p><strong>b) FOR</strong><br />
+Sabem exactament quantes iteracions necessitem (100).</p>
+</details>
+<div class="admonition question">
+<p class="admonition-title">Pregunta 2</p>
+<p>Què passa si oblides incrementar el comptador en un WHILE?</p>
+<p>a) El programa dóna error<br />
+b) El bucle no s'executa<br />
+c) Bucle infinit<br />
+d) Funciona correctament</p>
+</div>
+<details class="success">
+<summary>Resposta</summary>
+<p><strong>c) Bucle infinit</strong><br />
+La condició mai canviarà i el bucle continuarà per sempre.</p>
+</details>
+<div class="admonition question">
+<p class="admonition-title">Pregunta 3</p>
+<p>Quin bucle utilitzaries per validar una contrasenya?</p>
+<p>a) FOR<br />
+b) WHILE<br />
+c) Cap<br />
+d) Depèn</p>
+</div>
+<details class="success">
+<summary>Resposta</summary>
+<p><strong>b) WHILE</strong><br />
+No sabem quantes vegades l'usuari introduirà la contrasenya incorrecta.</p>
+</details>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Back to top
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+    
+      
+      <nav class="md-footer__inner md-grid" aria-label="Footer" >
+        
+          
+          <a href="../10-alternativa-encadenada/" class="md-footer__link md-footer__link--prev" aria-label="Previous: 10. Alternativa encadenada">
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+            </div>
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Previous
+              </span>
+              <div class="md-ellipsis">
+                10. Alternativa encadenada
+              </div>
+            </div>
+          </a>
+        
+        
+          
+          <a href="../12-bucle-for/" class="md-footer__link md-footer__link--next" aria-label="Next: 12. Repetició / Buble FOR (I)">
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Next
+              </span>
+              <div class="md-ellipsis">
+                12. Repetició / Buble FOR (I)
+              </div>
+            </div>
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11z"/></svg>
+            </div>
+          </a>
+        
+      </nav>
+    
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      Copyright &copy; 2025 - Curs de Git per a Estudiants
+    </div>
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      <script id="__config" type="application/json">{"base": "..", "features": ["navigation.tabs", "navigation.instant", "navigation.instant.prefetch", "navigation.tabs.sticky", "navigation.sections", "navigation.path", "navigation.indexes", "navigation.top", "navigation.footer", "navigation.tracking", "toc.integrate", "search.suggest", "search.highlight", "content.code.copy"], "search": "../assets/javascripts/workers/search.973d3a69.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.f55a23d4.min.js"></script>
+      
+        <script src="../javascripts/quiz.js"></script>
+      
+    
+  </body>
+</html>

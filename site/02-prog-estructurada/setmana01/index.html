@@ -1,0 +1,3284 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Curs complet de Programació">
+      
+      
+        <meta name="author" content="Jordi - Professor de Programació">
+      
+      
+        <link rel="canonical" href="https://curs-programacio-jvidal.gitlab.io/02-prog-estructurada/setmana01/">
+      
+      
+        <link rel="prev" href="../../resum-final-20/">
+      
+      
+        <link rel="next" href="../setmana02/">
+      
+      
+      <link rel="icon" href="../../images/logo_dam_v2.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.23">
+    
+    
+      
+        <title>Setmana 01 - DAM/DAW - Programació</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.84d31ad4.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.06af60db.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway:300,300i,400,400i,700,700i%7CJetBrains+mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Raleway";--md-code-font:"JetBrains mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../stylesheets/extra.css">
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#setmana-1-introduccio-a-dart-i-sintaxi-basica" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow md-header--lifted" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="DAM/DAW - Programació" class="md-header__button md-logo" aria-label="DAM/DAW - Programació" data-md-component="logo">
+      
+  <img src="../../images/logo_dam.png" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            DAM/DAW - Programació
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Setmana 01
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12s-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+    
+      
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../01-pseudocodi/c1-intro/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  Pseudocodi
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+    
+  
+  
+    
+    
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="./" class="md-tabs__link">
+          
+  
+  
+    
+  
+  Programació Estructurada (Dart)
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../99-problemes-entrevistes/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  Extra
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../05-poo/motivacio-poo/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  POO
+
+        </a>
+      </li>
+    
+  
+
+      
+    </ul>
+  </div>
+</nav>
+    
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+  
+
+<nav class="md-nav md-nav--primary md-nav--lifted md-nav--integrated" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="DAM/DAW - Programació" class="md-nav__button md-logo" aria-label="DAM/DAW - Programació" data-md-component="logo">
+      
+  <img src="../../images/logo_dam.png" alt="logo">
+
+    </a>
+    DAM/DAW - Programació
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_1" >
+        
+          
+          <label class="md-nav__link" for="__nav_1" id="__nav_1_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Pseudocodi
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_1">
+            <span class="md-nav__icon md-icon"></span>
+            Pseudocodi
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../01-pseudocodi/c1-intro/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    01. Introducció amb pseudocodi
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../02-variables/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    02. Variables
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../03-expressions/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    03. Expressions
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../04-entrada-sortida/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    04. Entrada / Sortida
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../05-logic-relacional/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    05. Expr. Lògiques / Relacionals
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../06-operadors-logics/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    06. Operadors lògics
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../07-alternativa-simple/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    07. Alternativa simple (IF)
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../08-alternativa-doble/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    08. Alternativa doble (IF-ELSE)
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../09-alternativa-aniuada/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    09. Alternativa aniuada
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../10-alternativa-encadenada/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    10. Alternativa encadenada
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../11-bucles/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    11. Repetició / Bucles
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../12-bucle-for/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    12. Repetició / Buble FOR (I)
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../13-bucle-for-2/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    13. Repetició / Bucle FOR (II)
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../14-while/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    14. Repetició / WHILE (I)
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../15-while-2/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    15. Repetició / WHILE (II)
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../16-dowhile-repeat/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    16. DO  WHILE / REPEAT
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../17-bucles-niuats/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    17. Bucles niuats
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../18-decisions-bucles/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    18. Decisions i Bucles
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../classe-strings-structs/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Extra Strings i Structs
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../19-Problemes-integradors/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    19. Problemes Integradors
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../20-repas-final/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    20. Repàs final
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../resum-final-20/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Resum final
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    Programació Estructurada (Dart)
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            Programació Estructurada (Dart)
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    Setmana 01
+    
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    Setmana 01
+    
+  </span>
+  
+
+      </a>
+      
+        
+
+  
+
+<nav class="md-nav md-nav--secondary" aria-label="En aquesta pàgina">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      En aquesta pàgina
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#objectius-daprenentatge" class="md-nav__link">
+    <span class="md-ellipsis">
+      Objectius d'aprenentatge
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#sessio-1-2-introduccio-i-installacio" class="md-nav__link">
+    <span class="md-ellipsis">
+      Sessió 1-2: Introducció i Instal·lació
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Sessió 1-2: Introducció i Instal·lació">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-que-es-dart" class="md-nav__link">
+    <span class="md-ellipsis">
+      1. Què és Dart?
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="1. Què és Dart?">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#caracteristiques-principals" class="md-nav__link">
+    <span class="md-ellipsis">
+      Característiques principals
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#historia-breu" class="md-nav__link">
+    <span class="md-ellipsis">
+      Història breu
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-installacio-de-lentorn" class="md-nav__link">
+    <span class="md-ellipsis">
+      2. Instal·lació de l'Entorn
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3-primer-programa-hola-mon" class="md-nav__link">
+    <span class="md-ellipsis">
+      3. Primer Programa: "Hola Món"
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#4-estructura-basica-dun-programa" class="md-nav__link">
+    <span class="md-ellipsis">
+      4. Estructura Bàsica d'un Programa
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="4. Estructura Bàsica d&#39;un Programa">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#tipus-de-comentaris" class="md-nav__link">
+    <span class="md-ellipsis">
+      Tipus de comentaris
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#5-funcio-print" class="md-nav__link">
+    <span class="md-ellipsis">
+      5. Funció print()
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#sessio-3-4-variables-i-tipus-de-dades" class="md-nav__link">
+    <span class="md-ellipsis">
+      Sessió 3-4: Variables i Tipus de Dades
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Sessió 3-4: Variables i Tipus de Dades">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-que-es-una-variable" class="md-nav__link">
+    <span class="md-ellipsis">
+      1. Què és una Variable?
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-declaracio-de-variables" class="md-nav__link">
+    <span class="md-ellipsis">
+      2. Declaració de Variables
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3-tipus-de-dades-basics" class="md-nav__link">
+    <span class="md-ellipsis">
+      3. Tipus de Dades Bàsics
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="3. Tipus de Dades Bàsics">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#31-numeros-enters-int" class="md-nav__link">
+    <span class="md-ellipsis">
+      3.1 Números Enters (int)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#32-numeros-decimals-double" class="md-nav__link">
+    <span class="md-ellipsis">
+      3.2 Números Decimals (double)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#33-text-string" class="md-nav__link">
+    <span class="md-ellipsis">
+      3.3 Text (String)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#34-booleans-bool" class="md-nav__link">
+    <span class="md-ellipsis">
+      3.4 Booleans (bool)
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#4-interpolacio-de-cadenes" class="md-nav__link">
+    <span class="md-ellipsis">
+      4. Interpolació de Cadenes
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#5-operadors-aritmetics" class="md-nav__link">
+    <span class="md-ellipsis">
+      5. Operadors Aritmètics
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="5. Operadors Aritmètics">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#taula-doperadors" class="md-nav__link">
+    <span class="md-ellipsis">
+      Taula d'operadors
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#6-operadors-relacionals" class="md-nav__link">
+    <span class="md-ellipsis">
+      6. Operadors Relacionals
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#7-operadors-logics" class="md-nav__link">
+    <span class="md-ellipsis">
+      7. Operadors Lògics
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#8-entrada-de-dades" class="md-nav__link">
+    <span class="md-ellipsis">
+      8. Entrada de Dades
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#9-conversio-de-tipus" class="md-nav__link">
+    <span class="md-ellipsis">
+      9. Conversió de Tipus
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#sessio-5-6-constants-i-practica" class="md-nav__link">
+    <span class="md-ellipsis">
+      Sessió 5-6: Constants i Pràctica
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Sessió 5-6: Constants i Pràctica">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-constants-final-vs-const" class="md-nav__link">
+    <span class="md-ellipsis">
+      1. Constants: final vs const
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="1. Constants: final vs const">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#11-constants-amb-final" class="md-nav__link">
+    <span class="md-ellipsis">
+      1.1 Constants amb final
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#12-constants-amb-const" class="md-nav__link">
+    <span class="md-ellipsis">
+      1.2 Constants amb const
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#comparacio-final-vs-const" class="md-nav__link">
+    <span class="md-ellipsis">
+      Comparació final vs const
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-bones-practiques-de-nomenclatura" class="md-nav__link">
+    <span class="md-ellipsis">
+      2. Bones Pràctiques de Nomenclatura
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="2. Bones Pràctiques de Nomenclatura">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#21-variables-i-funcions-camelcase" class="md-nav__link">
+    <span class="md-ellipsis">
+      2.1 Variables i funcions: camelCase
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#22-constants-upper_case" class="md-nav__link">
+    <span class="md-ellipsis">
+      2.2 Constants: UPPER_CASE
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#23-noms-descriptius" class="md-nav__link">
+    <span class="md-ellipsis">
+      2.3 Noms descriptius
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3-debug-basic-i-errors-comuns" class="md-nav__link">
+    <span class="md-ellipsis">
+      3. Debug Bàsic i Errors Comuns
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="3. Debug Bàsic i Errors Comuns">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#error-1-oblidar-el-punt-i-coma" class="md-nav__link">
+    <span class="md-ellipsis">
+      Error 1: Oblidar el punt i coma
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#error-2-tipus-incompatibles" class="md-nav__link">
+    <span class="md-ellipsis">
+      Error 2: Tipus incompatibles
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#error-3-variable-no-inicialitzada" class="md-nav__link">
+    <span class="md-ellipsis">
+      Error 3: Variable no inicialitzada
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#activitats-practiques" class="md-nav__link">
+    <span class="md-ellipsis">
+      💡 Activitats Pràctiques
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="💡 Activitats Pràctiques">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#activitat-1-analitza-el-codi" class="md-nav__link">
+    <span class="md-ellipsis">
+      🎯 Activitat 1: Analitza el codi
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#activitat-2-troba-els-errors" class="md-nav__link">
+    <span class="md-ellipsis">
+      🎯 Activitat 2: Troba els errors
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#activitat-3-completa-el-codi" class="md-nav__link">
+    <span class="md-ellipsis">
+      🎯 Activitat 3: Completa el codi
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#exercicis-de-programacio" class="md-nav__link">
+    <span class="md-ellipsis">
+      💻 Exercicis de Programació
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="💻 Exercicis de Programació">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#exercici-1-dades-personals" class="md-nav__link">
+    <span class="md-ellipsis">
+      Exercici 1: Dades personals
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#exercici-2-calculadora-basica" class="md-nav__link">
+    <span class="md-ellipsis">
+      Exercici 2: Calculadora bàsica
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#exercici-3-conversor-de-temperatures" class="md-nav__link">
+    <span class="md-ellipsis">
+      Exercici 3: Conversor de temperatures
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#exercici-4-area-i-perimetre" class="md-nav__link">
+    <span class="md-ellipsis">
+      Exercici 4: Àrea i perímetre
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#exercici-5-calcul-diva" class="md-nav__link">
+    <span class="md-ellipsis">
+      Exercici 5: Càlcul d'IVA
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#exercici-6-area-dun-cercle" class="md-nav__link">
+    <span class="md-ellipsis">
+      Exercici 6: Àrea d'un cercle
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#deures" class="md-nav__link">
+    <span class="md-ellipsis">
+      🏠 Deures
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="🏠 Deures">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#repte-1-descompte-per-volum" class="md-nav__link">
+    <span class="md-ellipsis">
+      Repte 1: Descompte per volum
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#repte-2-conversor-complet" class="md-nav__link">
+    <span class="md-ellipsis">
+      Repte 2: Conversor complet
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#repte-3-mitjana-de-3-notes" class="md-nav__link">
+    <span class="md-ellipsis">
+      Repte 3: Mitjana de 3 notes
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#repte-4-velocitat-mitjana" class="md-nav__link">
+    <span class="md-ellipsis">
+      Repte 4: Velocitat mitjana
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#repte-5-conversor-de-divisa" class="md-nav__link">
+    <span class="md-ellipsis">
+      Repte 5: Conversor de divisa
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#resum" class="md-nav__link">
+    <span class="md-ellipsis">
+      📝 Resum
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#autoavaluacio" class="md-nav__link">
+    <span class="md-ellipsis">
+      🤔 Autoavaluació
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#recursos-addicionals" class="md-nav__link">
+    <span class="md-ellipsis">
+      🎓 Recursos Addicionals
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="🎓 Recursos Addicionals">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#documentacio-oficial" class="md-nav__link">
+    <span class="md-ellipsis">
+      Documentació oficial
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#practica-addicional" class="md-nav__link">
+    <span class="md-ellipsis">
+      Pràctica addicional
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#comunitat" class="md-nav__link">
+    <span class="md-ellipsis">
+      Comunitat
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../setmana02/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Setmana 02
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../setmana03/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Setmana 03
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../setmana04/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Setmana 04
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../setmana05/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Setmana 05
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../setmana06/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Setmana 06
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../setmana07/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Setmana 07
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Extra
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            Extra
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../99-problemes-entrevistes/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Problemes d'Entrevistes
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    POO
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            POO
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../05-poo/motivacio-poo/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Motivació
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../05-poo/fase-index/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Índex
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../05-poo/fase1/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Fase 01
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../05-poo/fase2/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Fase 02
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../05-poo/fase3/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Fase 03
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../05-poo/fase4/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Fase 04
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="setmana-1-introduccio-a-dart-i-sintaxi-basica">Setmana 1: Introducció a Dart i Sintaxi Bàsica<a class="headerlink" href="#setmana-1-introduccio-a-dart-i-sintaxi-basica" title="Permanent link">&para;</a></h1>
+<h2 id="objectius-daprenentatge">Objectius d'aprenentatge<a class="headerlink" href="#objectius-daprenentatge" title="Permanent link">&para;</a></h2>
+<ul>
+<li>Conèixer què és Dart i per a què serveix</li>
+<li>Instal·lar i configurar l'entorn de desenvolupament</li>
+<li>Comprendre l'estructura bàsica d'un programa Dart</li>
+<li>Treballar amb variables i tipus de dades</li>
+<li>Utilitzar operadors i entrada/sortida de dades</li>
+<li>Aplicar constants i bones pràctiques</li>
+</ul>
+<hr />
+<h2 id="sessio-1-2-introduccio-i-installacio">Sessió 1-2: Introducció i Instal·lació<a class="headerlink" href="#sessio-1-2-introduccio-i-installacio" title="Permanent link">&para;</a></h2>
+<h3 id="1-que-es-dart">1. Què és Dart?<a class="headerlink" href="#1-que-es-dart" title="Permanent link">&para;</a></h3>
+<div class="admonition note">
+<p class="admonition-title">Definició</p>
+<p><strong>Dart</strong> és un llenguatge de programació modern, desenvolupat per Google, optimitzat per crear aplicacions ràpides en qualsevol plataforma.</p>
+</div>
+<h4 id="caracteristiques-principals">Característiques principals<a class="headerlink" href="#caracteristiques-principals" title="Permanent link">&para;</a></h4>
+<ul>
+<li>🚀 <strong>Ràpid:</strong> Compilat a codi natiu per a alt rendiment</li>
+<li>🎯 <strong>Tipat fort:</strong> Detecta errors abans d'executar</li>
+<li>🌐 <strong>Multiplataforma:</strong> Mòbil, web, escriptori i backend</li>
+<li>💙 <strong>Flutter:</strong> El framework més popular per a apps mòbils usa Dart</li>
+</ul>
+<h4 id="historia-breu">Història breu<a class="headerlink" href="#historia-breu" title="Permanent link">&para;</a></h4>
+<ul>
+<li>2011: Google presenta Dart</li>
+<li>2015: Llançament de Flutter</li>
+<li>2018: Dart 2.0 amb millores significatives</li>
+<li>Actualitat: Un dels llenguatges amb més creixement</li>
+</ul>
+<hr />
+<h3 id="2-installacio-de-lentorn">2. Instal·lació de l'Entorn<a class="headerlink" href="#2-installacio-de-lentorn" title="Permanent link">&para;</a></h3>
+<div class="tabbed-set tabbed-alternate" data-tabs="1:2"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio" /><input id="__tabbed_1_2" name="__tabbed_1" type="radio" /><div class="tabbed-labels"><label for="__tabbed_1_1">DartPad (Online) - Recomanat per començar</label><label for="__tabbed_1_2">VS Code (Recomanat per projectes)</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<p><strong>Avantatges:</strong>
+- ✅ No cal instal·lar res
+- ✅ Funciona al navegador
+- ✅ Ideal per aprendre</p>
+<p><strong>Com accedir:</strong>
+1. Obre <a href="https://dartpad.dev">dartpad.dev</a>
+2. Ja pots començar a programar!</p>
+<div class="language-dart highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="kt">void</span><span class="w"> </span><span class="n">main</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="w">  </span><span class="n">print</span><span class="p">(</span><span class="s1">&#39;Hola des de DartPad!&#39;</span><span class="p">);</span>
+</span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a><span class="p">}</span>
+</span></code></pre></div>
+</div>
+<div class="tabbed-block">
+<p><strong>Passos d'instal·lació:</strong></p>
+<ol>
+<li><strong>Instal·la Dart SDK:</strong></li>
+<li>Descarrega de <a href="https://dart.dev/get-dart">dart.dev</a></li>
+<li>
+<p>Segueix les instruccions per al teu sistema operatiu</p>
+</li>
+<li>
+<p><strong>Instal·la VS Code:</strong></p>
+</li>
+<li>
+<p>Descarrega de <a href="https://code.visualstudio.com">code.visualstudio.com</a></p>
+</li>
+<li>
+<p><strong>Instal·la l'extensió de Dart:</strong></p>
+</li>
+<li>Obre VS Code</li>
+<li>Ves a Extensions (Ctrl+Shift+X)</li>
+<li>Cerca "Dart"</li>
+<li>
+<p>Instal·la l'extensió oficial</p>
+</li>
+<li>
+<p><strong>Verifica la instal·lació:</strong>
+   <div class="language-bash highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>dart<span class="w"> </span>--version
+</span></code></pre></div></p>
+</li>
+</ol>
+</div>
+</div>
+</div>
+<hr />
+<h3 id="3-primer-programa-hola-mon">3. Primer Programa: "Hola Món"<a class="headerlink" href="#3-primer-programa-hola-mon" title="Permanent link">&para;</a></h3>
+<div class="language-dart highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="kt">void</span><span class="w"> </span><span class="n">main</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-2-2"><a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a><span class="w">  </span><span class="n">print</span><span class="p">(</span><span class="s1">&#39;Hola Món!&#39;</span><span class="p">);</span>
+</span><span id="__span-2-3"><a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a><span class="p">}</span>
+</span></code></pre></div>
+<p><strong>Anàlisi del codi:</strong></p>
+<ul>
+<li><code>void main()</code> → Funció principal (punt d'entrada del programa)</li>
+<li><code>{</code> i <code>}</code> → Delimiten el bloc de codi</li>
+<li><code>print()</code> → Funció per mostrar text a la consola</li>
+<li><code>;</code> → Finalitza cada instrucció</li>
+</ul>
+<div class="admonition tip">
+<p class="admonition-title">Consell</p>
+<p>Cada programa Dart <strong>ha de tenir</strong> una funció <code>main()</code>. És des d'on comença l'execució.</p>
+</div>
+<hr />
+<h3 id="4-estructura-basica-dun-programa">4. Estructura Bàsica d'un Programa<a class="headerlink" href="#4-estructura-basica-dun-programa" title="Permanent link">&para;</a></h3>
+<div class="language-dart highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="c1">// Comentari d&#39;una sola línia</span>
+</span><span id="__span-3-2"><a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a>
+</span><span id="__span-3-3"><a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a><span class="cm">/* </span>
+</span><span id="__span-3-4"><a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a><span class="cm">   Comentari</span>
+</span><span id="__span-3-5"><a id="__codelineno-3-5" name="__codelineno-3-5" href="#__codelineno-3-5"></a><span class="cm">   de múltiples</span>
+</span><span id="__span-3-6"><a id="__codelineno-3-6" name="__codelineno-3-6" href="#__codelineno-3-6"></a><span class="cm">   línies</span>
+</span><span id="__span-3-7"><a id="__codelineno-3-7" name="__codelineno-3-7" href="#__codelineno-3-7"></a><span class="cm">*/</span>
+</span><span id="__span-3-8"><a id="__codelineno-3-8" name="__codelineno-3-8" href="#__codelineno-3-8"></a>
+</span><span id="__span-3-9"><a id="__codelineno-3-9" name="__codelineno-3-9" href="#__codelineno-3-9"></a><span class="kt">void</span><span class="w"> </span><span class="n">main</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-3-10"><a id="__codelineno-3-10" name="__codelineno-3-10" href="#__codelineno-3-10"></a><span class="w">  </span><span class="c1">// Instruccions del programa</span>
+</span><span id="__span-3-11"><a id="__codelineno-3-11" name="__codelineno-3-11" href="#__codelineno-3-11"></a><span class="w">  </span><span class="n">print</span><span class="p">(</span><span class="s1">&#39;Primera instrucció&#39;</span><span class="p">);</span>
+</span><span id="__span-3-12"><a id="__codelineno-3-12" name="__codelineno-3-12" href="#__codelineno-3-12"></a><span class="w">  </span><span class="n">print</span><span class="p">(</span><span class="s1">&#39;Segona instrucció&#39;</span><span class="p">);</span>
+</span><span id="__span-3-13"><a id="__codelineno-3-13" name="__codelineno-3-13" href="#__codelineno-3-13"></a><span class="p">}</span>
+</span></code></pre></div>
+<h4 id="tipus-de-comentaris">Tipus de comentaris<a class="headerlink" href="#tipus-de-comentaris" title="Permanent link">&para;</a></h4>
+<table>
+<thead>
+<tr>
+<th>Tipus</th>
+<th>Sintaxi</th>
+<th>Ús</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Línia</td>
+<td><code>// comentari</code></td>
+<td>Explicacions curtes</td>
+</tr>
+<tr>
+<td>Bloc</td>
+<td><code>/* comentari */</code></td>
+<td>Explicacions llargues</td>
+</tr>
+<tr>
+<td>Documentació</td>
+<td><code>/// comentari</code></td>
+<td>Documentar funcions/classes</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h3 id="5-funcio-print">5. Funció print()<a class="headerlink" href="#5-funcio-print" title="Permanent link">&para;</a></h3>
+<p>La funció <code>print()</code> mostra informació a la consola.</p>
+<div class="language-dart highlight"><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="kt">void</span><span class="w"> </span><span class="n">main</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-4-2"><a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a><span class="w">  </span><span class="n">print</span><span class="p">(</span><span class="s1">&#39;Text simple&#39;</span><span class="p">);</span>
+</span><span id="__span-4-3"><a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a><span class="w">  </span><span class="n">print</span><span class="p">(</span><span class="m">42</span><span class="p">);</span>
+</span><span id="__span-4-4"><a id="__codelineno-4-4" name="__codelineno-4-4" href="#__codelineno-4-4"></a><span class="w">  </span><span class="n">print</span><span class="p">(</span><span class="m">3.14</span><span class="p">);</span>
+</span><span id="__span-4-5"><a id="__codelineno-4-5" name="__codelineno-4-5" href="#__codelineno-4-5"></a><span class="w">  </span><span class="n">print</span><span class="p">(</span><span class="kc">true</span><span class="p">);</span>
+</span><span id="__span-4-6"><a id="__codelineno-4-6" name="__codelineno-4-6" href="#__codelineno-4-6"></a>
+</span><span id="__span-4-7"><a id="__codelineno-4-7" name="__codelineno-4-7" href="#__codelineno-4-7"></a><span class="w">  </span><span class="c1">// Múltiples valors (concatenació)</span>
+</span><span id="__span-4-8"><a id="__codelineno-4-8" name="__codelineno-4-8" href="#__codelineno-4-8"></a><span class="w">  </span><span class="n">print</span><span class="p">(</span><span class="s1">&#39;Tinc &#39;</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="s1">&#39;20&#39;</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="s1">&#39; anys&#39;</span><span class="p">);</span>
+</span><span id="__span-4-9"><a id="__codelineno-4-9" name="__codelineno-4-9" href="#__codelineno-4-9"></a><span class="p">}</span>
+</span></code></pre></div>
+<p><strong>Sortida:</strong>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-5-1"><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a>Text simple
+</span><span id="__span-5-2"><a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a>42
+</span><span id="__span-5-3"><a id="__codelineno-5-3" name="__codelineno-5-3" href="#__codelineno-5-3"></a>3.14
+</span><span id="__span-5-4"><a id="__codelineno-5-4" name="__codelineno-5-4" href="#__codelineno-5-4"></a>true
+</span><span id="__span-5-5"><a id="__codelineno-5-5" name="__codelineno-5-5" href="#__codelineno-5-5"></a>Tinc 20 anys
+</span></code></pre></div></p>
+<hr />
+<h2 id="sessio-3-4-variables-i-tipus-de-dades">Sessió 3-4: Variables i Tipus de Dades<a class="headerlink" href="#sessio-3-4-variables-i-tipus-de-dades" title="Permanent link">&para;</a></h2>
+<h3 id="1-que-es-una-variable">1. Què és una Variable?<a class="headerlink" href="#1-que-es-una-variable" title="Permanent link">&para;</a></h3>
+<div class="admonition note">
+<p class="admonition-title">Definició</p>
+<p>Una <strong>variable</strong> és un espai de memòria amb un nom que emmagatzema un valor que pot canviar durant l'execució del programa.</p>
+</div>
+<div class="language-dart highlight"><pre><span></span><code><span id="__span-6-1"><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a><span class="kt">void</span><span class="w"> </span><span class="n">main</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-6-2"><a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a><span class="w">  </span><span class="kd">var</span><span class="w"> </span><span class="n">nom</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;Anna&#39;</span><span class="p">;</span><span class="w">        </span><span class="c1">// Variable amb tipus inferit</span>
+</span><span id="__span-6-3"><a id="__codelineno-6-3" name="__codelineno-6-3" href="#__codelineno-6-3"></a><span class="w">  </span><span class="n">print</span><span class="p">(</span><span class="n">nom</span><span class="p">);</span>
+</span><span id="__span-6-4"><a id="__codelineno-6-4" name="__codelineno-6-4" href="#__codelineno-6-4"></a>
+</span><span id="__span-6-5"><a id="__codelineno-6-5" name="__codelineno-6-5" href="#__codelineno-6-5"></a><span class="w">  </span><span class="n">nom</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;Maria&#39;</span><span class="p">;</span><span class="w">           </span><span class="c1">// Podem canviar el valor</span>
+</span><span id="__span-6-6"><a id="__codelineno-6-6" name="__codelineno-6-6" href="#__codelineno-6-6"></a><span class="w">  </span><span class="n">print</span><span class="p">(</span><span class="n">nom</span><span class="p">);</span>
+</span><span id="__span-6-7"><a id="__codelineno-6-7" name="__codelineno-6-7" href="#__codelineno-6-7"></a><span class="p">}</span>
+</span></code></pre></div>
+<hr />
+<h3 id="2-declaracio-de-variables">2. Declaració de Variables<a class="headerlink" href="#2-declaracio-de-variables" title="Permanent link">&para;</a></h3>
+<div class="tabbed-set tabbed-alternate" data-tabs="2:2"><input checked="checked" id="__tabbed_2_1" name="__tabbed_2" type="radio" /><input id="__tabbed_2_2" name="__tabbed_2" type="radio" /><div class="tabbed-labels"><label for="__tabbed_2_1">Amb var (tipus inferit)</label><label for="__tabbed_2_2">Amb tipus explícit</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<div class="language-dart highlight"><pre><span></span><code><span id="__span-7-1"><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a><span class="kt">void</span><span class="w"> </span><span class="n">main</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-7-2"><a id="__codelineno-7-2" name="__codelineno-7-2" href="#__codelineno-7-2"></a><span class="w">  </span><span class="kd">var</span><span class="w"> </span><span class="n">edat</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">20</span><span class="p">;</span><span class="w">           </span><span class="c1">// Dart infereix que és int</span>
+</span><span id="__span-7-3"><a id="__codelineno-7-3" name="__codelineno-7-3" href="#__codelineno-7-3"></a><span class="w">  </span><span class="kd">var</span><span class="w"> </span><span class="n">nom</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;Joan&#39;</span><span class="p">;</span><span class="w">        </span><span class="c1">// Dart infereix que és String</span>
+</span><span id="__span-7-4"><a id="__codelineno-7-4" name="__codelineno-7-4" href="#__codelineno-7-4"></a><span class="w">  </span><span class="kd">var</span><span class="w"> </span><span class="n">altura</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">1.75</span><span class="p">;</span><span class="w">       </span><span class="c1">// Dart infereix que és double</span>
+</span><span id="__span-7-5"><a id="__codelineno-7-5" name="__codelineno-7-5" href="#__codelineno-7-5"></a><span class="w">  </span><span class="kd">var</span><span class="w"> </span><span class="n">esEstudiant</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kc">true</span><span class="p">;</span><span class="w">  </span><span class="c1">// Dart infereix que és bool</span>
+</span><span id="__span-7-6"><a id="__codelineno-7-6" name="__codelineno-7-6" href="#__codelineno-7-6"></a>
+</span><span id="__span-7-7"><a id="__codelineno-7-7" name="__codelineno-7-7" href="#__codelineno-7-7"></a><span class="w">  </span><span class="n">print</span><span class="p">(</span><span class="n">edat</span><span class="p">);</span>
+</span><span id="__span-7-8"><a id="__codelineno-7-8" name="__codelineno-7-8" href="#__codelineno-7-8"></a><span class="w">  </span><span class="n">print</span><span class="p">(</span><span class="n">nom</span><span class="p">);</span>
+</span><span id="__span-7-9"><a id="__codelineno-7-9" name="__codelineno-7-9" href="#__codelineno-7-9"></a><span class="w">  </span><span class="n">print</span><span class="p">(</span><span class="n">altura</span><span class="p">);</span>
+</span><span id="__span-7-10"><a id="__codelineno-7-10" name="__codelineno-7-10" href="#__codelineno-7-10"></a><span class="w">  </span><span class="n">print</span><span class="p">(</span><span class="n">esEstudiant</span><span class="p">);</span>
+</span><span id="__span-7-11"><a id="__codelineno-7-11" name="__codelineno-7-11" href="#__codelineno-7-11"></a><span class="p">}</span>
+</span></code></pre></div>
+</div>
+<div class="tabbed-block">
+<div class="language-dart highlight"><pre><span></span><code><span id="__span-8-1"><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a><span class="kt">void</span><span class="w"> </span><span class="n">main</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-8-2"><a id="__codelineno-8-2" name="__codelineno-8-2" href="#__codelineno-8-2"></a><span class="w">  </span><span class="kt">int</span><span class="w"> </span><span class="n">edat</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">20</span><span class="p">;</span>
+</span><span id="__span-8-3"><a id="__codelineno-8-3" name="__codelineno-8-3" href="#__codelineno-8-3"></a><span class="w">  </span><span class="kt">String</span><span class="w"> </span><span class="n">nom</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;Joan&#39;</span><span class="p">;</span>
+</span><span id="__span-8-4"><a id="__codelineno-8-4" name="__codelineno-8-4" href="#__codelineno-8-4"></a><span class="w">  </span><span class="kt">double</span><span class="w"> </span><span class="n">altura</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">1.75</span><span class="p">;</span>
+</span><span id="__span-8-5"><a id="__codelineno-8-5" name="__codelineno-8-5" href="#__codelineno-8-5"></a><span class="w">  </span><span class="kt">bool</span><span class="w"> </span><span class="n">esEstudiant</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kc">true</span><span class="p">;</span>
+</span><span id="__span-8-6"><a id="__codelineno-8-6" name="__codelineno-8-6" href="#__codelineno-8-6"></a>
+</span><span id="__span-8-7"><a id="__codelineno-8-7" name="__codelineno-8-7" href="#__codelineno-8-7"></a><span class="w">  </span><span class="n">print</span><span class="p">(</span><span class="n">edat</span><span class="p">);</span>
+</span><span id="__span-8-8"><a id="__codelineno-8-8" name="__codelineno-8-8" href="#__codelineno-8-8"></a><span class="w">  </span><span class="n">print</span><span class="p">(</span><span class="n">nom</span><span class="p">);</span>
+</span><span id="__span-8-9"><a id="__codelineno-8-9" name="__codelineno-8-9" href="#__codelineno-8-9"></a><span class="w">  </span><span class="n">print</span><span class="p">(</span><span class="n">altura</span><span class="p">);</span>
+</span><span id="__span-8-10"><a id="__codelineno-8-10" name="__codelineno-8-10" href="#__codelineno-8-10"></a><span class="w">  </span><span class="n">print</span><span class="p">(</span><span class="n">esEstudiant</span><span class="p">);</span>
+</span><span id="__span-8-11"><a id="__codelineno-8-11" name="__codelineno-8-11" href="#__codelineno-8-11"></a><span class="p">}</span>
+</span></code></pre></div>
+</div>
+</div>
+</div>
+<div class="admonition tip">
+<p class="admonition-title">Quan usar cada forma?</p>
+<ul>
+<li><strong>var:</strong> Quan el tipus és obvi pel valor assignat</li>
+<li><strong>Tipus explícit:</strong> Per més claredat o quan declarem sense valor inicial</li>
+</ul>
+</div>
+<hr />
+<h3 id="3-tipus-de-dades-basics">3. Tipus de Dades Bàsics<a class="headerlink" href="#3-tipus-de-dades-basics" title="Permanent link">&para;</a></h3>
+<h4 id="31-numeros-enters-int">3.1 Números Enters (int)<a class="headerlink" href="#31-numeros-enters-int" title="Permanent link">&para;</a></h4>
+<div class="language-dart highlight"><pre><span></span><code><span id="__span-9-1"><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a><span class="kt">void</span><span class="w"> </span><span class="n">main</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-9-2"><a id="__codelineno-9-2" name="__codelineno-9-2" href="#__codelineno-9-2"></a><span class="w">  </span><span class="kt">int</span><span class="w"> </span><span class="n">edat</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">25</span><span class="p">;</span>
+</span><span id="__span-9-3"><a id="__codelineno-9-3" name="__codelineno-9-3" href="#__codelineno-9-3"></a><span class="w">  </span><span class="kt">int</span><span class="w"> </span><span class="n">anyNaixement</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">1998</span><span class="p">;</span>
+</span><span id="__span-9-4"><a id="__codelineno-9-4" name="__codelineno-9-4" href="#__codelineno-9-4"></a><span class="w">  </span><span class="kt">int</span><span class="w"> </span><span class="n">temperatura</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="o">-</span><span class="m">5</span><span class="p">;</span>
+</span><span id="__span-9-5"><a id="__codelineno-9-5" name="__codelineno-9-5" href="#__codelineno-9-5"></a>
+</span><span id="__span-9-6"><a id="__codelineno-9-6" name="__codelineno-9-6" href="#__codelineno-9-6"></a><span class="w">  </span><span class="n">print</span><span class="p">(</span><span class="s1">&#39;Edat: </span><span class="si">$</span><span class="n">edat</span><span class="s1">&#39;</span><span class="p">);</span>
+</span><span id="__span-9-7"><a id="__codelineno-9-7" name="__codelineno-9-7" href="#__codelineno-9-7"></a><span class="w">  </span><span class="n">print</span><span class="p">(</span><span class="s1">&#39;Any: </span><span class="si">$</span><span class="n">anyNaixement</span><span class="s1">&#39;</span><span class="p">);</span>
+</span><span id="__span-9-8"><a id="__codelineno-9-8" name="__codelineno-9-8" href="#__codelineno-9-8"></a><span class="w">  </span><span class="n">print</span><span class="p">(</span><span class="s1">&#39;Temperatura: </span><span class="si">$</span><span class="n">temperatura</span><span class="s1">°C&#39;</span><span class="p">);</span>
+</span><span id="__span-9-9"><a id="__codelineno-9-9" name="__codelineno-9-9" href="#__codelineno-9-9"></a><span class="p">}</span>
+</span></code></pre></div>
+<h4 id="32-numeros-decimals-double">3.2 Números Decimals (double)<a class="headerlink" href="#32-numeros-decimals-double" title="Permanent link">&para;</a></h4>
+<div class="language-dart highlight"><pre><span></span><code><span id="__span-10-1"><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a><span class="kt">void</span><span class="w"> </span><span class="n">main</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-10-2"><a id="__codelineno-10-2" name="__codelineno-10-2" href="#__codelineno-10-2"></a><span class="w">  </span><span class="kt">double</span><span class="w"> </span><span class="n">altura</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">1.75</span><span class="p">;</span>
+</span><span id="__span-10-3"><a id="__codelineno-10-3" name="__codelineno-10-3" href="#__codelineno-10-3"></a><span class="w">  </span><span class="kt">double</span><span class="w"> </span><span class="n">pes</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">68.5</span><span class="p">;</span>
+</span><span id="__span-10-4"><a id="__codelineno-10-4" name="__codelineno-10-4" href="#__codelineno-10-4"></a><span class="w">  </span><span class="kt">double</span><span class="w"> </span><span class="n">pi</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">3.14159</span><span class="p">;</span>
+</span><span id="__span-10-5"><a id="__codelineno-10-5" name="__codelineno-10-5" href="#__codelineno-10-5"></a>
+</span><span id="__span-10-6"><a id="__codelineno-10-6" name="__codelineno-10-6" href="#__codelineno-10-6"></a><span class="w">  </span><span class="n">print</span><span class="p">(</span><span class="s1">&#39;Altura: </span><span class="si">$</span><span class="n">altura</span><span class="s1"> m&#39;</span><span class="p">);</span>
+</span><span id="__span-10-7"><a id="__codelineno-10-7" name="__codelineno-10-7" href="#__codelineno-10-7"></a><span class="w">  </span><span class="n">print</span><span class="p">(</span><span class="s1">&#39;Pes: </span><span class="si">$</span><span class="n">pes</span><span class="s1"> kg&#39;</span><span class="p">);</span>
+</span><span id="__span-10-8"><a id="__codelineno-10-8" name="__codelineno-10-8" href="#__codelineno-10-8"></a><span class="w">  </span><span class="n">print</span><span class="p">(</span><span class="s1">&#39;Pi: </span><span class="si">$</span><span class="n">pi</span><span class="s1">&#39;</span><span class="p">);</span>
+</span><span id="__span-10-9"><a id="__codelineno-10-9" name="__codelineno-10-9" href="#__codelineno-10-9"></a><span class="p">}</span>
+</span></code></pre></div>
+<h4 id="33-text-string">3.3 Text (String)<a class="headerlink" href="#33-text-string" title="Permanent link">&para;</a></h4>
+<div class="language-dart highlight"><pre><span></span><code><span id="__span-11-1"><a id="__codelineno-11-1" name="__codelineno-11-1" href="#__codelineno-11-1"></a><span class="kt">void</span><span class="w"> </span><span class="n">main</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-11-2"><a id="__codelineno-11-2" name="__codelineno-11-2" href="#__codelineno-11-2"></a><span class="w">  </span><span class="kt">String</span><span class="w"> </span><span class="n">nom</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;Anna&#39;</span><span class="p">;</span>
+</span><span id="__span-11-3"><a id="__codelineno-11-3" name="__codelineno-11-3" href="#__codelineno-11-3"></a><span class="w">  </span><span class="kt">String</span><span class="w"> </span><span class="n">cognom</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;García&quot;</span><span class="p">;</span>
+</span><span id="__span-11-4"><a id="__codelineno-11-4" name="__codelineno-11-4" href="#__codelineno-11-4"></a><span class="w">  </span><span class="kt">String</span><span class="w"> </span><span class="n">frase</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;Hola, com estàs?&#39;</span><span class="p">;</span>
+</span><span id="__span-11-5"><a id="__codelineno-11-5" name="__codelineno-11-5" href="#__codelineno-11-5"></a>
+</span><span id="__span-11-6"><a id="__codelineno-11-6" name="__codelineno-11-6" href="#__codelineno-11-6"></a><span class="w">  </span><span class="c1">// Strings multilínia</span>
+</span><span id="__span-11-7"><a id="__codelineno-11-7" name="__codelineno-11-7" href="#__codelineno-11-7"></a><span class="w">  </span><span class="kt">String</span><span class="w"> </span><span class="n">poema</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;&#39;&#39;</span>
+</span><span id="__span-11-8"><a id="__codelineno-11-8" name="__codelineno-11-8" href="#__codelineno-11-8"></a><span class="s1">    Roses són vermelles,</span>
+</span><span id="__span-11-9"><a id="__codelineno-11-9" name="__codelineno-11-9" href="#__codelineno-11-9"></a><span class="s1">    Violetes són blaves,</span>
+</span><span id="__span-11-10"><a id="__codelineno-11-10" name="__codelineno-11-10" href="#__codelineno-11-10"></a><span class="s1">    Dart és genial!</span>
+</span><span id="__span-11-11"><a id="__codelineno-11-11" name="__codelineno-11-11" href="#__codelineno-11-11"></a><span class="s1">  &#39;&#39;&#39;</span><span class="p">;</span>
+</span><span id="__span-11-12"><a id="__codelineno-11-12" name="__codelineno-11-12" href="#__codelineno-11-12"></a>
+</span><span id="__span-11-13"><a id="__codelineno-11-13" name="__codelineno-11-13" href="#__codelineno-11-13"></a><span class="w">  </span><span class="n">print</span><span class="p">(</span><span class="n">nom</span><span class="p">);</span>
+</span><span id="__span-11-14"><a id="__codelineno-11-14" name="__codelineno-11-14" href="#__codelineno-11-14"></a><span class="w">  </span><span class="n">print</span><span class="p">(</span><span class="n">frase</span><span class="p">);</span>
+</span><span id="__span-11-15"><a id="__codelineno-11-15" name="__codelineno-11-15" href="#__codelineno-11-15"></a><span class="w">  </span><span class="n">print</span><span class="p">(</span><span class="n">poema</span><span class="p">);</span>
+</span><span id="__span-11-16"><a id="__codelineno-11-16" name="__codelineno-11-16" href="#__codelineno-11-16"></a><span class="p">}</span>
+</span></code></pre></div>
+<div class="admonition info">
+<p class="admonition-title">Cometes simples vs dobles</p>
+<p>En Dart, <code>'text'</code> i <code>"text"</code> són equivalents. Per convenció, s'usen cometes simples.</p>
+</div>
+<h4 id="34-booleans-bool">3.4 Booleans (bool)<a class="headerlink" href="#34-booleans-bool" title="Permanent link">&para;</a></h4>
+<div class="language-dart highlight"><pre><span></span><code><span id="__span-12-1"><a id="__codelineno-12-1" name="__codelineno-12-1" href="#__codelineno-12-1"></a><span class="kt">void</span><span class="w"> </span><span class="n">main</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-12-2"><a id="__codelineno-12-2" name="__codelineno-12-2" href="#__codelineno-12-2"></a><span class="w">  </span><span class="kt">bool</span><span class="w"> </span><span class="n">esMajorEdat</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kc">true</span><span class="p">;</span>
+</span><span id="__span-12-3"><a id="__codelineno-12-3" name="__codelineno-12-3" href="#__codelineno-12-3"></a><span class="w">  </span><span class="kt">bool</span><span class="w"> </span><span class="n">faFred</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kc">false</span><span class="p">;</span>
+</span><span id="__span-12-4"><a id="__codelineno-12-4" name="__codelineno-12-4" href="#__codelineno-12-4"></a><span class="w">  </span><span class="kt">bool</span><span class="w"> </span><span class="n">teCarnet</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kc">true</span><span class="p">;</span>
+</span><span id="__span-12-5"><a id="__codelineno-12-5" name="__codelineno-12-5" href="#__codelineno-12-5"></a>
+</span><span id="__span-12-6"><a id="__codelineno-12-6" name="__codelineno-12-6" href="#__codelineno-12-6"></a><span class="w">  </span><span class="n">print</span><span class="p">(</span><span class="s1">&#39;És major d</span><span class="se">\&#39;</span><span class="s1">edat: </span><span class="si">$</span><span class="n">esMajorEdat</span><span class="s1">&#39;</span><span class="p">);</span>
+</span><span id="__span-12-7"><a id="__codelineno-12-7" name="__codelineno-12-7" href="#__codelineno-12-7"></a><span class="w">  </span><span class="n">print</span><span class="p">(</span><span class="s1">&#39;Fa fred: </span><span class="si">$</span><span class="n">faFred</span><span class="s1">&#39;</span><span class="p">);</span>
+</span><span id="__span-12-8"><a id="__codelineno-12-8" name="__codelineno-12-8" href="#__codelineno-12-8"></a><span class="w">  </span><span class="n">print</span><span class="p">(</span><span class="s1">&#39;Té carnet: </span><span class="si">$</span><span class="n">teCarnet</span><span class="s1">&#39;</span><span class="p">);</span>
+</span><span id="__span-12-9"><a id="__codelineno-12-9" name="__codelineno-12-9" href="#__codelineno-12-9"></a><span class="p">}</span>
+</span></code></pre></div>
+<hr />
+<h3 id="4-interpolacio-de-cadenes">4. Interpolació de Cadenes<a class="headerlink" href="#4-interpolacio-de-cadenes" title="Permanent link">&para;</a></h3>
+<p>Dart permet inserir variables dins de Strings de forma elegant:</p>
+<div class="language-dart highlight"><pre><span></span><code><span id="__span-13-1"><a id="__codelineno-13-1" name="__codelineno-13-1" href="#__codelineno-13-1"></a><span class="kt">void</span><span class="w"> </span><span class="n">main</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-13-2"><a id="__codelineno-13-2" name="__codelineno-13-2" href="#__codelineno-13-2"></a><span class="w">  </span><span class="kt">String</span><span class="w"> </span><span class="n">nom</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;Carla&#39;</span><span class="p">;</span>
+</span><span id="__span-13-3"><a id="__codelineno-13-3" name="__codelineno-13-3" href="#__codelineno-13-3"></a><span class="w">  </span><span class="kt">int</span><span class="w"> </span><span class="n">edat</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">22</span><span class="p">;</span>
+</span><span id="__span-13-4"><a id="__codelineno-13-4" name="__codelineno-13-4" href="#__codelineno-13-4"></a><span class="w">  </span><span class="kt">double</span><span class="w"> </span><span class="n">altura</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">1.68</span><span class="p">;</span>
+</span><span id="__span-13-5"><a id="__codelineno-13-5" name="__codelineno-13-5" href="#__codelineno-13-5"></a>
+</span><span id="__span-13-6"><a id="__codelineno-13-6" name="__codelineno-13-6" href="#__codelineno-13-6"></a><span class="w">  </span><span class="c1">// Amb $variable</span>
+</span><span id="__span-13-7"><a id="__codelineno-13-7" name="__codelineno-13-7" href="#__codelineno-13-7"></a><span class="w">  </span><span class="n">print</span><span class="p">(</span><span class="s1">&#39;Em dic </span><span class="si">$</span><span class="n">nom</span><span class="s1">&#39;</span><span class="p">);</span>
+</span><span id="__span-13-8"><a id="__codelineno-13-8" name="__codelineno-13-8" href="#__codelineno-13-8"></a>
+</span><span id="__span-13-9"><a id="__codelineno-13-9" name="__codelineno-13-9" href="#__codelineno-13-9"></a><span class="w">  </span><span class="c1">// Amb ${expressió}</span>
+</span><span id="__span-13-10"><a id="__codelineno-13-10" name="__codelineno-13-10" href="#__codelineno-13-10"></a><span class="w">  </span><span class="n">print</span><span class="p">(</span><span class="s1">&#39;Tinc </span><span class="si">$</span><span class="n">edat</span><span class="s1"> anys&#39;</span><span class="p">);</span>
+</span><span id="__span-13-11"><a id="__codelineno-13-11" name="__codelineno-13-11" href="#__codelineno-13-11"></a><span class="w">  </span><span class="n">print</span><span class="p">(</span><span class="s1">&#39;L</span><span class="se">\&#39;</span><span class="s1">any que ve tindré </span><span class="si">${</span><span class="n">edat</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="m">1</span><span class="si">}</span><span class="s1"> anys&#39;</span><span class="p">);</span>
+</span><span id="__span-13-12"><a id="__codelineno-13-12" name="__codelineno-13-12" href="#__codelineno-13-12"></a><span class="w">  </span><span class="n">print</span><span class="p">(</span><span class="s1">&#39;La meva altura és </span><span class="si">$</span><span class="n">altura</span><span class="s1"> metres&#39;</span><span class="p">);</span>
+</span><span id="__span-13-13"><a id="__codelineno-13-13" name="__codelineno-13-13" href="#__codelineno-13-13"></a>
+</span><span id="__span-13-14"><a id="__codelineno-13-14" name="__codelineno-13-14" href="#__codelineno-13-14"></a><span class="w">  </span><span class="c1">// Expressions més complexes</span>
+</span><span id="__span-13-15"><a id="__codelineno-13-15" name="__codelineno-13-15" href="#__codelineno-13-15"></a><span class="w">  </span><span class="n">print</span><span class="p">(</span><span class="s1">&#39;La meva altura en cm: </span><span class="si">${</span><span class="n">altura</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="m">100</span><span class="si">}</span><span class="s1"> cm&#39;</span><span class="p">);</span>
+</span><span id="__span-13-16"><a id="__codelineno-13-16" name="__codelineno-13-16" href="#__codelineno-13-16"></a><span class="p">}</span>
+</span></code></pre></div>
+<p><strong>Sortida:</strong>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-14-1"><a id="__codelineno-14-1" name="__codelineno-14-1" href="#__codelineno-14-1"></a>Em dic Carla
+</span><span id="__span-14-2"><a id="__codelineno-14-2" name="__codelineno-14-2" href="#__codelineno-14-2"></a>Tinc 22 anys
+</span><span id="__span-14-3"><a id="__codelineno-14-3" name="__codelineno-14-3" href="#__codelineno-14-3"></a>L&#39;any que ve tindré 23 anys
+</span><span id="__span-14-4"><a id="__codelineno-14-4" name="__codelineno-14-4" href="#__codelineno-14-4"></a>La meva altura és 1.68 metres
+</span><span id="__span-14-5"><a id="__codelineno-14-5" name="__codelineno-14-5" href="#__codelineno-14-5"></a>La meva altura en cm: 168.0 cm
+</span></code></pre></div></p>
+<hr />
+<h3 id="5-operadors-aritmetics">5. Operadors Aritmètics<a class="headerlink" href="#5-operadors-aritmetics" title="Permanent link">&para;</a></h3>
+<div class="language-dart highlight"><pre><span></span><code><span id="__span-15-1"><a id="__codelineno-15-1" name="__codelineno-15-1" href="#__codelineno-15-1"></a><span class="kt">void</span><span class="w"> </span><span class="n">main</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-15-2"><a id="__codelineno-15-2" name="__codelineno-15-2" href="#__codelineno-15-2"></a><span class="w">  </span><span class="kt">int</span><span class="w"> </span><span class="n">a</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">10</span><span class="p">;</span>
+</span><span id="__span-15-3"><a id="__codelineno-15-3" name="__codelineno-15-3" href="#__codelineno-15-3"></a><span class="w">  </span><span class="kt">int</span><span class="w"> </span><span class="n">b</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">3</span><span class="p">;</span>
+</span><span id="__span-15-4"><a id="__codelineno-15-4" name="__codelineno-15-4" href="#__codelineno-15-4"></a>
+</span><span id="__span-15-5"><a id="__codelineno-15-5" name="__codelineno-15-5" href="#__codelineno-15-5"></a><span class="w">  </span><span class="n">print</span><span class="p">(</span><span class="s1">&#39;Suma: </span><span class="si">${</span><span class="n">a</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">b</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">);</span><span class="w">           </span><span class="c1">// 13</span>
+</span><span id="__span-15-6"><a id="__codelineno-15-6" name="__codelineno-15-6" href="#__codelineno-15-6"></a><span class="w">  </span><span class="n">print</span><span class="p">(</span><span class="s1">&#39;Resta: </span><span class="si">${</span><span class="n">a</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="n">b</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">);</span><span class="w">          </span><span class="c1">// 7</span>
+</span><span id="__span-15-7"><a id="__codelineno-15-7" name="__codelineno-15-7" href="#__codelineno-15-7"></a><span class="w">  </span><span class="n">print</span><span class="p">(</span><span class="s1">&#39;Multiplicació: </span><span class="si">${</span><span class="n">a</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">b</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">);</span><span class="w">  </span><span class="c1">// 30</span>
+</span><span id="__span-15-8"><a id="__codelineno-15-8" name="__codelineno-15-8" href="#__codelineno-15-8"></a><span class="w">  </span><span class="n">print</span><span class="p">(</span><span class="s1">&#39;Divisió: </span><span class="si">${</span><span class="n">a</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="n">b</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">);</span><span class="w">        </span><span class="c1">// 3.333...</span>
+</span><span id="__span-15-9"><a id="__codelineno-15-9" name="__codelineno-15-9" href="#__codelineno-15-9"></a><span class="w">  </span><span class="n">print</span><span class="p">(</span><span class="s1">&#39;Divisió entera: </span><span class="si">${</span><span class="n">a</span><span class="w"> </span><span class="o">~/</span><span class="w"> </span><span class="n">b</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">);</span><span class="w"> </span><span class="c1">// 3</span>
+</span><span id="__span-15-10"><a id="__codelineno-15-10" name="__codelineno-15-10" href="#__codelineno-15-10"></a><span class="w">  </span><span class="n">print</span><span class="p">(</span><span class="s1">&#39;Mòdul (residu): </span><span class="si">${</span><span class="n">a</span><span class="w"> </span><span class="o">%</span><span class="w"> </span><span class="n">b</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">);</span><span class="w"> </span><span class="c1">// 1</span>
+</span><span id="__span-15-11"><a id="__codelineno-15-11" name="__codelineno-15-11" href="#__codelineno-15-11"></a>
+</span><span id="__span-15-12"><a id="__codelineno-15-12" name="__codelineno-15-12" href="#__codelineno-15-12"></a><span class="w">  </span><span class="c1">// Increment i decrement</span>
+</span><span id="__span-15-13"><a id="__codelineno-15-13" name="__codelineno-15-13" href="#__codelineno-15-13"></a><span class="w">  </span><span class="kt">int</span><span class="w"> </span><span class="n">contador</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">5</span><span class="p">;</span>
+</span><span id="__span-15-14"><a id="__codelineno-15-14" name="__codelineno-15-14" href="#__codelineno-15-14"></a><span class="w">  </span><span class="n">contador</span><span class="o">++</span><span class="p">;</span><span class="w">  </span><span class="c1">// Ara val 6</span>
+</span><span id="__span-15-15"><a id="__codelineno-15-15" name="__codelineno-15-15" href="#__codelineno-15-15"></a><span class="w">  </span><span class="n">contador</span><span class="o">--</span><span class="p">;</span><span class="w">  </span><span class="c1">// Ara val 5</span>
+</span><span id="__span-15-16"><a id="__codelineno-15-16" name="__codelineno-15-16" href="#__codelineno-15-16"></a><span class="w">  </span><span class="n">print</span><span class="p">(</span><span class="s1">&#39;Comptador: </span><span class="si">$</span><span class="n">contador</span><span class="s1">&#39;</span><span class="p">);</span>
+</span><span id="__span-15-17"><a id="__codelineno-15-17" name="__codelineno-15-17" href="#__codelineno-15-17"></a><span class="p">}</span>
+</span></code></pre></div>
+<h4 id="taula-doperadors">Taula d'operadors<a class="headerlink" href="#taula-doperadors" title="Permanent link">&para;</a></h4>
+<table>
+<thead>
+<tr>
+<th>Operador</th>
+<th>Operació</th>
+<th>Exemple</th>
+<th>Resultat</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>+</code></td>
+<td>Suma</td>
+<td><code>5 + 3</code></td>
+<td><code>8</code></td>
+</tr>
+<tr>
+<td><code>-</code></td>
+<td>Resta</td>
+<td><code>5 - 3</code></td>
+<td><code>2</code></td>
+</tr>
+<tr>
+<td><code>*</code></td>
+<td>Multiplicació</td>
+<td><code>5 * 3</code></td>
+<td><code>15</code></td>
+</tr>
+<tr>
+<td><code>/</code></td>
+<td>Divisió</td>
+<td><code>5 / 2</code></td>
+<td><code>2.5</code></td>
+</tr>
+<tr>
+<td><code>~/</code></td>
+<td>Divisió entera</td>
+<td><code>5 ~/ 2</code></td>
+<td><code>2</code></td>
+</tr>
+<tr>
+<td><code>%</code></td>
+<td>Mòdul</td>
+<td><code>5 % 2</code></td>
+<td><code>1</code></td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h3 id="6-operadors-relacionals">6. Operadors Relacionals<a class="headerlink" href="#6-operadors-relacionals" title="Permanent link">&para;</a></h3>
+<div class="language-dart highlight"><pre><span></span><code><span id="__span-16-1"><a id="__codelineno-16-1" name="__codelineno-16-1" href="#__codelineno-16-1"></a><span class="kt">void</span><span class="w"> </span><span class="n">main</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-16-2"><a id="__codelineno-16-2" name="__codelineno-16-2" href="#__codelineno-16-2"></a><span class="w">  </span><span class="kt">int</span><span class="w"> </span><span class="n">x</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">10</span><span class="p">;</span>
+</span><span id="__span-16-3"><a id="__codelineno-16-3" name="__codelineno-16-3" href="#__codelineno-16-3"></a><span class="w">  </span><span class="kt">int</span><span class="w"> </span><span class="n">y</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">5</span><span class="p">;</span>
+</span><span id="__span-16-4"><a id="__codelineno-16-4" name="__codelineno-16-4" href="#__codelineno-16-4"></a>
+</span><span id="__span-16-5"><a id="__codelineno-16-5" name="__codelineno-16-5" href="#__codelineno-16-5"></a><span class="w">  </span><span class="n">print</span><span class="p">(</span><span class="s1">&#39;x == y: </span><span class="si">${</span><span class="n">x</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="n">y</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">);</span><span class="w">  </span><span class="c1">// false</span>
+</span><span id="__span-16-6"><a id="__codelineno-16-6" name="__codelineno-16-6" href="#__codelineno-16-6"></a><span class="w">  </span><span class="n">print</span><span class="p">(</span><span class="s1">&#39;x != y: </span><span class="si">${</span><span class="n">x</span><span class="w"> </span><span class="o">!=</span><span class="w"> </span><span class="n">y</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">);</span><span class="w">  </span><span class="c1">// true</span>
+</span><span id="__span-16-7"><a id="__codelineno-16-7" name="__codelineno-16-7" href="#__codelineno-16-7"></a><span class="w">  </span><span class="n">print</span><span class="p">(</span><span class="s1">&#39;x &gt; y: </span><span class="si">${</span><span class="n">x</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="n">y</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">);</span><span class="w">    </span><span class="c1">// true</span>
+</span><span id="__span-16-8"><a id="__codelineno-16-8" name="__codelineno-16-8" href="#__codelineno-16-8"></a><span class="w">  </span><span class="n">print</span><span class="p">(</span><span class="s1">&#39;x &lt; y: </span><span class="si">${</span><span class="n">x</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="n">y</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">);</span><span class="w">    </span><span class="c1">// false</span>
+</span><span id="__span-16-9"><a id="__codelineno-16-9" name="__codelineno-16-9" href="#__codelineno-16-9"></a><span class="w">  </span><span class="n">print</span><span class="p">(</span><span class="s1">&#39;x &gt;= y: </span><span class="si">${</span><span class="n">x</span><span class="w"> </span><span class="o">&gt;=</span><span class="w"> </span><span class="n">y</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">);</span><span class="w">  </span><span class="c1">// true</span>
+</span><span id="__span-16-10"><a id="__codelineno-16-10" name="__codelineno-16-10" href="#__codelineno-16-10"></a><span class="w">  </span><span class="n">print</span><span class="p">(</span><span class="s1">&#39;x &lt;= y: </span><span class="si">${</span><span class="n">x</span><span class="w"> </span><span class="o">&lt;=</span><span class="w"> </span><span class="n">y</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">);</span><span class="w">  </span><span class="c1">// false</span>
+</span><span id="__span-16-11"><a id="__codelineno-16-11" name="__codelineno-16-11" href="#__codelineno-16-11"></a><span class="p">}</span>
+</span></code></pre></div>
+<table>
+<thead>
+<tr>
+<th>Operador</th>
+<th>Significat</th>
+<th>Exemple</th>
+<th>Resultat</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>==</code></td>
+<td>Igual</td>
+<td><code>5 == 5</code></td>
+<td><code>true</code></td>
+</tr>
+<tr>
+<td><code>!=</code></td>
+<td>Diferent</td>
+<td><code>5 != 3</code></td>
+<td><code>true</code></td>
+</tr>
+<tr>
+<td><code>&gt;</code></td>
+<td>Major</td>
+<td><code>5 &gt; 3</code></td>
+<td><code>true</code></td>
+</tr>
+<tr>
+<td><code>&lt;</code></td>
+<td>Menor</td>
+<td><code>5 &lt; 3</code></td>
+<td><code>false</code></td>
+</tr>
+<tr>
+<td><code>&gt;=</code></td>
+<td>Major o igual</td>
+<td><code>5 &gt;= 5</code></td>
+<td><code>true</code></td>
+</tr>
+<tr>
+<td><code>&lt;=</code></td>
+<td>Menor o igual</td>
+<td><code>5 &lt;= 3</code></td>
+<td><code>false</code></td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h3 id="7-operadors-logics">7. Operadors Lògics<a class="headerlink" href="#7-operadors-logics" title="Permanent link">&para;</a></h3>
+<div class="language-dart highlight"><pre><span></span><code><span id="__span-17-1"><a id="__codelineno-17-1" name="__codelineno-17-1" href="#__codelineno-17-1"></a><span class="kt">void</span><span class="w"> </span><span class="n">main</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-17-2"><a id="__codelineno-17-2" name="__codelineno-17-2" href="#__codelineno-17-2"></a><span class="w">  </span><span class="kt">bool</span><span class="w"> </span><span class="n">teSol</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kc">true</span><span class="p">;</span>
+</span><span id="__span-17-3"><a id="__codelineno-17-3" name="__codelineno-17-3" href="#__codelineno-17-3"></a><span class="w">  </span><span class="kt">bool</span><span class="w"> </span><span class="n">faCaldor</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kc">true</span><span class="p">;</span>
+</span><span id="__span-17-4"><a id="__codelineno-17-4" name="__codelineno-17-4" href="#__codelineno-17-4"></a><span class="w">  </span><span class="kt">bool</span><span class="w"> </span><span class="n">plou</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kc">false</span><span class="p">;</span>
+</span><span id="__span-17-5"><a id="__codelineno-17-5" name="__codelineno-17-5" href="#__codelineno-17-5"></a>
+</span><span id="__span-17-6"><a id="__codelineno-17-6" name="__codelineno-17-6" href="#__codelineno-17-6"></a><span class="w">  </span><span class="c1">// AND (&amp;&amp;) - Totes han de ser certes</span>
+</span><span id="__span-17-7"><a id="__codelineno-17-7" name="__codelineno-17-7" href="#__codelineno-17-7"></a><span class="w">  </span><span class="n">print</span><span class="p">(</span><span class="s1">&#39;Sol I calor: </span><span class="si">${</span><span class="n">teSol</span><span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="n">faCaldor</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">);</span><span class="w">  </span><span class="c1">// true</span>
+</span><span id="__span-17-8"><a id="__codelineno-17-8" name="__codelineno-17-8" href="#__codelineno-17-8"></a><span class="w">  </span><span class="n">print</span><span class="p">(</span><span class="s1">&#39;Sol I pluja: </span><span class="si">${</span><span class="n">teSol</span><span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="n">plou</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">);</span><span class="w">      </span><span class="c1">// false</span>
+</span><span id="__span-17-9"><a id="__codelineno-17-9" name="__codelineno-17-9" href="#__codelineno-17-9"></a>
+</span><span id="__span-17-10"><a id="__codelineno-17-10" name="__codelineno-17-10" href="#__codelineno-17-10"></a><span class="w">  </span><span class="c1">// OR (||) - Almenys una ha de ser certa</span>
+</span><span id="__span-17-11"><a id="__codelineno-17-11" name="__codelineno-17-11" href="#__codelineno-17-11"></a><span class="w">  </span><span class="n">print</span><span class="p">(</span><span class="s1">&#39;Sol O pluja: </span><span class="si">${</span><span class="n">teSol</span><span class="w"> </span><span class="o">||</span><span class="w"> </span><span class="n">plou</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">);</span><span class="w">      </span><span class="c1">// true</span>
+</span><span id="__span-17-12"><a id="__codelineno-17-12" name="__codelineno-17-12" href="#__codelineno-17-12"></a><span class="w">  </span><span class="n">print</span><span class="p">(</span><span class="s1">&#39;Calor O pluja: </span><span class="si">${</span><span class="n">faCaldor</span><span class="w"> </span><span class="o">||</span><span class="w"> </span><span class="n">plou</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">);</span><span class="w"> </span><span class="c1">// true</span>
+</span><span id="__span-17-13"><a id="__codelineno-17-13" name="__codelineno-17-13" href="#__codelineno-17-13"></a>
+</span><span id="__span-17-14"><a id="__codelineno-17-14" name="__codelineno-17-14" href="#__codelineno-17-14"></a><span class="w">  </span><span class="c1">// NOT (!) - Inverteix el valor</span>
+</span><span id="__span-17-15"><a id="__codelineno-17-15" name="__codelineno-17-15" href="#__codelineno-17-15"></a><span class="w">  </span><span class="n">print</span><span class="p">(</span><span class="s1">&#39;No plou: </span><span class="si">${</span><span class="o">!</span><span class="n">plou</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">);</span><span class="w">                  </span><span class="c1">// true</span>
+</span><span id="__span-17-16"><a id="__codelineno-17-16" name="__codelineno-17-16" href="#__codelineno-17-16"></a><span class="w">  </span><span class="n">print</span><span class="p">(</span><span class="s1">&#39;No té sol: </span><span class="si">${</span><span class="o">!</span><span class="n">teSol</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">);</span><span class="w">               </span><span class="c1">// false</span>
+</span><span id="__span-17-17"><a id="__codelineno-17-17" name="__codelineno-17-17" href="#__codelineno-17-17"></a><span class="p">}</span>
+</span></code></pre></div>
+<table>
+<thead>
+<tr>
+<th>Operador</th>
+<th>Significat</th>
+<th>Exemple</th>
+<th>Resultat</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>&amp;&amp;</code></td>
+<td>AND (I)</td>
+<td><code>true &amp;&amp; false</code></td>
+<td><code>false</code></td>
+</tr>
+<tr>
+<td><code>||</code></td>
+<td>OR (O)</td>
+<td><code>true || false</code></td>
+<td><code>true</code></td>
+</tr>
+<tr>
+<td><code>!</code></td>
+<td>NOT (NO)</td>
+<td><code>!true</code></td>
+<td><code>false</code></td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h3 id="8-entrada-de-dades">8. Entrada de Dades<a class="headerlink" href="#8-entrada-de-dades" title="Permanent link">&para;</a></h3>
+<p>Per llegir dades de l'usuari, utilitzem <code>stdin.readLineSync()</code>:</p>
+<div class="language-dart highlight"><pre><span></span><code><span id="__span-18-1"><a id="__codelineno-18-1" name="__codelineno-18-1" href="#__codelineno-18-1"></a><span class="k">import</span><span class="w"> </span><span class="s1">&#39;dart:io&#39;</span><span class="p">;</span>
+</span><span id="__span-18-2"><a id="__codelineno-18-2" name="__codelineno-18-2" href="#__codelineno-18-2"></a>
+</span><span id="__span-18-3"><a id="__codelineno-18-3" name="__codelineno-18-3" href="#__codelineno-18-3"></a><span class="kt">void</span><span class="w"> </span><span class="n">main</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-18-4"><a id="__codelineno-18-4" name="__codelineno-18-4" href="#__codelineno-18-4"></a><span class="w">  </span><span class="n">print</span><span class="p">(</span><span class="s1">&#39;Com et dius?&#39;</span><span class="p">);</span>
+</span><span id="__span-18-5"><a id="__codelineno-18-5" name="__codelineno-18-5" href="#__codelineno-18-5"></a><span class="w">  </span><span class="kt">String</span><span class="o">?</span><span class="w"> </span><span class="n">nom</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">stdin</span><span class="p">.</span><span class="n">readLineSync</span><span class="p">();</span>
+</span><span id="__span-18-6"><a id="__codelineno-18-6" name="__codelineno-18-6" href="#__codelineno-18-6"></a>
+</span><span id="__span-18-7"><a id="__codelineno-18-7" name="__codelineno-18-7" href="#__codelineno-18-7"></a><span class="w">  </span><span class="n">print</span><span class="p">(</span><span class="s1">&#39;Quants anys tens?&#39;</span><span class="p">);</span>
+</span><span id="__span-18-8"><a id="__codelineno-18-8" name="__codelineno-18-8" href="#__codelineno-18-8"></a><span class="w">  </span><span class="kt">String</span><span class="o">?</span><span class="w"> </span><span class="n">edatText</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">stdin</span><span class="p">.</span><span class="n">readLineSync</span><span class="p">();</span>
+</span><span id="__span-18-9"><a id="__codelineno-18-9" name="__codelineno-18-9" href="#__codelineno-18-9"></a><span class="w">  </span><span class="kt">int</span><span class="w"> </span><span class="n">edat</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kt">int</span><span class="p">.</span><span class="n">parse</span><span class="p">(</span><span class="n">edatText</span><span class="o">!</span><span class="p">);</span>
+</span><span id="__span-18-10"><a id="__codelineno-18-10" name="__codelineno-18-10" href="#__codelineno-18-10"></a>
+</span><span id="__span-18-11"><a id="__codelineno-18-11" name="__codelineno-18-11" href="#__codelineno-18-11"></a><span class="w">  </span><span class="n">print</span><span class="p">(</span><span class="s1">&#39;</span><span class="se">\n</span><span class="s1">Hola </span><span class="si">$</span><span class="n">nom</span><span class="s1">!&#39;</span><span class="p">);</span>
+</span><span id="__span-18-12"><a id="__codelineno-18-12" name="__codelineno-18-12" href="#__codelineno-18-12"></a><span class="w">  </span><span class="n">print</span><span class="p">(</span><span class="s1">&#39;Tens </span><span class="si">$</span><span class="n">edat</span><span class="s1"> anys.&#39;</span><span class="p">);</span>
+</span><span id="__span-18-13"><a id="__codelineno-18-13" name="__codelineno-18-13" href="#__codelineno-18-13"></a><span class="p">}</span>
+</span></code></pre></div>
+<div class="admonition warning">
+<p class="admonition-title">Important</p>
+<ul>
+<li>Cal <code>import 'dart:io';</code> al principi</li>
+<li><code>readLineSync()</code> retorna <code>String?</code> (pot ser null)</li>
+<li>Usa <code>int.parse()</code> per convertir a enter</li>
+<li>Usa <code>double.parse()</code> per convertir a decimal</li>
+<li>El <code>!</code> indica que estem segurs que no és null</li>
+</ul>
+</div>
+<hr />
+<h3 id="9-conversio-de-tipus">9. Conversió de Tipus<a class="headerlink" href="#9-conversio-de-tipus" title="Permanent link">&para;</a></h3>
+<div class="language-dart highlight"><pre><span></span><code><span id="__span-19-1"><a id="__codelineno-19-1" name="__codelineno-19-1" href="#__codelineno-19-1"></a><span class="k">import</span><span class="w"> </span><span class="s1">&#39;dart:io&#39;</span><span class="p">;</span>
+</span><span id="__span-19-2"><a id="__codelineno-19-2" name="__codelineno-19-2" href="#__codelineno-19-2"></a>
+</span><span id="__span-19-3"><a id="__codelineno-19-3" name="__codelineno-19-3" href="#__codelineno-19-3"></a><span class="kt">void</span><span class="w"> </span><span class="n">main</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-19-4"><a id="__codelineno-19-4" name="__codelineno-19-4" href="#__codelineno-19-4"></a><span class="w">  </span><span class="c1">// String a int</span>
+</span><span id="__span-19-5"><a id="__codelineno-19-5" name="__codelineno-19-5" href="#__codelineno-19-5"></a><span class="w">  </span><span class="kt">String</span><span class="w"> </span><span class="n">textEdat</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;25&#39;</span><span class="p">;</span>
+</span><span id="__span-19-6"><a id="__codelineno-19-6" name="__codelineno-19-6" href="#__codelineno-19-6"></a><span class="w">  </span><span class="kt">int</span><span class="w"> </span><span class="n">edat</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kt">int</span><span class="p">.</span><span class="n">parse</span><span class="p">(</span><span class="n">textEdat</span><span class="p">);</span>
+</span><span id="__span-19-7"><a id="__codelineno-19-7" name="__codelineno-19-7" href="#__codelineno-19-7"></a><span class="w">  </span><span class="n">print</span><span class="p">(</span><span class="s1">&#39;Edat: </span><span class="si">$</span><span class="n">edat</span><span class="s1">&#39;</span><span class="p">);</span>
+</span><span id="__span-19-8"><a id="__codelineno-19-8" name="__codelineno-19-8" href="#__codelineno-19-8"></a>
+</span><span id="__span-19-9"><a id="__codelineno-19-9" name="__codelineno-19-9" href="#__codelineno-19-9"></a><span class="w">  </span><span class="c1">// String a double</span>
+</span><span id="__span-19-10"><a id="__codelineno-19-10" name="__codelineno-19-10" href="#__codelineno-19-10"></a><span class="w">  </span><span class="kt">String</span><span class="w"> </span><span class="n">textAltura</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;1.75&#39;</span><span class="p">;</span>
+</span><span id="__span-19-11"><a id="__codelineno-19-11" name="__codelineno-19-11" href="#__codelineno-19-11"></a><span class="w">  </span><span class="kt">double</span><span class="w"> </span><span class="n">altura</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kt">double</span><span class="p">.</span><span class="n">parse</span><span class="p">(</span><span class="n">textAltura</span><span class="p">);</span>
+</span><span id="__span-19-12"><a id="__codelineno-19-12" name="__codelineno-19-12" href="#__codelineno-19-12"></a><span class="w">  </span><span class="n">print</span><span class="p">(</span><span class="s1">&#39;Altura: </span><span class="si">$</span><span class="n">altura</span><span class="s1">&#39;</span><span class="p">);</span>
+</span><span id="__span-19-13"><a id="__codelineno-19-13" name="__codelineno-19-13" href="#__codelineno-19-13"></a>
+</span><span id="__span-19-14"><a id="__codelineno-19-14" name="__codelineno-19-14" href="#__codelineno-19-14"></a><span class="w">  </span><span class="c1">// int a String</span>
+</span><span id="__span-19-15"><a id="__codelineno-19-15" name="__codelineno-19-15" href="#__codelineno-19-15"></a><span class="w">  </span><span class="kt">int</span><span class="w"> </span><span class="n">numero</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">42</span><span class="p">;</span>
+</span><span id="__span-19-16"><a id="__codelineno-19-16" name="__codelineno-19-16" href="#__codelineno-19-16"></a><span class="w">  </span><span class="kt">String</span><span class="w"> </span><span class="n">textNumero</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">numero</span><span class="p">.</span><span class="n">toString</span><span class="p">();</span>
+</span><span id="__span-19-17"><a id="__codelineno-19-17" name="__codelineno-19-17" href="#__codelineno-19-17"></a><span class="w">  </span><span class="n">print</span><span class="p">(</span><span class="s1">&#39;Text: </span><span class="si">$</span><span class="n">textNumero</span><span class="s1">&#39;</span><span class="p">);</span>
+</span><span id="__span-19-18"><a id="__codelineno-19-18" name="__codelineno-19-18" href="#__codelineno-19-18"></a>
+</span><span id="__span-19-19"><a id="__codelineno-19-19" name="__codelineno-19-19" href="#__codelineno-19-19"></a><span class="w">  </span><span class="c1">// double a String</span>
+</span><span id="__span-19-20"><a id="__codelineno-19-20" name="__codelineno-19-20" href="#__codelineno-19-20"></a><span class="w">  </span><span class="kt">double</span><span class="w"> </span><span class="n">pi</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">3.14159</span><span class="p">;</span>
+</span><span id="__span-19-21"><a id="__codelineno-19-21" name="__codelineno-19-21" href="#__codelineno-19-21"></a><span class="w">  </span><span class="kt">String</span><span class="w"> </span><span class="n">textPi</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">pi</span><span class="p">.</span><span class="n">toString</span><span class="p">();</span>
+</span><span id="__span-19-22"><a id="__codelineno-19-22" name="__codelineno-19-22" href="#__codelineno-19-22"></a><span class="w">  </span><span class="n">print</span><span class="p">(</span><span class="s1">&#39;Pi: </span><span class="si">$</span><span class="n">textPi</span><span class="s1">&#39;</span><span class="p">);</span>
+</span><span id="__span-19-23"><a id="__codelineno-19-23" name="__codelineno-19-23" href="#__codelineno-19-23"></a>
+</span><span id="__span-19-24"><a id="__codelineno-19-24" name="__codelineno-19-24" href="#__codelineno-19-24"></a><span class="w">  </span><span class="c1">// double a int (trunca decimals)</span>
+</span><span id="__span-19-25"><a id="__codelineno-19-25" name="__codelineno-19-25" href="#__codelineno-19-25"></a><span class="w">  </span><span class="kt">double</span><span class="w"> </span><span class="n">decimal</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">3.99</span><span class="p">;</span>
+</span><span id="__span-19-26"><a id="__codelineno-19-26" name="__codelineno-19-26" href="#__codelineno-19-26"></a><span class="w">  </span><span class="kt">int</span><span class="w"> </span><span class="n">enter</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">decimal</span><span class="p">.</span><span class="n">toInt</span><span class="p">();</span>
+</span><span id="__span-19-27"><a id="__codelineno-19-27" name="__codelineno-19-27" href="#__codelineno-19-27"></a><span class="w">  </span><span class="n">print</span><span class="p">(</span><span class="s1">&#39;Enter: </span><span class="si">$</span><span class="n">enter</span><span class="s1">&#39;</span><span class="p">);</span><span class="w">  </span><span class="c1">// 3</span>
+</span><span id="__span-19-28"><a id="__codelineno-19-28" name="__codelineno-19-28" href="#__codelineno-19-28"></a><span class="p">}</span>
+</span></code></pre></div>
+<hr />
+<h2 id="sessio-5-6-constants-i-practica">Sessió 5-6: Constants i Pràctica<a class="headerlink" href="#sessio-5-6-constants-i-practica" title="Permanent link">&para;</a></h2>
+<h3 id="1-constants-final-vs-const">1. Constants: final vs const<a class="headerlink" href="#1-constants-final-vs-const" title="Permanent link">&para;</a></h3>
+<h4 id="11-constants-amb-final">1.1 Constants amb final<a class="headerlink" href="#11-constants-amb-final" title="Permanent link">&para;</a></h4>
+<div class="language-dart highlight"><pre><span></span><code><span id="__span-20-1"><a id="__codelineno-20-1" name="__codelineno-20-1" href="#__codelineno-20-1"></a><span class="kt">void</span><span class="w"> </span><span class="n">main</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-20-2"><a id="__codelineno-20-2" name="__codelineno-20-2" href="#__codelineno-20-2"></a><span class="w">  </span><span class="kd">final</span><span class="w"> </span><span class="kt">String</span><span class="w"> </span><span class="n">nom</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;Anna&#39;</span><span class="p">;</span>
+</span><span id="__span-20-3"><a id="__codelineno-20-3" name="__codelineno-20-3" href="#__codelineno-20-3"></a><span class="w">  </span><span class="kd">final</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">anyNaixement</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">2000</span><span class="p">;</span>
+</span><span id="__span-20-4"><a id="__codelineno-20-4" name="__codelineno-20-4" href="#__codelineno-20-4"></a><span class="w">  </span><span class="kd">final</span><span class="w"> </span><span class="kt">double</span><span class="w"> </span><span class="n">pi</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">3.14159</span><span class="p">;</span>
+</span><span id="__span-20-5"><a id="__codelineno-20-5" name="__codelineno-20-5" href="#__codelineno-20-5"></a>
+</span><span id="__span-20-6"><a id="__codelineno-20-6" name="__codelineno-20-6" href="#__codelineno-20-6"></a><span class="w">  </span><span class="n">print</span><span class="p">(</span><span class="n">nom</span><span class="p">);</span>
+</span><span id="__span-20-7"><a id="__codelineno-20-7" name="__codelineno-20-7" href="#__codelineno-20-7"></a><span class="w">  </span><span class="n">print</span><span class="p">(</span><span class="n">anyNaixement</span><span class="p">);</span>
+</span><span id="__span-20-8"><a id="__codelineno-20-8" name="__codelineno-20-8" href="#__codelineno-20-8"></a><span class="w">  </span><span class="n">print</span><span class="p">(</span><span class="n">pi</span><span class="p">);</span>
+</span><span id="__span-20-9"><a id="__codelineno-20-9" name="__codelineno-20-9" href="#__codelineno-20-9"></a>
+</span><span id="__span-20-10"><a id="__codelineno-20-10" name="__codelineno-20-10" href="#__codelineno-20-10"></a><span class="w">  </span><span class="c1">// nom = &#39;Maria&#39;;  ❌ ERROR: No es pot modificar</span>
+</span><span id="__span-20-11"><a id="__codelineno-20-11" name="__codelineno-20-11" href="#__codelineno-20-11"></a><span class="p">}</span>
+</span></code></pre></div>
+<div class="admonition info">
+<p class="admonition-title">final</p>
+<ul>
+<li>El valor s'assigna en temps d'execució</li>
+<li>No es pot reassignar després</li>
+<li>Pot dependre de càlculs</li>
+</ul>
+</div>
+<h4 id="12-constants-amb-const">1.2 Constants amb const<a class="headerlink" href="#12-constants-amb-const" title="Permanent link">&para;</a></h4>
+<div class="language-dart highlight"><pre><span></span><code><span id="__span-21-1"><a id="__codelineno-21-1" name="__codelineno-21-1" href="#__codelineno-21-1"></a><span class="kt">void</span><span class="w"> </span><span class="n">main</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-21-2"><a id="__codelineno-21-2" name="__codelineno-21-2" href="#__codelineno-21-2"></a><span class="w">  </span><span class="k">const</span><span class="w"> </span><span class="kt">double</span><span class="w"> </span><span class="n">PI</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">3.14159</span><span class="p">;</span>
+</span><span id="__span-21-3"><a id="__codelineno-21-3" name="__codelineno-21-3" href="#__codelineno-21-3"></a><span class="w">  </span><span class="k">const</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">DIES_SETMANA</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">7</span><span class="p">;</span>
+</span><span id="__span-21-4"><a id="__codelineno-21-4" name="__codelineno-21-4" href="#__codelineno-21-4"></a><span class="w">  </span><span class="k">const</span><span class="w"> </span><span class="kt">String</span><span class="w"> </span><span class="n">EMPRESA</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;TechCorp&#39;</span><span class="p">;</span>
+</span><span id="__span-21-5"><a id="__codelineno-21-5" name="__codelineno-21-5" href="#__codelineno-21-5"></a>
+</span><span id="__span-21-6"><a id="__codelineno-21-6" name="__codelineno-21-6" href="#__codelineno-21-6"></a><span class="w">  </span><span class="n">print</span><span class="p">(</span><span class="s1">&#39;Pi: </span><span class="si">$</span><span class="n">PI</span><span class="s1">&#39;</span><span class="p">);</span>
+</span><span id="__span-21-7"><a id="__codelineno-21-7" name="__codelineno-21-7" href="#__codelineno-21-7"></a><span class="w">  </span><span class="n">print</span><span class="p">(</span><span class="s1">&#39;Dies: </span><span class="si">$</span><span class="n">DIES_SETMANA</span><span class="s1">&#39;</span><span class="p">);</span>
+</span><span id="__span-21-8"><a id="__codelineno-21-8" name="__codelineno-21-8" href="#__codelineno-21-8"></a><span class="w">  </span><span class="n">print</span><span class="p">(</span><span class="s1">&#39;Empresa: </span><span class="si">$</span><span class="n">EMPRESA</span><span class="s1">&#39;</span><span class="p">);</span>
+</span><span id="__span-21-9"><a id="__codelineno-21-9" name="__codelineno-21-9" href="#__codelineno-21-9"></a>
+</span><span id="__span-21-10"><a id="__codelineno-21-10" name="__codelineno-21-10" href="#__codelineno-21-10"></a><span class="w">  </span><span class="c1">// PI = 3.14;  ❌ ERROR: No es pot modificar</span>
+</span><span id="__span-21-11"><a id="__codelineno-21-11" name="__codelineno-21-11" href="#__codelineno-21-11"></a><span class="p">}</span>
+</span></code></pre></div>
+<div class="admonition info">
+<p class="admonition-title">const</p>
+<ul>
+<li>El valor ha de ser conegut en temps de compilació</li>
+<li>Més eficient que final</li>
+<li>Per a valors realment constants</li>
+</ul>
+</div>
+<h4 id="comparacio-final-vs-const">Comparació final vs const<a class="headerlink" href="#comparacio-final-vs-const" title="Permanent link">&para;</a></h4>
+<div class="tabbed-set tabbed-alternate" data-tabs="3:2"><input checked="checked" id="__tabbed_3_1" name="__tabbed_3" type="radio" /><input id="__tabbed_3_2" name="__tabbed_3" type="radio" /><div class="tabbed-labels"><label for="__tabbed_3_1">final</label><label for="__tabbed_3_2">const</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<div class="language-dart highlight"><pre><span></span><code><span id="__span-22-1"><a id="__codelineno-22-1" name="__codelineno-22-1" href="#__codelineno-22-1"></a><span class="k">import</span><span class="w"> </span><span class="s1">&#39;dart:io&#39;</span><span class="p">;</span>
+</span><span id="__span-22-2"><a id="__codelineno-22-2" name="__codelineno-22-2" href="#__codelineno-22-2"></a>
+</span><span id="__span-22-3"><a id="__codelineno-22-3" name="__codelineno-22-3" href="#__codelineno-22-3"></a><span class="kt">void</span><span class="w"> </span><span class="n">main</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-22-4"><a id="__codelineno-22-4" name="__codelineno-22-4" href="#__codelineno-22-4"></a><span class="w">  </span><span class="n">print</span><span class="p">(</span><span class="s1">&#39;Nom?&#39;</span><span class="p">);</span>
+</span><span id="__span-22-5"><a id="__codelineno-22-5" name="__codelineno-22-5" href="#__codelineno-22-5"></a><span class="w">  </span><span class="kd">final</span><span class="w"> </span><span class="kt">String</span><span class="w"> </span><span class="n">nom</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">stdin</span><span class="p">.</span><span class="n">readLineSync</span><span class="p">()</span><span class="o">!</span><span class="p">;</span>
+</span><span id="__span-22-6"><a id="__codelineno-22-6" name="__codelineno-22-6" href="#__codelineno-22-6"></a><span class="w">  </span><span class="c1">// ✅ OK: El valor es determina en execució</span>
+</span><span id="__span-22-7"><a id="__codelineno-22-7" name="__codelineno-22-7" href="#__codelineno-22-7"></a>
+</span><span id="__span-22-8"><a id="__codelineno-22-8" name="__codelineno-22-8" href="#__codelineno-22-8"></a><span class="w">  </span><span class="n">print</span><span class="p">(</span><span class="s1">&#39;Hola </span><span class="si">$</span><span class="n">nom</span><span class="s1">!&#39;</span><span class="p">);</span>
+</span><span id="__span-22-9"><a id="__codelineno-22-9" name="__codelineno-22-9" href="#__codelineno-22-9"></a><span class="p">}</span>
+</span></code></pre></div>
+</div>
+<div class="tabbed-block">
+<div class="language-dart highlight"><pre><span></span><code><span id="__span-23-1"><a id="__codelineno-23-1" name="__codelineno-23-1" href="#__codelineno-23-1"></a><span class="kt">void</span><span class="w"> </span><span class="n">main</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-23-2"><a id="__codelineno-23-2" name="__codelineno-23-2" href="#__codelineno-23-2"></a><span class="w">  </span><span class="k">const</span><span class="w"> </span><span class="kt">double</span><span class="w"> </span><span class="n">PI</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">3.14159</span><span class="p">;</span>
+</span><span id="__span-23-3"><a id="__codelineno-23-3" name="__codelineno-23-3" href="#__codelineno-23-3"></a><span class="w">  </span><span class="k">const</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">MAX_INTENTS</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">3</span><span class="p">;</span>
+</span><span id="__span-23-4"><a id="__codelineno-23-4" name="__codelineno-23-4" href="#__codelineno-23-4"></a><span class="w">  </span><span class="c1">// ✅ OK: Valors coneguts abans d&#39;executar</span>
+</span><span id="__span-23-5"><a id="__codelineno-23-5" name="__codelineno-23-5" href="#__codelineno-23-5"></a>
+</span><span id="__span-23-6"><a id="__codelineno-23-6" name="__codelineno-23-6" href="#__codelineno-23-6"></a><span class="w">  </span><span class="n">print</span><span class="p">(</span><span class="s1">&#39;Pi: </span><span class="si">$</span><span class="n">PI</span><span class="s1">&#39;</span><span class="p">);</span>
+</span><span id="__span-23-7"><a id="__codelineno-23-7" name="__codelineno-23-7" href="#__codelineno-23-7"></a><span class="w">  </span><span class="n">print</span><span class="p">(</span><span class="s1">&#39;Màxim intents: </span><span class="si">$</span><span class="n">MAX_INTENTS</span><span class="s1">&#39;</span><span class="p">);</span>
+</span><span id="__span-23-8"><a id="__codelineno-23-8" name="__codelineno-23-8" href="#__codelineno-23-8"></a><span class="p">}</span>
+</span></code></pre></div>
+</div>
+</div>
+</div>
+<hr />
+<h3 id="2-bones-practiques-de-nomenclatura">2. Bones Pràctiques de Nomenclatura<a class="headerlink" href="#2-bones-practiques-de-nomenclatura" title="Permanent link">&para;</a></h3>
+<h4 id="21-variables-i-funcions-camelcase">2.1 Variables i funcions: camelCase<a class="headerlink" href="#21-variables-i-funcions-camelcase" title="Permanent link">&para;</a></h4>
+<div class="language-dart highlight"><pre><span></span><code><span id="__span-24-1"><a id="__codelineno-24-1" name="__codelineno-24-1" href="#__codelineno-24-1"></a><span class="kt">void</span><span class="w"> </span><span class="n">main</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-24-2"><a id="__codelineno-24-2" name="__codelineno-24-2" href="#__codelineno-24-2"></a><span class="w">  </span><span class="c1">// ✅ Correcte</span>
+</span><span id="__span-24-3"><a id="__codelineno-24-3" name="__codelineno-24-3" href="#__codelineno-24-3"></a><span class="w">  </span><span class="kt">String</span><span class="w"> </span><span class="n">nomComplet</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;Anna García&#39;</span><span class="p">;</span>
+</span><span id="__span-24-4"><a id="__codelineno-24-4" name="__codelineno-24-4" href="#__codelineno-24-4"></a><span class="w">  </span><span class="kt">int</span><span class="w"> </span><span class="n">edatUsuari</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">25</span><span class="p">;</span>
+</span><span id="__span-24-5"><a id="__codelineno-24-5" name="__codelineno-24-5" href="#__codelineno-24-5"></a><span class="w">  </span><span class="kt">double</span><span class="w"> </span><span class="n">preuTotal</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">99.99</span><span class="p">;</span>
+</span><span id="__span-24-6"><a id="__codelineno-24-6" name="__codelineno-24-6" href="#__codelineno-24-6"></a><span class="w">  </span><span class="kt">bool</span><span class="w"> </span><span class="n">esMajorEdat</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kc">true</span><span class="p">;</span>
+</span><span id="__span-24-7"><a id="__codelineno-24-7" name="__codelineno-24-7" href="#__codelineno-24-7"></a>
+</span><span id="__span-24-8"><a id="__codelineno-24-8" name="__codelineno-24-8" href="#__codelineno-24-8"></a><span class="w">  </span><span class="c1">// ❌ Incorrecte</span>
+</span><span id="__span-24-9"><a id="__codelineno-24-9" name="__codelineno-24-9" href="#__codelineno-24-9"></a><span class="w">  </span><span class="kt">String</span><span class="w"> </span><span class="n">Nom_Complet</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;Anna&#39;</span><span class="p">;</span>
+</span><span id="__span-24-10"><a id="__codelineno-24-10" name="__codelineno-24-10" href="#__codelineno-24-10"></a><span class="w">  </span><span class="kt">int</span><span class="w"> </span><span class="n">edat_usuari</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">25</span><span class="p">;</span>
+</span><span id="__span-24-11"><a id="__codelineno-24-11" name="__codelineno-24-11" href="#__codelineno-24-11"></a><span class="p">}</span>
+</span></code></pre></div>
+<h4 id="22-constants-upper_case">2.2 Constants: UPPER_CASE<a class="headerlink" href="#22-constants-upper_case" title="Permanent link">&para;</a></h4>
+<div class="language-dart highlight"><pre><span></span><code><span id="__span-25-1"><a id="__codelineno-25-1" name="__codelineno-25-1" href="#__codelineno-25-1"></a><span class="kt">void</span><span class="w"> </span><span class="n">main</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-25-2"><a id="__codelineno-25-2" name="__codelineno-25-2" href="#__codelineno-25-2"></a><span class="w">  </span><span class="c1">// ✅ Correcte</span>
+</span><span id="__span-25-3"><a id="__codelineno-25-3" name="__codelineno-25-3" href="#__codelineno-25-3"></a><span class="w">  </span><span class="k">const</span><span class="w"> </span><span class="kt">double</span><span class="w"> </span><span class="n">PI</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">3.14159</span><span class="p">;</span>
+</span><span id="__span-25-4"><a id="__codelineno-25-4" name="__codelineno-25-4" href="#__codelineno-25-4"></a><span class="w">  </span><span class="k">const</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">MAX_VALOR</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">100</span><span class="p">;</span>
+</span><span id="__span-25-5"><a id="__codelineno-25-5" name="__codelineno-25-5" href="#__codelineno-25-5"></a><span class="w">  </span><span class="k">const</span><span class="w"> </span><span class="kt">String</span><span class="w"> </span><span class="n">NOM_EMPRESA</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;TechCorp&#39;</span><span class="p">;</span>
+</span><span id="__span-25-6"><a id="__codelineno-25-6" name="__codelineno-25-6" href="#__codelineno-25-6"></a>
+</span><span id="__span-25-7"><a id="__codelineno-25-7" name="__codelineno-25-7" href="#__codelineno-25-7"></a><span class="w">  </span><span class="c1">// ❌ Incorrecte</span>
+</span><span id="__span-25-8"><a id="__codelineno-25-8" name="__codelineno-25-8" href="#__codelineno-25-8"></a><span class="w">  </span><span class="k">const</span><span class="w"> </span><span class="kt">double</span><span class="w"> </span><span class="n">pi</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">3.14159</span><span class="p">;</span>
+</span><span id="__span-25-9"><a id="__codelineno-25-9" name="__codelineno-25-9" href="#__codelineno-25-9"></a><span class="w">  </span><span class="k">const</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">maxValor</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">100</span><span class="p">;</span>
+</span><span id="__span-25-10"><a id="__codelineno-25-10" name="__codelineno-25-10" href="#__codelineno-25-10"></a><span class="p">}</span>
+</span></code></pre></div>
+<h4 id="23-noms-descriptius">2.3 Noms descriptius<a class="headerlink" href="#23-noms-descriptius" title="Permanent link">&para;</a></h4>
+<div class="language-dart highlight"><pre><span></span><code><span id="__span-26-1"><a id="__codelineno-26-1" name="__codelineno-26-1" href="#__codelineno-26-1"></a><span class="kt">void</span><span class="w"> </span><span class="n">main</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-26-2"><a id="__codelineno-26-2" name="__codelineno-26-2" href="#__codelineno-26-2"></a><span class="w">  </span><span class="c1">// ✅ Noms clars i descriptius</span>
+</span><span id="__span-26-3"><a id="__codelineno-26-3" name="__codelineno-26-3" href="#__codelineno-26-3"></a><span class="w">  </span><span class="kt">int</span><span class="w"> </span><span class="n">edatUsuari</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">25</span><span class="p">;</span>
+</span><span id="__span-26-4"><a id="__codelineno-26-4" name="__codelineno-26-4" href="#__codelineno-26-4"></a><span class="w">  </span><span class="kt">double</span><span class="w"> </span><span class="n">preuAmbIVA</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">121.0</span><span class="p">;</span>
+</span><span id="__span-26-5"><a id="__codelineno-26-5" name="__codelineno-26-5" href="#__codelineno-26-5"></a><span class="w">  </span><span class="kt">bool</span><span class="w"> </span><span class="n">tePermisConduir</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kc">true</span><span class="p">;</span>
+</span><span id="__span-26-6"><a id="__codelineno-26-6" name="__codelineno-26-6" href="#__codelineno-26-6"></a><span class="w">  </span><span class="kt">String</span><span class="w"> </span><span class="n">correuElectronic</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;anna@example.com&#39;</span><span class="p">;</span>
+</span><span id="__span-26-7"><a id="__codelineno-26-7" name="__codelineno-26-7" href="#__codelineno-26-7"></a>
+</span><span id="__span-26-8"><a id="__codelineno-26-8" name="__codelineno-26-8" href="#__codelineno-26-8"></a><span class="w">  </span><span class="c1">// ❌ Noms poc clars</span>
+</span><span id="__span-26-9"><a id="__codelineno-26-9" name="__codelineno-26-9" href="#__codelineno-26-9"></a><span class="w">  </span><span class="kt">int</span><span class="w"> </span><span class="n">e</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">25</span><span class="p">;</span>
+</span><span id="__span-26-10"><a id="__codelineno-26-10" name="__codelineno-26-10" href="#__codelineno-26-10"></a><span class="w">  </span><span class="kt">double</span><span class="w"> </span><span class="n">p</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">121.0</span><span class="p">;</span>
+</span><span id="__span-26-11"><a id="__codelineno-26-11" name="__codelineno-26-11" href="#__codelineno-26-11"></a><span class="w">  </span><span class="kt">bool</span><span class="w"> </span><span class="n">b</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kc">true</span><span class="p">;</span>
+</span><span id="__span-26-12"><a id="__codelineno-26-12" name="__codelineno-26-12" href="#__codelineno-26-12"></a><span class="w">  </span><span class="kt">String</span><span class="w"> </span><span class="n">c</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;anna@example.com&#39;</span><span class="p">;</span>
+</span><span id="__span-26-13"><a id="__codelineno-26-13" name="__codelineno-26-13" href="#__codelineno-26-13"></a><span class="p">}</span>
+</span></code></pre></div>
+<hr />
+<h3 id="3-debug-basic-i-errors-comuns">3. Debug Bàsic i Errors Comuns<a class="headerlink" href="#3-debug-basic-i-errors-comuns" title="Permanent link">&para;</a></h3>
+<h4 id="error-1-oblidar-el-punt-i-coma">Error 1: Oblidar el punt i coma<a class="headerlink" href="#error-1-oblidar-el-punt-i-coma" title="Permanent link">&para;</a></h4>
+<div class="language-dart highlight"><pre><span></span><code><span id="__span-27-1"><a id="__codelineno-27-1" name="__codelineno-27-1" href="#__codelineno-27-1"></a><span class="c1">// ❌ Incorrecte</span>
+</span><span id="__span-27-2"><a id="__codelineno-27-2" name="__codelineno-27-2" href="#__codelineno-27-2"></a><span class="kt">void</span><span class="w"> </span><span class="n">main</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-27-3"><a id="__codelineno-27-3" name="__codelineno-27-3" href="#__codelineno-27-3"></a><span class="w">  </span><span class="n">print</span><span class="p">(</span><span class="s1">&#39;Hola&#39;</span><span class="p">)</span><span class="w">  </span><span class="c1">// Falta ;</span>
+</span><span id="__span-27-4"><a id="__codelineno-27-4" name="__codelineno-27-4" href="#__codelineno-27-4"></a><span class="w">  </span><span class="n">print</span><span class="p">(</span><span class="s1">&#39;Adéu&#39;</span><span class="p">)</span>
+</span><span id="__span-27-5"><a id="__codelineno-27-5" name="__codelineno-27-5" href="#__codelineno-27-5"></a><span class="p">}</span>
+</span><span id="__span-27-6"><a id="__codelineno-27-6" name="__codelineno-27-6" href="#__codelineno-27-6"></a>
+</span><span id="__span-27-7"><a id="__codelineno-27-7" name="__codelineno-27-7" href="#__codelineno-27-7"></a><span class="c1">// ✅ Correcte</span>
+</span><span id="__span-27-8"><a id="__codelineno-27-8" name="__codelineno-27-8" href="#__codelineno-27-8"></a><span class="kt">void</span><span class="w"> </span><span class="n">main</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-27-9"><a id="__codelineno-27-9" name="__codelineno-27-9" href="#__codelineno-27-9"></a><span class="w">  </span><span class="n">print</span><span class="p">(</span><span class="s1">&#39;Hola&#39;</span><span class="p">);</span>
+</span><span id="__span-27-10"><a id="__codelineno-27-10" name="__codelineno-27-10" href="#__codelineno-27-10"></a><span class="w">  </span><span class="n">print</span><span class="p">(</span><span class="s1">&#39;Adéu&#39;</span><span class="p">);</span>
+</span><span id="__span-27-11"><a id="__codelineno-27-11" name="__codelineno-27-11" href="#__codelineno-27-11"></a><span class="p">}</span>
+</span></code></pre></div>
+<h4 id="error-2-tipus-incompatibles">Error 2: Tipus incompatibles<a class="headerlink" href="#error-2-tipus-incompatibles" title="Permanent link">&para;</a></h4>
+<div class="language-dart highlight"><pre><span></span><code><span id="__span-28-1"><a id="__codelineno-28-1" name="__codelineno-28-1" href="#__codelineno-28-1"></a><span class="c1">// ❌ Incorrecte</span>
+</span><span id="__span-28-2"><a id="__codelineno-28-2" name="__codelineno-28-2" href="#__codelineno-28-2"></a><span class="kt">void</span><span class="w"> </span><span class="n">main</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-28-3"><a id="__codelineno-28-3" name="__codelineno-28-3" href="#__codelineno-28-3"></a><span class="w">  </span><span class="kt">int</span><span class="w"> </span><span class="n">edat</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;25&#39;</span><span class="p">;</span><span class="w">  </span><span class="c1">// String en lloc d&#39;int</span>
+</span><span id="__span-28-4"><a id="__codelineno-28-4" name="__codelineno-28-4" href="#__codelineno-28-4"></a><span class="p">}</span>
+</span><span id="__span-28-5"><a id="__codelineno-28-5" name="__codelineno-28-5" href="#__codelineno-28-5"></a>
+</span><span id="__span-28-6"><a id="__codelineno-28-6" name="__codelineno-28-6" href="#__codelineno-28-6"></a><span class="c1">// ✅ Correcte</span>
+</span><span id="__span-28-7"><a id="__codelineno-28-7" name="__codelineno-28-7" href="#__codelineno-28-7"></a><span class="kt">void</span><span class="w"> </span><span class="n">main</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-28-8"><a id="__codelineno-28-8" name="__codelineno-28-8" href="#__codelineno-28-8"></a><span class="w">  </span><span class="kt">int</span><span class="w"> </span><span class="n">edat</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">25</span><span class="p">;</span>
+</span><span id="__span-28-9"><a id="__codelineno-28-9" name="__codelineno-28-9" href="#__codelineno-28-9"></a><span class="w">  </span><span class="c1">// O</span>
+</span><span id="__span-28-10"><a id="__codelineno-28-10" name="__codelineno-28-10" href="#__codelineno-28-10"></a><span class="w">  </span><span class="kt">int</span><span class="w"> </span><span class="n">edat</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kt">int</span><span class="p">.</span><span class="n">parse</span><span class="p">(</span><span class="s1">&#39;25&#39;</span><span class="p">);</span>
+</span><span id="__span-28-11"><a id="__codelineno-28-11" name="__codelineno-28-11" href="#__codelineno-28-11"></a><span class="p">}</span>
+</span></code></pre></div>
+<h4 id="error-3-variable-no-inicialitzada">Error 3: Variable no inicialitzada<a class="headerlink" href="#error-3-variable-no-inicialitzada" title="Permanent link">&para;</a></h4>
+<div class="language-dart highlight"><pre><span></span><code><span id="__span-29-1"><a id="__codelineno-29-1" name="__codelineno-29-1" href="#__codelineno-29-1"></a><span class="c1">// ❌ Incorrecte</span>
+</span><span id="__span-29-2"><a id="__codelineno-29-2" name="__codelineno-29-2" href="#__codelineno-29-2"></a><span class="kt">void</span><span class="w"> </span><span class="n">main</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-29-3"><a id="__codelineno-29-3" name="__codelineno-29-3" href="#__codelineno-29-3"></a><span class="w">  </span><span class="kt">int</span><span class="w"> </span><span class="n">edat</span><span class="p">;</span>
+</span><span id="__span-29-4"><a id="__codelineno-29-4" name="__codelineno-29-4" href="#__codelineno-29-4"></a><span class="w">  </span><span class="n">print</span><span class="p">(</span><span class="n">edat</span><span class="p">);</span><span class="w">  </span><span class="c1">// Error: variable no inicialitzada</span>
+</span><span id="__span-29-5"><a id="__codelineno-29-5" name="__codelineno-29-5" href="#__codelineno-29-5"></a><span class="p">}</span>
+</span><span id="__span-29-6"><a id="__codelineno-29-6" name="__codelineno-29-6" href="#__codelineno-29-6"></a>
+</span><span id="__span-29-7"><a id="__codelineno-29-7" name="__codelineno-29-7" href="#__codelineno-29-7"></a><span class="c1">// ✅ Correcte</span>
+</span><span id="__span-29-8"><a id="__codelineno-29-8" name="__codelineno-29-8" href="#__codelineno-29-8"></a><span class="kt">void</span><span class="w"> </span><span class="n">main</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-29-9"><a id="__codelineno-29-9" name="__codelineno-29-9" href="#__codelineno-29-9"></a><span class="w">  </span><span class="kt">int</span><span class="w"> </span><span class="n">edat</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">0</span><span class="p">;</span>
+</span><span id="__span-29-10"><a id="__codelineno-29-10" name="__codelineno-29-10" href="#__codelineno-29-10"></a><span class="w">  </span><span class="n">print</span><span class="p">(</span><span class="n">edat</span><span class="p">);</span>
+</span><span id="__span-29-11"><a id="__codelineno-29-11" name="__codelineno-29-11" href="#__codelineno-29-11"></a><span class="p">}</span>
+</span></code></pre></div>
+<hr />
+<h2 id="activitats-practiques">💡 Activitats Pràctiques<a class="headerlink" href="#activitats-practiques" title="Permanent link">&para;</a></h2>
+<h3 id="activitat-1-analitza-el-codi">🎯 Activitat 1: Analitza el codi<a class="headerlink" href="#activitat-1-analitza-el-codi" title="Permanent link">&para;</a></h3>
+<p>Què mostrarà aquest programa?</p>
+<div class="language-dart highlight"><pre><span></span><code><span id="__span-30-1"><a id="__codelineno-30-1" name="__codelineno-30-1" href="#__codelineno-30-1"></a><span class="kt">void</span><span class="w"> </span><span class="n">main</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-30-2"><a id="__codelineno-30-2" name="__codelineno-30-2" href="#__codelineno-30-2"></a><span class="w">  </span><span class="kt">String</span><span class="w"> </span><span class="n">nom</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;Marc&#39;</span><span class="p">;</span>
+</span><span id="__span-30-3"><a id="__codelineno-30-3" name="__codelineno-30-3" href="#__codelineno-30-3"></a><span class="w">  </span><span class="kt">int</span><span class="w"> </span><span class="n">edat</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">20</span><span class="p">;</span>
+</span><span id="__span-30-4"><a id="__codelineno-30-4" name="__codelineno-30-4" href="#__codelineno-30-4"></a>
+</span><span id="__span-30-5"><a id="__codelineno-30-5" name="__codelineno-30-5" href="#__codelineno-30-5"></a><span class="w">  </span><span class="n">print</span><span class="p">(</span><span class="s1">&#39;Hola </span><span class="si">$</span><span class="n">nom</span><span class="s1">&#39;</span><span class="p">);</span>
+</span><span id="__span-30-6"><a id="__codelineno-30-6" name="__codelineno-30-6" href="#__codelineno-30-6"></a><span class="w">  </span><span class="n">print</span><span class="p">(</span><span class="s1">&#39;Tens </span><span class="si">$</span><span class="n">edat</span><span class="s1"> anys&#39;</span><span class="p">);</span>
+</span><span id="__span-30-7"><a id="__codelineno-30-7" name="__codelineno-30-7" href="#__codelineno-30-7"></a><span class="w">  </span><span class="n">print</span><span class="p">(</span><span class="s1">&#39;L</span><span class="se">\&#39;</span><span class="s1">any que ve tindràs </span><span class="si">${</span><span class="n">edat</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="m">1</span><span class="si">}</span><span class="s1"> anys&#39;</span><span class="p">);</span>
+</span><span id="__span-30-8"><a id="__codelineno-30-8" name="__codelineno-30-8" href="#__codelineno-30-8"></a><span class="p">}</span>
+</span></code></pre></div>
+<details class="success">
+<summary>Solució</summary>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-31-1"><a id="__codelineno-31-1" name="__codelineno-31-1" href="#__codelineno-31-1"></a>Hola Marc
+</span><span id="__span-31-2"><a id="__codelineno-31-2" name="__codelineno-31-2" href="#__codelineno-31-2"></a>Tens 20 anys
+</span><span id="__span-31-3"><a id="__codelineno-31-3" name="__codelineno-31-3" href="#__codelineno-31-3"></a>L&#39;any que ve tindràs 21 anys
+</span></code></pre></div>
+</details>
+<hr />
+<h3 id="activitat-2-troba-els-errors">🎯 Activitat 2: Troba els errors<a class="headerlink" href="#activitat-2-troba-els-errors" title="Permanent link">&para;</a></h3>
+<p>Aquest codi té 4 errors. Troba'ls i corregeix-los:</p>
+<div class="language-dart highlight"><pre><span></span><code><span id="__span-32-1"><a id="__codelineno-32-1" name="__codelineno-32-1" href="#__codelineno-32-1"></a><span class="kt">void</span><span class="w"> </span><span class="n">main</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-32-2"><a id="__codelineno-32-2" name="__codelineno-32-2" href="#__codelineno-32-2"></a><span class="w">  </span><span class="kt">String</span><span class="w"> </span><span class="n">nom</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Marc</span><span class="p">;</span>
+</span><span id="__span-32-3"><a id="__codelineno-32-3" name="__codelineno-32-3" href="#__codelineno-32-3"></a><span class="w">  </span><span class="kt">int</span><span class="w"> </span><span class="n">edat</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;25&#39;</span><span class="p">;</span>
+</span><span id="__span-32-4"><a id="__codelineno-32-4" name="__codelineno-32-4" href="#__codelineno-32-4"></a><span class="w">  </span><span class="n">print</span><span class="p">(</span><span class="s1">&#39;Hola&#39;</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">nom</span><span class="p">)</span>
+</span><span id="__span-32-5"><a id="__codelineno-32-5" name="__codelineno-32-5" href="#__codelineno-32-5"></a><span class="w">  </span><span class="n">print</span><span class="p">(</span><span class="s1">&#39;Edat: </span><span class="si">$</span><span class="n">edat</span><span class="s1">&#39;</span><span class="p">);</span>
+</span></code></pre></div>
+<details class="success">
+<summary>Solució</summary>
+<div class="language-dart highlight"><pre><span></span><code><span id="__span-33-1"><a id="__codelineno-33-1" name="__codelineno-33-1" href="#__codelineno-33-1"></a><span class="kt">void</span><span class="w"> </span><span class="n">main</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-33-2"><a id="__codelineno-33-2" name="__codelineno-33-2" href="#__codelineno-33-2"></a><span class="w">  </span><span class="kt">String</span><span class="w"> </span><span class="n">nom</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;Marc&#39;</span><span class="p">;</span><span class="w">           </span><span class="c1">// 1. Falten cometes</span>
+</span><span id="__span-33-3"><a id="__codelineno-33-3" name="__codelineno-33-3" href="#__codelineno-33-3"></a><span class="w">  </span><span class="kt">int</span><span class="w"> </span><span class="n">edat</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">25</span><span class="p">;</span><span class="w">                 </span><span class="c1">// 2. 25 ha de ser enter, no String</span>
+</span><span id="__span-33-4"><a id="__codelineno-33-4" name="__codelineno-33-4" href="#__codelineno-33-4"></a><span class="w">  </span><span class="n">print</span><span class="p">(</span><span class="s1">&#39;Hola </span><span class="si">$</span><span class="n">nom</span><span class="s1">&#39;</span><span class="p">);</span><span class="w">           </span><span class="c1">// 3. Falta ; i usar interpolació</span>
+</span><span id="__span-33-5"><a id="__codelineno-33-5" name="__codelineno-33-5" href="#__codelineno-33-5"></a><span class="w">  </span><span class="n">print</span><span class="p">(</span><span class="s1">&#39;Edat: </span><span class="si">$</span><span class="n">edat</span><span class="s1">&#39;</span><span class="p">);</span>
+</span><span id="__span-33-6"><a id="__codelineno-33-6" name="__codelineno-33-6" href="#__codelineno-33-6"></a><span class="p">}</span><span class="w">                                 </span><span class="c1">// 4. Faltava tancar }</span>
+</span></code></pre></div>
+</details>
+<hr />
+<h3 id="activitat-3-completa-el-codi">🎯 Activitat 3: Completa el codi<a class="headerlink" href="#activitat-3-completa-el-codi" title="Permanent link">&para;</a></h3>
+<div class="language-dart highlight"><pre><span></span><code><span id="__span-34-1"><a id="__codelineno-34-1" name="__codelineno-34-1" href="#__codelineno-34-1"></a><span class="kt">void</span><span class="w"> </span><span class="n">main</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-34-2"><a id="__codelineno-34-2" name="__codelineno-34-2" href="#__codelineno-34-2"></a><span class="w">  </span><span class="c1">// Declara una variable per l&#39;edat</span>
+</span><span id="__span-34-3"><a id="__codelineno-34-3" name="__codelineno-34-3" href="#__codelineno-34-3"></a><span class="w">  </span><span class="n">_____</span><span class="w"> </span><span class="n">edat</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">18</span><span class="p">;</span>
+</span><span id="__span-34-4"><a id="__codelineno-34-4" name="__codelineno-34-4" href="#__codelineno-34-4"></a>
+</span><span id="__span-34-5"><a id="__codelineno-34-5" name="__codelineno-34-5" href="#__codelineno-34-5"></a><span class="w">  </span><span class="c1">// Declara una constant per al màxim d&#39;intents</span>
+</span><span id="__span-34-6"><a id="__codelineno-34-6" name="__codelineno-34-6" href="#__codelineno-34-6"></a><span class="w">  </span><span class="n">_____</span><span class="w"> </span><span class="n">MAX_INTENTS</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">3</span><span class="p">;</span>
+</span><span id="__span-34-7"><a id="__codelineno-34-7" name="__codelineno-34-7" href="#__codelineno-34-7"></a>
+</span><span id="__span-34-8"><a id="__codelineno-34-8" name="__codelineno-34-8" href="#__codelineno-34-8"></a><span class="w">  </span><span class="c1">// Mostra un missatge amb interpolació</span>
+</span><span id="__span-34-9"><a id="__codelineno-34-9" name="__codelineno-34-9" href="#__codelineno-34-9"></a><span class="w">  </span><span class="n">print</span><span class="p">(</span><span class="s1">&#39;Tens _____ anys&#39;</span><span class="p">);</span>
+</span><span id="__span-34-10"><a id="__codelineno-34-10" name="__codelineno-34-10" href="#__codelineno-34-10"></a><span class="p">}</span>
+</span></code></pre></div>
+<details class="success">
+<summary>Solució</summary>
+<div class="language-dart highlight"><pre><span></span><code><span id="__span-35-1"><a id="__codelineno-35-1" name="__codelineno-35-1" href="#__codelineno-35-1"></a><span class="kt">void</span><span class="w"> </span><span class="n">main</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-35-2"><a id="__codelineno-35-2" name="__codelineno-35-2" href="#__codelineno-35-2"></a><span class="w">  </span><span class="kt">int</span><span class="w"> </span><span class="n">edat</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">18</span><span class="p">;</span>
+</span><span id="__span-35-3"><a id="__codelineno-35-3" name="__codelineno-35-3" href="#__codelineno-35-3"></a><span class="w">  </span><span class="k">const</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">MAX_INTENTS</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">3</span><span class="p">;</span>
+</span><span id="__span-35-4"><a id="__codelineno-35-4" name="__codelineno-35-4" href="#__codelineno-35-4"></a><span class="w">  </span><span class="n">print</span><span class="p">(</span><span class="s1">&#39;Tens </span><span class="si">$</span><span class="n">edat</span><span class="s1"> anys&#39;</span><span class="p">);</span>
+</span><span id="__span-35-5"><a id="__codelineno-35-5" name="__codelineno-35-5" href="#__codelineno-35-5"></a><span class="p">}</span>
+</span></code></pre></div>
+</details>
+<hr />
+<h2 id="exercicis-de-programacio">💻 Exercicis de Programació<a class="headerlink" href="#exercicis-de-programacio" title="Permanent link">&para;</a></h2>
+<h3 id="exercici-1-dades-personals">Exercici 1: Dades personals<a class="headerlink" href="#exercici-1-dades-personals" title="Permanent link">&para;</a></h3>
+<p>Programa que demani nom i edat, i mostri un missatge personalitzat.</p>
+<p><strong>Exemple d'execució:</strong>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-36-1"><a id="__codelineno-36-1" name="__codelineno-36-1" href="#__codelineno-36-1"></a>Com et dius?
+</span><span id="__span-36-2"><a id="__codelineno-36-2" name="__codelineno-36-2" href="#__codelineno-36-2"></a>&gt; Anna
+</span><span id="__span-36-3"><a id="__codelineno-36-3" name="__codelineno-36-3" href="#__codelineno-36-3"></a>Quants anys tens?
+</span><span id="__span-36-4"><a id="__codelineno-36-4" name="__codelineno-36-4" href="#__codelineno-36-4"></a>&gt; 22
+</span><span id="__span-36-5"><a id="__codelineno-36-5" name="__codelineno-36-5" href="#__codelineno-36-5"></a>---
+</span><span id="__span-36-6"><a id="__codelineno-36-6" name="__codelineno-36-6" href="#__codelineno-36-6"></a>Hola Anna!
+</span><span id="__span-36-7"><a id="__codelineno-36-7" name="__codelineno-36-7" href="#__codelineno-36-7"></a>Tens 22 anys.
+</span></code></pre></div></p>
+<details class="success">
+<summary>Solució</summary>
+<div class="language-dart highlight"><pre><span></span><code><span id="__span-37-1"><a id="__codelineno-37-1" name="__codelineno-37-1" href="#__codelineno-37-1"></a><span class="k">import</span><span class="w"> </span><span class="s1">&#39;dart:io&#39;</span><span class="p">;</span>
+</span><span id="__span-37-2"><a id="__codelineno-37-2" name="__codelineno-37-2" href="#__codelineno-37-2"></a>
+</span><span id="__span-37-3"><a id="__codelineno-37-3" name="__codelineno-37-3" href="#__codelineno-37-3"></a><span class="kt">void</span><span class="w"> </span><span class="n">main</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-37-4"><a id="__codelineno-37-4" name="__codelineno-37-4" href="#__codelineno-37-4"></a><span class="w">  </span><span class="n">print</span><span class="p">(</span><span class="s1">&#39;Com et dius?&#39;</span><span class="p">);</span>
+</span><span id="__span-37-5"><a id="__codelineno-37-5" name="__codelineno-37-5" href="#__codelineno-37-5"></a><span class="w">  </span><span class="kt">String</span><span class="o">?</span><span class="w"> </span><span class="n">nom</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">stdin</span><span class="p">.</span><span class="n">readLineSync</span><span class="p">();</span>
+</span><span id="__span-37-6"><a id="__codelineno-37-6" name="__codelineno-37-6" href="#__codelineno-37-6"></a>
+</span><span id="__span-37-7"><a id="__codelineno-37-7" name="__codelineno-37-7" href="#__codelineno-37-7"></a><span class="w">  </span><span class="n">print</span><span class="p">(</span><span class="s1">&#39;Quants anys tens?&#39;</span><span class="p">);</span>
+</span><span id="__span-37-8"><a id="__codelineno-37-8" name="__codelineno-37-8" href="#__codelineno-37-8"></a><span class="w">  </span><span class="kt">String</span><span class="o">?</span><span class="w"> </span><span class="n">edatText</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">stdin</span><span class="p">.</span><span class="n">readLineSync</span><span class="p">();</span>
+</span><span id="__span-37-9"><a id="__codelineno-37-9" name="__codelineno-37-9" href="#__codelineno-37-9"></a><span class="w">  </span><span class="kt">int</span><span class="w"> </span><span class="n">edat</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kt">int</span><span class="p">.</span><span class="n">parse</span><span class="p">(</span><span class="n">edatText</span><span class="o">!</span><span class="p">);</span>
+</span><span id="__span-37-10"><a id="__codelineno-37-10" name="__codelineno-37-10" href="#__codelineno-37-10"></a>
+</span><span id="__span-37-11"><a id="__codelineno-37-11" name="__codelineno-37-11" href="#__codelineno-37-11"></a><span class="w">  </span><span class="n">print</span><span class="p">(</span><span class="s1">&#39;---&#39;</span><span class="p">);</span>
+</span><span id="__span-37-12"><a id="__codelineno-37-12" name="__codelineno-37-12" href="#__codelineno-37-12"></a><span class="w">  </span><span class="n">print</span><span class="p">(</span><span class="s1">&#39;Hola </span><span class="si">$</span><span class="n">nom</span><span class="s1">!&#39;</span><span class="p">);</span>
+</span><span id="__span-37-13"><a id="__codelineno-37-13" name="__codelineno-37-13" href="#__codelineno-37-13"></a><span class="w">  </span><span class="n">print</span><span class="p">(</span><span class="s1">&#39;Tens </span><span class="si">$</span><span class="n">edat</span><span class="s1"> anys.&#39;</span><span class="p">);</span>
+</span><span id="__span-37-14"><a id="__codelineno-37-14" name="__codelineno-37-14" href="#__codelineno-37-14"></a><span class="p">}</span>
+</span></code></pre></div>
+</details>
+<hr />
+<h3 id="exercici-2-calculadora-basica">Exercici 2: Calculadora bàsica<a class="headerlink" href="#exercici-2-calculadora-basica" title="Permanent link">&para;</a></h3>
+<p>Programa que demani dos números i mostri suma, resta, multiplicació i divisió.</p>
+<details class="success">
+<summary>Solució</summary>
+<div class="language-dart highlight"><pre><span></span><code><span id="__span-38-1"><a id="__codelineno-38-1" name="__codelineno-38-1" href="#__codelineno-38-1"></a><span class="k">import</span><span class="w"> </span><span class="s1">&#39;dart:io&#39;</span><span class="p">;</span>
+</span><span id="__span-38-2"><a id="__codelineno-38-2" name="__codelineno-38-2" href="#__codelineno-38-2"></a>
+</span><span id="__span-38-3"><a id="__codelineno-38-3" name="__codelineno-38-3" href="#__codelineno-38-3"></a><span class="kt">void</span><span class="w"> </span><span class="n">main</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-38-4"><a id="__codelineno-38-4" name="__codelineno-38-4" href="#__codelineno-38-4"></a><span class="w">  </span><span class="n">print</span><span class="p">(</span><span class="s1">&#39;Primer número:&#39;</span><span class="p">);</span>
+</span><span id="__span-38-5"><a id="__codelineno-38-5" name="__codelineno-38-5" href="#__codelineno-38-5"></a><span class="w">  </span><span class="kt">String</span><span class="o">?</span><span class="w"> </span><span class="n">num1Text</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">stdin</span><span class="p">.</span><span class="n">readLineSync</span><span class="p">();</span>
+</span><span id="__span-38-6"><a id="__codelineno-38-6" name="__codelineno-38-6" href="#__codelineno-38-6"></a><span class="w">  </span><span class="kt">double</span><span class="w"> </span><span class="n">num1</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kt">double</span><span class="p">.</span><span class="n">parse</span><span class="p">(</span><span class="n">num1Text</span><span class="o">!</span><span class="p">);</span>
+</span><span id="__span-38-7"><a id="__codelineno-38-7" name="__codelineno-38-7" href="#__codelineno-38-7"></a>
+</span><span id="__span-38-8"><a id="__codelineno-38-8" name="__codelineno-38-8" href="#__codelineno-38-8"></a><span class="w">  </span><span class="n">print</span><span class="p">(</span><span class="s1">&#39;Segon número:&#39;</span><span class="p">);</span>
+</span><span id="__span-38-9"><a id="__codelineno-38-9" name="__codelineno-38-9" href="#__codelineno-38-9"></a><span class="w">  </span><span class="kt">String</span><span class="o">?</span><span class="w"> </span><span class="n">num2Text</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">stdin</span><span class="p">.</span><span class="n">readLineSync</span><span class="p">();</span>
+</span><span id="__span-38-10"><a id="__codelineno-38-10" name="__codelineno-38-10" href="#__codelineno-38-10"></a><span class="w">  </span><span class="kt">double</span><span class="w"> </span><span class="n">num2</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kt">double</span><span class="p">.</span><span class="n">parse</span><span class="p">(</span><span class="n">num2Text</span><span class="o">!</span><span class="p">);</span>
+</span><span id="__span-38-11"><a id="__codelineno-38-11" name="__codelineno-38-11" href="#__codelineno-38-11"></a>
+</span><span id="__span-38-12"><a id="__codelineno-38-12" name="__codelineno-38-12" href="#__codelineno-38-12"></a><span class="w">  </span><span class="n">print</span><span class="p">(</span><span class="s1">&#39;</span><span class="se">\n</span><span class="s1">--- RESULTATS ---&#39;</span><span class="p">);</span>
+</span><span id="__span-38-13"><a id="__codelineno-38-13" name="__codelineno-38-13" href="#__codelineno-38-13"></a><span class="w">  </span><span class="n">print</span><span class="p">(</span><span class="s1">&#39;Suma: </span><span class="si">${</span><span class="n">num1</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">num2</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">);</span>
+</span><span id="__span-38-14"><a id="__codelineno-38-14" name="__codelineno-38-14" href="#__codelineno-38-14"></a><span class="w">  </span><span class="n">print</span><span class="p">(</span><span class="s1">&#39;Resta: </span><span class="si">${</span><span class="n">num1</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="n">num2</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">);</span>
+</span><span id="__span-38-15"><a id="__codelineno-38-15" name="__codelineno-38-15" href="#__codelineno-38-15"></a><span class="w">  </span><span class="n">print</span><span class="p">(</span><span class="s1">&#39;Multiplicació: </span><span class="si">${</span><span class="n">num1</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">num2</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">);</span>
+</span><span id="__span-38-16"><a id="__codelineno-38-16" name="__codelineno-38-16" href="#__codelineno-38-16"></a><span class="w">  </span><span class="n">print</span><span class="p">(</span><span class="s1">&#39;Divisió: </span><span class="si">${</span><span class="n">num1</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="n">num2</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">);</span>
+</span><span id="__span-38-17"><a id="__codelineno-38-17" name="__codelineno-38-17" href="#__codelineno-38-17"></a><span class="p">}</span>
+</span></code></pre></div>
+</details>
+<hr />
+<h3 id="exercici-3-conversor-de-temperatures">Exercici 3: Conversor de temperatures<a class="headerlink" href="#exercici-3-conversor-de-temperatures" title="Permanent link">&para;</a></h3>
+<p>Programa que converteixi Celsius a Fahrenheit.</p>
+<p><strong>Fórmula:</strong> <code>F = C * 9/5 + 32</code></p>
+<details class="success">
+<summary>Solució</summary>
+<div class="language-dart highlight"><pre><span></span><code><span id="__span-39-1"><a id="__codelineno-39-1" name="__codelineno-39-1" href="#__codelineno-39-1"></a><span class="k">import</span><span class="w"> </span><span class="s1">&#39;dart:io&#39;</span><span class="p">;</span>
+</span><span id="__span-39-2"><a id="__codelineno-39-2" name="__codelineno-39-2" href="#__codelineno-39-2"></a>
+</span><span id="__span-39-3"><a id="__codelineno-39-3" name="__codelineno-39-3" href="#__codelineno-39-3"></a><span class="kt">void</span><span class="w"> </span><span class="n">main</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-39-4"><a id="__codelineno-39-4" name="__codelineno-39-4" href="#__codelineno-39-4"></a><span class="w">  </span><span class="n">print</span><span class="p">(</span><span class="s1">&#39;Temperatura en Celsius:&#39;</span><span class="p">);</span>
+</span><span id="__span-39-5"><a id="__codelineno-39-5" name="__codelineno-39-5" href="#__codelineno-39-5"></a><span class="w">  </span><span class="kt">String</span><span class="o">?</span><span class="w"> </span><span class="n">celsiusText</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">stdin</span><span class="p">.</span><span class="n">readLineSync</span><span class="p">();</span>
+</span><span id="__span-39-6"><a id="__codelineno-39-6" name="__codelineno-39-6" href="#__codelineno-39-6"></a><span class="w">  </span><span class="kt">double</span><span class="w"> </span><span class="n">celsius</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kt">double</span><span class="p">.</span><span class="n">parse</span><span class="p">(</span><span class="n">celsiusText</span><span class="o">!</span><span class="p">);</span>
+</span><span id="__span-39-7"><a id="__codelineno-39-7" name="__codelineno-39-7" href="#__codelineno-39-7"></a>
+</span><span id="__span-39-8"><a id="__codelineno-39-8" name="__codelineno-39-8" href="#__codelineno-39-8"></a><span class="w">  </span><span class="kt">double</span><span class="w"> </span><span class="n">fahrenheit</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">celsius</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="m">9</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="m">5</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="m">32</span><span class="p">;</span>
+</span><span id="__span-39-9"><a id="__codelineno-39-9" name="__codelineno-39-9" href="#__codelineno-39-9"></a>
+</span><span id="__span-39-10"><a id="__codelineno-39-10" name="__codelineno-39-10" href="#__codelineno-39-10"></a><span class="w">  </span><span class="n">print</span><span class="p">(</span><span class="s1">&#39;</span><span class="si">$</span><span class="n">celsius</span><span class="s1">°C = </span><span class="si">$</span><span class="n">fahrenheit</span><span class="s1">°F&#39;</span><span class="p">);</span>
+</span><span id="__span-39-11"><a id="__codelineno-39-11" name="__codelineno-39-11" href="#__codelineno-39-11"></a><span class="p">}</span>
+</span></code></pre></div>
+</details>
+<hr />
+<h3 id="exercici-4-area-i-perimetre">Exercici 4: Àrea i perímetre<a class="headerlink" href="#exercici-4-area-i-perimetre" title="Permanent link">&para;</a></h3>
+<p>Programa que calculi l'àrea i perímetre d'un rectangle.</p>
+<details class="success">
+<summary>Solució</summary>
+<div class="language-dart highlight"><pre><span></span><code><span id="__span-40-1"><a id="__codelineno-40-1" name="__codelineno-40-1" href="#__codelineno-40-1"></a><span class="k">import</span><span class="w"> </span><span class="s1">&#39;dart:io&#39;</span><span class="p">;</span>
+</span><span id="__span-40-2"><a id="__codelineno-40-2" name="__codelineno-40-2" href="#__codelineno-40-2"></a>
+</span><span id="__span-40-3"><a id="__codelineno-40-3" name="__codelineno-40-3" href="#__codelineno-40-3"></a><span class="kt">void</span><span class="w"> </span><span class="n">main</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-40-4"><a id="__codelineno-40-4" name="__codelineno-40-4" href="#__codelineno-40-4"></a><span class="w">  </span><span class="n">print</span><span class="p">(</span><span class="s1">&#39;Base del rectangle:&#39;</span><span class="p">);</span>
+</span><span id="__span-40-5"><a id="__codelineno-40-5" name="__codelineno-40-5" href="#__codelineno-40-5"></a><span class="w">  </span><span class="kt">String</span><span class="o">?</span><span class="w"> </span><span class="n">baseText</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">stdin</span><span class="p">.</span><span class="n">readLineSync</span><span class="p">();</span>
+</span><span id="__span-40-6"><a id="__codelineno-40-6" name="__codelineno-40-6" href="#__codelineno-40-6"></a><span class="w">  </span><span class="kt">double</span><span class="w"> </span><span class="n">base</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kt">double</span><span class="p">.</span><span class="n">parse</span><span class="p">(</span><span class="n">baseText</span><span class="o">!</span><span class="p">);</span>
+</span><span id="__span-40-7"><a id="__codelineno-40-7" name="__codelineno-40-7" href="#__codelineno-40-7"></a>
+</span><span id="__span-40-8"><a id="__codelineno-40-8" name="__codelineno-40-8" href="#__codelineno-40-8"></a><span class="w">  </span><span class="n">print</span><span class="p">(</span><span class="s1">&#39;Altura del rectangle:&#39;</span><span class="p">);</span>
+</span><span id="__span-40-9"><a id="__codelineno-40-9" name="__codelineno-40-9" href="#__codelineno-40-9"></a><span class="w">  </span><span class="kt">String</span><span class="o">?</span><span class="w"> </span><span class="n">alturaText</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">stdin</span><span class="p">.</span><span class="n">readLineSync</span><span class="p">();</span>
+</span><span id="__span-40-10"><a id="__codelineno-40-10" name="__codelineno-40-10" href="#__codelineno-40-10"></a><span class="w">  </span><span class="kt">double</span><span class="w"> </span><span class="n">altura</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kt">double</span><span class="p">.</span><span class="n">parse</span><span class="p">(</span><span class="n">alturaText</span><span class="o">!</span><span class="p">);</span>
+</span><span id="__span-40-11"><a id="__codelineno-40-11" name="__codelineno-40-11" href="#__codelineno-40-11"></a>
+</span><span id="__span-40-12"><a id="__codelineno-40-12" name="__codelineno-40-12" href="#__codelineno-40-12"></a><span class="w">  </span><span class="kt">double</span><span class="w"> </span><span class="n">area</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">base</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">altura</span><span class="p">;</span>
+</span><span id="__span-40-13"><a id="__codelineno-40-13" name="__codelineno-40-13" href="#__codelineno-40-13"></a><span class="w">  </span><span class="kt">double</span><span class="w"> </span><span class="n">perimetre</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">2</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="p">(</span><span class="n">base</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">altura</span><span class="p">);</span>
+</span><span id="__span-40-14"><a id="__codelineno-40-14" name="__codelineno-40-14" href="#__codelineno-40-14"></a>
+</span><span id="__span-40-15"><a id="__codelineno-40-15" name="__codelineno-40-15" href="#__codelineno-40-15"></a><span class="w">  </span><span class="n">print</span><span class="p">(</span><span class="s1">&#39;</span><span class="se">\n</span><span class="s1">--- RESULTATS ---&#39;</span><span class="p">);</span>
+</span><span id="__span-40-16"><a id="__codelineno-40-16" name="__codelineno-40-16" href="#__codelineno-40-16"></a><span class="w">  </span><span class="n">print</span><span class="p">(</span><span class="s1">&#39;Àrea: </span><span class="si">$</span><span class="n">area</span><span class="s1">&#39;</span><span class="p">);</span>
+</span><span id="__span-40-17"><a id="__codelineno-40-17" name="__codelineno-40-17" href="#__codelineno-40-17"></a><span class="w">  </span><span class="n">print</span><span class="p">(</span><span class="s1">&#39;Perímetre: </span><span class="si">$</span><span class="n">perimetre</span><span class="s1">&#39;</span><span class="p">);</span>
+</span><span id="__span-40-18"><a id="__codelineno-40-18" name="__codelineno-40-18" href="#__codelineno-40-18"></a><span class="p">}</span>
+</span></code></pre></div>
+</details>
+<hr />
+<h3 id="exercici-5-calcul-diva">Exercici 5: Càlcul d'IVA<a class="headerlink" href="#exercici-5-calcul-diva" title="Permanent link">&para;</a></h3>
+<p>Programa que calculi el preu amb IVA (21%).</p>
+<details class="success">
+<summary>Solució</summary>
+<div class="language-dart highlight"><pre><span></span><code><span id="__span-41-1"><a id="__codelineno-41-1" name="__codelineno-41-1" href="#__codelineno-41-1"></a><span class="k">import</span><span class="w"> </span><span class="s1">&#39;dart:io&#39;</span><span class="p">;</span>
+</span><span id="__span-41-2"><a id="__codelineno-41-2" name="__codelineno-41-2" href="#__codelineno-41-2"></a>
+</span><span id="__span-41-3"><a id="__codelineno-41-3" name="__codelineno-41-3" href="#__codelineno-41-3"></a><span class="kt">void</span><span class="w"> </span><span class="n">main</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-41-4"><a id="__codelineno-41-4" name="__codelineno-41-4" href="#__codelineno-41-4"></a><span class="w">  </span><span class="k">const</span><span class="w"> </span><span class="kt">double</span><span class="w"> </span><span class="n">IVA</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">0.21</span><span class="p">;</span>
+</span><span id="__span-41-5"><a id="__codelineno-41-5" name="__codelineno-41-5" href="#__codelineno-41-5"></a>
+</span><span id="__span-41-6"><a id="__codelineno-41-6" name="__codelineno-41-6" href="#__codelineno-41-6"></a><span class="w">  </span><span class="n">print</span><span class="p">(</span><span class="s1">&#39;Preu del producte (sense IVA):&#39;</span><span class="p">);</span>
+</span><span id="__span-41-7"><a id="__codelineno-41-7" name="__codelineno-41-7" href="#__codelineno-41-7"></a><span class="w">  </span><span class="kt">String</span><span class="o">?</span><span class="w"> </span><span class="n">preuText</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">stdin</span><span class="p">.</span><span class="n">readLineSync</span><span class="p">();</span>
+</span><span id="__span-41-8"><a id="__codelineno-41-8" name="__codelineno-41-8" href="#__codelineno-41-8"></a><span class="w">  </span><span class="kt">double</span><span class="w"> </span><span class="n">preuBase</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kt">double</span><span class="p">.</span><span class="n">parse</span><span class="p">(</span><span class="n">preuText</span><span class="o">!</span><span class="p">);</span>
+</span><span id="__span-41-9"><a id="__codelineno-41-9" name="__codelineno-41-9" href="#__codelineno-41-9"></a>
+</span><span id="__span-41-10"><a id="__codelineno-41-10" name="__codelineno-41-10" href="#__codelineno-41-10"></a><span class="w">  </span><span class="kt">double</span><span class="w"> </span><span class="n">importIVA</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">preuBase</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">IVA</span><span class="p">;</span>
+</span><span id="__span-41-11"><a id="__codelineno-41-11" name="__codelineno-41-11" href="#__codelineno-41-11"></a><span class="w">  </span><span class="kt">double</span><span class="w"> </span><span class="n">preuFinal</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">preuBase</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">importIVA</span><span class="p">;</span>
+</span><span id="__span-41-12"><a id="__codelineno-41-12" name="__codelineno-41-12" href="#__codelineno-41-12"></a>
+</span><span id="__span-41-13"><a id="__codelineno-41-13" name="__codelineno-41-13" href="#__codelineno-41-13"></a><span class="w">  </span><span class="n">print</span><span class="p">(</span><span class="s1">&#39;</span><span class="se">\n</span><span class="s1">--- FACTURA ---&#39;</span><span class="p">);</span>
+</span><span id="__span-41-14"><a id="__codelineno-41-14" name="__codelineno-41-14" href="#__codelineno-41-14"></a><span class="w">  </span><span class="n">print</span><span class="p">(</span><span class="s1">&#39;Preu base: </span><span class="si">${</span><span class="n">preuBase</span><span class="p">.</span><span class="n">toStringAsFixed</span><span class="p">(</span><span class="m">2</span><span class="p">)</span><span class="si">}</span><span class="s1">€&#39;</span><span class="p">);</span>
+</span><span id="__span-41-15"><a id="__codelineno-41-15" name="__codelineno-41-15" href="#__codelineno-41-15"></a><span class="w">  </span><span class="n">print</span><span class="p">(</span><span class="s1">&#39;IVA (21%): </span><span class="si">${</span><span class="n">importIVA</span><span class="p">.</span><span class="n">toStringAsFixed</span><span class="p">(</span><span class="m">2</span><span class="p">)</span><span class="si">}</span><span class="s1">€&#39;</span><span class="p">);</span>
+</span><span id="__span-41-16"><a id="__codelineno-41-16" name="__codelineno-41-16" href="#__codelineno-41-16"></a><span class="w">  </span><span class="n">print</span><span class="p">(</span><span class="s1">&#39;Total: </span><span class="si">${</span><span class="n">preuFinal</span><span class="p">.</span><span class="n">toStringAsFixed</span><span class="p">(</span><span class="m">2</span><span class="p">)</span><span class="si">}</span><span class="s1">€&#39;</span><span class="p">);</span>
+</span><span id="__span-41-17"><a id="__codelineno-41-17" name="__codelineno-41-17" href="#__codelineno-41-17"></a><span class="p">}</span>
+</span></code></pre></div>
+</details>
+<hr />
+<h3 id="exercici-6-area-dun-cercle">Exercici 6: Àrea d'un cercle<a class="headerlink" href="#exercici-6-area-dun-cercle" title="Permanent link">&para;</a></h3>
+<p>Calcula l'àrea d'un cercle donat el radi.</p>
+<p><strong>Fórmula:</strong> <code>A = π * r²</code></p>
+<details class="success">
+<summary>Solució</summary>
+<div class="language-dart highlight"><pre><span></span><code><span id="__span-42-1"><a id="__codelineno-42-1" name="__codelineno-42-1" href="#__codelineno-42-1"></a><span class="k">import</span><span class="w"> </span><span class="s1">&#39;dart:io&#39;</span><span class="p">;</span>
+</span><span id="__span-42-2"><a id="__codelineno-42-2" name="__codelineno-42-2" href="#__codelineno-42-2"></a>
+</span><span id="__span-42-3"><a id="__codelineno-42-3" name="__codelineno-42-3" href="#__codelineno-42-3"></a><span class="kt">void</span><span class="w"> </span><span class="n">main</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-42-4"><a id="__codelineno-42-4" name="__codelineno-42-4" href="#__codelineno-42-4"></a><span class="w">  </span><span class="k">const</span><span class="w"> </span><span class="kt">double</span><span class="w"> </span><span class="n">PI</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">3.14159</span><span class="p">;</span>
+</span><span id="__span-42-5"><a id="__codelineno-42-5" name="__codelineno-42-5" href="#__codelineno-42-5"></a>
+</span><span id="__span-42-6"><a id="__codelineno-42-6" name="__codelineno-42-6" href="#__codelineno-42-6"></a><span class="w">  </span><span class="n">print</span><span class="p">(</span><span class="s1">&#39;Radi del cercle:&#39;</span><span class="p">);</span>
+</span><span id="__span-42-7"><a id="__codelineno-42-7" name="__codelineno-42-7" href="#__codelineno-42-7"></a><span class="w">  </span><span class="kt">String</span><span class="o">?</span><span class="w"> </span><span class="n">radiText</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">stdin</span><span class="p">.</span><span class="n">readLineSync</span><span class="p">();</span>
+</span><span id="__span-42-8"><a id="__codelineno-42-8" name="__codelineno-42-8" href="#__codelineno-42-8"></a><span class="w">  </span><span class="kt">double</span><span class="w"> </span><span class="n">radi</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kt">double</span><span class="p">.</span><span class="n">parse</span><span class="p">(</span><span class="n">radiText</span><span class="o">!</span><span class="p">);</span>
+</span><span id="__span-42-9"><a id="__codelineno-42-9" name="__codelineno-42-9" href="#__codelineno-42-9"></a>
+</span><span id="__span-42-10"><a id="__codelineno-42-10" name="__codelineno-42-10" href="#__codelineno-42-10"></a><span class="w">  </span><span class="kt">double</span><span class="w"> </span><span class="n">area</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">PI</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">radi</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">radi</span><span class="p">;</span>
+</span><span id="__span-42-11"><a id="__codelineno-42-11" name="__codelineno-42-11" href="#__codelineno-42-11"></a>
+</span><span id="__span-42-12"><a id="__codelineno-42-12" name="__codelineno-42-12" href="#__codelineno-42-12"></a><span class="w">  </span><span class="n">print</span><span class="p">(</span><span class="s1">&#39;Àrea del cercle: </span><span class="si">${</span><span class="n">area</span><span class="p">.</span><span class="n">toStringAsFixed</span><span class="p">(</span><span class="m">2</span><span class="p">)</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">);</span>
+</span><span id="__span-42-13"><a id="__codelineno-42-13" name="__codelineno-42-13" href="#__codelineno-42-13"></a><span class="p">}</span>
+</span></code></pre></div>
+</details>
+<hr />
+<h2 id="deures">🏠 Deures<a class="headerlink" href="#deures" title="Permanent link">&para;</a></h2>
+<h3 id="repte-1-descompte-per-volum">Repte 1: Descompte per volum<a class="headerlink" href="#repte-1-descompte-per-volum" title="Permanent link">&para;</a></h3>
+<p>Programa que calculi el preu final aplicant descomptes:
+- Menys de 10 unitats: sense descompte
+- 10-50 unitats: 10% descompte
+- Més de 50 unitats: 20% descompte</p>
+<h3 id="repte-2-conversor-complet">Repte 2: Conversor complet<a class="headerlink" href="#repte-2-conversor-complet" title="Permanent link">&para;</a></h3>
+<p>Programa que converteixi:
+1. Metres a quilòmetres
+2. Quilograms a grams
+3. Hores a minuts</p>
+<h3 id="repte-3-mitjana-de-3-notes">Repte 3: Mitjana de 3 notes<a class="headerlink" href="#repte-3-mitjana-de-3-notes" title="Permanent link">&para;</a></h3>
+<p>Demana 3 notes i calcula la mitjana.</p>
+<h3 id="repte-4-velocitat-mitjana">Repte 4: Velocitat mitjana<a class="headerlink" href="#repte-4-velocitat-mitjana" title="Permanent link">&para;</a></h3>
+<p>Calcula la velocitat mitjana donada la distància (km) i el temps (hores).</p>
+<p><strong>Fórmula:</strong> <code>v = d / t</code></p>
+<h3 id="repte-5-conversor-de-divisa">Repte 5: Conversor de divisa<a class="headerlink" href="#repte-5-conversor-de-divisa" title="Permanent link">&para;</a></h3>
+<p>Converteix euros a dòlars (1€ = 1.10$)</p>
+<hr />
+<h2 id="resum">📝 Resum<a class="headerlink" href="#resum" title="Permanent link">&para;</a></h2>
+<div class="admonition summary">
+<p class="admonition-title">Conceptes clau de la Setmana 1</p>
+<p><strong>Introducció:</strong>
+- ✅ Dart és un llenguatge modern de Google
+- ✅ Funció <code>main()</code> és el punt d'entrada
+- ✅ <code>print()</code> mostra informació per consola</p>
+<p><strong>Variables i Tipus:</strong>
+- ✅ <code>int</code>: números enters
+- ✅ <code>double</code>: números decimals
+- ✅ <code>String</code>: text
+- ✅ <code>bool</code>: veritat/fals
+- ✅ Interpolació amb <code>$variable</code> o <code>${expressió}</code></p>
+<p><strong>Operadors:</strong>
+- ✅ Aritmètics: <code>+</code>, <code>-</code>, <code>*</code>, <code>/</code>, <code>~/</code>, <code>%</code>
+- ✅ Relacionals: <code>==</code>, <code>!=</code>, <code>&gt;</code>, <code>&lt;</code>, <code>&gt;=</code>, <code>&lt;=</code>
+- ✅ Lògics: <code>&amp;&amp;</code>, <code>||</code>, <code>!</code></p>
+<p><strong>Constants:</strong>
+- ✅ <code>final</code>: valor assignat en execució
+- ✅ <code>const</code>: valor conegut en compilació</p>
+<p><strong>Entrada/Sortida:</strong>
+- ✅ <code>stdin.readLineSync()</code> per llegir
+- ✅ <code>int.parse()</code> i <code>double.parse()</code> per convertir</p>
+</div>
+<hr />
+<h2 id="autoavaluacio">🤔 Autoavaluació<a class="headerlink" href="#autoavaluacio" title="Permanent link">&para;</a></h2>
+<div class="admonition question">
+<p class="admonition-title">Pregunta 1</p>
+<p>Quin és el punt d'entrada d'un programa Dart?</p>
+<p>a) <code>void start()</code><br />
+b) <code>void main()</code><br />
+c) <code>void begin()</code><br />
+d) <code>void run()</code></p>
+</div>
+<details class="success">
+<summary>Resposta</summary>
+<p><strong>b) void main()</strong><br />
+Tot programa Dart comença executant la funció <code>main()</code>.</p>
+</details>
+<div class="admonition question">
+<p class="admonition-title">Pregunta 2</p>
+<p>Quin tipus de dada és <code>3.14</code>?</p>
+<p>a) int<br />
+b) String<br />
+c) double<br />
+d) num</p>
+</div>
+<details class="success">
+<summary>Resposta</summary>
+<p><strong>c) double</strong><br />
+Els números amb decimals són de tipus <code>double</code>.</p>
+</details>
+<div class="admonition question">
+<p class="admonition-title">Pregunta 3</p>
+<p>Com s'interpola una variable en un String?</p>
+<p>a) <code>"Hola" + nom</code><br />
+b) <code>"Hola $nom"</code><br />
+c) <code>"Hola {nom}"</code><br />
+d) <code>"Hola %nom"</code></p>
+</div>
+<details class="success">
+<summary>Resposta</summary>
+<p><strong>b) "Hola $nom"</strong><br />
+Dart usa el símbol <code>$</code> per interpolar variables.</p>
+</details>
+<div class="admonition question">
+<p class="admonition-title">Pregunta 4</p>
+<p>Quina diferència hi ha entre <code>final</code> i <code>const</code>?</p>
+<p>a) Cap, són iguals<br />
+b) <code>final</code> s'assigna en execució, <code>const</code> en compilació<br />
+c) <code>const</code> s'assigna en execució, <code>final</code> en compilació<br />
+d) <code>final</code> és per enters, <code>const</code> per decimals</p>
+</div>
+<details class="success">
+<summary>Resposta</summary>
+<p><strong>b) final s'assigna en execució, const en compilació</strong><br />
+<code>final</code> pot dependre de càlculs, <code>const</code> ha de ser un valor fix conegut abans.</p>
+</details>
+<div class="admonition question">
+<p class="admonition-title">Pregunta 5</p>
+<p>Quin operador dóna el residu d'una divisió?</p>
+<p>a) <code>/</code><br />
+b) <code>~/</code><br />
+c) <code>%</code><br />
+d) <code>\\</code></p>
+</div>
+<details class="success">
+<summary>Resposta</summary>
+<p><strong>c) %</strong><br />
+L'operador mòdul <code>%</code> retorna el residu de la divisió.</p>
+</details>
+<hr />
+<h2 id="recursos-addicionals">🎓 Recursos Addicionals<a class="headerlink" href="#recursos-addicionals" title="Permanent link">&para;</a></h2>
+<h3 id="documentacio-oficial">Documentació oficial<a class="headerlink" href="#documentacio-oficial" title="Permanent link">&para;</a></h3>
+<ul>
+<li><a href="https://dart.dev/guides/language/language-tour">Dart Language Tour</a></li>
+<li><a href="https://dartpad.dev">DartPad</a> - Editor online</li>
+<li><a href="https://api.dart.dev">Dart API Reference</a></li>
+</ul>
+<h3 id="practica-addicional">Pràctica addicional<a class="headerlink" href="#practica-addicional" title="Permanent link">&para;</a></h3>
+<ul>
+<li><a href="https://exercism.org/tracks/dart">Exercism - Dart Track</a></li>
+<li><a href="https://www.w3adda.com/dart-tutorial">Dart Tutorial - W3Schools</a></li>
+</ul>
+<h3 id="comunitat">Comunitat<a class="headerlink" href="#comunitat" title="Permanent link">&para;</a></h3>
+<ul>
+<li><a href="https://reddit.com/r/dartlang">r/dartlang</a> - Comunitat Reddit</li>
+<li><a href="https://dart.dev/community">Dart Community</a></li>
+</ul>
+<hr />
+<div class="admonition success">
+<p class="admonition-title">Has completat la Setmana 1! 🎉</p>
+<p>Ara ja coneixes els fonaments de Dart. A la setmana 2 aprendràs sobre estructures de control condicionals (if-else).</p>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Back to top
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+    
+      
+      <nav class="md-footer__inner md-grid" aria-label="Footer" >
+        
+          
+          <a href="../../resum-final-20/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Resum final">
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+            </div>
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Previous
+              </span>
+              <div class="md-ellipsis">
+                Resum final
+              </div>
+            </div>
+          </a>
+        
+        
+          
+          <a href="../setmana02/" class="md-footer__link md-footer__link--next" aria-label="Next: Setmana 02">
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Next
+              </span>
+              <div class="md-ellipsis">
+                Setmana 02
+              </div>
+            </div>
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11z"/></svg>
+            </div>
+          </a>
+        
+      </nav>
+    
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      Copyright &copy; 2025 - Curs de Git per a Estudiants
+    </div>
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.tabs", "navigation.instant", "navigation.instant.prefetch", "navigation.tabs.sticky", "navigation.sections", "navigation.path", "navigation.indexes", "navigation.top", "navigation.footer", "navigation.tracking", "toc.integrate", "search.suggest", "search.highlight", "content.code.copy"], "search": "../../assets/javascripts/workers/search.973d3a69.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.f55a23d4.min.js"></script>
+      
+        <script src="../../javascripts/quiz.js"></script>
+      
+    
+  </body>
+</html>

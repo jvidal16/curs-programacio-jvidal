@@ -1,0 +1,2371 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Curs complet de Programació">
+      
+      
+        <meta name="author" content="Jordi - Professor de Programació">
+      
+      
+        <link rel="canonical" href="https://curs-programacio-jvidal.gitlab.io/resum-final-20/">
+      
+      
+        <link rel="prev" href="../20-repas-final/">
+      
+      
+        <link rel="next" href="../02-prog-estructurada/setmana01/">
+      
+      
+      <link rel="icon" href="../images/logo_dam_v2.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.23">
+    
+    
+      
+        <title>Resum final - DAM/DAW - Programació</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.84d31ad4.min.css">
+      
+        
+        <link rel="stylesheet" href="../assets/stylesheets/palette.06af60db.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway:300,300i,400,400i,700,700i%7CJetBrains+mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Raleway";--md-code-font:"JetBrains mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../stylesheets/extra.css">
+    
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#curs-complet-generat-programacio-estructurada-amb-pseudocodi" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow md-header--lifted" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href=".." title="DAM/DAW - Programació" class="md-header__button md-logo" aria-label="DAM/DAW - Programació" data-md-component="logo">
+      
+  <img src="../images/logo_dam.png" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            DAM/DAW - Programació
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Resum final
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12s-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+    
+      
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+    
+  
+  
+    
+    
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="../01-pseudocodi/c1-intro/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  Pseudocodi
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../02-prog-estructurada/setmana01/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  Programació Estructurada (Dart)
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../99-problemes-entrevistes/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  Extra
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../05-poo/motivacio-poo/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  POO
+
+        </a>
+      </li>
+    
+  
+
+      
+    </ul>
+  </div>
+</nav>
+    
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+  
+
+<nav class="md-nav md-nav--primary md-nav--lifted md-nav--integrated" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="DAM/DAW - Programació" class="md-nav__button md-logo" aria-label="DAM/DAW - Programació" data-md-component="logo">
+      
+  <img src="../images/logo_dam.png" alt="logo">
+
+    </a>
+    DAM/DAW - Programació
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_1" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_1" id="__nav_1_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    Pseudocodi
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_1_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_1">
+            <span class="md-nav__icon md-icon"></span>
+            Pseudocodi
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../01-pseudocodi/c1-intro/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    01. Introducció amb pseudocodi
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../02-variables/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    02. Variables
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../03-expressions/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    03. Expressions
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../04-entrada-sortida/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    04. Entrada / Sortida
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../05-logic-relacional/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    05. Expr. Lògiques / Relacionals
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../06-operadors-logics/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    06. Operadors lògics
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../07-alternativa-simple/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    07. Alternativa simple (IF)
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../08-alternativa-doble/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    08. Alternativa doble (IF-ELSE)
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../09-alternativa-aniuada/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    09. Alternativa aniuada
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../10-alternativa-encadenada/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    10. Alternativa encadenada
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../11-bucles/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    11. Repetició / Bucles
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../12-bucle-for/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    12. Repetició / Buble FOR (I)
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../13-bucle-for-2/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    13. Repetició / Bucle FOR (II)
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../14-while/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    14. Repetició / WHILE (I)
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../15-while-2/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    15. Repetició / WHILE (II)
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../16-dowhile-repeat/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    16. DO  WHILE / REPEAT
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../17-bucles-niuats/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    17. Bucles niuats
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../18-decisions-bucles/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    18. Decisions i Bucles
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../02-prog-estructurada/classe-strings-structs/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Extra Strings i Structs
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../19-Problemes-integradors/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    19. Problemes Integradors
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../20-repas-final/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    20. Repàs final
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    Resum final
+    
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    Resum final
+    
+  </span>
+  
+
+      </a>
+      
+        
+
+  
+
+<nav class="md-nav md-nav--secondary" aria-label="En aquesta pàgina">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      En aquesta pàgina
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#completat-al-100" class="md-nav__link">
+    <span class="md-ellipsis">
+      ✅ COMPLETAT AL 100%
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#contingut-generat" class="md-nav__link">
+    <span class="md-ellipsis">
+      📦 Contingut Generat
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="📦 Contingut Generat">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#classes-20-fitxers" class="md-nav__link">
+    <span class="md-ellipsis">
+      🎓 Classes (20 fitxers)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#fitxers-de-configuracio" class="md-nav__link">
+    <span class="md-ellipsis">
+      🛠️ Fitxers de Configuració
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#documentacio" class="md-nav__link">
+    <span class="md-ellipsis">
+      📚 Documentació
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#estadistiques-totals" class="md-nav__link">
+    <span class="md-ellipsis">
+      📊 Estadístiques Totals
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#com-utilitzar-els-materials" class="md-nav__link">
+    <span class="md-ellipsis">
+      🚀 Com Utilitzar els Materials
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="🚀 Com Utilitzar els Materials">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#opcio-1-visualitzacio-local-recomanat" class="md-nav__link">
+    <span class="md-ellipsis">
+      Opció 1: Visualització Local (Recomanat)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#opcio-2-publicar-a-github-pages" class="md-nav__link">
+    <span class="md-ellipsis">
+      Opció 2: Publicar a GitHub Pages
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#opcio-3-usar-directament" class="md-nav__link">
+    <span class="md-ellipsis">
+      Opció 3: Usar Directament
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#estructura-de-fitxers" class="md-nav__link">
+    <span class="md-ellipsis">
+      📁 Estructura de Fitxers
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#caracteristiques-principals" class="md-nav__link">
+    <span class="md-ellipsis">
+      🎯 Característiques Principals
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="🎯 Característiques Principals">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#contingut-de-qualitat" class="md-nav__link">
+    <span class="md-ellipsis">
+      ✨ Contingut de Qualitat
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#format-professional" class="md-nav__link">
+    <span class="md-ellipsis">
+      🎨 Format Professional
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#disseny-modern" class="md-nav__link">
+    <span class="md-ellipsis">
+      📱 Disseny Modern
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#contingut-academic" class="md-nav__link">
+    <span class="md-ellipsis">
+      🎓 Contingut Acadèmic
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="🎓 Contingut Acadèmic">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#conceptes-coberts" class="md-nav__link">
+    <span class="md-ellipsis">
+      Conceptes Coberts
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#exemples-dus" class="md-nav__link">
+    <span class="md-ellipsis">
+      💡 Exemples d'Ús
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="💡 Exemples d&#39;Ús">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#per-a-professors" class="md-nav__link">
+    <span class="md-ellipsis">
+      Per a Professors:
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#per-a-estudiants" class="md-nav__link">
+    <span class="md-ellipsis">
+      Per a Estudiants:
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#per-a-autodidactes" class="md-nav__link">
+    <span class="md-ellipsis">
+      Per a Autodidactes:
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#personalitzacio" class="md-nav__link">
+    <span class="md-ellipsis">
+      🔧 Personalització
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="🔧 Personalització">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#canviar-colors" class="md-nav__link">
+    <span class="md-ellipsis">
+      Canviar Colors
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#afegir-contingut" class="md-nav__link">
+    <span class="md-ellipsis">
+      Afegir Contingut
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#exportar-a-pdf" class="md-nav__link">
+    <span class="md-ellipsis">
+      Exportar a PDF
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#progressio-recomanada" class="md-nav__link">
+    <span class="md-ellipsis">
+      📈 Progressió Recomanada
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="📈 Progressió Recomanada">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#setmana-1-2-fonaments-bloc-1" class="md-nav__link">
+    <span class="md-ellipsis">
+      Setmana 1-2: Fonaments (Bloc 1)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#setmana-3-4-decisions-blocs-2-3" class="md-nav__link">
+    <span class="md-ellipsis">
+      Setmana 3-4: Decisions (Blocs 2-3)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#setmana-5-7-bucles-bloc-4" class="md-nav__link">
+    <span class="md-ellipsis">
+      Setmana 5-7: Bucles (Bloc 4)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#setmana-8-integracio-bloc-5" class="md-nav__link">
+    <span class="md-ellipsis">
+      Setmana 8: Integració (Bloc 5)
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#objectius-aconseguits" class="md-nav__link">
+    <span class="md-ellipsis">
+      🎯 Objectius Aconseguits
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#punts-forts-del-curs" class="md-nav__link">
+    <span class="md-ellipsis">
+      🌟 Punts Forts del Curs
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="🌟 Punts Forts del Curs">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#didactica" class="md-nav__link">
+    <span class="md-ellipsis">
+      Didàctica
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#tecnica" class="md-nav__link">
+    <span class="md-ellipsis">
+      Tècnica
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#visual" class="md-nav__link">
+    <span class="md-ellipsis">
+      Visual
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#suport-i-recursos" class="md-nav__link">
+    <span class="md-ellipsis">
+      📞 Suport i Recursos
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="📞 Suport i Recursos">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#documentacio_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      Documentació
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#online" class="md-nav__link">
+    <span class="md-ellipsis">
+      Online
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#qualitat-garantida" class="md-nav__link">
+    <span class="md-ellipsis">
+      🏆 Qualitat Garantida
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#conclusio" class="md-nav__link">
+    <span class="md-ellipsis">
+      🎉 Conclusió
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#seguents-passos" class="md-nav__link">
+    <span class="md-ellipsis">
+      🚀 Següents Passos
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Programació Estructurada (Dart)
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            Programació Estructurada (Dart)
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../02-prog-estructurada/setmana01/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Setmana 01
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../02-prog-estructurada/setmana02/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Setmana 02
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../02-prog-estructurada/setmana03/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Setmana 03
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../02-prog-estructurada/setmana04/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Setmana 04
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../02-prog-estructurada/setmana05/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Setmana 05
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../02-prog-estructurada/setmana06/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Setmana 06
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../02-prog-estructurada/setmana07/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Setmana 07
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Extra
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            Extra
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../99-problemes-entrevistes/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Problemes d'Entrevistes
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    POO
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            POO
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../05-poo/motivacio-poo/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Motivació
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../05-poo/fase-index/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Índex
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../05-poo/fase1/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Fase 01
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../05-poo/fase2/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Fase 02
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../05-poo/fase3/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Fase 03
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../05-poo/fase4/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Fase 04
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="curs-complet-generat-programacio-estructurada-amb-pseudocodi">🎉 CURS COMPLET GENERAT - Programació Estructurada amb Pseudocodi<a class="headerlink" href="#curs-complet-generat-programacio-estructurada-amb-pseudocodi" title="Permanent link">&para;</a></h1>
+<h2 id="completat-al-100">✅ COMPLETAT AL 100%<a class="headerlink" href="#completat-al-100" title="Permanent link">&para;</a></h2>
+<p>S'han generat <strong>TOTS</strong> els materials per a un curs complet de programació estructurada amb pseudocodi.</p>
+<hr />
+<h2 id="contingut-generat">📦 Contingut Generat<a class="headerlink" href="#contingut-generat" title="Permanent link">&para;</a></h2>
+<h3 id="classes-20-fitxers">🎓 Classes (20 fitxers)<a class="headerlink" href="#classes-20-fitxers" title="Permanent link">&para;</a></h3>
+<p><strong>Bloc 1: Fonaments (Classes 1-4)</strong>
+- ✅ Introducció a la programació
+- ✅ Variables i tipus de dades<br />
+- ✅ Expressions numèriques
+- ✅ Assignació i entrada/sortida</p>
+<p><strong>Bloc 2: Expressions Lògiques i Decisions (Classes 5-8)</strong>
+- ✅ Operadors relacionals
+- ✅ Operadors lògics
+- ✅ IF simple
+- ✅ IF-ELSE</p>
+<p><strong>Bloc 3: Decisions Complexes (Classes 9-10)</strong>
+- ✅ Alternatives niuades
+- ✅ Alternatives encadenades</p>
+<p><strong>Bloc 4: Estructures Repetitives (Classes 11-16)</strong>
+- ✅ Introducció als bucles
+- ✅ FOR (I) - Bàsic
+- ✅ FOR (II) - Avançat
+- ✅ WHILE (I) - Bàsic
+- ✅ WHILE (II) - Avançat
+- ✅ DO-WHILE</p>
+<p><strong>Bloc 5: Integració (Classes 17-20)</strong>
+- ✅ Bucles niuats
+- ✅ Combinació estructures
+- ✅ Problemes integradors
+- ✅ Repàs i avaluació</p>
+<h3 id="fitxers-de-configuracio">🛠️ Fitxers de Configuració<a class="headerlink" href="#fitxers-de-configuracio" title="Permanent link">&para;</a></h3>
+<ul>
+<li>✅ <code>mkdocs.yml</code> - Configuració completa amb els 5 blocs</li>
+<li>✅ <code>index.md</code> - Pàgina principal actualitzada</li>
+<li>✅ <code>stylesheets/extra.css</code> - Estils personalitzats</li>
+</ul>
+<h3 id="documentacio">📚 Documentació<a class="headerlink" href="#documentacio" title="Permanent link">&para;</a></h3>
+<ul>
+<li>✅ <code>README.md</code> - Instruccions generals</li>
+<li>✅ <code>INSTALLACIO.md</code> - Guia pas a pas</li>
+<li>✅ <code>CONTINGUTS_COMPLET.md</code> - Resum detallat</li>
+<li>✅ <code>RESUM_FINAL.md</code> - Aquest fitxer</li>
+</ul>
+<hr />
+<h2 id="estadistiques-totals">📊 Estadístiques Totals<a class="headerlink" href="#estadistiques-totals" title="Permanent link">&para;</a></h2>
+<table>
+<thead>
+<tr>
+<th>Element</th>
+<th>Quantitat</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Classes</strong></td>
+<td>20</td>
+</tr>
+<tr>
+<td><strong>Pàgines approx.</strong></td>
+<td>~400</td>
+</tr>
+<tr>
+<td><strong>Exemples de codi</strong></td>
+<td>~200</td>
+</tr>
+<tr>
+<td><strong>Activitats pràctiques</strong></td>
+<td>~100</td>
+</tr>
+<tr>
+<td><strong>Exercicis programació</strong></td>
+<td>~120</td>
+</tr>
+<tr>
+<td><strong>Deures</strong></td>
+<td>~80</td>
+</tr>
+<tr>
+<td><strong>Preguntes avaluació</strong></td>
+<td>~50</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="com-utilitzar-els-materials">🚀 Com Utilitzar els Materials<a class="headerlink" href="#com-utilitzar-els-materials" title="Permanent link">&para;</a></h2>
+<h3 id="opcio-1-visualitzacio-local-recomanat">Opció 1: Visualització Local (Recomanat)<a class="headerlink" href="#opcio-1-visualitzacio-local-recomanat" title="Permanent link">&para;</a></h3>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="c1"># 1. Instal·la MkDocs</span>
+</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>pip<span class="w"> </span>install<span class="w"> </span>mkdocs<span class="w"> </span>mkdocs-material
+</span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>
+</span><span id="__span-0-4"><a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a><span class="c1"># 2. Crea estructura</span>
+</span><span id="__span-0-5"><a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a>mkdir<span class="w"> </span>curs-programacio
+</span><span id="__span-0-6"><a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a><span class="nb">cd</span><span class="w"> </span>curs-programacio
+</span><span id="__span-0-7"><a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a>mkdir<span class="w"> </span>docs
+</span><span id="__span-0-8"><a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a>
+</span><span id="__span-0-9"><a id="__codelineno-0-9" name="__codelineno-0-9" href="#__codelineno-0-9"></a><span class="c1"># 3. Copia fitxers</span>
+</span><span id="__span-0-10"><a id="__codelineno-0-10" name="__codelineno-0-10" href="#__codelineno-0-10"></a><span class="c1"># - Tots els .md a docs/</span>
+</span><span id="__span-0-11"><a id="__codelineno-0-11" name="__codelineno-0-11" href="#__codelineno-0-11"></a><span class="c1"># - mkdocs.yml a l&#39;arrel</span>
+</span><span id="__span-0-12"><a id="__codelineno-0-12" name="__codelineno-0-12" href="#__codelineno-0-12"></a><span class="c1"># - stylesheets/ a docs/</span>
+</span><span id="__span-0-13"><a id="__codelineno-0-13" name="__codelineno-0-13" href="#__codelineno-0-13"></a>
+</span><span id="__span-0-14"><a id="__codelineno-0-14" name="__codelineno-0-14" href="#__codelineno-0-14"></a><span class="c1"># 4. Executa</span>
+</span><span id="__span-0-15"><a id="__codelineno-0-15" name="__codelineno-0-15" href="#__codelineno-0-15"></a>mkdocs<span class="w"> </span>serve
+</span><span id="__span-0-16"><a id="__codelineno-0-16" name="__codelineno-0-16" href="#__codelineno-0-16"></a>
+</span><span id="__span-0-17"><a id="__codelineno-0-17" name="__codelineno-0-17" href="#__codelineno-0-17"></a><span class="c1"># 5. Obre el navegador</span>
+</span><span id="__span-0-18"><a id="__codelineno-0-18" name="__codelineno-0-18" href="#__codelineno-0-18"></a><span class="c1"># http://127.0.0.1:8000</span>
+</span></code></pre></div>
+<h3 id="opcio-2-publicar-a-github-pages">Opció 2: Publicar a GitHub Pages<a class="headerlink" href="#opcio-2-publicar-a-github-pages" title="Permanent link">&para;</a></h3>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="c1"># 1. Puja a GitHub</span>
+</span><span id="__span-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>git<span class="w"> </span>init
+</span><span id="__span-1-3"><a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a>git<span class="w"> </span>add<span class="w"> </span>.
+</span><span id="__span-1-4"><a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a>git<span class="w"> </span>commit<span class="w"> </span>-m<span class="w"> </span><span class="s2">&quot;Curs de programació&quot;</span>
+</span><span id="__span-1-5"><a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a>git<span class="w"> </span>push
+</span><span id="__span-1-6"><a id="__codelineno-1-6" name="__codelineno-1-6" href="#__codelineno-1-6"></a>
+</span><span id="__span-1-7"><a id="__codelineno-1-7" name="__codelineno-1-7" href="#__codelineno-1-7"></a><span class="c1"># 2. Publica</span>
+</span><span id="__span-1-8"><a id="__codelineno-1-8" name="__codelineno-1-8" href="#__codelineno-1-8"></a>mkdocs<span class="w"> </span>gh-deploy
+</span><span id="__span-1-9"><a id="__codelineno-1-9" name="__codelineno-1-9" href="#__codelineno-1-9"></a>
+</span><span id="__span-1-10"><a id="__codelineno-1-10" name="__codelineno-1-10" href="#__codelineno-1-10"></a><span class="c1"># 3. Accedeix</span>
+</span><span id="__span-1-11"><a id="__codelineno-1-11" name="__codelineno-1-11" href="#__codelineno-1-11"></a><span class="c1"># https://el-teu-usuari.github.io/curs-programacio/</span>
+</span></code></pre></div>
+<h3 id="opcio-3-usar-directament">Opció 3: Usar Directament<a class="headerlink" href="#opcio-3-usar-directament" title="Permanent link">&para;</a></h3>
+<p>Els fitxers <code>.md</code> es poden visualitzar en qualsevol editor Markdown o plataforma que suporti Markdown.</p>
+<hr />
+<h2 id="estructura-de-fitxers">📁 Estructura de Fitxers<a class="headerlink" href="#estructura-de-fitxers" title="Permanent link">&para;</a></h2>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>curs-programacio/
+</span><span id="__span-2-2"><a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a>├── docs/
+</span><span id="__span-2-3"><a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a>│   ├── index.md
+</span><span id="__span-2-4"><a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a>│   ├── bloc1_classe1.md
+</span><span id="__span-2-5"><a id="__codelineno-2-5" name="__codelineno-2-5" href="#__codelineno-2-5"></a>│   ├── bloc1_classe2.md
+</span><span id="__span-2-6"><a id="__codelineno-2-6" name="__codelineno-2-6" href="#__codelineno-2-6"></a>│   ├── ...
+</span><span id="__span-2-7"><a id="__codelineno-2-7" name="__codelineno-2-7" href="#__codelineno-2-7"></a>│   ├── bloc5_classe20.md
+</span><span id="__span-2-8"><a id="__codelineno-2-8" name="__codelineno-2-8" href="#__codelineno-2-8"></a>│   └── stylesheets/
+</span><span id="__span-2-9"><a id="__codelineno-2-9" name="__codelineno-2-9" href="#__codelineno-2-9"></a>│       └── extra.css
+</span><span id="__span-2-10"><a id="__codelineno-2-10" name="__codelineno-2-10" href="#__codelineno-2-10"></a>├── mkdocs.yml
+</span><span id="__span-2-11"><a id="__codelineno-2-11" name="__codelineno-2-11" href="#__codelineno-2-11"></a>└── README.md
+</span></code></pre></div>
+<hr />
+<h2 id="caracteristiques-principals">🎯 Característiques Principals<a class="headerlink" href="#caracteristiques-principals" title="Permanent link">&para;</a></h2>
+<h3 id="contingut-de-qualitat">✨ Contingut de Qualitat<a class="headerlink" href="#contingut-de-qualitat" title="Permanent link">&para;</a></h3>
+<p>✅ <strong>Explicacions clares</strong> amb exemples
+✅ <strong>Activitats pràctiques</strong> amb solucions desplegables
+✅ <strong>Exercicis progressius</strong> de dificultat creixent
+✅ <strong>Deures</strong> per practicar a casa
+✅ <strong>Autoavaluació</strong> amb preguntes i respostes</p>
+<h3 id="format-professional">🎨 Format Professional<a class="headerlink" href="#format-professional" title="Permanent link">&para;</a></h3>
+<p>✅ <strong>Admonitions</strong> (notes, tips, avisos)
+✅ <strong>Tabs</strong> per comparacions
+✅ <strong>Details/Summary</strong> per solucions
+✅ <strong>Codi destacat</strong> amb sintaxi
+✅ <strong>Taules</strong> per referències</p>
+<h3 id="disseny-modern">📱 Disseny Modern<a class="headerlink" href="#disseny-modern" title="Permanent link">&para;</a></h3>
+<p>✅ <strong>Responsive</strong> per mòbils i tablets
+✅ <strong>Tema Material</strong> amb mode clar/fosc
+✅ <strong>Navegació intuïtiva</strong> per tabs
+✅ <strong>Cerca integrada</strong> en català
+✅ <strong>Accessibilitat</strong> optimitzada</p>
+<hr />
+<h2 id="contingut-academic">🎓 Contingut Acadèmic<a class="headerlink" href="#contingut-academic" title="Permanent link">&para;</a></h2>
+<h3 id="conceptes-coberts">Conceptes Coberts<a class="headerlink" href="#conceptes-coberts" title="Permanent link">&para;</a></h3>
+<p><strong>Variables i Dades:</strong>
+- ENTER, REAL, TEXT, CARÀCTER, BOOLEÀ
+- Declaració, assignació, constants</p>
+<p><strong>Operadors:</strong>
+- Aritmètics: +, -, *, /, div, mod
+- Relacionals: =, ≠, &lt;, &gt;, ≤, ≥<br />
+- Lògics: I, O, NO</p>
+<p><strong>Estructures de Control:</strong>
+- Decisions: IF, IF-ELSE, SINO_SI
+- Bucles: FOR, WHILE, DO-WHILE
+- Niuament i combinació</p>
+<p><strong>Tècniques:</strong>
+- Comptadors i acumuladors
+- Màxims i mínims
+- Validacions
+- Cerca i classificació
+- Problemes complexos</p>
+<hr />
+<h2 id="exemples-dus">💡 Exemples d'Ús<a class="headerlink" href="#exemples-dus" title="Permanent link">&para;</a></h2>
+<h3 id="per-a-professors">Per a Professors:<a class="headerlink" href="#per-a-professors" title="Permanent link">&para;</a></h3>
+<ol>
+<li><strong>Classe presencial:</strong> Projecta les pàgines durant les explicacions</li>
+<li><strong>Deures:</strong> Assigna exercicis específics de cada classe</li>
+<li><strong>Avaluació:</strong> Utilitza les preguntes d'autoavaluació</li>
+<li><strong>Projectes:</strong> Usa els problemes integradors de la classe 19</li>
+</ol>
+<h3 id="per-a-estudiants">Per a Estudiants:<a class="headerlink" href="#per-a-estudiants" title="Permanent link">&para;</a></h3>
+<ol>
+<li><strong>Estudi individual:</strong> Segueix les classes en ordre</li>
+<li><strong>Pràctica:</strong> Resol tots els exercicis</li>
+<li><strong>Repàs:</strong> Usa les autoavaluacions</li>
+<li><strong>Preparació exàmens:</strong> Classe 20 té avaluació completa</li>
+</ol>
+<h3 id="per-a-autodidactes">Per a Autodidactes:<a class="headerlink" href="#per-a-autodidactes" title="Permanent link">&para;</a></h3>
+<ol>
+<li><strong>Aprenentatge autònom:</strong> Tot el material està autoconteingut</li>
+<li><strong>Ritme propi:</strong> Avança segons el teu temps</li>
+<li><strong>Verificació:</strong> Totes les solucions estan disponibles</li>
+<li><strong>Progressió:</strong> De conceptes bàsics a avançats</li>
+</ol>
+<hr />
+<h2 id="personalitzacio">🔧 Personalització<a class="headerlink" href="#personalitzacio" title="Permanent link">&para;</a></h2>
+<h3 id="canviar-colors">Canviar Colors<a class="headerlink" href="#canviar-colors" title="Permanent link">&para;</a></h3>
+<p>Edita <code>mkdocs.yml</code>:
+<div class="language-yaml highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="nt">theme</span><span class="p">:</span>
+</span><span id="__span-3-2"><a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a><span class="w">  </span><span class="nt">palette</span><span class="p">:</span>
+</span><span id="__span-3-3"><a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a><span class="w">    </span><span class="nt">primary</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">blue</span><span class="w">     </span><span class="c1"># Canvia el color principal</span>
+</span><span id="__span-3-4"><a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a><span class="w">    </span><span class="nt">accent</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">amber</span><span class="w">     </span><span class="c1"># Canvia el color d&#39;accent</span>
+</span></code></pre></div></p>
+<h3 id="afegir-contingut">Afegir Contingut<a class="headerlink" href="#afegir-contingut" title="Permanent link">&para;</a></h3>
+<ol>
+<li>Crea nous fitxers <code>.md</code> a <code>docs/</code></li>
+<li>Afegeix-los a <code>nav:</code> a <code>mkdocs.yml</code></li>
+<li>Executa <code>mkdocs serve</code> per veure els canvis</li>
+</ol>
+<h3 id="exportar-a-pdf">Exportar a PDF<a class="headerlink" href="#exportar-a-pdf" title="Permanent link">&para;</a></h3>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>pip<span class="w"> </span>install<span class="w"> </span>mkdocs-with-pdf
+</span></code></pre></div>
+<p>Afegeix a <code>mkdocs.yml</code>:
+<div class="language-yaml highlight"><pre><span></span><code><span id="__span-5-1"><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a><span class="nt">plugins</span><span class="p">:</span>
+</span><span id="__span-5-2"><a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a><span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">with-pdf</span><span class="p">:</span>
+</span><span id="__span-5-3"><a id="__codelineno-5-3" name="__codelineno-5-3" href="#__codelineno-5-3"></a><span class="w">      </span><span class="nt">output_path</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">curs-programacio.pdf</span>
+</span></code></pre></div></p>
+<hr />
+<h2 id="progressio-recomanada">📈 Progressió Recomanada<a class="headerlink" href="#progressio-recomanada" title="Permanent link">&para;</a></h2>
+<h3 id="setmana-1-2-fonaments-bloc-1">Setmana 1-2: Fonaments (Bloc 1)<a class="headerlink" href="#setmana-1-2-fonaments-bloc-1" title="Permanent link">&para;</a></h3>
+<ul>
+<li>Classes 1-4</li>
+<li>2 classes per setmana</li>
+<li>Focus: Variables, operadors, E/S</li>
+</ul>
+<h3 id="setmana-3-4-decisions-blocs-2-3">Setmana 3-4: Decisions (Blocs 2-3)<a class="headerlink" href="#setmana-3-4-decisions-blocs-2-3" title="Permanent link">&para;</a></h3>
+<ul>
+<li>Classes 5-10</li>
+<li>3 classes per setmana</li>
+<li>Focus: IF, operadors lògics</li>
+</ul>
+<h3 id="setmana-5-7-bucles-bloc-4">Setmana 5-7: Bucles (Bloc 4)<a class="headerlink" href="#setmana-5-7-bucles-bloc-4" title="Permanent link">&para;</a></h3>
+<ul>
+<li>Classes 11-16</li>
+<li>2 classes per setmana</li>
+<li>Focus: FOR, WHILE, DO-WHILE</li>
+</ul>
+<h3 id="setmana-8-integracio-bloc-5">Setmana 8: Integració (Bloc 5)<a class="headerlink" href="#setmana-8-integracio-bloc-5" title="Permanent link">&para;</a></h3>
+<ul>
+<li>Classes 17-20</li>
+<li>2-4 classes per setmana</li>
+<li>Focus: Problemes complexos i avaluació</li>
+</ul>
+<p><strong>Total: 8 setmanes</strong> (~2 mesos)</p>
+<hr />
+<h2 id="objectius-aconseguits">🎯 Objectius Aconseguits<a class="headerlink" href="#objectius-aconseguits" title="Permanent link">&para;</a></h2>
+<p>Després de completar aquest curs, l'estudiant pot:</p>
+<p>✅ Dissenyar algorismes estructurats
+✅ Utilitzar estructures de control bàsiques
+✅ Resoldre problemes amb pseudocodi
+✅ Traduir pseudocodi a qualsevol llenguatge
+✅ Desenvolupar pensament computacional
+✅ Aplicar tècniques algorítmiques comunes
+✅ Optimitzar solucions
+✅ Combinar estructures complexes</p>
+<hr />
+<h2 id="punts-forts-del-curs">🌟 Punts Forts del Curs<a class="headerlink" href="#punts-forts-del-curs" title="Permanent link">&para;</a></h2>
+<h3 id="didactica">Didàctica<a class="headerlink" href="#didactica" title="Permanent link">&para;</a></h3>
+<p>✅ Progressió lògica i natural
+✅ Exemples pràctics i rellevants
+✅ Explicacions clares i concises
+✅ Solucions detallades
+✅ Retroalimentació constant</p>
+<h3 id="tecnica">Tècnica<a class="headerlink" href="#tecnica" title="Permanent link">&para;</a></h3>
+<p>✅ Pseudocodi estandarditzat
+✅ Sintaxi consistent
+✅ Bones pràctiques
+✅ Patrons comuns
+✅ Casos límit</p>
+<h3 id="visual">Visual<a class="headerlink" href="#visual" title="Permanent link">&para;</a></h3>
+<p>✅ Format modern i atractiu
+✅ Codi ben formatat
+✅ Diagrames i taules
+✅ Navegació intuïtiva
+✅ Cerca funcional</p>
+<hr />
+<h2 id="suport-i-recursos">📞 Suport i Recursos<a class="headerlink" href="#suport-i-recursos" title="Permanent link">&para;</a></h2>
+<h3 id="documentacio_1">Documentació<a class="headerlink" href="#documentacio_1" title="Permanent link">&para;</a></h3>
+<ul>
+<li><code>README.md</code> - Visió general</li>
+<li><code>INSTALLACIO.md</code> - Guia tècnica</li>
+<li><code>CONTINGUTS_COMPLET.md</code> - Detall complet</li>
+</ul>
+<h3 id="online">Online<a class="headerlink" href="#online" title="Permanent link">&para;</a></h3>
+<ul>
+<li><a href="https://www.mkdocs.org">MkDocs</a></li>
+<li><a href="https://squidfunk.github.io/mkdocs-material/">Material for MkDocs</a></li>
+<li><a href="https://www.markdownguide.org">Markdown Guide</a></li>
+</ul>
+<hr />
+<h2 id="qualitat-garantida">🏆 Qualitat Garantida<a class="headerlink" href="#qualitat-garantida" title="Permanent link">&para;</a></h2>
+<p>Aquest curs ha estat dissenyat amb:</p>
+<p>✅ <strong>Rigor pedagògic</strong> - Progressió adequada
+✅ <strong>Claredat expositiva</strong> - Explicacions entenedores<br />
+✅ <strong>Completesa</strong> - Cobreix tots els conceptes bàsics
+✅ <strong>Practicitat</strong> - Orientat a la resolució de problemes
+✅ <strong>Actualitat</strong> - Format modern i accessible
+✅ <strong>Versatilitat</strong> - Adaptable a diferents contextos</p>
+<hr />
+<h2 id="conclusio">🎉 Conclusió<a class="headerlink" href="#conclusio" title="Permanent link">&para;</a></h2>
+<p><strong>Tens a la teva disposició un curs COMPLET de programació estructurada amb:</strong></p>
+<ul>
+<li>📚 20 classes ben estructurades</li>
+<li>💻 120+ exercicis amb solucions</li>
+<li>📝 Material d'avaluació</li>
+<li>🎨 Format professional</li>
+<li>🌐 Llest per publicar online</li>
+<li>📱 Responsive per tots els dispositius</li>
+</ul>
+<hr />
+<h2 id="seguents-passos">🚀 Següents Passos<a class="headerlink" href="#seguents-passos" title="Permanent link">&para;</a></h2>
+<ol>
+<li><strong>Revisa</strong> tots els fitxers generats</li>
+<li><strong>Personalitza</strong> colors i estils si vols</li>
+<li><strong>Configura</strong> MkDocs seguint <code>INSTALLACIO.md</code></li>
+<li><strong>Publica</strong> online o usa localment</li>
+<li><strong>Comparteix</strong> amb els teus estudiants</li>
+<li><strong>Gaudeix</strong> ensenyant programació!</li>
+</ol>
+<hr />
+<p><strong>Tots els materials estan llests. Comença a ensenyar avui mateix! 🎓</strong></p>
+<hr />
+<p><em>Data de generació: Novembre 2024</em><br />
+<em>Versió: 2.0 - Curs Complet</em><br />
+<em>Classes: 20</em><br />
+<em>Blocs: 5</em><br />
+<em>Estat: ✅ COMPLET</em></p>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Back to top
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+    
+      
+      <nav class="md-footer__inner md-grid" aria-label="Footer" >
+        
+          
+          <a href="../20-repas-final/" class="md-footer__link md-footer__link--prev" aria-label="Previous: 20. Repàs final">
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+            </div>
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Previous
+              </span>
+              <div class="md-ellipsis">
+                20. Repàs final
+              </div>
+            </div>
+          </a>
+        
+        
+          
+          <a href="../02-prog-estructurada/setmana01/" class="md-footer__link md-footer__link--next" aria-label="Next: Setmana 01">
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Next
+              </span>
+              <div class="md-ellipsis">
+                Setmana 01
+              </div>
+            </div>
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11z"/></svg>
+            </div>
+          </a>
+        
+      </nav>
+    
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      Copyright &copy; 2025 - Curs de Git per a Estudiants
+    </div>
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      <script id="__config" type="application/json">{"base": "..", "features": ["navigation.tabs", "navigation.instant", "navigation.instant.prefetch", "navigation.tabs.sticky", "navigation.sections", "navigation.path", "navigation.indexes", "navigation.top", "navigation.footer", "navigation.tracking", "toc.integrate", "search.suggest", "search.highlight", "content.code.copy"], "search": "../assets/javascripts/workers/search.973d3a69.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.f55a23d4.min.js"></script>
+      
+        <script src="../javascripts/quiz.js"></script>
+      
+    
+  </body>
+</html>

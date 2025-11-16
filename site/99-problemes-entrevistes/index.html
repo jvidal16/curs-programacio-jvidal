@@ -1,0 +1,2911 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Curs complet de Programació">
+      
+      
+        <meta name="author" content="Jordi - Professor de Programació">
+      
+      
+        <link rel="canonical" href="https://curs-programacio-jvidal.gitlab.io/99-problemes-entrevistes/">
+      
+      
+        <link rel="prev" href="../02-prog-estructurada/setmana07/">
+      
+      
+        <link rel="next" href="../05-poo/motivacio-poo/">
+      
+      
+      <link rel="icon" href="../images/logo_dam_v2.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.23">
+    
+    
+      
+        <title>Problemes d'Entrevistes - DAM/DAW - Programació</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.84d31ad4.min.css">
+      
+        
+        <link rel="stylesheet" href="../assets/stylesheets/palette.06af60db.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway:300,300i,400,400i,700,700i%7CJetBrains+mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Raleway";--md-code-font:"JetBrains mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../stylesheets/extra.css">
+    
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#problemes-dentrevistes-de-programacio-nivell-principiant" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow md-header--lifted" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href=".." title="DAM/DAW - Programació" class="md-header__button md-logo" aria-label="DAM/DAW - Programació" data-md-component="logo">
+      
+  <img src="../images/logo_dam.png" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            DAM/DAW - Programació
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Problemes d'Entrevistes
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12s-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+    
+      
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../01-pseudocodi/c1-intro/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  Pseudocodi
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../02-prog-estructurada/setmana01/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  Programació Estructurada (Dart)
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+    
+  
+  
+    
+    
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="./" class="md-tabs__link">
+          
+  
+  
+    
+  
+  Extra
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../05-poo/motivacio-poo/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  POO
+
+        </a>
+      </li>
+    
+  
+
+      
+    </ul>
+  </div>
+</nav>
+    
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+  
+
+<nav class="md-nav md-nav--primary md-nav--lifted md-nav--integrated" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="DAM/DAW - Programació" class="md-nav__button md-logo" aria-label="DAM/DAW - Programació" data-md-component="logo">
+      
+  <img src="../images/logo_dam.png" alt="logo">
+
+    </a>
+    DAM/DAW - Programació
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_1" >
+        
+          
+          <label class="md-nav__link" for="__nav_1" id="__nav_1_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Pseudocodi
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_1">
+            <span class="md-nav__icon md-icon"></span>
+            Pseudocodi
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../01-pseudocodi/c1-intro/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    01. Introducció amb pseudocodi
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../02-variables/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    02. Variables
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../03-expressions/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    03. Expressions
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../04-entrada-sortida/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    04. Entrada / Sortida
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../05-logic-relacional/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    05. Expr. Lògiques / Relacionals
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../06-operadors-logics/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    06. Operadors lògics
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../07-alternativa-simple/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    07. Alternativa simple (IF)
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../08-alternativa-doble/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    08. Alternativa doble (IF-ELSE)
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../09-alternativa-aniuada/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    09. Alternativa aniuada
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../10-alternativa-encadenada/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    10. Alternativa encadenada
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../11-bucles/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    11. Repetició / Bucles
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../12-bucle-for/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    12. Repetició / Buble FOR (I)
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../13-bucle-for-2/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    13. Repetició / Bucle FOR (II)
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../14-while/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    14. Repetició / WHILE (I)
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../15-while-2/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    15. Repetició / WHILE (II)
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../16-dowhile-repeat/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    16. DO  WHILE / REPEAT
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../17-bucles-niuats/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    17. Bucles niuats
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../18-decisions-bucles/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    18. Decisions i Bucles
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../02-prog-estructurada/classe-strings-structs/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Extra Strings i Structs
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../19-Problemes-integradors/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    19. Problemes Integradors
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../20-repas-final/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    20. Repàs final
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../resum-final-20/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Resum final
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Programació Estructurada (Dart)
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            Programació Estructurada (Dart)
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../02-prog-estructurada/setmana01/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Setmana 01
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../02-prog-estructurada/setmana02/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Setmana 02
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../02-prog-estructurada/setmana03/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Setmana 03
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../02-prog-estructurada/setmana04/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Setmana 04
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../02-prog-estructurada/setmana05/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Setmana 05
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../02-prog-estructurada/setmana06/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Setmana 06
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../02-prog-estructurada/setmana07/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Setmana 07
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    Extra
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            Extra
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    Problemes d'Entrevistes
+    
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    Problemes d'Entrevistes
+    
+  </span>
+  
+
+      </a>
+      
+        
+
+  
+
+<nav class="md-nav md-nav--secondary" aria-label="En aquesta pàgina">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      En aquesta pàgina
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#introduccio" class="md-nav__link">
+    <span class="md-ellipsis">
+      🎯 Introducció
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#arrays-basics" class="md-nav__link">
+    <span class="md-ellipsis">
+      🔢 Arrays Bàsics
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="🔢 Arrays Bàsics">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-remove-duplicates-from-sorted-array" class="md-nav__link">
+    <span class="md-ellipsis">
+      1. Remove Duplicates from Sorted Array
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-move-zeroes" class="md-nav__link">
+    <span class="md-ellipsis">
+      2. Move Zeroes
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3-find-numbers-with-even-number-of-digits" class="md-nav__link">
+    <span class="md-ellipsis">
+      3. Find Numbers with Even Number of Digits
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#4-squares-of-a-sorted-array" class="md-nav__link">
+    <span class="md-ellipsis">
+      4. Squares of a Sorted Array
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#5-contains-duplicate" class="md-nav__link">
+    <span class="md-ellipsis">
+      5. Contains Duplicate
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#6-maximum-subarray" class="md-nav__link">
+    <span class="md-ellipsis">
+      6. Maximum Subarray
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#7-third-maximum-number" class="md-nav__link">
+    <span class="md-ellipsis">
+      7. Third Maximum Number
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#strings-basics" class="md-nav__link">
+    <span class="md-ellipsis">
+      📝 Strings Bàsics
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="📝 Strings Bàsics">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#8-reverse-string" class="md-nav__link">
+    <span class="md-ellipsis">
+      8. Reverse String
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#9-reverse-integer" class="md-nav__link">
+    <span class="md-ellipsis">
+      9. Reverse Integer
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#10-valid-palindrome" class="md-nav__link">
+    <span class="md-ellipsis">
+      10. Valid Palindrome
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#11-valid-anagram" class="md-nav__link">
+    <span class="md-ellipsis">
+      11. Valid Anagram
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#12-first-unique-character-in-a-string" class="md-nav__link">
+    <span class="md-ellipsis">
+      12. First Unique Character in a String
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#13-fizz-buzz" class="md-nav__link">
+    <span class="md-ellipsis">
+      13. Fizz Buzz
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#14-reverse-words-in-a-string-iii" class="md-nav__link">
+    <span class="md-ellipsis">
+      14. Reverse Words in a String III
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#bucles-i-logica-basica" class="md-nav__link">
+    <span class="md-ellipsis">
+      🔄 Bucles i Lògica Bàsica
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="🔄 Bucles i Lògica Bàsica">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#15-palindrome-number" class="md-nav__link">
+    <span class="md-ellipsis">
+      15. Palindrome Number
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#16-plus-one" class="md-nav__link">
+    <span class="md-ellipsis">
+      16. Plus One
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#17-single-number" class="md-nav__link">
+    <span class="md-ellipsis">
+      17. Single Number
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#18-missing-number" class="md-nav__link">
+    <span class="md-ellipsis">
+      18. Missing Number
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#19-majority-element" class="md-nav__link">
+    <span class="md-ellipsis">
+      19. Majority Element
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#20-add-binary" class="md-nav__link">
+    <span class="md-ellipsis">
+      20. Add Binary
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#cerca-i-comparacio-simple" class="md-nav__link">
+    <span class="md-ellipsis">
+      🔍 Cerca i Comparació Simple
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="🔍 Cerca i Comparació Simple">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#21-search-insert-position" class="md-nav__link">
+    <span class="md-ellipsis">
+      21. Search Insert Position
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#22-two-sum" class="md-nav__link">
+    <span class="md-ellipsis">
+      22. Two Sum
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#23-best-time-to-buy-and-sell-stock" class="md-nav__link">
+    <span class="md-ellipsis">
+      23. Best Time to Buy and Sell Stock
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#24-find-the-difference" class="md-nav__link">
+    <span class="md-ellipsis">
+      24. Find the Difference
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#25-happy-number" class="md-nav__link">
+    <span class="md-ellipsis">
+      25. Happy Number
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#recursos-addicionals" class="md-nav__link">
+    <span class="md-ellipsis">
+      📚 Recursos Addicionals
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#pla-destudi-recomanat" class="md-nav__link">
+    <span class="md-ellipsis">
+      🗓️ Pla d'Estudi Recomanat
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#consells-per-a-lestudi" class="md-nav__link">
+    <span class="md-ellipsis">
+      💡 Consells per a l'Estudi
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#preparacio-per-a-entrevistes" class="md-nav__link">
+    <span class="md-ellipsis">
+      🎯 Preparació per a Entrevistes
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#seguiment-del-progres" class="md-nav__link">
+    <span class="md-ellipsis">
+      📊 Seguiment del Progrés
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    POO
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            POO
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../05-poo/motivacio-poo/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Motivació
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../05-poo/fase-index/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Índex
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../05-poo/fase1/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Fase 01
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../05-poo/fase2/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Fase 02
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../05-poo/fase3/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Fase 03
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../05-poo/fase4/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Fase 04
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="problemes-dentrevistes-de-programacio-nivell-principiant">Problemes d'Entrevistes de Programació - Nivell Principiant<a class="headerlink" href="#problemes-dentrevistes-de-programacio-nivell-principiant" title="Permanent link">&para;</a></h1>
+<div class="admonition info">
+<p class="admonition-title">Informació del document</p>
+<p><strong>Nivell</strong>: Principiant (6 mesos d'experiència)<br />
+<strong>Temps estimat</strong>: 8 setmanes de pràctica<br />
+<strong>Enfocament</strong>: Arrays, Strings, Bucles i Lògica Bàsica</p>
+</div>
+<hr />
+<h2 id="introduccio">🎯 Introducció<a class="headerlink" href="#introduccio" title="Permanent link">&para;</a></h2>
+<p>Aquesta llista conté <strong>25 problemes essencials</strong> per a estudiants amb aproximadament 6 mesos d'experiència en programació. Tots els problemes estan seleccionats de plataformes reconegudes i inclouen enllaços directes i solucions publicades.</p>
+<div class="admonition tip">
+<p class="admonition-title">Consell d'estudi</p>
+<p>No miris la solució immediatament! Prova de resoldre cada problema durant 20-30 minuts abans de consultar la resposta.</p>
+</div>
+<hr />
+<h2 id="arrays-basics">🔢 Arrays Bàsics<a class="headerlink" href="#arrays-basics" title="Permanent link">&para;</a></h2>
+<h3 id="1-remove-duplicates-from-sorted-array">1. Remove Duplicates from Sorted Array<a class="headerlink" href="#1-remove-duplicates-from-sorted-array" title="Permanent link">&para;</a></h3>
+<div class="admonition question">
+<p class="admonition-title">Enunciat</p>
+<p>Donada una array ordenada, elimina els duplicats "in-place" i retorna la nova longitud.</p>
+</div>
+<p><strong>Exemple:</strong>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="n">Input</span><span class="p">:</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">]</span>
+</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="n">Output</span><span class="p">:</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">]</span> <span class="p">(</span><span class="n">longitud</span> <span class="o">=</span> <span class="mi">3</span><span class="p">)</span>
+</span></code></pre></div></p>
+<div class="tabbed-set tabbed-alternate" data-tabs="1:3"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio" /><input id="__tabbed_1_2" name="__tabbed_1" type="radio" /><input id="__tabbed_1_3" name="__tabbed_1" type="radio" /><div class="tabbed-labels"><label for="__tabbed_1_1">Informació</label><label for="__tabbed_1_2">Pista</label><label for="__tabbed_1_3">Conceptes clau</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<ul>
+<li><strong>Dificultat</strong>: <img alt="🟢" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.1.0/assets/svg/1f7e2.svg" title=":green_circle:" /> Fàcil</li>
+<li><strong>Enllaç</strong>: <a href="https://leetcode.com/problems/remove-duplicates-from-sorted-array/">LeetCode</a></li>
+<li><strong>Solució disponible</strong>: <img alt="✅" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.1.0/assets/svg/2705.svg" title=":white_check_mark:" /> Sí</li>
+</ul>
+</div>
+<div class="tabbed-block">
+<p>Usa dos índexs (pointers): un per recórrer l'array i un altre per marcar la posició dels elements únics.</p>
+</div>
+<div class="tabbed-block">
+<ul>
+<li>Two pointers</li>
+<li>In-place modification</li>
+<li>Arrays ordenats</li>
+</ul>
+</div>
+</div>
+</div>
+<hr />
+<h3 id="2-move-zeroes">2. Move Zeroes<a class="headerlink" href="#2-move-zeroes" title="Permanent link">&para;</a></h3>
+<div class="admonition question">
+<p class="admonition-title">Enunciat</p>
+<p>Mou tots els zeros al final de l'array mantenint l'ordre dels altres elements.</p>
+</div>
+<p><strong>Exemple:</strong>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="n">Input</span><span class="p">:</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">12</span><span class="p">]</span>
+</span><span id="__span-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a><span class="n">Output</span><span class="p">:</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">12</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">]</span>
+</span></code></pre></div></p>
+<div class="tabbed-set tabbed-alternate" data-tabs="2:3"><input checked="checked" id="__tabbed_2_1" name="__tabbed_2" type="radio" /><input id="__tabbed_2_2" name="__tabbed_2" type="radio" /><input id="__tabbed_2_3" name="__tabbed_2" type="radio" /><div class="tabbed-labels"><label for="__tabbed_2_1">Informació</label><label for="__tabbed_2_2">Pista</label><label for="__tabbed_2_3">Conceptes clau</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<ul>
+<li><strong>Dificultat</strong>: <img alt="🟢" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.1.0/assets/svg/1f7e2.svg" title=":green_circle:" /> Fàcil</li>
+<li><strong>Enllaç</strong>: <a href="https://leetcode.com/problems/move-zeroes/">LeetCode</a></li>
+<li><strong>Solució disponible</strong>: <img alt="✅" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.1.0/assets/svg/2705.svg" title=":white_check_mark:" /> Sí</li>
+</ul>
+</div>
+<div class="tabbed-block">
+<p>Mantén un índex per a la posició dels elements no-zero. Recorre l'array i intercanvia elements.</p>
+</div>
+<div class="tabbed-block">
+<ul>
+<li>Two pointers</li>
+<li>Array manipulation</li>
+<li>In-place operations</li>
+</ul>
+</div>
+</div>
+</div>
+<hr />
+<h3 id="3-find-numbers-with-even-number-of-digits">3. Find Numbers with Even Number of Digits<a class="headerlink" href="#3-find-numbers-with-even-number-of-digits" title="Permanent link">&para;</a></h3>
+<div class="admonition question">
+<p class="admonition-title">Enunciat</p>
+<p>Compta quants nombres en una array tenen un nombre parell de dígits.</p>
+</div>
+<p><strong>Exemple:</strong>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="n">Input</span><span class="p">:</span> <span class="p">[</span><span class="mi">12</span><span class="p">,</span><span class="mi">345</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">6</span><span class="p">,</span><span class="mi">7896</span><span class="p">]</span>
+</span><span id="__span-2-2"><a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a><span class="n">Output</span><span class="p">:</span> <span class="mi">2</span>  <span class="c1"># 12 té 2 dígits, 7896 té 4 dígits</span>
+</span></code></pre></div></p>
+<div class="tabbed-set tabbed-alternate" data-tabs="3:3"><input checked="checked" id="__tabbed_3_1" name="__tabbed_3" type="radio" /><input id="__tabbed_3_2" name="__tabbed_3" type="radio" /><input id="__tabbed_3_3" name="__tabbed_3" type="radio" /><div class="tabbed-labels"><label for="__tabbed_3_1">Informació</label><label for="__tabbed_3_2">Pista</label><label for="__tabbed_3_3">Conceptes clau</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<ul>
+<li><strong>Dificultat</strong>: <img alt="🟢" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.1.0/assets/svg/1f7e2.svg" title=":green_circle:" /> Fàcil</li>
+<li><strong>Enllaç</strong>: <a href="https://leetcode.com/problems/find-numbers-with-even-number-of-digits/">LeetCode</a></li>
+<li><strong>Solució disponible</strong>: <img alt="✅" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.1.0/assets/svg/2705.svg" title=":white_check_mark:" /> Sí</li>
+</ul>
+</div>
+<div class="tabbed-block">
+<p>Converteix cada nombre a string i comprova si la longitud és parell.</p>
+</div>
+<div class="tabbed-block">
+<ul>
+<li>Conversió de tipus</li>
+<li>Bucles</li>
+<li>Comptadors</li>
+</ul>
+</div>
+</div>
+</div>
+<hr />
+<h3 id="4-squares-of-a-sorted-array">4. Squares of a Sorted Array<a class="headerlink" href="#4-squares-of-a-sorted-array" title="Permanent link">&para;</a></h3>
+<div class="admonition question">
+<p class="admonition-title">Enunciat</p>
+<p>Donada una array ordenada d'enters, retorna una array dels seus quadrats, també ordenada.</p>
+</div>
+<p><strong>Exemple:</strong>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="n">Input</span><span class="p">:</span> <span class="p">[</span><span class="o">-</span><span class="mi">4</span><span class="p">,</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">10</span><span class="p">]</span>
+</span><span id="__span-3-2"><a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a><span class="n">Output</span><span class="p">:</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">9</span><span class="p">,</span><span class="mi">16</span><span class="p">,</span><span class="mi">100</span><span class="p">]</span>
+</span></code></pre></div></p>
+<div class="tabbed-set tabbed-alternate" data-tabs="4:3"><input checked="checked" id="__tabbed_4_1" name="__tabbed_4" type="radio" /><input id="__tabbed_4_2" name="__tabbed_4" type="radio" /><input id="__tabbed_4_3" name="__tabbed_4" type="radio" /><div class="tabbed-labels"><label for="__tabbed_4_1">Informació</label><label for="__tabbed_4_2">Pista</label><label for="__tabbed_4_3">Conceptes clau</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<ul>
+<li><strong>Dificultat</strong>: <img alt="🟢" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.1.0/assets/svg/1f7e2.svg" title=":green_circle:" /> Fàcil</li>
+<li><strong>Enllaç</strong>: <a href="https://leetcode.com/problems/squares-of-a-sorted-array/">LeetCode</a></li>
+<li><strong>Solució disponible</strong>: <img alt="✅" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.1.0/assets/svg/2705.svg" title=":white_check_mark:" /> Sí</li>
+</ul>
+</div>
+<div class="tabbed-block">
+<p>Solució simple: eleva cada element al quadrat i ordena. Solució òptima: usa two pointers.</p>
+</div>
+<div class="tabbed-block">
+<ul>
+<li>Operacions matemàtiques</li>
+<li>Ordenació</li>
+<li>Two pointers (solució avançada)</li>
+</ul>
+</div>
+</div>
+</div>
+<hr />
+<h3 id="5-contains-duplicate">5. Contains Duplicate<a class="headerlink" href="#5-contains-duplicate" title="Permanent link">&para;</a></h3>
+<div class="admonition question">
+<p class="admonition-title">Enunciat</p>
+<p>Retorna <code>true</code> si hi ha algun duplicat en l'array.</p>
+</div>
+<p><strong>Exemple:</strong>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="n">Input</span><span class="p">:</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">1</span><span class="p">]</span>
+</span><span id="__span-4-2"><a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a><span class="n">Output</span><span class="p">:</span> <span class="n">true</span>
+</span></code></pre></div></p>
+<div class="tabbed-set tabbed-alternate" data-tabs="5:3"><input checked="checked" id="__tabbed_5_1" name="__tabbed_5" type="radio" /><input id="__tabbed_5_2" name="__tabbed_5" type="radio" /><input id="__tabbed_5_3" name="__tabbed_5" type="radio" /><div class="tabbed-labels"><label for="__tabbed_5_1">Informació</label><label for="__tabbed_5_2">Pista</label><label for="__tabbed_5_3">Conceptes clau</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<ul>
+<li><strong>Dificultat</strong>: <img alt="🟢" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.1.0/assets/svg/1f7e2.svg" title=":green_circle:" /> Fàcil</li>
+<li><strong>Enllaç</strong>: <a href="https://leetcode.com/problems/contains-duplicate/">LeetCode</a></li>
+<li><strong>Solució disponible</strong>: <img alt="✅" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.1.0/assets/svg/2705.svg" title=":white_check_mark:" /> Sí</li>
+</ul>
+</div>
+<div class="tabbed-block">
+<p>Usa un Set (conjunt) per guardar elements vistos, o ordena l'array primer.</p>
+</div>
+<div class="tabbed-block">
+<ul>
+<li>HashSet/Set</li>
+<li>Ordenació</li>
+<li>Cerca lineal</li>
+</ul>
+</div>
+</div>
+</div>
+<hr />
+<h3 id="6-maximum-subarray">6. Maximum Subarray<a class="headerlink" href="#6-maximum-subarray" title="Permanent link">&para;</a></h3>
+<div class="admonition question">
+<p class="admonition-title">Enunciat</p>
+<p>Troba la suma més gran possible d'una subarray consecutiva.</p>
+</div>
+<p><strong>Exemple:</strong>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-5-1"><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a><span class="n">Input</span><span class="p">:</span> <span class="p">[</span><span class="o">-</span><span class="mi">2</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="o">-</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="o">-</span><span class="mi">5</span><span class="p">,</span><span class="mi">4</span><span class="p">]</span>
+</span><span id="__span-5-2"><a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a><span class="n">Output</span><span class="p">:</span> <span class="mi">6</span>  <span class="c1"># Subarray: [4,-1,2,1]</span>
+</span></code></pre></div></p>
+<div class="tabbed-set tabbed-alternate" data-tabs="6:3"><input checked="checked" id="__tabbed_6_1" name="__tabbed_6" type="radio" /><input id="__tabbed_6_2" name="__tabbed_6" type="radio" /><input id="__tabbed_6_3" name="__tabbed_6" type="radio" /><div class="tabbed-labels"><label for="__tabbed_6_1">Informació</label><label for="__tabbed_6_2">Pista</label><label for="__tabbed_6_3">Conceptes clau</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<ul>
+<li><strong>Dificultat</strong>: <img alt="🟠" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.1.0/assets/svg/1f7e0.svg" title=":orange_circle:" /> Fàcil-Mitjana</li>
+<li><strong>Enllaç</strong>: <a href="https://leetcode.com/problems/maximum-subarray/">LeetCode</a></li>
+<li><strong>Solució disponible</strong>: <img alt="✅" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.1.0/assets/svg/2705.svg" title=":white_check_mark:" /> Sí</li>
+</ul>
+</div>
+<div class="tabbed-block">
+<p>Algoritme de Kadane: mantén la suma màxima actual i la suma màxima global.</p>
+</div>
+<div class="tabbed-block">
+<ul>
+<li>Dynamic Programming (introducció)</li>
+<li>Algoritme de Kadane</li>
+<li>Subarrays</li>
+</ul>
+</div>
+</div>
+</div>
+<hr />
+<h3 id="7-third-maximum-number">7. Third Maximum Number<a class="headerlink" href="#7-third-maximum-number" title="Permanent link">&para;</a></h3>
+<div class="admonition question">
+<p class="admonition-title">Enunciat</p>
+<p>Troba el tercer nombre més gran en una array. Si no existeix, retorna el màxim.</p>
+</div>
+<p><strong>Exemple:</strong>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-6-1"><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a><span class="n">Input</span><span class="p">:</span> <span class="p">[</span><span class="mi">3</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">1</span><span class="p">]</span>
+</span><span id="__span-6-2"><a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a><span class="n">Output</span><span class="p">:</span> <span class="mi">1</span>
+</span></code></pre></div></p>
+<div class="tabbed-set tabbed-alternate" data-tabs="7:3"><input checked="checked" id="__tabbed_7_1" name="__tabbed_7" type="radio" /><input id="__tabbed_7_2" name="__tabbed_7" type="radio" /><input id="__tabbed_7_3" name="__tabbed_7" type="radio" /><div class="tabbed-labels"><label for="__tabbed_7_1">Informació</label><label for="__tabbed_7_2">Pista</label><label for="__tabbed_7_3">Conceptes clau</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<ul>
+<li><strong>Dificultat</strong>: <img alt="🟢" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.1.0/assets/svg/1f7e2.svg" title=":green_circle:" /> Fàcil</li>
+<li><strong>Enllaç</strong>: <a href="https://leetcode.com/problems/third-maximum-number/">LeetCode</a></li>
+<li><strong>Solució disponible</strong>: <img alt="✅" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.1.0/assets/svg/2705.svg" title=":white_check_mark:" /> Sí</li>
+</ul>
+</div>
+<div class="tabbed-block">
+<p>Mantén tres variables per als tres nombres més grans mentre recorres l'array.</p>
+</div>
+<div class="tabbed-block">
+<ul>
+<li>Variables de seguiment</li>
+<li>Comparacions</li>
+<li>Edge cases</li>
+</ul>
+</div>
+</div>
+</div>
+<hr />
+<h2 id="strings-basics">📝 Strings Bàsics<a class="headerlink" href="#strings-basics" title="Permanent link">&para;</a></h2>
+<h3 id="8-reverse-string">8. Reverse String<a class="headerlink" href="#8-reverse-string" title="Permanent link">&para;</a></h3>
+<div class="admonition question">
+<p class="admonition-title">Enunciat</p>
+<p>Inverteix una cadena de caràcters.</p>
+</div>
+<p><strong>Exemple:</strong>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-7-1"><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a><span class="n">Input</span><span class="p">:</span> <span class="p">[</span><span class="s2">&quot;h&quot;</span><span class="p">,</span><span class="s2">&quot;e&quot;</span><span class="p">,</span><span class="s2">&quot;l&quot;</span><span class="p">,</span><span class="s2">&quot;l&quot;</span><span class="p">,</span><span class="s2">&quot;o&quot;</span><span class="p">]</span>
+</span><span id="__span-7-2"><a id="__codelineno-7-2" name="__codelineno-7-2" href="#__codelineno-7-2"></a><span class="n">Output</span><span class="p">:</span> <span class="p">[</span><span class="s2">&quot;o&quot;</span><span class="p">,</span><span class="s2">&quot;l&quot;</span><span class="p">,</span><span class="s2">&quot;l&quot;</span><span class="p">,</span><span class="s2">&quot;e&quot;</span><span class="p">,</span><span class="s2">&quot;h&quot;</span><span class="p">]</span>
+</span></code></pre></div></p>
+<div class="tabbed-set tabbed-alternate" data-tabs="8:3"><input checked="checked" id="__tabbed_8_1" name="__tabbed_8" type="radio" /><input id="__tabbed_8_2" name="__tabbed_8" type="radio" /><input id="__tabbed_8_3" name="__tabbed_8" type="radio" /><div class="tabbed-labels"><label for="__tabbed_8_1">Informació</label><label for="__tabbed_8_2">Pista</label><label for="__tabbed_8_3">Conceptes clau</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<ul>
+<li><strong>Dificultat</strong>: <img alt="🟢" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.1.0/assets/svg/1f7e2.svg" title=":green_circle:" /> Fàcil</li>
+<li><strong>Enllaç</strong>: <a href="https://leetcode.com/problems/reverse-string/">LeetCode</a></li>
+<li><strong>Solució disponible</strong>: <img alt="✅" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.1.0/assets/svg/2705.svg" title=":white_check_mark:" /> Sí</li>
+</ul>
+</div>
+<div class="tabbed-block">
+<p>Usa dos pointers: un a l'inici i un al final. Intercanvia i mou els pointers cap al centre.</p>
+</div>
+<div class="tabbed-block">
+<ul>
+<li>Two pointers</li>
+<li>String manipulation</li>
+<li>In-place modification</li>
+</ul>
+</div>
+</div>
+</div>
+<hr />
+<h3 id="9-reverse-integer">9. Reverse Integer<a class="headerlink" href="#9-reverse-integer" title="Permanent link">&para;</a></h3>
+<div class="admonition question">
+<p class="admonition-title">Enunciat</p>
+<p>Inverteix els dígits d'un nombre enter.</p>
+</div>
+<p><strong>Exemple:</strong>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-8-1"><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a><span class="n">Input</span><span class="p">:</span> <span class="mi">123</span>
+</span><span id="__span-8-2"><a id="__codelineno-8-2" name="__codelineno-8-2" href="#__codelineno-8-2"></a><span class="n">Output</span><span class="p">:</span> <span class="mi">321</span>
+</span><span id="__span-8-3"><a id="__codelineno-8-3" name="__codelineno-8-3" href="#__codelineno-8-3"></a>
+</span><span id="__span-8-4"><a id="__codelineno-8-4" name="__codelineno-8-4" href="#__codelineno-8-4"></a><span class="n">Input</span><span class="p">:</span> <span class="o">-</span><span class="mi">123</span>
+</span><span id="__span-8-5"><a id="__codelineno-8-5" name="__codelineno-8-5" href="#__codelineno-8-5"></a><span class="n">Output</span><span class="p">:</span> <span class="o">-</span><span class="mi">321</span>
+</span></code></pre></div></p>
+<div class="tabbed-set tabbed-alternate" data-tabs="9:3"><input checked="checked" id="__tabbed_9_1" name="__tabbed_9" type="radio" /><input id="__tabbed_9_2" name="__tabbed_9" type="radio" /><input id="__tabbed_9_3" name="__tabbed_9" type="radio" /><div class="tabbed-labels"><label for="__tabbed_9_1">Informació</label><label for="__tabbed_9_2">Pista</label><label for="__tabbed_9_3">Conceptes clau</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<ul>
+<li><strong>Dificultat</strong>: <img alt="🟢" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.1.0/assets/svg/1f7e2.svg" title=":green_circle:" /> Fàcil</li>
+<li><strong>Enllaç</strong>: <a href="https://leetcode.com/problems/reverse-integer/">LeetCode</a></li>
+<li><strong>Solució disponible</strong>: <img alt="✅" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.1.0/assets/svg/2705.svg" title=":white_check_mark:" /> Sí</li>
+</ul>
+</div>
+<div class="tabbed-block">
+<p>Usa operacions de mòdul (%) i divisió entera (//) per extreure dígits.</p>
+</div>
+<div class="tabbed-block">
+<ul>
+<li>Operacions matemàtiques</li>
+<li>Mòdul i divisió</li>
+<li>Overflow handling</li>
+</ul>
+</div>
+</div>
+</div>
+<hr />
+<h3 id="10-valid-palindrome">10. Valid Palindrome<a class="headerlink" href="#10-valid-palindrome" title="Permanent link">&para;</a></h3>
+<div class="admonition question">
+<p class="admonition-title">Enunciat</p>
+<p>Determina si una cadena és un palíndrom (ignorant majúscules i caràcters especials).</p>
+</div>
+<p><strong>Exemple:</strong>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-9-1"><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a><span class="n">Input</span><span class="p">:</span> <span class="s2">&quot;A man, a plan, a canal: Panama&quot;</span>
+</span><span id="__span-9-2"><a id="__codelineno-9-2" name="__codelineno-9-2" href="#__codelineno-9-2"></a><span class="n">Output</span><span class="p">:</span> <span class="n">true</span>
+</span></code></pre></div></p>
+<div class="tabbed-set tabbed-alternate" data-tabs="10:3"><input checked="checked" id="__tabbed_10_1" name="__tabbed_10" type="radio" /><input id="__tabbed_10_2" name="__tabbed_10" type="radio" /><input id="__tabbed_10_3" name="__tabbed_10" type="radio" /><div class="tabbed-labels"><label for="__tabbed_10_1">Informació</label><label for="__tabbed_10_2">Pista</label><label for="__tabbed_10_3">Conceptes clau</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<ul>
+<li><strong>Dificultat</strong>: <img alt="🟢" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.1.0/assets/svg/1f7e2.svg" title=":green_circle:" /> Fàcil</li>
+<li><strong>Enllaç</strong>: <a href="https://leetcode.com/problems/valid-palindrome/">LeetCode</a></li>
+<li><strong>Solució disponible</strong>: <img alt="✅" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.1.0/assets/svg/2705.svg" title=":white_check_mark:" /> Sí</li>
+</ul>
+</div>
+<div class="tabbed-block">
+<p>Neteja la string primer (només alfanumèrics, lowercase) i usa two pointers.</p>
+</div>
+<div class="tabbed-block">
+<ul>
+<li>String processing</li>
+<li>Two pointers</li>
+<li>Character validation</li>
+</ul>
+</div>
+</div>
+</div>
+<hr />
+<h3 id="11-valid-anagram">11. Valid Anagram<a class="headerlink" href="#11-valid-anagram" title="Permanent link">&para;</a></h3>
+<div class="admonition question">
+<p class="admonition-title">Enunciat</p>
+<p>Comprova si dues cadenes són anagrames.</p>
+</div>
+<p><strong>Exemple:</strong>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-10-1"><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a><span class="n">Input</span><span class="p">:</span> <span class="n">s</span> <span class="o">=</span> <span class="s2">&quot;anagram&quot;</span><span class="p">,</span> <span class="n">t</span> <span class="o">=</span> <span class="s2">&quot;nagaram&quot;</span>
+</span><span id="__span-10-2"><a id="__codelineno-10-2" name="__codelineno-10-2" href="#__codelineno-10-2"></a><span class="n">Output</span><span class="p">:</span> <span class="n">true</span>
+</span></code></pre></div></p>
+<div class="tabbed-set tabbed-alternate" data-tabs="11:3"><input checked="checked" id="__tabbed_11_1" name="__tabbed_11" type="radio" /><input id="__tabbed_11_2" name="__tabbed_11" type="radio" /><input id="__tabbed_11_3" name="__tabbed_11" type="radio" /><div class="tabbed-labels"><label for="__tabbed_11_1">Informació</label><label for="__tabbed_11_2">Pista</label><label for="__tabbed_11_3">Conceptes clau</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<ul>
+<li><strong>Dificultat</strong>: <img alt="🟢" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.1.0/assets/svg/1f7e2.svg" title=":green_circle:" /> Fàcil</li>
+<li><strong>Enllaç</strong>: <a href="https://leetcode.com/problems/valid-anagram/">LeetCode</a></li>
+<li><strong>Solució disponible</strong>: <img alt="✅" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.1.0/assets/svg/2705.svg" title=":white_check_mark:" /> Sí</li>
+</ul>
+</div>
+<div class="tabbed-block">
+<p>Ordena ambdues strings i compara, o usa un HashMap per comptar freqüències.</p>
+</div>
+<div class="tabbed-block">
+<ul>
+<li>Ordenació</li>
+<li>HashMap/Dictionary</li>
+<li>Comptatge de freqüències</li>
+</ul>
+</div>
+</div>
+</div>
+<hr />
+<h3 id="12-first-unique-character-in-a-string">12. First Unique Character in a String<a class="headerlink" href="#12-first-unique-character-in-a-string" title="Permanent link">&para;</a></h3>
+<div class="admonition question">
+<p class="admonition-title">Enunciat</p>
+<p>Troba l'índex del primer caràcter que només apareix una vegada.</p>
+</div>
+<p><strong>Exemple:</strong>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-11-1"><a id="__codelineno-11-1" name="__codelineno-11-1" href="#__codelineno-11-1"></a><span class="n">Input</span><span class="p">:</span> <span class="s2">&quot;leetcode&quot;</span>
+</span><span id="__span-11-2"><a id="__codelineno-11-2" name="__codelineno-11-2" href="#__codelineno-11-2"></a><span class="n">Output</span><span class="p">:</span> <span class="mi">0</span>  <span class="c1"># La &#39;l&#39; és el primer caràcter únic</span>
+</span></code></pre></div></p>
+<div class="tabbed-set tabbed-alternate" data-tabs="12:3"><input checked="checked" id="__tabbed_12_1" name="__tabbed_12" type="radio" /><input id="__tabbed_12_2" name="__tabbed_12" type="radio" /><input id="__tabbed_12_3" name="__tabbed_12" type="radio" /><div class="tabbed-labels"><label for="__tabbed_12_1">Informació</label><label for="__tabbed_12_2">Pista</label><label for="__tabbed_12_3">Conceptes clau</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<ul>
+<li><strong>Dificultat</strong>: <img alt="🟢" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.1.0/assets/svg/1f7e2.svg" title=":green_circle:" /> Fàcil</li>
+<li><strong>Enllaç</strong>: <a href="https://leetcode.com/problems/first-unique-character-in-a-string/">LeetCode</a></li>
+<li><strong>Solució disponible</strong>: <img alt="✅" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.1.0/assets/svg/2705.svg" title=":white_check_mark:" /> Sí</li>
+</ul>
+</div>
+<div class="tabbed-block">
+<p>Primer passa: compta freqüències. Segona passa: troba el primer amb freqüència 1.</p>
+</div>
+<div class="tabbed-block">
+<ul>
+<li>HashMap</li>
+<li>Dos passades</li>
+<li>Comptatge de freqüències</li>
+</ul>
+</div>
+</div>
+</div>
+<hr />
+<h3 id="13-fizz-buzz">13. Fizz Buzz<a class="headerlink" href="#13-fizz-buzz" title="Permanent link">&para;</a></h3>
+<div class="admonition question">
+<p class="admonition-title">Enunciat</p>
+<p>Retorna array de strings de l'1 al n:</p>
+<ul>
+<li>"Fizz" si múltiple de 3</li>
+<li>"Buzz" si múltiple de 5</li>
+<li>"FizzBuzz" si múltiple de 3 i 5</li>
+<li>El número com string en altres casos</li>
+</ul>
+</div>
+<p><strong>Exemple:</strong>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-12-1"><a id="__codelineno-12-1" name="__codelineno-12-1" href="#__codelineno-12-1"></a><span class="n">Input</span><span class="p">:</span> <span class="n">n</span> <span class="o">=</span> <span class="mi">5</span>
+</span><span id="__span-12-2"><a id="__codelineno-12-2" name="__codelineno-12-2" href="#__codelineno-12-2"></a><span class="n">Output</span><span class="p">:</span> <span class="p">[</span><span class="s2">&quot;1&quot;</span><span class="p">,</span><span class="s2">&quot;2&quot;</span><span class="p">,</span><span class="s2">&quot;Fizz&quot;</span><span class="p">,</span><span class="s2">&quot;4&quot;</span><span class="p">,</span><span class="s2">&quot;Buzz&quot;</span><span class="p">]</span>
+</span></code></pre></div></p>
+<div class="tabbed-set tabbed-alternate" data-tabs="13:3"><input checked="checked" id="__tabbed_13_1" name="__tabbed_13" type="radio" /><input id="__tabbed_13_2" name="__tabbed_13" type="radio" /><input id="__tabbed_13_3" name="__tabbed_13" type="radio" /><div class="tabbed-labels"><label for="__tabbed_13_1">Informació</label><label for="__tabbed_13_2">Pista</label><label for="__tabbed_13_3">Conceptes clau</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<ul>
+<li><strong>Dificultat</strong>: <img alt="🟢" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.1.0/assets/svg/1f7e2.svg" title=":green_circle:" /> Fàcil</li>
+<li><strong>Enllaç</strong>: <a href="https://leetcode.com/problems/fizz-buzz/">LeetCode</a></li>
+<li><strong>Solució disponible</strong>: <img alt="✅" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.1.0/assets/svg/2705.svg" title=":white_check_mark:" /> Sí</li>
+</ul>
+</div>
+<div class="tabbed-block">
+<p>Usa condicionals per comprovar divisibilitat. Atenció a l'ordre: comprova 15 abans de 3 i 5.</p>
+</div>
+<div class="tabbed-block">
+<ul>
+<li>Condicionals</li>
+<li>Mòdul</li>
+<li>Bucles</li>
+</ul>
+</div>
+</div>
+</div>
+<hr />
+<h3 id="14-reverse-words-in-a-string-iii">14. Reverse Words in a String III<a class="headerlink" href="#14-reverse-words-in-a-string-iii" title="Permanent link">&para;</a></h3>
+<div class="admonition question">
+<p class="admonition-title">Enunciat</p>
+<p>Inverteix cada paraula en una frase però manté l'ordre de les paraules.</p>
+</div>
+<p><strong>Exemple:</strong>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-13-1"><a id="__codelineno-13-1" name="__codelineno-13-1" href="#__codelineno-13-1"></a><span class="n">Input</span><span class="p">:</span> <span class="s2">&quot;Let&#39;s take LeetCode contest&quot;</span>
+</span><span id="__span-13-2"><a id="__codelineno-13-2" name="__codelineno-13-2" href="#__codelineno-13-2"></a><span class="n">Output</span><span class="p">:</span> <span class="s2">&quot;s&#39;teL ekat edoCteeL tsetnoc&quot;</span>
+</span></code></pre></div></p>
+<div class="tabbed-set tabbed-alternate" data-tabs="14:3"><input checked="checked" id="__tabbed_14_1" name="__tabbed_14" type="radio" /><input id="__tabbed_14_2" name="__tabbed_14" type="radio" /><input id="__tabbed_14_3" name="__tabbed_14" type="radio" /><div class="tabbed-labels"><label for="__tabbed_14_1">Informació</label><label for="__tabbed_14_2">Pista</label><label for="__tabbed_14_3">Conceptes clau</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<ul>
+<li><strong>Dificultat</strong>: <img alt="🟢" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.1.0/assets/svg/1f7e2.svg" title=":green_circle:" /> Fàcil</li>
+<li><strong>Enllaç</strong>: <a href="https://leetcode.com/problems/reverse-words-in-a-string-iii/">LeetCode</a></li>
+<li><strong>Solució disponible</strong>: <img alt="✅" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.1.0/assets/svg/2705.svg" title=":white_check_mark:" /> Sí</li>
+</ul>
+</div>
+<div class="tabbed-block">
+<p>Divideix la string en paraules, inverteix cada paraula, i torna a ajuntar.</p>
+</div>
+<div class="tabbed-block">
+<ul>
+<li>String split/join</li>
+<li>String reversal</li>
+<li>Arrays de strings</li>
+</ul>
+</div>
+</div>
+</div>
+<hr />
+<h2 id="bucles-i-logica-basica">🔄 Bucles i Lògica Bàsica<a class="headerlink" href="#bucles-i-logica-basica" title="Permanent link">&para;</a></h2>
+<h3 id="15-palindrome-number">15. Palindrome Number<a class="headerlink" href="#15-palindrome-number" title="Permanent link">&para;</a></h3>
+<div class="admonition question">
+<p class="admonition-title">Enunciat</p>
+<p>Determina si un nombre enter és palíndrom (sense convertir a string).</p>
+</div>
+<p><strong>Exemple:</strong>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-14-1"><a id="__codelineno-14-1" name="__codelineno-14-1" href="#__codelineno-14-1"></a><span class="n">Input</span><span class="p">:</span> <span class="mi">121</span>
+</span><span id="__span-14-2"><a id="__codelineno-14-2" name="__codelineno-14-2" href="#__codelineno-14-2"></a><span class="n">Output</span><span class="p">:</span> <span class="n">true</span>
+</span><span id="__span-14-3"><a id="__codelineno-14-3" name="__codelineno-14-3" href="#__codelineno-14-3"></a>
+</span><span id="__span-14-4"><a id="__codelineno-14-4" name="__codelineno-14-4" href="#__codelineno-14-4"></a><span class="n">Input</span><span class="p">:</span> <span class="o">-</span><span class="mi">121</span>
+</span><span id="__span-14-5"><a id="__codelineno-14-5" name="__codelineno-14-5" href="#__codelineno-14-5"></a><span class="n">Output</span><span class="p">:</span> <span class="n">false</span>
+</span></code></pre></div></p>
+<div class="tabbed-set tabbed-alternate" data-tabs="15:3"><input checked="checked" id="__tabbed_15_1" name="__tabbed_15" type="radio" /><input id="__tabbed_15_2" name="__tabbed_15" type="radio" /><input id="__tabbed_15_3" name="__tabbed_15" type="radio" /><div class="tabbed-labels"><label for="__tabbed_15_1">Informació</label><label for="__tabbed_15_2">Pista</label><label for="__tabbed_15_3">Conceptes clau</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<ul>
+<li><strong>Dificultat</strong>: <img alt="🟢" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.1.0/assets/svg/1f7e2.svg" title=":green_circle:" /> Fàcil</li>
+<li><strong>Enllaç</strong>: <a href="https://leetcode.com/problems/palindrome-number/">LeetCode</a></li>
+<li><strong>Solució disponible</strong>: <img alt="✅" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.1.0/assets/svg/2705.svg" title=":white_check_mark:" /> Sí</li>
+</ul>
+</div>
+<div class="tabbed-block">
+<p>Inverteix el número matemàticament (sense string) i compara.</p>
+</div>
+<div class="tabbed-block">
+<ul>
+<li>Operacions matemàtiques</li>
+<li>Bucles</li>
+<li>Edge cases (negatius)</li>
+</ul>
+</div>
+</div>
+</div>
+<hr />
+<h3 id="16-plus-one">16. Plus One<a class="headerlink" href="#16-plus-one" title="Permanent link">&para;</a></h3>
+<div class="admonition question">
+<p class="admonition-title">Enunciat</p>
+<p>Donada una array que representa un nombre (cada element és un dígit), suma 1.</p>
+</div>
+<p><strong>Exemple:</strong>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-15-1"><a id="__codelineno-15-1" name="__codelineno-15-1" href="#__codelineno-15-1"></a><span class="n">Input</span><span class="p">:</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">]</span>
+</span><span id="__span-15-2"><a id="__codelineno-15-2" name="__codelineno-15-2" href="#__codelineno-15-2"></a><span class="n">Output</span><span class="p">:</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">4</span><span class="p">]</span>
+</span><span id="__span-15-3"><a id="__codelineno-15-3" name="__codelineno-15-3" href="#__codelineno-15-3"></a>
+</span><span id="__span-15-4"><a id="__codelineno-15-4" name="__codelineno-15-4" href="#__codelineno-15-4"></a><span class="n">Input</span><span class="p">:</span> <span class="p">[</span><span class="mi">9</span><span class="p">,</span><span class="mi">9</span><span class="p">]</span>
+</span><span id="__span-15-5"><a id="__codelineno-15-5" name="__codelineno-15-5" href="#__codelineno-15-5"></a><span class="n">Output</span><span class="p">:</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">]</span>
+</span></code></pre></div></p>
+<div class="tabbed-set tabbed-alternate" data-tabs="16:3"><input checked="checked" id="__tabbed_16_1" name="__tabbed_16" type="radio" /><input id="__tabbed_16_2" name="__tabbed_16" type="radio" /><input id="__tabbed_16_3" name="__tabbed_16" type="radio" /><div class="tabbed-labels"><label for="__tabbed_16_1">Informació</label><label for="__tabbed_16_2">Pista</label><label for="__tabbed_16_3">Conceptes clau</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<ul>
+<li><strong>Dificultat</strong>: <img alt="🟢" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.1.0/assets/svg/1f7e2.svg" title=":green_circle:" /> Fàcil</li>
+<li><strong>Enllaç</strong>: <a href="https://leetcode.com/problems/plus-one/">LeetCode</a></li>
+<li><strong>Solució disponible</strong>: <img alt="✅" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.1.0/assets/svg/2705.svg" title=":white_check_mark:" /> Sí</li>
+</ul>
+</div>
+<div class="tabbed-block">
+<p>Comença pel final. Si el dígit és 9, posa'l a 0 i continua (carry). Sinó, suma 1 i retorna.</p>
+</div>
+<div class="tabbed-block">
+<ul>
+<li>Carry en suma</li>
+<li>Bucles inversos</li>
+<li>Edge cases</li>
+</ul>
+</div>
+</div>
+</div>
+<hr />
+<h3 id="17-single-number">17. Single Number<a class="headerlink" href="#17-single-number" title="Permanent link">&para;</a></h3>
+<div class="admonition question">
+<p class="admonition-title">Enunciat</p>
+<p>En una array on cada element apareix dues vegades excepte un, troba l'element únic.</p>
+</div>
+<p><strong>Exemple:</strong>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-16-1"><a id="__codelineno-16-1" name="__codelineno-16-1" href="#__codelineno-16-1"></a><span class="n">Input</span><span class="p">:</span> <span class="p">[</span><span class="mi">2</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">1</span><span class="p">]</span>
+</span><span id="__span-16-2"><a id="__codelineno-16-2" name="__codelineno-16-2" href="#__codelineno-16-2"></a><span class="n">Output</span><span class="p">:</span> <span class="mi">1</span>
+</span></code></pre></div></p>
+<div class="tabbed-set tabbed-alternate" data-tabs="17:3"><input checked="checked" id="__tabbed_17_1" name="__tabbed_17" type="radio" /><input id="__tabbed_17_2" name="__tabbed_17" type="radio" /><input id="__tabbed_17_3" name="__tabbed_17" type="radio" /><div class="tabbed-labels"><label for="__tabbed_17_1">Informació</label><label for="__tabbed_17_2">Pista</label><label for="__tabbed_17_3">Conceptes clau</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<ul>
+<li><strong>Dificultat</strong>: <img alt="🟢" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.1.0/assets/svg/1f7e2.svg" title=":green_circle:" /> Fàcil</li>
+<li><strong>Enllaç</strong>: <a href="https://leetcode.com/problems/single-number/">LeetCode</a></li>
+<li><strong>Solució disponible</strong>: <img alt="✅" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.1.0/assets/svg/2705.svg" title=":white_check_mark:" /> Sí</li>
+</ul>
+</div>
+<div class="tabbed-block">
+<p>Usa l'operació XOR (^). La propietat clau: a ^ a = 0, i a ^ 0 = a.</p>
+</div>
+<div class="tabbed-block">
+<ul>
+<li>Bit manipulation</li>
+<li>XOR operation</li>
+<li>Propietats matemàtiques</li>
+</ul>
+</div>
+</div>
+</div>
+<hr />
+<h3 id="18-missing-number">18. Missing Number<a class="headerlink" href="#18-missing-number" title="Permanent link">&para;</a></h3>
+<div class="admonition question">
+<p class="admonition-title">Enunciat</p>
+<p>Donada una array amb n nombres de 0 a n, troba el nombre que falta.</p>
+</div>
+<p><strong>Exemple:</strong>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-17-1"><a id="__codelineno-17-1" name="__codelineno-17-1" href="#__codelineno-17-1"></a><span class="n">Input</span><span class="p">:</span> <span class="p">[</span><span class="mi">3</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">]</span>
+</span><span id="__span-17-2"><a id="__codelineno-17-2" name="__codelineno-17-2" href="#__codelineno-17-2"></a><span class="n">Output</span><span class="p">:</span> <span class="mi">2</span>
+</span></code></pre></div></p>
+<div class="tabbed-set tabbed-alternate" data-tabs="18:3"><input checked="checked" id="__tabbed_18_1" name="__tabbed_18" type="radio" /><input id="__tabbed_18_2" name="__tabbed_18" type="radio" /><input id="__tabbed_18_3" name="__tabbed_18" type="radio" /><div class="tabbed-labels"><label for="__tabbed_18_1">Informació</label><label for="__tabbed_18_2">Pista</label><label for="__tabbed_18_3">Conceptes clau</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<ul>
+<li><strong>Dificultat</strong>: <img alt="🟢" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.1.0/assets/svg/1f7e2.svg" title=":green_circle:" /> Fàcil</li>
+<li><strong>Enllaç</strong>: <a href="https://leetcode.com/problems/missing-number/">LeetCode</a></li>
+<li><strong>Solució disponible</strong>: <img alt="✅" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.1.0/assets/svg/2705.svg" title=":white_check_mark:" /> Sí</li>
+</ul>
+</div>
+<div class="tabbed-block">
+<p>Suma esperada (0+1+2+...+n) menys la suma actual = nombre que falta.</p>
+</div>
+<div class="tabbed-block">
+<ul>
+<li>Fórmula de Gauss</li>
+<li>Suma d'arrays</li>
+<li>Propietats matemàtiques</li>
+</ul>
+</div>
+</div>
+</div>
+<hr />
+<h3 id="19-majority-element">19. Majority Element<a class="headerlink" href="#19-majority-element" title="Permanent link">&para;</a></h3>
+<div class="admonition question">
+<p class="admonition-title">Enunciat</p>
+<p>Troba l'element que apareix més de n/2 vegades en una array.</p>
+</div>
+<p><strong>Exemple:</strong>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-18-1"><a id="__codelineno-18-1" name="__codelineno-18-1" href="#__codelineno-18-1"></a><span class="n">Input</span><span class="p">:</span> <span class="p">[</span><span class="mi">3</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">]</span>
+</span><span id="__span-18-2"><a id="__codelineno-18-2" name="__codelineno-18-2" href="#__codelineno-18-2"></a><span class="n">Output</span><span class="p">:</span> <span class="mi">3</span>
+</span></code></pre></div></p>
+<div class="tabbed-set tabbed-alternate" data-tabs="19:3"><input checked="checked" id="__tabbed_19_1" name="__tabbed_19" type="radio" /><input id="__tabbed_19_2" name="__tabbed_19" type="radio" /><input id="__tabbed_19_3" name="__tabbed_19" type="radio" /><div class="tabbed-labels"><label for="__tabbed_19_1">Informació</label><label for="__tabbed_19_2">Pista</label><label for="__tabbed_19_3">Conceptes clau</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<ul>
+<li><strong>Dificultat</strong>: <img alt="🟢" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.1.0/assets/svg/1f7e2.svg" title=":green_circle:" /> Fàcil</li>
+<li><strong>Enllaç</strong>: <a href="https://leetcode.com/problems/majority-element/">LeetCode</a></li>
+<li><strong>Solució disponible</strong>: <img alt="✅" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.1.0/assets/svg/2705.svg" title=":white_check_mark:" /> Sí</li>
+</ul>
+</div>
+<div class="tabbed-block">
+<p>Solució simple: ordena i agafa l'element del mig. Solució òptima: Boyer-Moore Voting Algorithm.</p>
+</div>
+<div class="tabbed-block">
+<ul>
+<li>Ordenació</li>
+<li>HashMap</li>
+<li>Boyer-Moore algorithm</li>
+</ul>
+</div>
+</div>
+</div>
+<hr />
+<h3 id="20-add-binary">20. Add Binary<a class="headerlink" href="#20-add-binary" title="Permanent link">&para;</a></h3>
+<div class="admonition question">
+<p class="admonition-title">Enunciat</p>
+<p>Suma dos nombres binaris (representats com strings).</p>
+</div>
+<p><strong>Exemple:</strong>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-19-1"><a id="__codelineno-19-1" name="__codelineno-19-1" href="#__codelineno-19-1"></a><span class="n">Input</span><span class="p">:</span> <span class="n">a</span> <span class="o">=</span> <span class="s2">&quot;11&quot;</span><span class="p">,</span> <span class="n">b</span> <span class="o">=</span> <span class="s2">&quot;1&quot;</span>
+</span><span id="__span-19-2"><a id="__codelineno-19-2" name="__codelineno-19-2" href="#__codelineno-19-2"></a><span class="n">Output</span><span class="p">:</span> <span class="s2">&quot;100&quot;</span>
+</span></code></pre></div></p>
+<div class="tabbed-set tabbed-alternate" data-tabs="20:3"><input checked="checked" id="__tabbed_20_1" name="__tabbed_20" type="radio" /><input id="__tabbed_20_2" name="__tabbed_20" type="radio" /><input id="__tabbed_20_3" name="__tabbed_20" type="radio" /><div class="tabbed-labels"><label for="__tabbed_20_1">Informació</label><label for="__tabbed_20_2">Pista</label><label for="__tabbed_20_3">Conceptes clau</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<ul>
+<li><strong>Dificultat</strong>: <img alt="🟢" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.1.0/assets/svg/1f7e2.svg" title=":green_circle:" /> Fàcil</li>
+<li><strong>Enllaç</strong>: <a href="https://leetcode.com/problems/add-binary/">LeetCode</a></li>
+<li><strong>Solució disponible</strong>: <img alt="✅" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.1.0/assets/svg/2705.svg" title=":white_check_mark:" /> Sí</li>
+</ul>
+</div>
+<div class="tabbed-block">
+<p>Recorre des del final, suma bit a bit amb carry, com la suma manual.</p>
+</div>
+<div class="tabbed-block">
+<ul>
+<li>String manipulation</li>
+<li>Carry en suma</li>
+<li>Bucles</li>
+</ul>
+</div>
+</div>
+</div>
+<hr />
+<h2 id="cerca-i-comparacio-simple">🔍 Cerca i Comparació Simple<a class="headerlink" href="#cerca-i-comparacio-simple" title="Permanent link">&para;</a></h2>
+<h3 id="21-search-insert-position">21. Search Insert Position<a class="headerlink" href="#21-search-insert-position" title="Permanent link">&para;</a></h3>
+<div class="admonition question">
+<p class="admonition-title">Enunciat</p>
+<p>Troba la posició on s'hauria d'inserir un valor en una array ordenada.</p>
+</div>
+<p><strong>Exemple:</strong>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-20-1"><a id="__codelineno-20-1" name="__codelineno-20-1" href="#__codelineno-20-1"></a><span class="n">Input</span><span class="p">:</span> <span class="n">nums</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">5</span><span class="p">,</span><span class="mi">6</span><span class="p">],</span> <span class="n">target</span> <span class="o">=</span> <span class="mi">5</span>
+</span><span id="__span-20-2"><a id="__codelineno-20-2" name="__codelineno-20-2" href="#__codelineno-20-2"></a><span class="n">Output</span><span class="p">:</span> <span class="mi">2</span>
+</span></code></pre></div></p>
+<div class="tabbed-set tabbed-alternate" data-tabs="21:3"><input checked="checked" id="__tabbed_21_1" name="__tabbed_21" type="radio" /><input id="__tabbed_21_2" name="__tabbed_21" type="radio" /><input id="__tabbed_21_3" name="__tabbed_21" type="radio" /><div class="tabbed-labels"><label for="__tabbed_21_1">Informació</label><label for="__tabbed_21_2">Pista</label><label for="__tabbed_21_3">Conceptes clau</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<ul>
+<li><strong>Dificultat</strong>: <img alt="🟢" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.1.0/assets/svg/1f7e2.svg" title=":green_circle:" /> Fàcil</li>
+<li><strong>Enllaç</strong>: <a href="https://leetcode.com/problems/search-insert-position/">LeetCode</a></li>
+<li><strong>Solució disponible</strong>: <img alt="✅" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.1.0/assets/svg/2705.svg" title=":white_check_mark:" /> Sí</li>
+</ul>
+</div>
+<div class="tabbed-block">
+<p>Cerca binària simple. Si no el trobes, <code>left</code> serà la posició d'inserció.</p>
+</div>
+<div class="tabbed-block">
+<ul>
+<li>Binary Search</li>
+<li>Arrays ordenats</li>
+<li>Índexs</li>
+</ul>
+</div>
+</div>
+</div>
+<hr />
+<h3 id="22-two-sum">22. Two Sum<a class="headerlink" href="#22-two-sum" title="Permanent link">&para;</a></h3>
+<div class="admonition question">
+<p class="admonition-title">Enunciat</p>
+<p>Troba dos índexs que sumen un valor objectiu.</p>
+</div>
+<p><strong>Exemple:</strong>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-21-1"><a id="__codelineno-21-1" name="__codelineno-21-1" href="#__codelineno-21-1"></a><span class="n">Input</span><span class="p">:</span> <span class="n">nums</span> <span class="o">=</span> <span class="p">[</span><span class="mi">2</span><span class="p">,</span><span class="mi">7</span><span class="p">,</span><span class="mi">11</span><span class="p">,</span><span class="mi">15</span><span class="p">],</span> <span class="n">target</span> <span class="o">=</span> <span class="mi">9</span>
+</span><span id="__span-21-2"><a id="__codelineno-21-2" name="__codelineno-21-2" href="#__codelineno-21-2"></a><span class="n">Output</span><span class="p">:</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">]</span>  <span class="c1"># nums[0] + nums[1] = 2 + 7 = 9</span>
+</span></code></pre></div></p>
+<div class="tabbed-set tabbed-alternate" data-tabs="22:3"><input checked="checked" id="__tabbed_22_1" name="__tabbed_22" type="radio" /><input id="__tabbed_22_2" name="__tabbed_22" type="radio" /><input id="__tabbed_22_3" name="__tabbed_22" type="radio" /><div class="tabbed-labels"><label for="__tabbed_22_1">Informació</label><label for="__tabbed_22_2">Pista</label><label for="__tabbed_22_3">Conceptes clau</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<ul>
+<li><strong>Dificultat</strong>: <img alt="🟢" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.1.0/assets/svg/1f7e2.svg" title=":green_circle:" /> Fàcil</li>
+<li><strong>Enllaç</strong>: <a href="https://leetcode.com/problems/two-sum/">LeetCode</a></li>
+<li><strong>Solució disponible</strong>: <img alt="✅" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.1.0/assets/svg/2705.svg" title=":white_check_mark:" /> Sí</li>
+</ul>
+</div>
+<div class="tabbed-block">
+<p>Usa un HashMap. Per cada element, comprova si (target - element) ja està al mapa.</p>
+</div>
+<div class="tabbed-block">
+<ul>
+<li>HashMap/Dictionary</li>
+<li>Complement search</li>
+<li>O(n) time complexity</li>
+</ul>
+</div>
+</div>
+</div>
+<hr />
+<h3 id="23-best-time-to-buy-and-sell-stock">23. Best Time to Buy and Sell Stock<a class="headerlink" href="#23-best-time-to-buy-and-sell-stock" title="Permanent link">&para;</a></h3>
+<div class="admonition question">
+<p class="admonition-title">Enunciat</p>
+<p>Troba el màxim benefici comprant i venent una acció una vegada.</p>
+</div>
+<p><strong>Exemple:</strong>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-22-1"><a id="__codelineno-22-1" name="__codelineno-22-1" href="#__codelineno-22-1"></a><span class="n">Input</span><span class="p">:</span> <span class="p">[</span><span class="mi">7</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">5</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">6</span><span class="p">,</span><span class="mi">4</span><span class="p">]</span>
+</span><span id="__span-22-2"><a id="__codelineno-22-2" name="__codelineno-22-2" href="#__codelineno-22-2"></a><span class="n">Output</span><span class="p">:</span> <span class="mi">5</span>  <span class="c1"># Compra a 1, ven a 6</span>
+</span></code></pre></div></p>
+<div class="tabbed-set tabbed-alternate" data-tabs="23:3"><input checked="checked" id="__tabbed_23_1" name="__tabbed_23" type="radio" /><input id="__tabbed_23_2" name="__tabbed_23" type="radio" /><input id="__tabbed_23_3" name="__tabbed_23" type="radio" /><div class="tabbed-labels"><label for="__tabbed_23_1">Informació</label><label for="__tabbed_23_2">Pista</label><label for="__tabbed_23_3">Conceptes clau</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<ul>
+<li><strong>Dificultat</strong>: <img alt="🟢" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.1.0/assets/svg/1f7e2.svg" title=":green_circle:" /> Fàcil</li>
+<li><strong>Enllaç</strong>: <a href="https://leetcode.com/problems/best-time-to-buy-and-sell-stock/">LeetCode</a></li>
+<li><strong>Solució disponible</strong>: <img alt="✅" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.1.0/assets/svg/2705.svg" title=":white_check_mark:" /> Sí</li>
+</ul>
+</div>
+<div class="tabbed-block">
+<p>Mantén el preu mínim vist fins ara i el màxim benefici possible.</p>
+</div>
+<div class="tabbed-block">
+<ul>
+<li>Greedy approach</li>
+<li>Variables de seguiment</li>
+<li>Una passada</li>
+</ul>
+</div>
+</div>
+</div>
+<hr />
+<h3 id="24-find-the-difference">24. Find the Difference<a class="headerlink" href="#24-find-the-difference" title="Permanent link">&para;</a></h3>
+<div class="admonition question">
+<p class="admonition-title">Enunciat</p>
+<p>Donades dues strings <code>s</code> i <code>t</code> on <code>t</code> és <code>s</code> amb un caràcter extra afegit, troba el caràcter extra.</p>
+</div>
+<p><strong>Exemple:</strong>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-23-1"><a id="__codelineno-23-1" name="__codelineno-23-1" href="#__codelineno-23-1"></a><span class="n">Input</span><span class="p">:</span> <span class="n">s</span> <span class="o">=</span> <span class="s2">&quot;abcd&quot;</span><span class="p">,</span> <span class="n">t</span> <span class="o">=</span> <span class="s2">&quot;abcde&quot;</span>
+</span><span id="__span-23-2"><a id="__codelineno-23-2" name="__codelineno-23-2" href="#__codelineno-23-2"></a><span class="n">Output</span><span class="p">:</span> <span class="s2">&quot;e&quot;</span>
+</span></code></pre></div></p>
+<div class="tabbed-set tabbed-alternate" data-tabs="24:3"><input checked="checked" id="__tabbed_24_1" name="__tabbed_24" type="radio" /><input id="__tabbed_24_2" name="__tabbed_24" type="radio" /><input id="__tabbed_24_3" name="__tabbed_24" type="radio" /><div class="tabbed-labels"><label for="__tabbed_24_1">Informació</label><label for="__tabbed_24_2">Pista</label><label for="__tabbed_24_3">Conceptes clau</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<ul>
+<li><strong>Dificultat</strong>: <img alt="🟢" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.1.0/assets/svg/1f7e2.svg" title=":green_circle:" /> Fàcil</li>
+<li><strong>Enllaç</strong>: <a href="https://leetcode.com/problems/find-the-difference/">LeetCode</a></li>
+<li><strong>Solució disponible</strong>: <img alt="✅" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.1.0/assets/svg/2705.svg" title=":white_check_mark:" /> Sí</li>
+</ul>
+</div>
+<div class="tabbed-block">
+<p>XOR tots els caràcters, o suma els valors ASCII i resta.</p>
+</div>
+<div class="tabbed-block">
+<ul>
+<li>XOR</li>
+<li>ASCII values</li>
+<li>Character manipulation</li>
+</ul>
+</div>
+</div>
+</div>
+<hr />
+<h3 id="25-happy-number">25. Happy Number<a class="headerlink" href="#25-happy-number" title="Permanent link">&para;</a></h3>
+<div class="admonition question">
+<p class="admonition-title">Enunciat</p>
+<p>Un nombre és "feliç" si la suma dels quadrats dels seus dígits eventualment arriba a 1.</p>
+</div>
+<p><strong>Exemple:</strong>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-24-1"><a id="__codelineno-24-1" name="__codelineno-24-1" href="#__codelineno-24-1"></a><span class="n">Input</span><span class="p">:</span> <span class="mi">19</span>
+</span><span id="__span-24-2"><a id="__codelineno-24-2" name="__codelineno-24-2" href="#__codelineno-24-2"></a><span class="n">Output</span><span class="p">:</span> <span class="n">true</span>
+</span><span id="__span-24-3"><a id="__codelineno-24-3" name="__codelineno-24-3" href="#__codelineno-24-3"></a>
+</span><span id="__span-24-4"><a id="__codelineno-24-4" name="__codelineno-24-4" href="#__codelineno-24-4"></a><span class="n">Explicació</span><span class="p">:</span>
+</span><span id="__span-24-5"><a id="__codelineno-24-5" name="__codelineno-24-5" href="#__codelineno-24-5"></a><span class="mi">1</span><span class="err">²</span> <span class="o">+</span> <span class="mi">9</span><span class="err">²</span> <span class="o">=</span> <span class="mi">82</span>
+</span><span id="__span-24-6"><a id="__codelineno-24-6" name="__codelineno-24-6" href="#__codelineno-24-6"></a><span class="mi">8</span><span class="err">²</span> <span class="o">+</span> <span class="mi">2</span><span class="err">²</span> <span class="o">=</span> <span class="mi">68</span>
+</span><span id="__span-24-7"><a id="__codelineno-24-7" name="__codelineno-24-7" href="#__codelineno-24-7"></a><span class="mi">6</span><span class="err">²</span> <span class="o">+</span> <span class="mi">8</span><span class="err">²</span> <span class="o">=</span> <span class="mi">100</span>
+</span><span id="__span-24-8"><a id="__codelineno-24-8" name="__codelineno-24-8" href="#__codelineno-24-8"></a><span class="mi">1</span><span class="err">²</span> <span class="o">+</span> <span class="mi">0</span><span class="err">²</span> <span class="o">+</span> <span class="mi">0</span><span class="err">²</span> <span class="o">=</span> <span class="mi">1</span>
+</span></code></pre></div></p>
+<div class="tabbed-set tabbed-alternate" data-tabs="25:3"><input checked="checked" id="__tabbed_25_1" name="__tabbed_25" type="radio" /><input id="__tabbed_25_2" name="__tabbed_25" type="radio" /><input id="__tabbed_25_3" name="__tabbed_25" type="radio" /><div class="tabbed-labels"><label for="__tabbed_25_1">Informació</label><label for="__tabbed_25_2">Pista</label><label for="__tabbed_25_3">Conceptes clau</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<ul>
+<li><strong>Dificultat</strong>: <img alt="🟢" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.1.0/assets/svg/1f7e2.svg" title=":green_circle:" /> Fàcil</li>
+<li><strong>Enllaç</strong>: <a href="https://leetcode.com/problems/happy-number/">LeetCode</a></li>
+<li><strong>Solució disponible</strong>: <img alt="✅" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.1.0/assets/svg/2705.svg" title=":white_check_mark:" /> Sí</li>
+</ul>
+</div>
+<div class="tabbed-block">
+<p>Usa un Set per detectar cicles. Si entres en un cicle sense arribar a 1, no és feliç.</p>
+</div>
+<div class="tabbed-block">
+<ul>
+<li>Cycle detection</li>
+<li>HashSet</li>
+<li>Mathematical operations</li>
+</ul>
+</div>
+</div>
+</div>
+<hr />
+<h2 id="recursos-addicionals">📚 Recursos Addicionals<a class="headerlink" href="#recursos-addicionals" title="Permanent link">&para;</a></h2>
+<div class="admonition success">
+<p class="admonition-title">Plataformes Recomanades</p>
+<ul>
+<li><strong><a href="https://leetcode.com/">LeetCode</a></strong> - Filtra per "Easy" i temàtiques específiques</li>
+<li><strong><a href="https://www.hackerrank.com/">HackerRank</a></strong> - "Interview Preparation Kit"</li>
+<li><strong><a href="https://www.geeksforgeeks.org/">GeeksforGeeks</a></strong> - Articles amb explicacions detallades</li>
+<li><strong><a href="https://neetcode.io/">NeetCode</a></strong> - Vídeos explicatius en anglès</li>
+</ul>
+</div>
+<hr />
+<h2 id="pla-destudi-recomanat">🗓️ Pla d'Estudi Recomanat<a class="headerlink" href="#pla-destudi-recomanat" title="Permanent link">&para;</a></h2>
+<div class="admonition example">
+<p class="admonition-title">Calendari de 8 Setmanes</p>
+<div class="tabbed-set tabbed-alternate" data-tabs="26:4"><input checked="checked" id="__tabbed_26_1" name="__tabbed_26" type="radio" /><input id="__tabbed_26_2" name="__tabbed_26" type="radio" /><input id="__tabbed_26_3" name="__tabbed_26" type="radio" /><input id="__tabbed_26_4" name="__tabbed_26" type="radio" /><div class="tabbed-labels"><label for="__tabbed_26_1">Setmanes 1-2: Arrays</label><label for="__tabbed_26_2">Setmanes 3-4: Strings</label><label for="__tabbed_26_3">Setmanes 5-6: Bucles i Lògica</label><label for="__tabbed_26_4">Setmanes 7-8: Cerca Simple</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<p><strong>Problemes</strong>: #1 - #7<br />
+<strong>Objectiu</strong>: Dominar manipulació bàsica d'arrays<br />
+<strong>Conceptes</strong>: Two pointers, in-place operations</p>
+</div>
+<div class="tabbed-block">
+<p><strong>Problemes</strong>: #8 - #14<br />
+<strong>Objectiu</strong>: Operacions amb cadenes de text<br />
+<strong>Conceptes</strong>: String processing, reversals, anagrames</p>
+</div>
+<div class="tabbed-block">
+<p><strong>Problemes</strong>: #15 - #20<br />
+<strong>Objectiu</strong>: Lògica matemàtica i bucles<br />
+<strong>Conceptes</strong>: XOR, operacions matemàtiques, carry</p>
+</div>
+<div class="tabbed-block">
+<p><strong>Problemes</strong>: #21 - #25<br />
+<strong>Objectiu</strong>: Cerca i comparació<br />
+<strong>Conceptes</strong>: Binary search, HashMap, cycle detection</p>
+</div>
+</div>
+</div>
+</div>
+<hr />
+<h2 id="consells-per-a-lestudi">💡 Consells per a l'Estudi<a class="headerlink" href="#consells-per-a-lestudi" title="Permanent link">&para;</a></h2>
+<div class="admonition tip">
+<p class="admonition-title">Estratègia de Resolució</p>
+<ol>
+<li><strong>Llegeix l'enunciat amb atenció</strong> - Entén què demana exactament</li>
+<li><strong>Escriu exemples</strong> - Prova amb 2-3 casos diferents</li>
+<li><strong>Pensa abans de programar</strong> - Esbossa el pseudocodi</li>
+<li><strong>Implementa</strong> - Escriu el codi pas a pas</li>
+<li><strong>Prova</strong> - Comprova amb els exemples i edge cases</li>
+<li><strong>Optimitza</strong> - Hi ha una solució millor?</li>
+</ol>
+</div>
+<div class="admonition warning">
+<p class="admonition-title">Errors Comuns a Evitar</p>
+<ul>
+<li>❌ Mirar la solució massa aviat</li>
+<li>❌ No provar amb edge cases (arrays buides, un sol element, etc.)</li>
+<li>❌ No pensar en la complexitat temporal i espacial</li>
+<li>❌ Només practicar al ordinador (practica també en paper!)</li>
+</ul>
+</div>
+<div class="admonition info">
+<p class="admonition-title">Quan et quedis encallat</p>
+<ol>
+<li>Torna a llegir l'enunciat</li>
+<li>Prova amb un exemple més petit</li>
+<li>Pensa en força bruta primer, després optimitza</li>
+<li>Si portes &gt;30 minuts, mira una pista (no la solució completa)</li>
+<li>Si veus la solució, tanca-la i prova de nou l'endemà</li>
+</ol>
+</div>
+<hr />
+<h2 id="preparacio-per-a-entrevistes">🎯 Preparació per a Entrevistes<a class="headerlink" href="#preparacio-per-a-entrevistes" title="Permanent link">&para;</a></h2>
+<div class="admonition note">
+<p class="admonition-title">Durant l'Entrevista</p>
+<p><strong>Comunica't clarament:</strong></p>
+<ul>
+<li>Pensa en veu alta</li>
+<li>Explica el teu raonament</li>
+<li>Pregunta si tens dubtes</li>
+<li>Discuteix complexitat temporal/espacial</li>
+<li>Menciona alternatives</li>
+</ul>
+</div>
+<div class="admonition success">
+<p class="admonition-title">Bones Pràctiques</p>
+<p>✅ Escriu codi net i llegible<br />
+✅ Usa noms de variables descriptius<br />
+✅ Gestiona els edge cases<br />
+✅ Prova el teu codi amb exemples<br />
+✅ Mantén la calma i pensa amb claredat</p>
+</div>
+<hr />
+<h2 id="seguiment-del-progres">📊 Seguiment del Progrés<a class="headerlink" href="#seguiment-del-progres" title="Permanent link">&para;</a></h2>
+<div class="admonition example">
+<p class="admonition-title">Taula de Seguiment</p>
+<p>Pots crear una taula per fer seguiment del teu progrés:</p>
+<table>
+<thead>
+<tr>
+<th>#</th>
+<th>Problema</th>
+<th>1a Intent</th>
+<th>2n Intent</th>
+<th>Dominat</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>Remove Duplicates</td>
+<td>⬜</td>
+<td>⬜</td>
+<td>⬜</td>
+</tr>
+<tr>
+<td>2</td>
+<td>Move Zeroes</td>
+<td>⬜</td>
+<td>⬜</td>
+<td>⬜</td>
+</tr>
+<tr>
+<td>...</td>
+<td>...</td>
+<td>...</td>
+<td>...</td>
+<td>...</td>
+</tr>
+</tbody>
+</table>
+</div>
+<hr />
+<div class="admonition quote">
+<p class="admonition-title">Recorda</p>
+<p><em>"La pràctica consistent és més important que la intensitat esporàdica. Dedica temps cada dia, encara que siguin 30 minuts, i veuràs resultats!"</em></p>
+</div>
+<hr />
+<p><strong>Document creat per a estudiants de programació amb 6 mesos d'experiència</strong><br />
+<strong>Última actualització</strong>: 2025-11-15</p>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Back to top
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+    
+      
+      <nav class="md-footer__inner md-grid" aria-label="Footer" >
+        
+          
+          <a href="../02-prog-estructurada/setmana07/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Setmana 07">
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+            </div>
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Previous
+              </span>
+              <div class="md-ellipsis">
+                Setmana 07
+              </div>
+            </div>
+          </a>
+        
+        
+          
+          <a href="../05-poo/motivacio-poo/" class="md-footer__link md-footer__link--next" aria-label="Next: Motivació">
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Next
+              </span>
+              <div class="md-ellipsis">
+                Motivació
+              </div>
+            </div>
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11z"/></svg>
+            </div>
+          </a>
+        
+      </nav>
+    
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      Copyright &copy; 2025 - Curs de Git per a Estudiants
+    </div>
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      <script id="__config" type="application/json">{"base": "..", "features": ["navigation.tabs", "navigation.instant", "navigation.instant.prefetch", "navigation.tabs.sticky", "navigation.sections", "navigation.path", "navigation.indexes", "navigation.top", "navigation.footer", "navigation.tracking", "toc.integrate", "search.suggest", "search.highlight", "content.code.copy"], "search": "../assets/javascripts/workers/search.973d3a69.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.f55a23d4.min.js"></script>
+      
+        <script src="../javascripts/quiz.js"></script>
+      
+    
+  </body>
+</html>

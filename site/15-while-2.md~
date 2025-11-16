@@ -1,0 +1,968 @@
+# 🔄 Classe 15: Bucle WHILE (II)
+
+## 📋 Continguts
+
+- Validació d'entrada
+- Bucles amb condicions complexes
+- Combinació amb IF
+- Banderetes (flags)
+
+---
+
+## 🎯 Objectius d'aprenentatge
+
+Després d'aquesta classe seràs capaç de:
+
+- ✅ Validar entrada d'usuari amb WHILE
+- ✅ Usar condicions complexes en bucles
+- ✅ Combinar estructures IF i WHILE
+- ✅ Treballar amb banderetes (flags)
+
+---
+
+## 📖 Introducció
+
+En la classe anterior vam veure els fonaments del bucle WHILE. Ara aprendrem **tècniques avançades** que es fan servir constantment en programació real:
+
+- ✨ Assegurar que l'usuari introdueix dades vàlides
+- ✨ Condicions més complexes
+- ✨ Combinar decisions amb bucles
+- ✨ Usar variables booleanes per controlar el flux
+
+---
+
+## ✅ Validació d'entrada
+
+Un dels usos més comuns del WHILE és **assegurar que l'usuari introdueix dades correctes**.
+
+### Exemple 1: Nota entre 0 i 10
+
+```pseudocode
+ALGORISME ValidarNota
+VARIABLES
+    nota: REAL
+    
+INICI
+    ESCRIURE "Introdueix una nota (0-10):"
+    LLEGIR nota
+    
+    MENTRE nota < 0 OR nota > 10 FER
+        ESCRIURE "Error! La nota ha d'estar entre 0 i 10."
+        ESCRIURE "Torna a introduir-la:"
+        LLEGIR nota
+    FI_MENTRE
+    
+    ESCRIURE "Nota vàlida:", nota
+FI
+```
+
+### Exemple 2: Edat positiva
+
+```pseudocode
+ALGORISME ValidarEdat
+VARIABLES
+    edat: ENTER
+    
+INICI
+    ESCRIURE "Quina edat tens?"
+    LLEGIR edat
+    
+    MENTRE edat <= 0 OR edat > 120 FER
+        ESCRIURE "Edat no vàlida!"
+        ESCRIURE "Introdueix una edat real (1-120):"
+        LLEGIR edat
+    FI_MENTRE
+    
+    ESCRIURE "Tens", edat, "anys"
+FI
+```
+
+### Exemple 3: Opcions de menú
+
+```pseudocode
+ALGORISME MenuValidat
+VARIABLES
+    opcio: ENTER
+    
+INICI
+    ESCRIURE "=== MENÚ ==="
+    ESCRIURE "1. Jugar"
+    ESCRIURE "2. Opcions"
+    ESCRIURE "3. Sortir"
+    ESCRIURE "Tria una opció:"
+    LLEGIR opcio
+    
+    MENTRE opcio < 1 OR opcio > 3 FER
+        ESCRIURE "Opció no vàlida!"
+        ESCRIURE "Tria 1, 2 o 3:"
+        LLEGIR opcio
+    FI_MENTRE
+    
+    ESCRIURE "Has triat l'opció", opcio
+FI
+```
+
+### 💡 Patró de validació
+
+```pseudocode
+// 1. Demanar dada
+ESCRIURE "Missatge"
+LLEGIR variable
+
+// 2. Repetir mentre sigui invàlida
+MENTRE NOT (condició_de_validesa) FER
+    ESCRIURE "Error!"
+    ESCRIURE "Torna a intentar:"
+    LLEGIR variable
+FI_MENTRE
+
+// Ara la variable és vàlida
+```
+
+---
+
+## 🔗 Condicions complexes
+
+Podem usar operadors lògics per fer condicions més sofisticades.
+
+### Exemple 1: Múltiples condicions amb AND
+
+```pseudocode
+ALGORISME PasswordSegur
+VARIABLES
+    password: TEXT
+    longitud: ENTER
+    
+INICI
+    ESCRIURE "Crea una contrasenya:"
+    LLEGIR password
+    longitud ← LONGITUD(password)
+    
+    MENTRE longitud < 8 AND longitud > 20 FER
+        ESCRIURE "La contrasenya ha de tenir entre 8 i 20 caràcters"
+        ESCRIURE "Torna a intentar:"
+        LLEGIR password
+        longitud ← LONGITUD(password)
+    FI_MENTRE
+    
+    ESCRIURE "Contrasenya creada correctament!"
+FI
+```
+
+### Exemple 2: Múltiples condicions amb OR
+
+```pseudocode
+ALGORISME ValidarResposta
+VARIABLES
+    resposta: CARACTER
+    
+INICI
+    ESCRIURE "Vols continuar? (S/N)"
+    LLEGIR resposta
+    
+    MENTRE resposta ≠ 'S' AND resposta ≠ 'N' FER
+        ESCRIURE "Si us plau, respon S o N:"
+        LLEGIR resposta
+    FI_MENTRE
+    
+    SI resposta = 'S' LLAVORS
+        ESCRIURE "Continuem!"
+    SINO
+        ESCRIURE "Adéu!"
+    FI_SI
+FI
+```
+
+### Exemple 3: Condició negada
+
+```pseudocode
+ALGORISME CodiValid
+VARIABLES
+    codi: TEXT
+    valid: BOOLEAN
+    
+INICI
+    ESCRIURE "Introdueix el codi d'accés:"
+    LLEGIR codi
+    
+    valid ← VALIDAR_CODI(codi)  // Funció hipotètica
+    
+    MENTRE NOT valid FER
+        ESCRIURE "Codi incorrecte!"
+        ESCRIURE "Torna a intentar:"
+        LLEGIR codi
+        valid ← VALIDAR_CODI(codi)
+    FI_MENTRE
+    
+    ESCRIURE "Accés concedit"
+FI
+```
+
+---
+
+## 🔄 Combinació IF dins de WHILE
+
+Podem combinar decisions condicionals dins dels bucles.
+
+### Exemple 1: Comptar només els parells
+
+```pseudocode
+ALGORISME ComptaParells
+VARIABLES
+    numero: ENTER
+    comptador: ENTER
+    
+INICI
+    comptador ← 0
+    
+    ESCRIURE "Introdueix números (0 per acabar):"
+    LLEGIR numero
+    
+    MENTRE numero ≠ 0 FER
+        SI numero mod 2 = 0 LLAVORS
+            comptador ← comptador + 1
+        FI_SI
+        
+        LLEGIR numero
+    FI_MENTRE
+    
+    ESCRIURE "Has introduït", comptador, "números parells"
+FI
+```
+
+### Exemple 2: Trobar el màxim
+
+```pseudocode
+ALGORISME TrobarMaxim
+VARIABLES
+    numero, maxim: REAL
+    primer: BOOLEAN
+    
+INICI
+    primer ← CERT
+    
+    ESCRIURE "Introdueix números (0 per acabar):"
+    LLEGIR numero
+    
+    MENTRE numero ≠ 0 FER
+        SI primer LLAVORS
+            maxim ← numero
+            primer ← FALS
+        SINO
+            SI numero > maxim LLAVORS
+                maxim ← numero
+            FI_SI
+        FI_SI
+        
+        LLEGIR numero
+    FI_MENTRE
+    
+    SI NOT primer LLAVORS
+        ESCRIURE "El màxim és:", maxim
+    SINO
+        ESCRIURE "No s'han introduït números"
+    FI_SI
+FI
+```
+
+### Exemple 3: Classificar números
+
+```pseudocode
+ALGORISME ClassificarNumeros
+VARIABLES
+    numero: REAL
+    positius, negatius, zeros: ENTER
+    
+INICI
+    positius ← 0
+    negatius ← 0
+    zeros ← 0
+    
+    ESCRIURE "Introdueix 10 números:"
+    comptador ← 0
+    
+    MENTRE comptador < 10 FER
+        LLEGIR numero
+        
+        SI numero > 0 LLAVORS
+            positius ← positius + 1
+        SINO SI numero < 0 LLAVORS
+            negatius ← negatius + 1
+        SINO
+            zeros ← zeros + 1
+        FI_SI
+        
+        comptador ← comptador + 1
+    FI_MENTRE
+    
+    ESCRIURE "Positius:", positius
+    ESCRIURE "Negatius:", negatius
+    ESCRIURE "Zeros:", zeros
+FI
+```
+
+---
+
+## 🚩 Banderetes (Flags)
+
+Una **bandereta** o **flag** és una variable booleana que controla el flux del programa.
+
+### Exemple 1: Trobar un número
+
+```pseudocode
+ALGORISME TrobarNumero
+CONSTANTS
+    BUSCAT = 7
+    
+VARIABLES
+    numero: ENTER
+    trobat: BOOLEAN
+    
+INICI
+    trobat ← FALS
+    
+    ESCRIURE "Introdueix números (0 per acabar):"
+    LLEGIR numero
+    
+    MENTRE numero ≠ 0 AND NOT trobat FER
+        SI numero = BUSCAT LLAVORS
+            trobat ← CERT
+            ESCRIURE "Número trobat!"
+        FI_SI
+        
+        SI NOT trobat LLAVORS
+            LLEGIR numero
+        FI_SI
+    FI_MENTRE
+    
+    SI NOT trobat LLAVORS
+        ESCRIURE "Número no trobat"
+    FI_SI
+FI
+```
+
+### Exemple 2: Login amb intents limitats
+
+```pseudocode
+ALGORISME LoginSegur
+CONSTANTS
+    PASSWORD_CORRECTE = "1234"
+    MAX_INTENTS = 3
+    
+VARIABLES
+    password: TEXT
+    intents: ENTER
+    acces_concedit: BOOLEAN
+    
+INICI
+    intents ← 0
+    acces_concedit ← FALS
+    
+    MENTRE intents < MAX_INTENTS AND NOT acces_concedit FER
+        ESCRIURE "Introdueix la contrasenya:"
+        LLEGIR password
+        
+        SI password = PASSWORD_CORRECTE LLAVORS
+            acces_concedit ← CERT
+            ESCRIURE "Accés concedit!"
+        SINO
+            intents ← intents + 1
+            SI intents < MAX_INTENTS LLAVORS
+                ESCRIURE "Contrasenya incorrecta. Intents restants:", MAX_INTENTS - intents
+            FI_SI
+        FI_SI
+    FI_MENTRE
+    
+    SI NOT acces_concedit LLAVORS
+        ESCRIURE "Massa intents fallits. Compte bloquejat."
+    FI_SI
+FI
+```
+
+### Exemple 3: Validació múltiple
+
+```pseudocode
+ALGORISME ValidarUsuari
+VARIABLES
+    edat: ENTER
+    dni: TEXT
+    tot_valid: BOOLEAN
+    
+INICI
+    tot_valid ← FALS
+    
+    MENTRE NOT tot_valid FER
+        // Validar edat
+        ESCRIURE "Edat:"
+        LLEGIR edat
+        
+        MENTRE edat < 18 OR edat > 100 FER
+            ESCRIURE "Edat invàlida (18-100):"
+            LLEGIR edat
+        FI_MENTRE
+        
+        // Validar DNI
+        ESCRIURE "DNI (8 dígits):"
+        LLEGIR dni
+        
+        MENTRE LONGITUD(dni) ≠ 8 FER
+            ESCRIURE "DNI ha de tenir 8 dígits:"
+            LLEGIR dni
+        FI_MENTRE
+        
+        // Confirmar dades
+        ESCRIURE "Confirmes les dades? (S/N)"
+        LLEGIR confirmacio
+        
+        SI confirmacio = 'S' LLAVORS
+            tot_valid ← CERT
+        SINO
+            ESCRIURE "Tornem a començar..."
+        FI_SI
+    FI_MENTRE
+    
+    ESCRIURE "Usuari registrat correctament!"
+FI
+```
+
+### 💡 Avantatges dels flags
+
+1. **Claredat:** El codi és més llegible
+2. **Control:** Pots sortir del bucle des de múltiples llocs
+3. **Manteniment:** Més fàcil de modificar i debugar
+4. **Lògica:** Representa estats del programa de forma natural
+
+---
+
+## 🎨 Patrons comuns
+
+### Patró 1: Cerca amb èxit/fracàs
+
+```pseudocode
+trobat ← FALS
+índex ← 1
+
+MENTRE índex <= N AND NOT trobat FER
+    SI llista[índex] = element_buscat LLAVORS
+        trobat ← CERT
+    SINO
+        índex ← índex + 1
+    FI_SI
+FI_MENTRE
+
+SI trobat LLAVORS
+    ESCRIURE "Trobat a la posició", índex
+SINO
+    ESCRIURE "No trobat"
+FI_SI
+```
+
+### Patró 2: Processar fins a condició d'èxit
+
+```pseudocode
+continuar ← CERT
+
+MENTRE continuar FER
+    // Processar
+    ESCRIURE "Continuar? (S/N)"
+    LLEGIR resposta
+    
+    SI resposta = 'N' LLAVORS
+        continuar ← FALS
+    FI_SI
+FI_MENTRE
+```
+
+### Patró 3: Validació amb reintents
+
+```pseudocode
+dada_valida ← FALS
+intents ← 0
+
+MENTRE NOT dada_valida AND intents < MAX_INTENTS FER
+    LLEGIR dada
+    
+    SI VALIDAR(dada) LLAVORS
+        dada_valida ← CERT
+    SINO
+        intents ← intents + 1
+        ESCRIURE "Intent", intents, "de", MAX_INTENTS
+    FI_SI
+FI_MENTRE
+```
+
+---
+
+## 💡 Activitats Pràctiques
+
+### 🎯 Activitat 1: Què fa aquest codi?
+
+```pseudocode
+suma ← 0
+valid ← FALS
+
+MENTRE NOT valid FER
+    ESCRIURE "Número (positiu):"
+    LLEGIR num
+    
+    SI num > 0 LLAVORS
+        suma ← suma + num
+        valid ← CERT
+    SINO
+        ESCRIURE "Ha de ser positiu!"
+    FI_SI
+FI_MENTRE
+
+ESCRIURE suma
+```
+
+??? success "Solució"
+    Demana un número positiu a l'usuari i el valida. Si l'usuari introdueix un número negatiu o zero, torna a demanar-lo. Quan finalment introdueix un número positiu, mostra aquest número.
+    
+    És un exemple de **validació amb flag**.
+
+---
+
+### 🎯 Activitat 2: Completa el codi
+
+Completa per validar que el número està entre 1 i 100:
+
+```pseudocode
+ESCRIURE "Número (1-100):"
+LLEGIR n
+
+MENTRE ___________________ FER
+    ESCRIURE "Error! Torna a intentar:"
+    LLEGIR n
+FI_MENTRE
+```
+
+??? success "Solució"
+    ```pseudocode
+    MENTRE n < 1 OR n > 100 FER
+    ```
+    
+    O també:
+    ```pseudocode
+    MENTRE NOT (n >= 1 AND n <= 100) FER
+    ```
+
+---
+
+### 🎯 Activitat 3: Depura l'error
+
+Aquest codi té un problema. Quin?
+
+```pseudocode
+trobat ← FALS
+i ← 1
+
+MENTRE i <= 10 FER
+    LLEGIR num
+    SI num = 5 LLAVORS
+        trobat ← CERT
+    FI_SI
+    i ← i + 1
+FI_MENTRE
+```
+
+??? success "Solució"
+    **Problema:** El bucle sempre fa 10 iteracions, fins i tot després de trobar el 5.
+    
+    **Solució:** Afegir el flag a la condició:
+    ```pseudocode
+    trobat ← FALS
+    i ← 1
+    
+    MENTRE i <= 10 AND NOT trobat FER
+        LLEGIR num
+        SI num = 5 LLAVORS
+            trobat ← CERT
+        SINO
+            i ← i + 1
+        FI_SI
+    FI_MENTRE
+    ```
+
+---
+
+### 🎯 Activitat 4: Traça el bucle
+
+```pseudocode
+n ← 5
+trobat ← FALS
+
+MENTRE n > 0 AND NOT trobat FER
+    SI n mod 2 = 0 LLAVORS
+        trobat ← CERT
+    SINO
+        n ← n - 1
+    FI_SI
+FI_MENTRE
+
+ESCRIURE n
+```
+
+Quin valor es mostra?
+
+??? success "Solució"
+    **4**
+    
+    | Iteració | n | trobat | n mod 2 = 0 | Acció |
+    |----------|---|--------|-------------|-------|
+    | 1 | 5 | FALS | 5 mod 2 = 1 ✗ | n = 4 |
+    | 2 | 4 | FALS | 4 mod 2 = 0 ✓ | trobat = CERT |
+    | Fi | 4 | CERT | - | Surt del bucle |
+
+---
+
+## 💻 Exercicis de Programació
+
+### Exercici 1: Validar DNI
+
+Programa que demani un DNI i validi que té exactament 8 dígits.
+
+??? tip "Ajuda"
+    - Usa la funció LONGITUD() per comprovar
+    - Repeteix mentre la longitud no sigui 8
+    - Mostra missatges d'error apropiats
+
+??? success "Solució"
+    ```pseudocode
+    ALGORISME ValidarDNI
+    VARIABLES
+        dni: TEXT
+        longitud: ENTER
+        
+    INICI
+        ESCRIURE "Introdueix el teu DNI (8 dígits):"
+        LLEGIR dni
+        longitud ← LONGITUD(dni)
+        
+        MENTRE longitud ≠ 8 FER
+            SI longitud < 8 LLAVORS
+                ESCRIURE "Massa curt! Falten", 8 - longitud, "dígits"
+            SINO
+                ESCRIURE "Massa llarg! Sobren", longitud - 8, "dígits"
+            FI_SI
+            
+            ESCRIURE "Torna a introduir el DNI:"
+            LLEGIR dni
+            longitud ← LONGITUD(dni)
+        FI_MENTRE
+        
+        ESCRIURE "DNI vàlid:", dni
+    FI
+    ```
+
+---
+
+### Exercici 2: Calculadora amb validació
+
+Calculadora simple que demana dos números i una operació (+, -, *, /). Valida l'operació i la divisió per zero.
+
+??? tip "Ajuda"
+    - Valida que l'operació sigui +, -, * o /
+    - Si és divisió, valida que el segon número no sigui 0
+    - Usa flags per controlar la validesa
+
+??? success "Solució"
+    ```pseudocode
+    ALGORISME CalculadoraSegura
+    VARIABLES
+        num1, num2, resultat: REAL
+        operacio: CARACTER
+        operacio_valida, divisor_valid: BOOLEAN
+        
+    INICI
+        ESCRIURE "Primer número:"
+        LLEGIR num1
+        
+        // Validar operació
+        operacio_valida ← FALS
+        MENTRE NOT operacio_valida FER
+            ESCRIURE "Operació (+, -, *, /):"
+            LLEGIR operacio
+            
+            SI operacio = '+' OR operacio = '-' OR operacio = '*' OR operacio = '/' LLAVORS
+                operacio_valida ← CERT
+            SINO
+                ESCRIURE "Operació no vàlida!"
+            FI_SI
+        FI_MENTRE
+        
+        // Validar segon número (especialment per divisió)
+        divisor_valid ← FALS
+        MENTRE NOT divisor_valid FER
+            ESCRIURE "Segon número:"
+            LLEGIR num2
+            
+            SI operacio = '/' AND num2 = 0 LLAVORS
+                ESCRIURE "No es pot dividir per zero!"
+            SINO
+                divisor_valid ← CERT
+            FI_SI
+        FI_MENTRE
+        
+        // Calcular
+        SI operacio = '+' LLAVORS
+            resultat ← num1 + num2
+        SINO SI operacio = '-' LLAVORS
+            resultat ← num1 - num2
+        SINO SI operacio = '*' LLAVORS
+            resultat ← num1 * num2
+        SINO
+            resultat ← num1 / num2
+        FI_SI
+        
+        ESCRIURE num1, operacio, num2, "=", resultat
+    FI
+    ```
+
+---
+
+### Exercici 3: Cerca de primer número parell
+
+Programa que demana números fins a trobar el primer parell o arribar a 10 intents.
+
+??? tip "Ajuda"
+    - Usa dos flags: trobat i arribat_al_limit
+    - Compte amb la condició del MENTRE
+
+??? success "Solució"
+    ```pseudocode
+    ALGORISME CercaParell
+    VARIABLES
+        numero, intents: ENTER
+        trobat: BOOLEAN
+        
+    INICI
+        trobat ← FALS
+        intents ← 0
+        
+        MENTRE intents < 10 AND NOT trobat FER
+            ESCRIURE "Introdueix un número:"
+            LLEGIR numero
+            intents ← intents + 1
+            
+            SI numero mod 2 = 0 LLAVORS
+                trobat ← CERT
+                ESCRIURE "Primer parell trobat:", numero
+                ESCRIURE "En", intents, "intents"
+            FI_SI
+        FI_MENTRE
+        
+        SI NOT trobat LLAVORS
+            ESCRIURE "No s'ha trobat cap parell en 10 intents"
+        FI_SI
+    FI
+    ```
+
+---
+
+### Exercici 4: Joc de preguntes
+
+Programa que fa 5 preguntes matemàtiques simples i compta les respostes correctes. Permet 2 intents per pregunta.
+
+??? tip "Ajuda"
+    - Bucle principal per les 5 preguntes
+    - Bucle intern per els intents
+    - Usa flags per controlar si ha encertat
+
+??? success "Solució"
+    ```pseudocode
+    ALGORISME JocPreguntes
+    VARIABLES
+        resposta, resultat: ENTER
+        encerts: ENTER
+        encertat: BOOLEAN
+        intents: ENTER
+        
+    INICI
+        encerts ← 0
+        
+        // Pregunta 1: 5 + 3
+        ESCRIURE "=== Pregunta 1 ==="
+        ESCRIURE "Quant és 5 + 3?"
+        resultat ← 8
+        encertat ← FALS
+        intents ← 0
+        
+        MENTRE intents < 2 AND NOT encertat FER
+            LLEGIR resposta
+            intents ← intents + 1
+            
+            SI resposta = resultat LLAVORS
+                ESCRIURE "Correcte!"
+                encerts ← encerts + 1
+                encertat ← CERT
+            SINO
+                SI intents < 2 LLAVORS
+                    ESCRIURE "Incorrecte! Prova de nou:"
+                SINO
+                    ESCRIURE "Incorrecte! La resposta era", resultat
+                FI_SI
+            FI_SI
+        FI_MENTRE
+        
+        // ... (repetir per les altres 4 preguntes)
+        
+        ESCRIURE "Has encertat", encerts, "de 5 preguntes"
+        
+        SI encerts >= 4 LLAVORS
+            ESCRIURE "Excel·lent!"
+        SINO SI encerts >= 3 LLAVORS
+            ESCRIURE "Bé!"
+        SINO
+            ESCRIURE "Has de practicar més"
+        FI_SI
+    FI
+    ```
+
+---
+
+### Exercici 5: Sistema de login complet
+
+Crea un sistema de login amb:
+- Usuari i contrasenya
+- Màxim 3 intents
+- Validació de contrasenya (mínim 6 caràcters)
+
+??? success "Solució"
+    ```pseudocode
+    ALGORISME SistemaLogin
+    CONSTANTS
+        USUARI_CORRECTE = "admin"
+        PASSWORD_CORRECTE = "123456"
+        MAX_INTENTS = 3
+        
+    VARIABLES
+        usuari, password: TEXT
+        intents: ENTER
+        acces: BOOLEAN
+        password_valid: BOOLEAN
+        
+    INICI
+        intents ← 0
+        acces ← FALS
+        
+        MENTRE intents < MAX_INTENTS AND NOT acces FER
+            // Demanar usuari
+            ESCRIURE "Usuari:"
+            LLEGIR usuari
+            
+            // Demanar i validar contrasenya
+            password_valid ← FALS
+            MENTRE NOT password_valid FER
+                ESCRIURE "Contrasenya (mínim 6 caràcters):"
+                LLEGIR password
+                
+                SI LONGITUD(password) >= 6 LLAVORS
+                    password_valid ← CERT
+                SINO
+                    ESCRIURE "Contrasenya massa curta!"
+                FI_SI
+            FI_MENTRE
+            
+            // Comprovar credencials
+            SI usuari = USUARI_CORRECTE AND password = PASSWORD_CORRECTE LLAVORS
+                acces ← CERT
+                ESCRIURE "Benvingut al sistema!"
+            SINO
+                intents ← intents + 1
+                SI intents < MAX_INTENTS LLAVORS
+                    ESCRIURE "Credencials incorrectes!"
+                    ESCRIURE "Intents restants:", MAX_INTENTS - intents
+                FI_SI
+            FI_SI
+        FI_MENTRE
+        
+        SI NOT acces LLAVORS
+            ESCRIURE "Massa intents. Compte bloquejat."
+        FI_SI
+    FI
+    ```
+
+---
+
+## 🎓 Resum de la classe
+
+### Conceptes clau
+
+1. **Validació:** Assegura que les dades són correctes abans de processar-les
+2. **Condicions complexes:** Usa AND, OR, NOT per condicions més sofisticades
+3. **IF dins WHILE:** Permet prendre decisions dins del bucle
+4. **Flags (banderetes):** Variables booleanes que controlen el flux
+5. **Patrons comuns:** Reutilitza solucions provades per problemes típics
+
+### Patrons essencials
+
+**Validació:**
+```pseudocode
+LLEGIR valor
+MENTRE NOT (condició_valida) FER
+    ESCRIURE "Error"
+    LLEGIR valor
+FI_MENTRE
+```
+
+**Cerca amb flag:**
+```pseudocode
+trobat ← FALS
+MENTRE NOT trobat AND més_dades FER
+    SI condició LLAVORS
+        trobat ← CERT
+    FI_SI
+FI_MENTRE
+```
+
+**Reintents limitats:**
+```pseudocode
+intents ← 0
+èxit ← FALS
+MENTRE intents < MAX AND NOT èxit FER
+    // Intentar
+    intents ← intents + 1
+FI_MENTRE
+```
+
+---
+
+## 💡 Consells pràctics
+
+1. ✅ **Sempre valida l'entrada de l'usuari** - mai assumeixis que introduiran dades correctes
+2. ✅ **Usa noms descriptius per els flags** - `trobat`, `valid`, `continuar` són millors que `b`, `flag`, `x`
+3. ✅ **Combina condicions amb cura** - assegura't que la lògica AND/OR és correcta
+4. ✅ **Evita bucles infinits** - comprova que sempre hi ha una forma de sortir
+5. ✅ **Mostra missatges clars** - l'usuari ha de saber què ha fet malament
+
+---
+
+## 🔗 Navegació
+
+- ⬅️ [Classe 14: Bucle WHILE (I)](bloc4_classe14.md)
+- ➡️ [Classe 16: Bucle DO-WHILE / REPEAT-UNTIL](bloc4_classe16.md)
+- 🏠 [Torna a l'índex](index.md)
+
+---
+
+## 📚 Recursos addicionals
+
+### Per practicar més
+
+1. Crea un programa que validi un email (ha de contenir @)
+2. Sistema de votació que comprovi que l'edat sigui >= 18
+3. Menú interactiu amb 5 opcions i validació
+4. Programa que demani números fins a introduir 3 parells
+
+### Reptes
+
+🌟 **Repte 1:** Crea un joc "Pedra, Paper, Tisores" amb validació completa i opció de jugar diverses partides.
+
+🌟 **Repte 2:** Sistema de registre d'usuaris que validi: nom (no buit), edat (18-99), email (conté @), i confirmi totes les dades abans de guardar.
+
+---
+
+**Recorda:** La validació és essencial en programació real. No confiïs mai en l'entrada de l'usuari! 🛡️
+
+💪 Els flags són eines poderoses - aprèn a usar-los bé!

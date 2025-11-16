@@ -1,0 +1,1582 @@
+
+<!DOCTYPE html>
+
+<html class="no-js" lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width,initial-scale=1" name="viewport"/>
+<meta content="Curs complet de Programació" name="description"/>
+<meta content="Jordi - Professor de Programació" name="author"/>
+<link href="https://curs-programacio-jvidal.gitlab.io/05-poo/motivacio-poo/" rel="canonical"/>
+<link href="../../99-problemes-entrevistes/" rel="prev"/>
+<link href="../fase-index/" rel="next"/>
+<link href="../../images/logo_dam_v2.png" rel="icon"/>
+<meta content="mkdocs-1.6.1, mkdocs-material-9.6.23" name="generator"/>
+<title>Motivació - DAM/DAW - Programació</title>
+<link href="../../assets/stylesheets/main.84d31ad4.min.css" rel="stylesheet"/>
+<link href="../../assets/stylesheets/palette.06af60db.min.css" rel="stylesheet"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css?family=Raleway:300,300i,400,400i,700,700i%7CJetBrains+mono:400,400i,700,700i&amp;display=fallback" rel="stylesheet"/>
+<style>:root{--md-text-font:"Raleway";--md-code-font:"JetBrains mono"}</style>
+<link href="../../stylesheets/extra.css" rel="stylesheet"/>
+<script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+</head>
+<body data-md-color-accent="indigo" data-md-color-primary="indigo" data-md-color-scheme="default" dir="ltr">
+<input autocomplete="off" class="md-toggle" data-md-toggle="drawer" id="__drawer" type="checkbox"/>
+<input autocomplete="off" class="md-toggle" data-md-toggle="search" id="__search" type="checkbox"/>
+<label class="md-overlay" for="__drawer"></label>
+<div data-md-component="skip">
+<a class="md-skip" href="#introduccio-a-la-programacio-orientada-a-objectes">
+          Skip to content
+        </a>
+</div>
+<div data-md-component="announce">
+</div>
+<header class="md-header md-header--shadow md-header--lifted" data-md-component="header">
+<nav aria-label="Header" class="md-header__inner md-grid">
+<a aria-label="DAM/DAW - Programació" class="md-header__button md-logo" data-md-component="logo" href="../.." title="DAM/DAW - Programació">
+<img alt="logo" src="../../images/logo_dam.png"/>
+</a>
+<label class="md-header__button md-icon" for="__drawer">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"></path></svg>
+</label>
+<div class="md-header__title" data-md-component="header-title">
+<div class="md-header__ellipsis">
+<div class="md-header__topic">
+<span class="md-ellipsis">
+            DAM/DAW - Programació
+          </span>
+</div>
+<div class="md-header__topic" data-md-component="header-topic">
+<span class="md-ellipsis">
+            
+              Motivació
+            
+          </span>
+</div>
+</div>
+</div>
+<form class="md-header__option" data-md-component="palette">
+<input aria-label="Switch to dark mode" class="md-option" data-md-color-accent="indigo" data-md-color-media="" data-md-color-primary="indigo" data-md-color-scheme="default" id="__palette_0" name="__palette" type="radio"/>
+<label class="md-header__button md-icon" for="__palette_1" hidden="" title="Switch to dark mode">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"></path></svg>
+</label>
+<input aria-label="Switch to light mode" class="md-option" data-md-color-accent="indigo" data-md-color-media="" data-md-color-primary="indigo" data-md-color-scheme="slate" id="__palette_1" name="__palette" type="radio"/>
+<label class="md-header__button md-icon" for="__palette_0" hidden="" title="Switch to light mode">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12s-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"></path></svg>
+</label>
+</form>
+<script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+<label class="md-header__button md-icon" for="__search">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"></path></svg>
+</label>
+<div class="md-search" data-md-component="search" role="dialog">
+<label class="md-search__overlay" for="__search"></label>
+<div class="md-search__inner" role="search">
+<form class="md-search__form" name="search">
+<input aria-label="Search" autocapitalize="off" autocomplete="off" autocorrect="off" class="md-search__input" data-md-component="search-query" name="query" placeholder="Search" required="" spellcheck="false" type="text"/>
+<label class="md-search__icon md-icon" for="__search">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"></path></svg>
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"></path></svg>
+</label>
+<nav aria-label="Search" class="md-search__options">
+<button aria-label="Clear" class="md-search__icon md-icon" tabindex="-1" title="Clear" type="reset">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"></path></svg>
+</button>
+</nav>
+<div class="md-search__suggest" data-md-component="search-suggest"></div>
+</form>
+<div class="md-search__output">
+<div class="md-search__scrollwrap" data-md-scrollfix="" tabindex="0">
+<div class="md-search-result" data-md-component="search-result">
+<div class="md-search-result__meta">
+            Initializing search
+          </div>
+<ol class="md-search-result__list" role="presentation"></ol>
+</div>
+</div>
+</div>
+</div>
+</div>
+</nav>
+<nav aria-label="Tabs" class="md-tabs" data-md-component="tabs">
+<div class="md-grid">
+<ul class="md-tabs__list">
+<li class="md-tabs__item">
+<a class="md-tabs__link" href="../../01-pseudocodi/c1-intro/">
+          
+  
+  
+    
+  
+  Pseudocodi
+
+        </a>
+</li>
+<li class="md-tabs__item">
+<a class="md-tabs__link" href="../../02-prog-estructurada/setmana01/">
+          
+  
+  
+    
+  
+  Programació Estructurada (Dart)
+
+        </a>
+</li>
+<li class="md-tabs__item">
+<a class="md-tabs__link" href="../../99-problemes-entrevistes/">
+          
+  
+  
+    
+  
+  Extra
+
+        </a>
+</li>
+<li class="md-tabs__item md-tabs__item--active">
+<a class="md-tabs__link" href="./">
+          
+  
+  
+    
+  
+  POO
+
+        </a>
+</li>
+</ul>
+</div>
+</nav>
+</header>
+<div class="md-container" data-md-component="container">
+<main class="md-main" data-md-component="main">
+<div class="md-main__inner md-grid">
+<div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation">
+<div class="md-sidebar__scrollwrap">
+<div class="md-sidebar__inner">
+<nav aria-label="Navigation" class="md-nav md-nav--primary md-nav--lifted md-nav--integrated" data-md-level="0">
+<label class="md-nav__title" for="__drawer">
+<a aria-label="DAM/DAW - Programació" class="md-nav__button md-logo" data-md-component="logo" href="../.." title="DAM/DAW - Programació">
+<img alt="logo" src="../../images/logo_dam.png"/>
+</a>
+    DAM/DAW - Programació
+  </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" id="__nav_1" type="checkbox"/>
+<label class="md-nav__link" for="__nav_1" id="__nav_1_label" tabindex="0">
+<span class="md-ellipsis">
+    Pseudocodi
+    
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="false" aria-labelledby="__nav_1_label" class="md-nav" data-md-level="1">
+<label class="md-nav__title" for="__nav_1">
+<span class="md-nav__icon md-icon"></span>
+            Pseudocodi
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../01-pseudocodi/c1-intro/">
+<span class="md-ellipsis">
+    01. Introducció amb pseudocodi
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../02-variables/">
+<span class="md-ellipsis">
+    02. Variables
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../03-expressions/">
+<span class="md-ellipsis">
+    03. Expressions
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../04-entrada-sortida/">
+<span class="md-ellipsis">
+    04. Entrada / Sortida
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../05-logic-relacional/">
+<span class="md-ellipsis">
+    05. Expr. Lògiques / Relacionals
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../06-operadors-logics/">
+<span class="md-ellipsis">
+    06. Operadors lògics
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../07-alternativa-simple/">
+<span class="md-ellipsis">
+    07. Alternativa simple (IF)
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../08-alternativa-doble/">
+<span class="md-ellipsis">
+    08. Alternativa doble (IF-ELSE)
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../09-alternativa-aniuada/">
+<span class="md-ellipsis">
+    09. Alternativa aniuada
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../10-alternativa-encadenada/">
+<span class="md-ellipsis">
+    10. Alternativa encadenada
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../11-bucles/">
+<span class="md-ellipsis">
+    11. Repetició / Bucles
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../12-bucle-for/">
+<span class="md-ellipsis">
+    12. Repetició / Buble FOR (I)
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../13-bucle-for-2/">
+<span class="md-ellipsis">
+    13. Repetició / Bucle FOR (II)
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../14-while/">
+<span class="md-ellipsis">
+    14. Repetició / WHILE (I)
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../15-while-2/">
+<span class="md-ellipsis">
+    15. Repetició / WHILE (II)
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../16-dowhile-repeat/">
+<span class="md-ellipsis">
+    16. DO  WHILE / REPEAT
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../17-bucles-niuats/">
+<span class="md-ellipsis">
+    17. Bucles niuats
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../18-decisions-bucles/">
+<span class="md-ellipsis">
+    18. Decisions i Bucles
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../02-prog-estructurada/classe-strings-structs/">
+<span class="md-ellipsis">
+    Extra Strings i Structs
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../19-Problemes-integradors/">
+<span class="md-ellipsis">
+    19. Problemes Integradors
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../20-repas-final/">
+<span class="md-ellipsis">
+    20. Repàs final
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../resum-final-20/">
+<span class="md-ellipsis">
+    Resum final
+    
+  </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" id="__nav_2" type="checkbox"/>
+<label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+<span class="md-ellipsis">
+    Programació Estructurada (Dart)
+    
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="false" aria-labelledby="__nav_2_label" class="md-nav" data-md-level="1">
+<label class="md-nav__title" for="__nav_2">
+<span class="md-nav__icon md-icon"></span>
+            Programació Estructurada (Dart)
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../02-prog-estructurada/setmana01/">
+<span class="md-ellipsis">
+    Setmana 01
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../02-prog-estructurada/setmana02/">
+<span class="md-ellipsis">
+    Setmana 02
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../02-prog-estructurada/setmana03/">
+<span class="md-ellipsis">
+    Setmana 03
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../02-prog-estructurada/setmana04/">
+<span class="md-ellipsis">
+    Setmana 04
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../02-prog-estructurada/setmana05/">
+<span class="md-ellipsis">
+    Setmana 05
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../02-prog-estructurada/setmana06/">
+<span class="md-ellipsis">
+    Setmana 06
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../02-prog-estructurada/setmana07/">
+<span class="md-ellipsis">
+    Setmana 07
+    
+  </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" id="__nav_3" type="checkbox"/>
+<label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+<span class="md-ellipsis">
+    Extra
+    
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="false" aria-labelledby="__nav_3_label" class="md-nav" data-md-level="1">
+<label class="md-nav__title" for="__nav_3">
+<span class="md-nav__icon md-icon"></span>
+            Extra
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../99-problemes-entrevistes/">
+<span class="md-ellipsis">
+    Problemes d'Entrevistes
+    
+  </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+<input checked="" class="md-nav__toggle md-toggle" id="__nav_4" type="checkbox"/>
+<label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="">
+<span class="md-ellipsis">
+    POO
+    
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="true" aria-labelledby="__nav_4_label" class="md-nav" data-md-level="1">
+<label class="md-nav__title" for="__nav_4">
+<span class="md-nav__icon md-icon"></span>
+            POO
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item md-nav__item--active">
+<input class="md-nav__toggle md-toggle" id="__toc" type="checkbox"/>
+<label class="md-nav__link md-nav__link--active" for="__toc">
+<span class="md-ellipsis">
+    Motivació
+    
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</label>
+<a class="md-nav__link md-nav__link--active" href="./">
+<span class="md-ellipsis">
+    Motivació
+    
+  </span>
+</a>
+<nav aria-label="En aquesta pàgina" class="md-nav md-nav--secondary">
+<label class="md-nav__title" for="__toc">
+<span class="md-nav__icon md-icon"></span>
+      En aquesta pàgina
+    </label>
+<ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#objectius-de-la-llico">
+<span class="md-ellipsis">
+      📚 Objectius de la lliçó
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#context-sistema-de-seguiment-dactivitat-fisica">
+<span class="md-ellipsis">
+      🎯 Context: Sistema de Seguiment d'Activitat Física
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#part-1-programacio-procedural">
+<span class="md-ellipsis">
+      📝 Part 1: Programació Procedural
+    </span>
+</a>
+<nav aria-label="📝 Part 1: Programació Procedural" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#versio-inicial-del-programa">
+<span class="md-ellipsis">
+      Versió inicial del programa
+    </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#part-2-problemes-i-limitacions-de-la-programacio-procedural">
+<span class="md-ellipsis">
+      ⚠️ Part 2: Problemes i Limitacions de la Programació Procedural
+    </span>
+</a>
+<nav aria-label="⚠️ Part 2: Problemes i Limitacions de la Programació Procedural" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#problema-1-variables-globals-i-acoblament-fort">
+<span class="md-ellipsis">
+      🔴 Problema 1: Variables Globals i Acoblament Fort
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#problema-2-dades-relacionades-disperses">
+<span class="md-ellipsis">
+      🔴 Problema 2: Dades Relacionades Disperses
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#problema-3-manca-dencapsulacio">
+<span class="md-ellipsis">
+      🔴 Problema 3: Manca d'Encapsulació
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#problema-4-funcions-amb-molt-acoblament">
+<span class="md-ellipsis">
+      🔴 Problema 4: Funcions amb Molt Acoblament
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#problema-5-codi-repetitiu">
+<span class="md-ellipsis">
+      🔴 Problema 5: Codi Repetitiu
+    </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#part-3-solucio-amb-programacio-orientada-a-objectes">
+<span class="md-ellipsis">
+      ✅ Part 3: Solució amb Programació Orientada a Objectes
+    </span>
+</a>
+<nav aria-label="✅ Part 3: Solució amb Programació Orientada a Objectes" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#conceptes-clau-de-poo">
+<span class="md-ellipsis">
+      🎓 Conceptes Clau de POO
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#disseny-de-classes">
+<span class="md-ellipsis">
+      🏗️ Disseny de Classes
+    </span>
+</a>
+<nav aria-label="🏗️ Disseny de Classes" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#diagrama-de-classes">
+<span class="md-ellipsis">
+      Diagrama de Classes
+    </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#part-4-implementacio-amb-poo">
+<span class="md-ellipsis">
+      💻 Part 4: Implementació amb POO
+    </span>
+</a>
+<nav aria-label="💻 Part 4: Implementació amb POO" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#classe-activity">
+<span class="md-ellipsis">
+      Classe Activity
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#classe-fitnesstracker">
+<span class="md-ellipsis">
+      Classe FitnessTracker
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#programa-principal-refactoritzat">
+<span class="md-ellipsis">
+      Programa Principal Refactoritzat
+    </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#part-5-comparacio-final">
+<span class="md-ellipsis">
+      📊 Part 5: Comparació Final
+    </span>
+</a>
+<nav aria-label="📊 Part 5: Comparació Final" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#taula-comparativa">
+<span class="md-ellipsis">
+      Taula Comparativa
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#avantatges-de-la-versio-poo">
+<span class="md-ellipsis">
+      Avantatges de la versió POO
+    </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#exercicis-practics">
+<span class="md-ellipsis">
+      🎯 Exercicis Pràctics
+    </span>
+</a>
+<nav aria-label="🎯 Exercicis Pràctics" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#exercici-1-afegir-calories">
+<span class="md-ellipsis">
+      Exercici 1: Afegir Calories
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#exercici-2-calcular-calories-totals">
+<span class="md-ellipsis">
+      Exercici 2: Calcular Calories Totals
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#exercici-3-activitat-mes-llarga">
+<span class="md-ellipsis">
+      Exercici 3: Activitat més Llarga
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#exercici-4-activitats-per-setmana">
+<span class="md-ellipsis">
+      Exercici 4: Activitats per Setmana
+    </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#resum-de-conceptes">
+<span class="md-ellipsis">
+      📝 Resum de Conceptes
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#pas-seguent">
+<span class="md-ellipsis">
+      🚀 Pas Següent
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#recursos-addicionals">
+<span class="md-ellipsis">
+      📚 Recursos Addicionals
+    </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../fase-index/">
+<span class="md-ellipsis">
+    Índex
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../fase1/">
+<span class="md-ellipsis">
+    Fase 01
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../fase2/">
+<span class="md-ellipsis">
+    Fase 02
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../fase3/">
+<span class="md-ellipsis">
+    Fase 03
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../fase4/">
+<span class="md-ellipsis">
+    Fase 04
+    
+  </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+</ul>
+</nav>
+</div>
+</div>
+</div>
+<div class="md-content" data-md-component="content">
+<article class="md-content__inner md-typeset">
+<h1 id="introduccio-a-la-programacio-orientada-a-objectes">🏃 Introducció a la Programació Orientada a Objectes<a class="headerlink" href="#introduccio-a-la-programacio-orientada-a-objectes" title="Permanent link">¶</a></h1>
+<h2 id="objectius-de-la-llico">📚 Objectius de la lliçó<a class="headerlink" href="#objectius-de-la-llico" title="Permanent link">¶</a></h2>
+<p>En aquesta lliçó aprendràs:</p>
+<ul>
+<li>Comprendre les limitacions de la programació procedural</li>
+<li>Identificar males pràctiques en codi procedural</li>
+<li>Aplicar els conceptes bàsics de POO</li>
+<li>Refactoritzar codi procedural a orientat a objectes</li>
+<li>Utilitzar classes, objectes i encapsulació</li>
+</ul>
+<hr/>
+<h2 id="context-sistema-de-seguiment-dactivitat-fisica">🎯 Context: Sistema de Seguiment d'Activitat Física<a class="headerlink" href="#context-sistema-de-seguiment-dactivitat-fisica" title="Permanent link">¶</a></h2>
+<p>Desenvoluparem un sistema per registrar i analitzar activitats físiques com córrer, nedar o fer ciclisme. Aquest tipus de sistema és similar al que utilitzen aplicacions com Strava o Fitbit.</p>
+<hr/>
+<h2 id="part-1-programacio-procedural">📝 Part 1: Programació Procedural<a class="headerlink" href="#part-1-programacio-procedural" title="Permanent link">¶</a></h2>
+<h3 id="versio-inicial-del-programa">Versió inicial del programa<a class="headerlink" href="#versio-inicial-del-programa" title="Permanent link">¶</a></h3>
+<p>Començarem amb una aproximació <strong>procedural</strong> on utilitzarem variables globals i funcions per gestionar les dades d'activitats físiques.</p>
+<div class="language-dart highlight"><pre><span></span><code><span id="__span-0-1"><a href="#__codelineno-0-1" id="__codelineno-0-1" name="__codelineno-0-1"></a><span class="c1">// Variables globals per emmagatzemar les activitats</span>
+</span><span id="__span-0-2"><a href="#__codelineno-0-2" id="__codelineno-0-2" name="__codelineno-0-2"></a><span class="n">List</span><span class="o">&lt;</span><span class="kt">String</span><span class="o">&gt;</span><span class="w"> </span><span class="n">activityTypes</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[];</span>
+</span><span id="__span-0-3"><a href="#__codelineno-0-3" id="__codelineno-0-3" name="__codelineno-0-3"></a><span class="n">List</span><span class="o">&lt;</span><span class="kt">double</span><span class="o">&gt;</span><span class="w"> </span><span class="n">distances</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[];</span>
+</span><span id="__span-0-4"><a href="#__codelineno-0-4" id="__codelineno-0-4" name="__codelineno-0-4"></a><span class="n">List</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span><span class="w"> </span><span class="n">durations</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[];</span><span class="w"> </span><span class="c1">// en minuts</span>
+</span><span id="__span-0-5"><a href="#__codelineno-0-5" id="__codelineno-0-5" name="__codelineno-0-5"></a><span class="n">List</span><span class="o">&lt;</span><span class="n">DateTime</span><span class="o">&gt;</span><span class="w"> </span><span class="n">dates</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[];</span>
+</span><span id="__span-0-6"><a href="#__codelineno-0-6" id="__codelineno-0-6" name="__codelineno-0-6"></a>
+</span><span id="__span-0-7"><a href="#__codelineno-0-7" id="__codelineno-0-7" name="__codelineno-0-7"></a><span class="kt">void</span><span class="w"> </span><span class="n">main</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-0-8"><a href="#__codelineno-0-8" id="__codelineno-0-8" name="__codelineno-0-8"></a><span class="w">  </span><span class="c1">// Afegir algunes activitats</span>
+</span><span id="__span-0-9"><a href="#__codelineno-0-9" id="__codelineno-0-9" name="__codelineno-0-9"></a><span class="w">  </span><span class="n">addActivity</span><span class="p">(</span><span class="s1">'Córrer'</span><span class="p">,</span><span class="w"> </span><span class="m">5.2</span><span class="p">,</span><span class="w"> </span><span class="m">32</span><span class="p">,</span><span class="w"> </span><span class="n">DateTime</span><span class="p">(</span><span class="m">2024</span><span class="p">,</span><span class="w"> </span><span class="m">11</span><span class="p">,</span><span class="w"> </span><span class="m">15</span><span class="p">));</span>
+</span><span id="__span-0-10"><a href="#__codelineno-0-10" id="__codelineno-0-10" name="__codelineno-0-10"></a><span class="w">  </span><span class="n">addActivity</span><span class="p">(</span><span class="s1">'Nedar'</span><span class="p">,</span><span class="w"> </span><span class="m">1.5</span><span class="p">,</span><span class="w"> </span><span class="m">45</span><span class="p">,</span><span class="w"> </span><span class="n">DateTime</span><span class="p">(</span><span class="m">2024</span><span class="p">,</span><span class="w"> </span><span class="m">11</span><span class="p">,</span><span class="w"> </span><span class="m">16</span><span class="p">));</span>
+</span><span id="__span-0-11"><a href="#__codelineno-0-11" id="__codelineno-0-11" name="__codelineno-0-11"></a><span class="w">  </span><span class="n">addActivity</span><span class="p">(</span><span class="s1">'Ciclisme'</span><span class="p">,</span><span class="w"> </span><span class="m">20.0</span><span class="p">,</span><span class="w"> </span><span class="m">60</span><span class="p">,</span><span class="w"> </span><span class="n">DateTime</span><span class="p">(</span><span class="m">2024</span><span class="p">,</span><span class="w"> </span><span class="m">11</span><span class="p">,</span><span class="w"> </span><span class="m">16</span><span class="p">));</span>
+</span><span id="__span-0-12"><a href="#__codelineno-0-12" id="__codelineno-0-12" name="__codelineno-0-12"></a>
+</span><span id="__span-0-13"><a href="#__codelineno-0-13" id="__codelineno-0-13" name="__codelineno-0-13"></a><span class="w">  </span><span class="c1">// Mostrar totes les activitats</span>
+</span><span id="__span-0-14"><a href="#__codelineno-0-14" id="__codelineno-0-14" name="__codelineno-0-14"></a><span class="w">  </span><span class="n">print</span><span class="p">(</span><span class="s1">'=== ACTIVITATS REGISTRADES ==='</span><span class="p">);</span>
+</span><span id="__span-0-15"><a href="#__codelineno-0-15" id="__codelineno-0-15" name="__codelineno-0-15"></a><span class="w">  </span><span class="n">displayAllActivities</span><span class="p">();</span>
+</span><span id="__span-0-16"><a href="#__codelineno-0-16" id="__codelineno-0-16" name="__codelineno-0-16"></a>
+</span><span id="__span-0-17"><a href="#__codelineno-0-17" id="__codelineno-0-17" name="__codelineno-0-17"></a><span class="w">  </span><span class="n">print</span><span class="p">(</span><span class="s1">'</span><span class="se">\n</span><span class="s1">=== ESTADÍSTIQUES ==='</span><span class="p">);</span>
+</span><span id="__span-0-18"><a href="#__codelineno-0-18" id="__codelineno-0-18" name="__codelineno-0-18"></a><span class="w">  </span><span class="n">displayStatistics</span><span class="p">();</span>
+</span><span id="__span-0-19"><a href="#__codelineno-0-19" id="__codelineno-0-19" name="__codelineno-0-19"></a>
+</span><span id="__span-0-20"><a href="#__codelineno-0-20" id="__codelineno-0-20" name="__codelineno-0-20"></a><span class="w">  </span><span class="n">print</span><span class="p">(</span><span class="s1">'</span><span class="se">\n</span><span class="s1">=== ACTIVITATS DE CÓRRER ==='</span><span class="p">);</span>
+</span><span id="__span-0-21"><a href="#__codelineno-0-21" id="__codelineno-0-21" name="__codelineno-0-21"></a><span class="w">  </span><span class="n">displayActivitiesByType</span><span class="p">(</span><span class="s1">'Córrer'</span><span class="p">);</span>
+</span><span id="__span-0-22"><a href="#__codelineno-0-22" id="__codelineno-0-22" name="__codelineno-0-22"></a><span class="p">}</span>
+</span><span id="__span-0-23"><a href="#__codelineno-0-23" id="__codelineno-0-23" name="__codelineno-0-23"></a>
+</span><span id="__span-0-24"><a href="#__codelineno-0-24" id="__codelineno-0-24" name="__codelineno-0-24"></a><span class="c1">// Afegir una nova activitat</span>
+</span><span id="__span-0-25"><a href="#__codelineno-0-25" id="__codelineno-0-25" name="__codelineno-0-25"></a><span class="kt">void</span><span class="w"> </span><span class="n">addActivity</span><span class="p">(</span><span class="kt">String</span><span class="w"> </span><span class="n">type</span><span class="p">,</span><span class="w"> </span><span class="kt">double</span><span class="w"> </span><span class="n">distance</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">duration</span><span class="p">,</span><span class="w"> </span><span class="n">DateTime</span><span class="w"> </span><span class="n">date</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-0-26"><a href="#__codelineno-0-26" id="__codelineno-0-26" name="__codelineno-0-26"></a><span class="w">  </span><span class="n">activityTypes</span><span class="p">.</span><span class="n">add</span><span class="p">(</span><span class="n">type</span><span class="p">);</span>
+</span><span id="__span-0-27"><a href="#__codelineno-0-27" id="__codelineno-0-27" name="__codelineno-0-27"></a><span class="w">  </span><span class="n">distances</span><span class="p">.</span><span class="n">add</span><span class="p">(</span><span class="n">distance</span><span class="p">);</span>
+</span><span id="__span-0-28"><a href="#__codelineno-0-28" id="__codelineno-0-28" name="__codelineno-0-28"></a><span class="w">  </span><span class="n">durations</span><span class="p">.</span><span class="n">add</span><span class="p">(</span><span class="n">duration</span><span class="p">);</span>
+</span><span id="__span-0-29"><a href="#__codelineno-0-29" id="__codelineno-0-29" name="__codelineno-0-29"></a><span class="w">  </span><span class="n">dates</span><span class="p">.</span><span class="n">add</span><span class="p">(</span><span class="n">date</span><span class="p">);</span>
+</span><span id="__span-0-30"><a href="#__codelineno-0-30" id="__codelineno-0-30" name="__codelineno-0-30"></a><span class="w">  </span><span class="n">print</span><span class="p">(</span><span class="s1">'✓ Activitat afegida: </span><span class="si">$</span><span class="n">type</span><span class="s1"> - </span><span class="si">$</span><span class="n">distance</span><span class="s1"> km'</span><span class="p">);</span>
+</span><span id="__span-0-31"><a href="#__codelineno-0-31" id="__codelineno-0-31" name="__codelineno-0-31"></a><span class="p">}</span>
+</span><span id="__span-0-32"><a href="#__codelineno-0-32" id="__codelineno-0-32" name="__codelineno-0-32"></a>
+</span><span id="__span-0-33"><a href="#__codelineno-0-33" id="__codelineno-0-33" name="__codelineno-0-33"></a><span class="c1">// Mostrar totes les activitats</span>
+</span><span id="__span-0-34"><a href="#__codelineno-0-34" id="__codelineno-0-34" name="__codelineno-0-34"></a><span class="kt">void</span><span class="w"> </span><span class="n">displayAllActivities</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-0-35"><a href="#__codelineno-0-35" id="__codelineno-0-35" name="__codelineno-0-35"></a><span class="w">  </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">0</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="n">activityTypes</span><span class="p">.</span><span class="n">length</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="o">++</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-0-36"><a href="#__codelineno-0-36" id="__codelineno-0-36" name="__codelineno-0-36"></a><span class="w">    </span><span class="n">print</span><span class="p">(</span><span class="s1">'</span><span class="si">${</span><span class="n">i</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="m">1</span><span class="si">}</span><span class="s1">. </span><span class="si">${</span><span class="n">activityTypes</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="si">}</span><span class="s1"> - </span><span class="si">${</span><span class="n">distances</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="si">}</span><span class="s1"> km - '</span>
+</span><span id="__span-0-37"><a href="#__codelineno-0-37" id="__codelineno-0-37" name="__codelineno-0-37"></a><span class="w">          </span><span class="s1">'</span><span class="si">${</span><span class="n">durations</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="si">}</span><span class="s1"> min - </span><span class="si">${</span><span class="n">dates</span><span class="p">[</span><span class="n">i</span><span class="p">].</span><span class="n">toString</span><span class="p">().</span><span class="n">split</span><span class="p">(</span><span class="s1">' '</span><span class="p">)[</span><span class="m">0</span><span class="p">]</span><span class="si">}</span><span class="s1">'</span><span class="p">);</span>
+</span><span id="__span-0-38"><a href="#__codelineno-0-38" id="__codelineno-0-38" name="__codelineno-0-38"></a><span class="w">  </span><span class="p">}</span>
+</span><span id="__span-0-39"><a href="#__codelineno-0-39" id="__codelineno-0-39" name="__codelineno-0-39"></a><span class="p">}</span>
+</span><span id="__span-0-40"><a href="#__codelineno-0-40" id="__codelineno-0-40" name="__codelineno-0-40"></a>
+</span><span id="__span-0-41"><a href="#__codelineno-0-41" id="__codelineno-0-41" name="__codelineno-0-41"></a><span class="c1">// Calcular distància total</span>
+</span><span id="__span-0-42"><a href="#__codelineno-0-42" id="__codelineno-0-42" name="__codelineno-0-42"></a><span class="kt">double</span><span class="w"> </span><span class="n">getTotalDistance</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-0-43"><a href="#__codelineno-0-43" id="__codelineno-0-43" name="__codelineno-0-43"></a><span class="w">  </span><span class="kt">double</span><span class="w"> </span><span class="n">total</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">0</span><span class="p">;</span>
+</span><span id="__span-0-44"><a href="#__codelineno-0-44" id="__codelineno-0-44" name="__codelineno-0-44"></a><span class="w">  </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">0</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="n">distances</span><span class="p">.</span><span class="n">length</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="o">++</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-0-45"><a href="#__codelineno-0-45" id="__codelineno-0-45" name="__codelineno-0-45"></a><span class="w">    </span><span class="n">total</span><span class="w"> </span><span class="o">+=</span><span class="w"> </span><span class="n">distances</span><span class="p">[</span><span class="n">i</span><span class="p">];</span>
+</span><span id="__span-0-46"><a href="#__codelineno-0-46" id="__codelineno-0-46" name="__codelineno-0-46"></a><span class="w">  </span><span class="p">}</span>
+</span><span id="__span-0-47"><a href="#__codelineno-0-47" id="__codelineno-0-47" name="__codelineno-0-47"></a><span class="w">  </span><span class="k">return</span><span class="w"> </span><span class="n">total</span><span class="p">;</span>
+</span><span id="__span-0-48"><a href="#__codelineno-0-48" id="__codelineno-0-48" name="__codelineno-0-48"></a><span class="p">}</span>
+</span><span id="__span-0-49"><a href="#__codelineno-0-49" id="__codelineno-0-49" name="__codelineno-0-49"></a>
+</span><span id="__span-0-50"><a href="#__codelineno-0-50" id="__codelineno-0-50" name="__codelineno-0-50"></a><span class="c1">// Calcular temps total</span>
+</span><span id="__span-0-51"><a href="#__codelineno-0-51" id="__codelineno-0-51" name="__codelineno-0-51"></a><span class="kt">int</span><span class="w"> </span><span class="n">getTotalDuration</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-0-52"><a href="#__codelineno-0-52" id="__codelineno-0-52" name="__codelineno-0-52"></a><span class="w">  </span><span class="kt">int</span><span class="w"> </span><span class="n">total</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">0</span><span class="p">;</span>
+</span><span id="__span-0-53"><a href="#__codelineno-0-53" id="__codelineno-0-53" name="__codelineno-0-53"></a><span class="w">  </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">0</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="n">durations</span><span class="p">.</span><span class="n">length</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="o">++</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-0-54"><a href="#__codelineno-0-54" id="__codelineno-0-54" name="__codelineno-0-54"></a><span class="w">    </span><span class="n">total</span><span class="w"> </span><span class="o">+=</span><span class="w"> </span><span class="n">durations</span><span class="p">[</span><span class="n">i</span><span class="p">];</span>
+</span><span id="__span-0-55"><a href="#__codelineno-0-55" id="__codelineno-0-55" name="__codelineno-0-55"></a><span class="w">  </span><span class="p">}</span>
+</span><span id="__span-0-56"><a href="#__codelineno-0-56" id="__codelineno-0-56" name="__codelineno-0-56"></a><span class="w">  </span><span class="k">return</span><span class="w"> </span><span class="n">total</span><span class="p">;</span>
+</span><span id="__span-0-57"><a href="#__codelineno-0-57" id="__codelineno-0-57" name="__codelineno-0-57"></a><span class="p">}</span>
+</span><span id="__span-0-58"><a href="#__codelineno-0-58" id="__codelineno-0-58" name="__codelineno-0-58"></a>
+</span><span id="__span-0-59"><a href="#__codelineno-0-59" id="__codelineno-0-59" name="__codelineno-0-59"></a><span class="c1">// Calcular velocitat mitjana d'una activitat</span>
+</span><span id="__span-0-60"><a href="#__codelineno-0-60" id="__codelineno-0-60" name="__codelineno-0-60"></a><span class="kt">double</span><span class="w"> </span><span class="n">getAverageSpeed</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">index</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-0-61"><a href="#__codelineno-0-61" id="__codelineno-0-61" name="__codelineno-0-61"></a><span class="w">  </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">durations</span><span class="p">[</span><span class="n">index</span><span class="p">]</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="m">0</span><span class="p">)</span><span class="w"> </span><span class="k">return</span><span class="w"> </span><span class="m">0</span><span class="p">;</span>
+</span><span id="__span-0-62"><a href="#__codelineno-0-62" id="__codelineno-0-62" name="__codelineno-0-62"></a><span class="w">  </span><span class="kt">double</span><span class="w"> </span><span class="n">hours</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">durations</span><span class="p">[</span><span class="n">index</span><span class="p">]</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="m">60</span><span class="p">;</span>
+</span><span id="__span-0-63"><a href="#__codelineno-0-63" id="__codelineno-0-63" name="__codelineno-0-63"></a><span class="w">  </span><span class="k">return</span><span class="w"> </span><span class="n">distances</span><span class="p">[</span><span class="n">index</span><span class="p">]</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="n">hours</span><span class="p">;</span>
+</span><span id="__span-0-64"><a href="#__codelineno-0-64" id="__codelineno-0-64" name="__codelineno-0-64"></a><span class="p">}</span>
+</span><span id="__span-0-65"><a href="#__codelineno-0-65" id="__codelineno-0-65" name="__codelineno-0-65"></a>
+</span><span id="__span-0-66"><a href="#__codelineno-0-66" id="__codelineno-0-66" name="__codelineno-0-66"></a><span class="c1">// Mostrar estadístiques generals</span>
+</span><span id="__span-0-67"><a href="#__codelineno-0-67" id="__codelineno-0-67" name="__codelineno-0-67"></a><span class="kt">void</span><span class="w"> </span><span class="n">displayStatistics</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-0-68"><a href="#__codelineno-0-68" id="__codelineno-0-68" name="__codelineno-0-68"></a><span class="w">  </span><span class="n">print</span><span class="p">(</span><span class="s1">'Total d</span><span class="se">\'</span><span class="s1">activitats: </span><span class="si">${</span><span class="n">activityTypes</span><span class="p">.</span><span class="n">length</span><span class="si">}</span><span class="s1">'</span><span class="p">);</span>
+</span><span id="__span-0-69"><a href="#__codelineno-0-69" id="__codelineno-0-69" name="__codelineno-0-69"></a><span class="w">  </span><span class="n">print</span><span class="p">(</span><span class="s1">'Distància total: </span><span class="si">${</span><span class="n">getTotalDistance</span><span class="p">().</span><span class="n">toStringAsFixed</span><span class="p">(</span><span class="m">2</span><span class="p">)</span><span class="si">}</span><span class="s1"> km'</span><span class="p">);</span>
+</span><span id="__span-0-70"><a href="#__codelineno-0-70" id="__codelineno-0-70" name="__codelineno-0-70"></a><span class="w">  </span><span class="n">print</span><span class="p">(</span><span class="s1">'Temps total: </span><span class="si">${</span><span class="n">getTotalDuration</span><span class="p">()</span><span class="si">}</span><span class="s1"> min'</span><span class="p">);</span>
+</span><span id="__span-0-71"><a href="#__codelineno-0-71" id="__codelineno-0-71" name="__codelineno-0-71"></a>
+</span><span id="__span-0-72"><a href="#__codelineno-0-72" id="__codelineno-0-72" name="__codelineno-0-72"></a><span class="w">  </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">activityTypes</span><span class="p">.</span><span class="n">isNotEmpty</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-0-73"><a href="#__codelineno-0-73" id="__codelineno-0-73" name="__codelineno-0-73"></a><span class="w">    </span><span class="kt">double</span><span class="w"> </span><span class="n">avgDistance</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">getTotalDistance</span><span class="p">()</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="n">activityTypes</span><span class="p">.</span><span class="n">length</span><span class="p">;</span>
+</span><span id="__span-0-74"><a href="#__codelineno-0-74" id="__codelineno-0-74" name="__codelineno-0-74"></a><span class="w">    </span><span class="n">print</span><span class="p">(</span><span class="s1">'Distància mitjana: </span><span class="si">${</span><span class="n">avgDistance</span><span class="p">.</span><span class="n">toStringAsFixed</span><span class="p">(</span><span class="m">2</span><span class="p">)</span><span class="si">}</span><span class="s1"> km'</span><span class="p">);</span>
+</span><span id="__span-0-75"><a href="#__codelineno-0-75" id="__codelineno-0-75" name="__codelineno-0-75"></a><span class="w">  </span><span class="p">}</span>
+</span><span id="__span-0-76"><a href="#__codelineno-0-76" id="__codelineno-0-76" name="__codelineno-0-76"></a><span class="p">}</span>
+</span><span id="__span-0-77"><a href="#__codelineno-0-77" id="__codelineno-0-77" name="__codelineno-0-77"></a>
+</span><span id="__span-0-78"><a href="#__codelineno-0-78" id="__codelineno-0-78" name="__codelineno-0-78"></a><span class="c1">// Mostrar activitats d'un tipus específic</span>
+</span><span id="__span-0-79"><a href="#__codelineno-0-79" id="__codelineno-0-79" name="__codelineno-0-79"></a><span class="kt">void</span><span class="w"> </span><span class="n">displayActivitiesByType</span><span class="p">(</span><span class="kt">String</span><span class="w"> </span><span class="n">type</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-0-80"><a href="#__codelineno-0-80" id="__codelineno-0-80" name="__codelineno-0-80"></a><span class="w">  </span><span class="kt">bool</span><span class="w"> </span><span class="n">found</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kc">false</span><span class="p">;</span>
+</span><span id="__span-0-81"><a href="#__codelineno-0-81" id="__codelineno-0-81" name="__codelineno-0-81"></a><span class="w">  </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">0</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="n">activityTypes</span><span class="p">.</span><span class="n">length</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="o">++</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-0-82"><a href="#__codelineno-0-82" id="__codelineno-0-82" name="__codelineno-0-82"></a><span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">activityTypes</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="n">type</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-0-83"><a href="#__codelineno-0-83" id="__codelineno-0-83" name="__codelineno-0-83"></a><span class="w">      </span><span class="n">print</span><span class="p">(</span><span class="s1">'</span><span class="si">${</span><span class="n">activityTypes</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="si">}</span><span class="s1"> - </span><span class="si">${</span><span class="n">distances</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="si">}</span><span class="s1"> km - '</span>
+</span><span id="__span-0-84"><a href="#__codelineno-0-84" id="__codelineno-0-84" name="__codelineno-0-84"></a><span class="w">            </span><span class="s1">'</span><span class="si">${</span><span class="n">durations</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="si">}</span><span class="s1"> min - Velocitat: </span><span class="si">${</span><span class="n">getAverageSpeed</span><span class="p">(</span><span class="n">i</span><span class="p">).</span><span class="n">toStringAsFixed</span><span class="p">(</span><span class="m">2</span><span class="p">)</span><span class="si">}</span><span class="s1"> km/h'</span><span class="p">);</span>
+</span><span id="__span-0-85"><a href="#__codelineno-0-85" id="__codelineno-0-85" name="__codelineno-0-85"></a><span class="w">      </span><span class="n">found</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kc">true</span><span class="p">;</span>
+</span><span id="__span-0-86"><a href="#__codelineno-0-86" id="__codelineno-0-86" name="__codelineno-0-86"></a><span class="w">    </span><span class="p">}</span>
+</span><span id="__span-0-87"><a href="#__codelineno-0-87" id="__codelineno-0-87" name="__codelineno-0-87"></a><span class="w">  </span><span class="p">}</span>
+</span><span id="__span-0-88"><a href="#__codelineno-0-88" id="__codelineno-0-88" name="__codelineno-0-88"></a>
+</span><span id="__span-0-89"><a href="#__codelineno-0-89" id="__codelineno-0-89" name="__codelineno-0-89"></a><span class="w">  </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="o">!</span><span class="n">found</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-0-90"><a href="#__codelineno-0-90" id="__codelineno-0-90" name="__codelineno-0-90"></a><span class="w">    </span><span class="n">print</span><span class="p">(</span><span class="s1">'No s</span><span class="se">\'</span><span class="s1">han trobat activitats de tipus: </span><span class="si">$</span><span class="n">type</span><span class="s1">'</span><span class="p">);</span>
+</span><span id="__span-0-91"><a href="#__codelineno-0-91" id="__codelineno-0-91" name="__codelineno-0-91"></a><span class="w">  </span><span class="p">}</span>
+</span><span id="__span-0-92"><a href="#__codelineno-0-92" id="__codelineno-0-92" name="__codelineno-0-92"></a><span class="p">}</span>
+</span></code></pre></div>
+<div class="admonition example">
+<p class="admonition-title">Sortida del programa</p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-1-1"><a href="#__codelineno-1-1" id="__codelineno-1-1" name="__codelineno-1-1"></a>✓ Activitat afegida: Córrer - 5.2 km
+</span><span id="__span-1-2"><a href="#__codelineno-1-2" id="__codelineno-1-2" name="__codelineno-1-2"></a>✓ Activitat afegida: Nedar - 1.5 km
+</span><span id="__span-1-3"><a href="#__codelineno-1-3" id="__codelineno-1-3" name="__codelineno-1-3"></a>✓ Activitat afegida: Ciclisme - 20.0 km
+</span><span id="__span-1-4"><a href="#__codelineno-1-4" id="__codelineno-1-4" name="__codelineno-1-4"></a>=== ACTIVITATS REGISTRADES ===
+</span><span id="__span-1-5"><a href="#__codelineno-1-5" id="__codelineno-1-5" name="__codelineno-1-5"></a>1. Córrer - 5.2 km - 32 min - 2024-11-15
+</span><span id="__span-1-6"><a href="#__codelineno-1-6" id="__codelineno-1-6" name="__codelineno-1-6"></a>2. Nedar - 1.5 km - 45 min - 2024-11-16
+</span><span id="__span-1-7"><a href="#__codelineno-1-7" id="__codelineno-1-7" name="__codelineno-1-7"></a>3. Ciclisme - 20.0 km - 60 min - 2024-11-16
+</span><span id="__span-1-8"><a href="#__codelineno-1-8" id="__codelineno-1-8" name="__codelineno-1-8"></a>
+</span><span id="__span-1-9"><a href="#__codelineno-1-9" id="__codelineno-1-9" name="__codelineno-1-9"></a>=== ESTADÍSTIQUES ===
+</span><span id="__span-1-10"><a href="#__codelineno-1-10" id="__codelineno-1-10" name="__codelineno-1-10"></a>Total d'activitats: 3
+</span><span id="__span-1-11"><a href="#__codelineno-1-11" id="__codelineno-1-11" name="__codelineno-1-11"></a>Distància total: 26.70 km
+</span><span id="__span-1-12"><a href="#__codelineno-1-12" id="__codelineno-1-12" name="__codelineno-1-12"></a>Temps total: 137 min
+</span><span id="__span-1-13"><a href="#__codelineno-1-13" id="__codelineno-1-13" name="__codelineno-1-13"></a>Distància mitjana: 8.90 km
+</span><span id="__span-1-14"><a href="#__codelineno-1-14" id="__codelineno-1-14" name="__codelineno-1-14"></a>
+</span><span id="__span-1-15"><a href="#__codelineno-1-15" id="__codelineno-1-15" name="__codelineno-1-15"></a>=== ACTIVITATS DE CÓRRER ===
+</span><span id="__span-1-16"><a href="#__codelineno-1-16" id="__codelineno-1-16" name="__codelineno-1-16"></a>Córrer - 5.2 km - 32 min - Velocitat: 9.75 km/h
+</span></code></pre></div>
+</div>
+<hr/>
+<h2 id="part-2-problemes-i-limitacions-de-la-programacio-procedural">⚠️ Part 2: Problemes i Limitacions de la Programació Procedural<a class="headerlink" href="#part-2-problemes-i-limitacions-de-la-programacio-procedural" title="Permanent link">¶</a></h2>
+<h3 id="problema-1-variables-globals-i-acoblament-fort">🔴 Problema 1: Variables Globals i Acoblament Fort<a class="headerlink" href="#problema-1-variables-globals-i-acoblament-fort" title="Permanent link">¶</a></h3>
+<div class="language-dart highlight"><pre><span></span><code><span id="__span-2-1"><a href="#__codelineno-2-1" id="__codelineno-2-1" name="__codelineno-2-1"></a><span class="c1">// Totes aquestes variables estan exposades globalment</span>
+</span><span id="__span-2-2"><a href="#__codelineno-2-2" id="__codelineno-2-2" name="__codelineno-2-2"></a><span class="n">List</span><span class="o">&lt;</span><span class="kt">String</span><span class="o">&gt;</span><span class="w"> </span><span class="n">activityTypes</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[];</span>
+</span><span id="__span-2-3"><a href="#__codelineno-2-3" id="__codelineno-2-3" name="__codelineno-2-3"></a><span class="n">List</span><span class="o">&lt;</span><span class="kt">double</span><span class="o">&gt;</span><span class="w"> </span><span class="n">distances</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[];</span>
+</span><span id="__span-2-4"><a href="#__codelineno-2-4" id="__codelineno-2-4" name="__codelineno-2-4"></a><span class="n">List</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span><span class="w"> </span><span class="n">durations</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[];</span>
+</span><span id="__span-2-5"><a href="#__codelineno-2-5" id="__codelineno-2-5" name="__codelineno-2-5"></a><span class="n">List</span><span class="o">&lt;</span><span class="n">DateTime</span><span class="o">&gt;</span><span class="w"> </span><span class="n">dates</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[];</span>
+</span></code></pre></div>
+<p><strong>Problemes:</strong></p>
+<ul>
+<li>Qualsevol part del codi pot modificar aquestes variables</li>
+<li>No hi ha control sobre la validació de dades</li>
+<li>Risc d'inconsistències entre llistes (diferents longituds)</li>
+<li>Dificultat per mantenir la integritat de les dades</li>
+</ul>
+<div class="admonition danger">
+<p class="admonition-title">Exemple de problema</p>
+<div class="language-dart highlight"><pre><span></span><code><span id="__span-3-1"><a href="#__codelineno-3-1" id="__codelineno-3-1" name="__codelineno-3-1"></a><span class="c1">// Algú podria fer això per error:</span>
+</span><span id="__span-3-2"><a href="#__codelineno-3-2" id="__codelineno-3-2" name="__codelineno-3-2"></a><span class="n">activityTypes</span><span class="p">.</span><span class="n">add</span><span class="p">(</span><span class="s1">'Córrer'</span><span class="p">);</span>
+</span><span id="__span-3-3"><a href="#__codelineno-3-3" id="__codelineno-3-3" name="__codelineno-3-3"></a><span class="n">distances</span><span class="p">.</span><span class="n">add</span><span class="p">(</span><span class="m">5.0</span><span class="p">);</span>
+</span><span id="__span-3-4"><a href="#__codelineno-3-4" id="__codelineno-3-4" name="__codelineno-3-4"></a><span class="c1">// Oblida afegir durations i dates!</span>
+</span><span id="__span-3-5"><a href="#__codelineno-3-5" id="__codelineno-3-5" name="__codelineno-3-5"></a><span class="c1">// Ara les llistes tenen longituds diferents → errors!</span>
+</span></code></pre></div>
+</div>
+<h3 id="problema-2-dades-relacionades-disperses">🔴 Problema 2: Dades Relacionades Disperses<a class="headerlink" href="#problema-2-dades-relacionades-disperses" title="Permanent link">¶</a></h3>
+<p>Les dades d'una mateixa activitat estan <strong>separades</strong> en diferents llistes:</p>
+<div class="language-dart highlight"><pre><span></span><code><span id="__span-4-1"><a href="#__codelineno-4-1" id="__codelineno-4-1" name="__codelineno-4-1"></a><span class="n">activityTypes</span><span class="p">[</span><span class="m">0</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">'Córrer'</span>
+</span><span id="__span-4-2"><a href="#__codelineno-4-2" id="__codelineno-4-2" name="__codelineno-4-2"></a><span class="n">distances</span><span class="p">[</span><span class="m">0</span><span class="p">]</span><span class="w">     </span><span class="o">=</span><span class="w"> </span><span class="m">5.2</span>
+</span><span id="__span-4-3"><a href="#__codelineno-4-3" id="__codelineno-4-3" name="__codelineno-4-3"></a><span class="n">durations</span><span class="p">[</span><span class="m">0</span><span class="p">]</span><span class="w">     </span><span class="o">=</span><span class="w"> </span><span class="m">32</span>
+</span><span id="__span-4-4"><a href="#__codelineno-4-4" id="__codelineno-4-4" name="__codelineno-4-4"></a><span class="n">dates</span><span class="p">[</span><span class="m">0</span><span class="p">]</span><span class="w">         </span><span class="o">=</span><span class="w"> </span><span class="n">DateTime</span><span class="p">(</span><span class="m">2024</span><span class="p">,</span><span class="w"> </span><span class="m">11</span><span class="p">,</span><span class="w"> </span><span class="m">15</span><span class="p">)</span>
+</span></code></pre></div>
+<p><strong>Problemes:</strong></p>
+<ul>
+<li>Difícil de mantenir la relació entre dades</li>
+<li>Propens a errors si s'insereixen/eliminen elements</li>
+<li>No hi ha garantia que els índexs coincideixin</li>
+</ul>
+<h3 id="problema-3-manca-dencapsulacio">🔴 Problema 3: Manca d'Encapsulació<a class="headerlink" href="#problema-3-manca-dencapsulacio" title="Permanent link">¶</a></h3>
+<div class="language-dart highlight"><pre><span></span><code><span id="__span-5-1"><a href="#__codelineno-5-1" id="__codelineno-5-1" name="__codelineno-5-1"></a><span class="kt">void</span><span class="w"> </span><span class="n">addActivity</span><span class="p">(</span><span class="kt">String</span><span class="w"> </span><span class="n">type</span><span class="p">,</span><span class="w"> </span><span class="kt">double</span><span class="w"> </span><span class="n">distance</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">duration</span><span class="p">,</span><span class="w"> </span><span class="n">DateTime</span><span class="w"> </span><span class="n">date</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-5-2"><a href="#__codelineno-5-2" id="__codelineno-5-2" name="__codelineno-5-2"></a><span class="w">  </span><span class="c1">// No hi ha validació!</span>
+</span><span id="__span-5-3"><a href="#__codelineno-5-3" id="__codelineno-5-3" name="__codelineno-5-3"></a><span class="w">  </span><span class="n">activityTypes</span><span class="p">.</span><span class="n">add</span><span class="p">(</span><span class="n">type</span><span class="p">);</span>
+</span><span id="__span-5-4"><a href="#__codelineno-5-4" id="__codelineno-5-4" name="__codelineno-5-4"></a><span class="w">  </span><span class="n">distances</span><span class="p">.</span><span class="n">add</span><span class="p">(</span><span class="n">distance</span><span class="p">);</span>
+</span><span id="__span-5-5"><a href="#__codelineno-5-5" id="__codelineno-5-5" name="__codelineno-5-5"></a><span class="w">  </span><span class="n">durations</span><span class="p">.</span><span class="n">add</span><span class="p">(</span><span class="n">duration</span><span class="p">);</span>
+</span><span id="__span-5-6"><a href="#__codelineno-5-6" id="__codelineno-5-6" name="__codelineno-5-6"></a><span class="w">  </span><span class="n">dates</span><span class="p">.</span><span class="n">add</span><span class="p">(</span><span class="n">date</span><span class="p">);</span>
+</span><span id="__span-5-7"><a href="#__codelineno-5-7" id="__codelineno-5-7" name="__codelineno-5-7"></a><span class="p">}</span>
+</span></code></pre></div>
+<p><strong>Problemes:</strong></p>
+<ul>
+<li>No es validen les dades abans d'afegir-les</li>
+<li>Es podrien afegir distàncies negatives</li>
+<li>Es podrien afegir durations de 0 minuts</li>
+<li>No hi ha control sobre tipus d'activitat vàlids</li>
+</ul>
+<div class="admonition warning">
+<p class="admonition-title">Males pràctiques detectades</p>
+<div class="language-dart highlight"><pre><span></span><code><span id="__span-6-1"><a href="#__codelineno-6-1" id="__codelineno-6-1" name="__codelineno-6-1"></a><span class="c1">// Tot això seria vàlid però incorrecte:</span>
+</span><span id="__span-6-2"><a href="#__codelineno-6-2" id="__codelineno-6-2" name="__codelineno-6-2"></a><span class="n">addActivity</span><span class="p">(</span><span class="s1">''</span><span class="p">,</span><span class="w"> </span><span class="o">-</span><span class="m">5.0</span><span class="p">,</span><span class="w"> </span><span class="o">-</span><span class="m">10</span><span class="p">,</span><span class="w"> </span><span class="n">DateTime</span><span class="p">(</span><span class="m">2025</span><span class="p">,</span><span class="w"> </span><span class="m">1</span><span class="p">,</span><span class="w"> </span><span class="m">1</span><span class="p">));</span><span class="w"> </span><span class="c1">// ❌</span>
+</span><span id="__span-6-3"><a href="#__codelineno-6-3" id="__codelineno-6-3" name="__codelineno-6-3"></a><span class="n">addActivity</span><span class="p">(</span><span class="s1">'XYZ'</span><span class="p">,</span><span class="w"> </span><span class="m">0</span><span class="p">,</span><span class="w"> </span><span class="m">0</span><span class="p">,</span><span class="w"> </span><span class="n">DateTime</span><span class="p">.</span><span class="n">now</span><span class="p">());</span><span class="w"> </span><span class="c1">// ❌</span>
+</span><span id="__span-6-4"><a href="#__codelineno-6-4" id="__codelineno-6-4" name="__codelineno-6-4"></a>
+</span><span id="__span-6-5"><a href="#__codelineno-6-5" id="__codelineno-6-5" name="__codelineno-6-5"></a><span class="c1">// Modificació directa sense control:</span>
+</span><span id="__span-6-6"><a href="#__codelineno-6-6" id="__codelineno-6-6" name="__codelineno-6-6"></a><span class="n">distances</span><span class="p">[</span><span class="m">0</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="o">-</span><span class="m">100</span><span class="p">;</span><span class="w"> </span><span class="c1">// ❌ No hauria de ser possible!</span>
+</span></code></pre></div>
+</div>
+<h3 id="problema-4-funcions-amb-molt-acoblament">🔴 Problema 4: Funcions amb Molt Acoblament<a class="headerlink" href="#problema-4-funcions-amb-molt-acoblament" title="Permanent link">¶</a></h3>
+<div class="language-dart highlight"><pre><span></span><code><span id="__span-7-1"><a href="#__codelineno-7-1" id="__codelineno-7-1" name="__codelineno-7-1"></a><span class="kt">double</span><span class="w"> </span><span class="n">getAverageSpeed</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">index</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-7-2"><a href="#__codelineno-7-2" id="__codelineno-7-2" name="__codelineno-7-2"></a><span class="w">  </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">durations</span><span class="p">[</span><span class="n">index</span><span class="p">]</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="m">0</span><span class="p">)</span><span class="w"> </span><span class="k">return</span><span class="w"> </span><span class="m">0</span><span class="p">;</span>
+</span><span id="__span-7-3"><a href="#__codelineno-7-3" id="__codelineno-7-3" name="__codelineno-7-3"></a><span class="w">  </span><span class="kt">double</span><span class="w"> </span><span class="n">hours</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">durations</span><span class="p">[</span><span class="n">index</span><span class="p">]</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="m">60</span><span class="p">;</span>
+</span><span id="__span-7-4"><a href="#__codelineno-7-4" id="__codelineno-7-4" name="__codelineno-7-4"></a><span class="w">  </span><span class="k">return</span><span class="w"> </span><span class="n">distances</span><span class="p">[</span><span class="n">index</span><span class="p">]</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="n">hours</span><span class="p">;</span>
+</span><span id="__span-7-5"><a href="#__codelineno-7-5" id="__codelineno-7-5" name="__codelineno-7-5"></a><span class="p">}</span>
+</span></code></pre></div>
+<p><strong>Problemes:</strong></p>
+<ul>
+<li>La funció depèn de variables globals</li>
+<li>Cal passar un índex (risc d'errors)</li>
+<li>Difícil de testejar de forma aïllada</li>
+<li>No és reutilitzable en altres contexts</li>
+</ul>
+<h3 id="problema-5-codi-repetitiu">🔴 Problema 5: Codi Repetitiu<a class="headerlink" href="#problema-5-codi-repetitiu" title="Permanent link">¶</a></h3>
+<div class="language-dart highlight"><pre><span></span><code><span id="__span-8-1"><a href="#__codelineno-8-1" id="__codelineno-8-1" name="__codelineno-8-1"></a><span class="kt">double</span><span class="w"> </span><span class="n">getTotalDistance</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-8-2"><a href="#__codelineno-8-2" id="__codelineno-8-2" name="__codelineno-8-2"></a><span class="w">  </span><span class="kt">double</span><span class="w"> </span><span class="n">total</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">0</span><span class="p">;</span>
+</span><span id="__span-8-3"><a href="#__codelineno-8-3" id="__codelineno-8-3" name="__codelineno-8-3"></a><span class="w">  </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">0</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="n">distances</span><span class="p">.</span><span class="n">length</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="o">++</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-8-4"><a href="#__codelineno-8-4" id="__codelineno-8-4" name="__codelineno-8-4"></a><span class="w">    </span><span class="n">total</span><span class="w"> </span><span class="o">+=</span><span class="w"> </span><span class="n">distances</span><span class="p">[</span><span class="n">i</span><span class="p">];</span>
+</span><span id="__span-8-5"><a href="#__codelineno-8-5" id="__codelineno-8-5" name="__codelineno-8-5"></a><span class="w">  </span><span class="p">}</span>
+</span><span id="__span-8-6"><a href="#__codelineno-8-6" id="__codelineno-8-6" name="__codelineno-8-6"></a><span class="w">  </span><span class="k">return</span><span class="w"> </span><span class="n">total</span><span class="p">;</span>
+</span><span id="__span-8-7"><a href="#__codelineno-8-7" id="__codelineno-8-7" name="__codelineno-8-7"></a><span class="p">}</span>
+</span><span id="__span-8-8"><a href="#__codelineno-8-8" id="__codelineno-8-8" name="__codelineno-8-8"></a>
+</span><span id="__span-8-9"><a href="#__codelineno-8-9" id="__codelineno-8-9" name="__codelineno-8-9"></a><span class="kt">int</span><span class="w"> </span><span class="n">getTotalDuration</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-8-10"><a href="#__codelineno-8-10" id="__codelineno-8-10" name="__codelineno-8-10"></a><span class="w">  </span><span class="kt">int</span><span class="w"> </span><span class="n">total</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">0</span><span class="p">;</span>
+</span><span id="__span-8-11"><a href="#__codelineno-8-11" id="__codelineno-8-11" name="__codelineno-8-11"></a><span class="w">  </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">0</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="n">durations</span><span class="p">.</span><span class="n">length</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="o">++</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-8-12"><a href="#__codelineno-8-12" id="__codelineno-8-12" name="__codelineno-8-12"></a><span class="w">    </span><span class="n">total</span><span class="w"> </span><span class="o">+=</span><span class="w"> </span><span class="n">durations</span><span class="p">[</span><span class="n">i</span><span class="p">];</span>
+</span><span id="__span-8-13"><a href="#__codelineno-8-13" id="__codelineno-8-13" name="__codelineno-8-13"></a><span class="w">  </span><span class="p">}</span>
+</span><span id="__span-8-14"><a href="#__codelineno-8-14" id="__codelineno-8-14" name="__codelineno-8-14"></a><span class="w">  </span><span class="k">return</span><span class="w"> </span><span class="n">total</span><span class="p">;</span>
+</span><span id="__span-8-15"><a href="#__codelineno-8-15" id="__codelineno-8-15" name="__codelineno-8-15"></a><span class="p">}</span>
+</span></code></pre></div>
+<p><strong>Problemes:</strong></p>
+<ul>
+<li>Codi duplicat (patrón similar per cada càlcul)</li>
+<li>Difícil de mantenir i actualitzar</li>
+<li>Més línies de codi del necessari</li>
+</ul>
+<hr/>
+<h2 id="part-3-solucio-amb-programacio-orientada-a-objectes">✅ Part 3: Solució amb Programació Orientada a Objectes<a class="headerlink" href="#part-3-solucio-amb-programacio-orientada-a-objectes" title="Permanent link">¶</a></h2>
+<h3 id="conceptes-clau-de-poo">🎓 Conceptes Clau de POO<a class="headerlink" href="#conceptes-clau-de-poo" title="Permanent link">¶</a></h3>
+<div class="admonition info">
+<p class="admonition-title">Classes i Objectes</p>
+<ul>
+<li><strong>Classe</strong>: Un pla o plantilla que defineix les propietats i comportaments d'un tipus d'entitat</li>
+<li><strong>Objecte</strong>: Una instància concreta d'una classe amb valors específics</li>
+</ul>
+<p><strong>Analogia:</strong> Una classe és com un plànol d'una casa (plantilla), i un objecte és una casa real construïda amb aquest plànol.</p>
+</div>
+<div class="admonition info">
+<p class="admonition-title">Encapsulació</p>
+<p>Agrupar dades i funcions relacionades dins d'una mateixa unitat (classe) i controlar l'accés a aquestes dades.</p>
+<p><strong>Beneficis:</strong></p>
+<ul>
+<li>Protecció de dades</li>
+<li>Validació centralitzada</li>
+<li>Canvis interns sense afectar l'exterior</li>
+</ul>
+</div>
+<h3 id="disseny-de-classes">🏗️ Disseny de Classes<a class="headerlink" href="#disseny-de-classes" title="Permanent link">¶</a></h3>
+<p>Per al nostre sistema de fitness tracking, crearem dues classes principals:</p>
+<ol>
+<li><strong><code>Activity</code></strong>: Representa una activitat física individual</li>
+<li><strong><code>FitnessTracker</code></strong>: Gestiona el conjunt d'activitats</li>
+</ol>
+<h4 id="diagrama-de-classes">Diagrama de Classes<a class="headerlink" href="#diagrama-de-classes" title="Permanent link">¶</a></h4>
+<pre class="mermaid"><code>classDiagram
+    class Activity {
+        -String type
+        -double distance
+        -int duration
+        -DateTime date
+        +Activity(...)
+        +getAverageSpeed() double
+        +toString() String
+    }
+
+    class FitnessTracker {
+        -List~Activity~ activities
+        +addActivity(...)
+        +getTotalDistance() double
+        +getTotalDuration() int
+        +displayAll()
+        +displayByType(...)
+        +displayStatistics()
+    }
+
+    FitnessTracker "1" o-- "0..*" Activity : conté múltiples</code></pre>
+<hr/>
+<h2 id="part-4-implementacio-amb-poo">💻 Part 4: Implementació amb POO<a class="headerlink" href="#part-4-implementacio-amb-poo" title="Permanent link">¶</a></h2>
+<h3 id="classe-activity">Classe Activity<a class="headerlink" href="#classe-activity" title="Permanent link">¶</a></h3>
+<div class="language-dart highlight"><pre><span></span><code><span id="__span-9-1"><a href="#__codelineno-9-1" id="__codelineno-9-1" name="__codelineno-9-1"></a><span class="kd">class</span><span class="w"> </span><span class="nc">Activity</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-9-2"><a href="#__codelineno-9-2" id="__codelineno-9-2" name="__codelineno-9-2"></a><span class="w">  </span><span class="c1">// Propietats privades (encapsulació)</span>
+</span><span id="__span-9-3"><a href="#__codelineno-9-3" id="__codelineno-9-3" name="__codelineno-9-3"></a><span class="w">  </span><span class="kt">String</span><span class="w"> </span><span class="n">_type</span><span class="p">;</span>
+</span><span id="__span-9-4"><a href="#__codelineno-9-4" id="__codelineno-9-4" name="__codelineno-9-4"></a><span class="w">  </span><span class="kt">double</span><span class="w"> </span><span class="n">_distance</span><span class="p">;</span>
+</span><span id="__span-9-5"><a href="#__codelineno-9-5" id="__codelineno-9-5" name="__codelineno-9-5"></a><span class="w">  </span><span class="kt">int</span><span class="w"> </span><span class="n">_duration</span><span class="p">;</span>
+</span><span id="__span-9-6"><a href="#__codelineno-9-6" id="__codelineno-9-6" name="__codelineno-9-6"></a><span class="w">  </span><span class="n">DateTime</span><span class="w"> </span><span class="n">_date</span><span class="p">;</span>
+</span><span id="__span-9-7"><a href="#__codelineno-9-7" id="__codelineno-9-7" name="__codelineno-9-7"></a>
+</span><span id="__span-9-8"><a href="#__codelineno-9-8" id="__codelineno-9-8" name="__codelineno-9-8"></a><span class="w">  </span><span class="c1">// Constructor amb validació</span>
+</span><span id="__span-9-9"><a href="#__codelineno-9-9" id="__codelineno-9-9" name="__codelineno-9-9"></a><span class="w">  </span><span class="n">Activity</span><span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="n">_type</span><span class="p">,</span><span class="w"> </span><span class="k">this</span><span class="p">.</span><span class="n">_distance</span><span class="p">,</span><span class="w"> </span><span class="k">this</span><span class="p">.</span><span class="n">_duration</span><span class="p">,</span><span class="w"> </span><span class="k">this</span><span class="p">.</span><span class="n">_date</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-9-10"><a href="#__codelineno-9-10" id="__codelineno-9-10" name="__codelineno-9-10"></a><span class="w">    </span><span class="n">_validateType</span><span class="p">(</span><span class="n">_type</span><span class="p">);</span>
+</span><span id="__span-9-11"><a href="#__codelineno-9-11" id="__codelineno-9-11" name="__codelineno-9-11"></a><span class="w">    </span><span class="n">_validateDistance</span><span class="p">(</span><span class="n">_distance</span><span class="p">);</span>
+</span><span id="__span-9-12"><a href="#__codelineno-9-12" id="__codelineno-9-12" name="__codelineno-9-12"></a><span class="w">    </span><span class="n">_validateDuration</span><span class="p">(</span><span class="n">_duration</span><span class="p">);</span>
+</span><span id="__span-9-13"><a href="#__codelineno-9-13" id="__codelineno-9-13" name="__codelineno-9-13"></a><span class="w">  </span><span class="p">}</span>
+</span><span id="__span-9-14"><a href="#__codelineno-9-14" id="__codelineno-9-14" name="__codelineno-9-14"></a>
+</span><span id="__span-9-15"><a href="#__codelineno-9-15" id="__codelineno-9-15" name="__codelineno-9-15"></a><span class="w">  </span><span class="c1">// Getters per accedir a les propietats</span>
+</span><span id="__span-9-16"><a href="#__codelineno-9-16" id="__codelineno-9-16" name="__codelineno-9-16"></a><span class="w">  </span><span class="kt">String</span><span class="w"> </span><span class="kd">get</span><span class="w"> </span><span class="n">type</span><span class="w"> </span><span class="o">=&gt;</span><span class="w"> </span><span class="n">_type</span><span class="p">;</span>
+</span><span id="__span-9-17"><a href="#__codelineno-9-17" id="__codelineno-9-17" name="__codelineno-9-17"></a><span class="w">  </span><span class="kt">double</span><span class="w"> </span><span class="kd">get</span><span class="w"> </span><span class="n">distance</span><span class="w"> </span><span class="o">=&gt;</span><span class="w"> </span><span class="n">_distance</span><span class="p">;</span>
+</span><span id="__span-9-18"><a href="#__codelineno-9-18" id="__codelineno-9-18" name="__codelineno-9-18"></a><span class="w">  </span><span class="kt">int</span><span class="w"> </span><span class="kd">get</span><span class="w"> </span><span class="n">duration</span><span class="w"> </span><span class="o">=&gt;</span><span class="w"> </span><span class="n">_duration</span><span class="p">;</span>
+</span><span id="__span-9-19"><a href="#__codelineno-9-19" id="__codelineno-9-19" name="__codelineno-9-19"></a><span class="w">  </span><span class="n">DateTime</span><span class="w"> </span><span class="kd">get</span><span class="w"> </span><span class="n">date</span><span class="w"> </span><span class="o">=&gt;</span><span class="w"> </span><span class="n">_date</span><span class="p">;</span>
+</span><span id="__span-9-20"><a href="#__codelineno-9-20" id="__codelineno-9-20" name="__codelineno-9-20"></a>
+</span><span id="__span-9-21"><a href="#__codelineno-9-21" id="__codelineno-9-21" name="__codelineno-9-21"></a><span class="w">  </span><span class="c1">// Mètodes de validació privats</span>
+</span><span id="__span-9-22"><a href="#__codelineno-9-22" id="__codelineno-9-22" name="__codelineno-9-22"></a><span class="w">  </span><span class="kt">void</span><span class="w"> </span><span class="n">_validateType</span><span class="p">(</span><span class="kt">String</span><span class="w"> </span><span class="n">type</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-9-23"><a href="#__codelineno-9-23" id="__codelineno-9-23" name="__codelineno-9-23"></a><span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">type</span><span class="p">.</span><span class="n">trim</span><span class="p">().</span><span class="n">isEmpty</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-9-24"><a href="#__codelineno-9-24" id="__codelineno-9-24" name="__codelineno-9-24"></a><span class="w">      </span><span class="k">throw</span><span class="w"> </span><span class="n">ArgumentError</span><span class="p">(</span><span class="s1">'El tipus d</span><span class="se">\'</span><span class="s1">activitat no pot estar buit'</span><span class="p">);</span>
+</span><span id="__span-9-25"><a href="#__codelineno-9-25" id="__codelineno-9-25" name="__codelineno-9-25"></a><span class="w">    </span><span class="p">}</span>
+</span><span id="__span-9-26"><a href="#__codelineno-9-26" id="__codelineno-9-26" name="__codelineno-9-26"></a><span class="w">  </span><span class="p">}</span>
+</span><span id="__span-9-27"><a href="#__codelineno-9-27" id="__codelineno-9-27" name="__codelineno-9-27"></a>
+</span><span id="__span-9-28"><a href="#__codelineno-9-28" id="__codelineno-9-28" name="__codelineno-9-28"></a><span class="w">  </span><span class="kt">void</span><span class="w"> </span><span class="n">_validateDistance</span><span class="p">(</span><span class="kt">double</span><span class="w"> </span><span class="n">distance</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-9-29"><a href="#__codelineno-9-29" id="__codelineno-9-29" name="__codelineno-9-29"></a><span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">distance</span><span class="w"> </span><span class="o">&lt;=</span><span class="w"> </span><span class="m">0</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-9-30"><a href="#__codelineno-9-30" id="__codelineno-9-30" name="__codelineno-9-30"></a><span class="w">      </span><span class="k">throw</span><span class="w"> </span><span class="n">ArgumentError</span><span class="p">(</span><span class="s1">'La distància ha de ser positiva'</span><span class="p">);</span>
+</span><span id="__span-9-31"><a href="#__codelineno-9-31" id="__codelineno-9-31" name="__codelineno-9-31"></a><span class="w">    </span><span class="p">}</span>
+</span><span id="__span-9-32"><a href="#__codelineno-9-32" id="__codelineno-9-32" name="__codelineno-9-32"></a><span class="w">  </span><span class="p">}</span>
+</span><span id="__span-9-33"><a href="#__codelineno-9-33" id="__codelineno-9-33" name="__codelineno-9-33"></a>
+</span><span id="__span-9-34"><a href="#__codelineno-9-34" id="__codelineno-9-34" name="__codelineno-9-34"></a><span class="w">  </span><span class="kt">void</span><span class="w"> </span><span class="n">_validateDuration</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">duration</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-9-35"><a href="#__codelineno-9-35" id="__codelineno-9-35" name="__codelineno-9-35"></a><span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">duration</span><span class="w"> </span><span class="o">&lt;=</span><span class="w"> </span><span class="m">0</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-9-36"><a href="#__codelineno-9-36" id="__codelineno-9-36" name="__codelineno-9-36"></a><span class="w">      </span><span class="k">throw</span><span class="w"> </span><span class="n">ArgumentError</span><span class="p">(</span><span class="s1">'La duració ha de ser positiva'</span><span class="p">);</span>
+</span><span id="__span-9-37"><a href="#__codelineno-9-37" id="__codelineno-9-37" name="__codelineno-9-37"></a><span class="w">    </span><span class="p">}</span>
+</span><span id="__span-9-38"><a href="#__codelineno-9-38" id="__codelineno-9-38" name="__codelineno-9-38"></a><span class="w">  </span><span class="p">}</span>
+</span><span id="__span-9-39"><a href="#__codelineno-9-39" id="__codelineno-9-39" name="__codelineno-9-39"></a>
+</span><span id="__span-9-40"><a href="#__codelineno-9-40" id="__codelineno-9-40" name="__codelineno-9-40"></a><span class="w">  </span><span class="c1">// Mètode per calcular la velocitat mitjana</span>
+</span><span id="__span-9-41"><a href="#__codelineno-9-41" id="__codelineno-9-41" name="__codelineno-9-41"></a><span class="w">  </span><span class="kt">double</span><span class="w"> </span><span class="n">getAverageSpeed</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-9-42"><a href="#__codelineno-9-42" id="__codelineno-9-42" name="__codelineno-9-42"></a><span class="w">    </span><span class="kt">double</span><span class="w"> </span><span class="n">hours</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">_duration</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="m">60</span><span class="p">;</span>
+</span><span id="__span-9-43"><a href="#__codelineno-9-43" id="__codelineno-9-43" name="__codelineno-9-43"></a><span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="n">_distance</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="n">hours</span><span class="p">;</span>
+</span><span id="__span-9-44"><a href="#__codelineno-9-44" id="__codelineno-9-44" name="__codelineno-9-44"></a><span class="w">  </span><span class="p">}</span>
+</span><span id="__span-9-45"><a href="#__codelineno-9-45" id="__codelineno-9-45" name="__codelineno-9-45"></a>
+</span><span id="__span-9-46"><a href="#__codelineno-9-46" id="__codelineno-9-46" name="__codelineno-9-46"></a><span class="w">  </span><span class="c1">// Mètode per obtenir una representació textual</span>
+</span><span id="__span-9-47"><a href="#__codelineno-9-47" id="__codelineno-9-47" name="__codelineno-9-47"></a><span class="w">  </span><span class="nd">@override</span>
+</span><span id="__span-9-48"><a href="#__codelineno-9-48" id="__codelineno-9-48" name="__codelineno-9-48"></a><span class="w">  </span><span class="kt">String</span><span class="w"> </span><span class="n">toString</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-9-49"><a href="#__codelineno-9-49" id="__codelineno-9-49" name="__codelineno-9-49"></a><span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="s1">'</span><span class="si">$</span><span class="n">_type</span><span class="s1"> - </span><span class="si">$</span><span class="n">_distance</span><span class="s1"> km - </span><span class="si">$</span><span class="n">_duration</span><span class="s1"> min - '</span>
+</span><span id="__span-9-50"><a href="#__codelineno-9-50" id="__codelineno-9-50" name="__codelineno-9-50"></a><span class="w">           </span><span class="s1">'</span><span class="si">${</span><span class="n">_date</span><span class="p">.</span><span class="n">toString</span><span class="p">().</span><span class="n">split</span><span class="p">(</span><span class="s1">' '</span><span class="p">)[</span><span class="m">0</span><span class="p">]</span><span class="si">}</span><span class="s1"> - '</span>
+</span><span id="__span-9-51"><a href="#__codelineno-9-51" id="__codelineno-9-51" name="__codelineno-9-51"></a><span class="w">           </span><span class="s1">'Velocitat: </span><span class="si">${</span><span class="n">getAverageSpeed</span><span class="p">().</span><span class="n">toStringAsFixed</span><span class="p">(</span><span class="m">2</span><span class="p">)</span><span class="si">}</span><span class="s1"> km/h'</span><span class="p">;</span>
+</span><span id="__span-9-52"><a href="#__codelineno-9-52" id="__codelineno-9-52" name="__codelineno-9-52"></a><span class="w">  </span><span class="p">}</span>
+</span><span id="__span-9-53"><a href="#__codelineno-9-53" id="__codelineno-9-53" name="__codelineno-9-53"></a><span class="p">}</span>
+</span></code></pre></div>
+<div class="admonition tip">
+<p class="admonition-title">Avantatges de la Classe Activity</p>
+<p>✅ <strong>Encapsulació</strong>: Les dades estan protegides amb <code>_</code> (privades)</p>
+<p>✅ <strong>Validació</strong>: Totes les dades es validen al constructor</p>
+<p>✅ <strong>Cohesió</strong>: Totes les dades d'una activitat estan juntes</p>
+<p>✅ <strong>Mètodes associats</strong>: <code>getAverageSpeed()</code> està on pertoca</p>
+</div>
+<h3 id="classe-fitnesstracker">Classe FitnessTracker<a class="headerlink" href="#classe-fitnesstracker" title="Permanent link">¶</a></h3>
+<div class="language-dart highlight"><pre><span></span><code><span id="__span-10-1"><a href="#__codelineno-10-1" id="__codelineno-10-1" name="__codelineno-10-1"></a><span class="kd">class</span><span class="w"> </span><span class="nc">FitnessTracker</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-10-2"><a href="#__codelineno-10-2" id="__codelineno-10-2" name="__codelineno-10-2"></a><span class="w">  </span><span class="c1">// Llista privada d'activitats</span>
+</span><span id="__span-10-3"><a href="#__codelineno-10-3" id="__codelineno-10-3" name="__codelineno-10-3"></a><span class="w">  </span><span class="kd">final</span><span class="w"> </span><span class="n">List</span><span class="o">&lt;</span><span class="n">Activity</span><span class="o">&gt;</span><span class="w"> </span><span class="n">_activities</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[];</span>
+</span><span id="__span-10-4"><a href="#__codelineno-10-4" id="__codelineno-10-4" name="__codelineno-10-4"></a>
+</span><span id="__span-10-5"><a href="#__codelineno-10-5" id="__codelineno-10-5" name="__codelineno-10-5"></a><span class="w">  </span><span class="c1">// Getter per obtenir una còpia de les activitats (només lectura)</span>
+</span><span id="__span-10-6"><a href="#__codelineno-10-6" id="__codelineno-10-6" name="__codelineno-10-6"></a><span class="w">  </span><span class="n">List</span><span class="o">&lt;</span><span class="n">Activity</span><span class="o">&gt;</span><span class="w"> </span><span class="kd">get</span><span class="w"> </span><span class="n">activities</span><span class="w"> </span><span class="o">=&gt;</span><span class="w"> </span><span class="n">List</span><span class="p">.</span><span class="n">unmodifiable</span><span class="p">(</span><span class="n">_activities</span><span class="p">);</span>
+</span><span id="__span-10-7"><a href="#__codelineno-10-7" id="__codelineno-10-7" name="__codelineno-10-7"></a>
+</span><span id="__span-10-8"><a href="#__codelineno-10-8" id="__codelineno-10-8" name="__codelineno-10-8"></a><span class="w">  </span><span class="c1">// Afegir una nova activitat</span>
+</span><span id="__span-10-9"><a href="#__codelineno-10-9" id="__codelineno-10-9" name="__codelineno-10-9"></a><span class="w">  </span><span class="kt">void</span><span class="w"> </span><span class="n">addActivity</span><span class="p">(</span><span class="kt">String</span><span class="w"> </span><span class="n">type</span><span class="p">,</span><span class="w"> </span><span class="kt">double</span><span class="w"> </span><span class="n">distance</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">duration</span><span class="p">,</span><span class="w"> </span><span class="n">DateTime</span><span class="w"> </span><span class="n">date</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-10-10"><a href="#__codelineno-10-10" id="__codelineno-10-10" name="__codelineno-10-10"></a><span class="w">    </span><span class="k">try</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-10-11"><a href="#__codelineno-10-11" id="__codelineno-10-11" name="__codelineno-10-11"></a><span class="w">      </span><span class="n">Activity</span><span class="w"> </span><span class="n">activity</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Activity</span><span class="p">(</span><span class="n">type</span><span class="p">,</span><span class="w"> </span><span class="n">distance</span><span class="p">,</span><span class="w"> </span><span class="n">duration</span><span class="p">,</span><span class="w"> </span><span class="n">date</span><span class="p">);</span>
+</span><span id="__span-10-12"><a href="#__codelineno-10-12" id="__codelineno-10-12" name="__codelineno-10-12"></a><span class="w">      </span><span class="n">_activities</span><span class="p">.</span><span class="n">add</span><span class="p">(</span><span class="n">activity</span><span class="p">);</span>
+</span><span id="__span-10-13"><a href="#__codelineno-10-13" id="__codelineno-10-13" name="__codelineno-10-13"></a><span class="w">      </span><span class="n">print</span><span class="p">(</span><span class="s1">'✓ Activitat afegida: </span><span class="si">$</span><span class="n">type</span><span class="s1"> - </span><span class="si">$</span><span class="n">distance</span><span class="s1"> km'</span><span class="p">);</span>
+</span><span id="__span-10-14"><a href="#__codelineno-10-14" id="__codelineno-10-14" name="__codelineno-10-14"></a><span class="w">    </span><span class="p">}</span><span class="w"> </span><span class="k">catch</span><span class="w"> </span><span class="p">(</span><span class="n">e</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-10-15"><a href="#__codelineno-10-15" id="__codelineno-10-15" name="__codelineno-10-15"></a><span class="w">      </span><span class="n">print</span><span class="p">(</span><span class="s1">'✗ Error: </span><span class="si">${</span><span class="n">e</span><span class="p">.</span><span class="n">toString</span><span class="p">()</span><span class="si">}</span><span class="s1">'</span><span class="p">);</span>
+</span><span id="__span-10-16"><a href="#__codelineno-10-16" id="__codelineno-10-16" name="__codelineno-10-16"></a><span class="w">    </span><span class="p">}</span>
+</span><span id="__span-10-17"><a href="#__codelineno-10-17" id="__codelineno-10-17" name="__codelineno-10-17"></a><span class="w">  </span><span class="p">}</span>
+</span><span id="__span-10-18"><a href="#__codelineno-10-18" id="__codelineno-10-18" name="__codelineno-10-18"></a>
+</span><span id="__span-10-19"><a href="#__codelineno-10-19" id="__codelineno-10-19" name="__codelineno-10-19"></a><span class="w">  </span><span class="c1">// Calcular distància total</span>
+</span><span id="__span-10-20"><a href="#__codelineno-10-20" id="__codelineno-10-20" name="__codelineno-10-20"></a><span class="w">  </span><span class="kt">double</span><span class="w"> </span><span class="n">getTotalDistance</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-10-21"><a href="#__codelineno-10-21" id="__codelineno-10-21" name="__codelineno-10-21"></a><span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="n">_activities</span><span class="p">.</span><span class="n">fold</span><span class="p">(</span><span class="m">0.0</span><span class="p">,</span><span class="w"> </span><span class="p">(</span><span class="n">sum</span><span class="p">,</span><span class="w"> </span><span class="n">activity</span><span class="p">)</span><span class="w"> </span><span class="o">=&gt;</span><span class="w"> </span><span class="n">sum</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">activity</span><span class="p">.</span><span class="n">distance</span><span class="p">);</span>
+</span><span id="__span-10-22"><a href="#__codelineno-10-22" id="__codelineno-10-22" name="__codelineno-10-22"></a><span class="w">  </span><span class="p">}</span>
+</span><span id="__span-10-23"><a href="#__codelineno-10-23" id="__codelineno-10-23" name="__codelineno-10-23"></a>
+</span><span id="__span-10-24"><a href="#__codelineno-10-24" id="__codelineno-10-24" name="__codelineno-10-24"></a><span class="w">  </span><span class="c1">// Calcular duració total</span>
+</span><span id="__span-10-25"><a href="#__codelineno-10-25" id="__codelineno-10-25" name="__codelineno-10-25"></a><span class="w">  </span><span class="kt">int</span><span class="w"> </span><span class="n">getTotalDuration</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-10-26"><a href="#__codelineno-10-26" id="__codelineno-10-26" name="__codelineno-10-26"></a><span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="n">_activities</span><span class="p">.</span><span class="n">fold</span><span class="p">(</span><span class="m">0</span><span class="p">,</span><span class="w"> </span><span class="p">(</span><span class="n">sum</span><span class="p">,</span><span class="w"> </span><span class="n">activity</span><span class="p">)</span><span class="w"> </span><span class="o">=&gt;</span><span class="w"> </span><span class="n">sum</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">activity</span><span class="p">.</span><span class="n">duration</span><span class="p">);</span>
+</span><span id="__span-10-27"><a href="#__codelineno-10-27" id="__codelineno-10-27" name="__codelineno-10-27"></a><span class="w">  </span><span class="p">}</span>
+</span><span id="__span-10-28"><a href="#__codelineno-10-28" id="__codelineno-10-28" name="__codelineno-10-28"></a>
+</span><span id="__span-10-29"><a href="#__codelineno-10-29" id="__codelineno-10-29" name="__codelineno-10-29"></a><span class="w">  </span><span class="c1">// Obtenir nombre d'activitats</span>
+</span><span id="__span-10-30"><a href="#__codelineno-10-30" id="__codelineno-10-30" name="__codelineno-10-30"></a><span class="w">  </span><span class="kt">int</span><span class="w"> </span><span class="n">getActivityCount</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-10-31"><a href="#__codelineno-10-31" id="__codelineno-10-31" name="__codelineno-10-31"></a><span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="n">_activities</span><span class="p">.</span><span class="n">length</span><span class="p">;</span>
+</span><span id="__span-10-32"><a href="#__codelineno-10-32" id="__codelineno-10-32" name="__codelineno-10-32"></a><span class="w">  </span><span class="p">}</span>
+</span><span id="__span-10-33"><a href="#__codelineno-10-33" id="__codelineno-10-33" name="__codelineno-10-33"></a>
+</span><span id="__span-10-34"><a href="#__codelineno-10-34" id="__codelineno-10-34" name="__codelineno-10-34"></a><span class="w">  </span><span class="c1">// Calcular distància mitjana</span>
+</span><span id="__span-10-35"><a href="#__codelineno-10-35" id="__codelineno-10-35" name="__codelineno-10-35"></a><span class="w">  </span><span class="kt">double</span><span class="w"> </span><span class="n">getAverageDistance</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-10-36"><a href="#__codelineno-10-36" id="__codelineno-10-36" name="__codelineno-10-36"></a><span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">_activities</span><span class="p">.</span><span class="n">isEmpty</span><span class="p">)</span><span class="w"> </span><span class="k">return</span><span class="w"> </span><span class="m">0.0</span><span class="p">;</span>
+</span><span id="__span-10-37"><a href="#__codelineno-10-37" id="__codelineno-10-37" name="__codelineno-10-37"></a><span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="n">getTotalDistance</span><span class="p">()</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="n">_activities</span><span class="p">.</span><span class="n">length</span><span class="p">;</span>
+</span><span id="__span-10-38"><a href="#__codelineno-10-38" id="__codelineno-10-38" name="__codelineno-10-38"></a><span class="w">  </span><span class="p">}</span>
+</span><span id="__span-10-39"><a href="#__codelineno-10-39" id="__codelineno-10-39" name="__codelineno-10-39"></a>
+</span><span id="__span-10-40"><a href="#__codelineno-10-40" id="__codelineno-10-40" name="__codelineno-10-40"></a><span class="w">  </span><span class="c1">// Mostrar totes les activitats</span>
+</span><span id="__span-10-41"><a href="#__codelineno-10-41" id="__codelineno-10-41" name="__codelineno-10-41"></a><span class="w">  </span><span class="kt">void</span><span class="w"> </span><span class="n">displayAllActivities</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-10-42"><a href="#__codelineno-10-42" id="__codelineno-10-42" name="__codelineno-10-42"></a><span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">_activities</span><span class="p">.</span><span class="n">isEmpty</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-10-43"><a href="#__codelineno-10-43" id="__codelineno-10-43" name="__codelineno-10-43"></a><span class="w">      </span><span class="n">print</span><span class="p">(</span><span class="s1">'No hi ha activitats registrades'</span><span class="p">);</span>
+</span><span id="__span-10-44"><a href="#__codelineno-10-44" id="__codelineno-10-44" name="__codelineno-10-44"></a><span class="w">      </span><span class="k">return</span><span class="p">;</span>
+</span><span id="__span-10-45"><a href="#__codelineno-10-45" id="__codelineno-10-45" name="__codelineno-10-45"></a><span class="w">    </span><span class="p">}</span>
+</span><span id="__span-10-46"><a href="#__codelineno-10-46" id="__codelineno-10-46" name="__codelineno-10-46"></a>
+</span><span id="__span-10-47"><a href="#__codelineno-10-47" id="__codelineno-10-47" name="__codelineno-10-47"></a><span class="w">    </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">0</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="n">_activities</span><span class="p">.</span><span class="n">length</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="o">++</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-10-48"><a href="#__codelineno-10-48" id="__codelineno-10-48" name="__codelineno-10-48"></a><span class="w">      </span><span class="n">print</span><span class="p">(</span><span class="s1">'</span><span class="si">${</span><span class="n">i</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="m">1</span><span class="si">}</span><span class="s1">. </span><span class="si">${</span><span class="n">_activities</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="si">}</span><span class="s1">'</span><span class="p">);</span>
+</span><span id="__span-10-49"><a href="#__codelineno-10-49" id="__codelineno-10-49" name="__codelineno-10-49"></a><span class="w">    </span><span class="p">}</span>
+</span><span id="__span-10-50"><a href="#__codelineno-10-50" id="__codelineno-10-50" name="__codelineno-10-50"></a><span class="w">  </span><span class="p">}</span>
+</span><span id="__span-10-51"><a href="#__codelineno-10-51" id="__codelineno-10-51" name="__codelineno-10-51"></a>
+</span><span id="__span-10-52"><a href="#__codelineno-10-52" id="__codelineno-10-52" name="__codelineno-10-52"></a><span class="w">  </span><span class="c1">// Mostrar activitats per tipus</span>
+</span><span id="__span-10-53"><a href="#__codelineno-10-53" id="__codelineno-10-53" name="__codelineno-10-53"></a><span class="w">  </span><span class="kt">void</span><span class="w"> </span><span class="n">displayActivitiesByType</span><span class="p">(</span><span class="kt">String</span><span class="w"> </span><span class="n">type</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-10-54"><a href="#__codelineno-10-54" id="__codelineno-10-54" name="__codelineno-10-54"></a><span class="w">    </span><span class="n">List</span><span class="o">&lt;</span><span class="n">Activity</span><span class="o">&gt;</span><span class="w"> </span><span class="n">filtered</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">_activities</span>
+</span><span id="__span-10-55"><a href="#__codelineno-10-55" id="__codelineno-10-55" name="__codelineno-10-55"></a><span class="w">        </span><span class="p">.</span><span class="n">where</span><span class="p">((</span><span class="n">activity</span><span class="p">)</span><span class="w"> </span><span class="o">=&gt;</span><span class="w"> </span><span class="n">activity</span><span class="p">.</span><span class="n">type</span><span class="p">.</span><span class="n">toLowerCase</span><span class="p">()</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="n">type</span><span class="p">.</span><span class="n">toLowerCase</span><span class="p">())</span>
+</span><span id="__span-10-56"><a href="#__codelineno-10-56" id="__codelineno-10-56" name="__codelineno-10-56"></a><span class="w">        </span><span class="p">.</span><span class="n">toList</span><span class="p">();</span>
+</span><span id="__span-10-57"><a href="#__codelineno-10-57" id="__codelineno-10-57" name="__codelineno-10-57"></a>
+</span><span id="__span-10-58"><a href="#__codelineno-10-58" id="__codelineno-10-58" name="__codelineno-10-58"></a><span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">filtered</span><span class="p">.</span><span class="n">isEmpty</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-10-59"><a href="#__codelineno-10-59" id="__codelineno-10-59" name="__codelineno-10-59"></a><span class="w">      </span><span class="n">print</span><span class="p">(</span><span class="s1">'No s</span><span class="se">\'</span><span class="s1">han trobat activitats de tipus: </span><span class="si">$</span><span class="n">type</span><span class="s1">'</span><span class="p">);</span>
+</span><span id="__span-10-60"><a href="#__codelineno-10-60" id="__codelineno-10-60" name="__codelineno-10-60"></a><span class="w">      </span><span class="k">return</span><span class="p">;</span>
+</span><span id="__span-10-61"><a href="#__codelineno-10-61" id="__codelineno-10-61" name="__codelineno-10-61"></a><span class="w">    </span><span class="p">}</span>
+</span><span id="__span-10-62"><a href="#__codelineno-10-62" id="__codelineno-10-62" name="__codelineno-10-62"></a>
+</span><span id="__span-10-63"><a href="#__codelineno-10-63" id="__codelineno-10-63" name="__codelineno-10-63"></a><span class="w">    </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="n">Activity</span><span class="w"> </span><span class="n">activity</span><span class="w"> </span><span class="k">in</span><span class="w"> </span><span class="n">filtered</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-10-64"><a href="#__codelineno-10-64" id="__codelineno-10-64" name="__codelineno-10-64"></a><span class="w">      </span><span class="n">print</span><span class="p">(</span><span class="n">activity</span><span class="p">);</span>
+</span><span id="__span-10-65"><a href="#__codelineno-10-65" id="__codelineno-10-65" name="__codelineno-10-65"></a><span class="w">    </span><span class="p">}</span>
+</span><span id="__span-10-66"><a href="#__codelineno-10-66" id="__codelineno-10-66" name="__codelineno-10-66"></a><span class="w">  </span><span class="p">}</span>
+</span><span id="__span-10-67"><a href="#__codelineno-10-67" id="__codelineno-10-67" name="__codelineno-10-67"></a>
+</span><span id="__span-10-68"><a href="#__codelineno-10-68" id="__codelineno-10-68" name="__codelineno-10-68"></a><span class="w">  </span><span class="c1">// Mostrar estadístiques</span>
+</span><span id="__span-10-69"><a href="#__codelineno-10-69" id="__codelineno-10-69" name="__codelineno-10-69"></a><span class="w">  </span><span class="kt">void</span><span class="w"> </span><span class="n">displayStatistics</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-10-70"><a href="#__codelineno-10-70" id="__codelineno-10-70" name="__codelineno-10-70"></a><span class="w">    </span><span class="n">print</span><span class="p">(</span><span class="s1">'Total d</span><span class="se">\'</span><span class="s1">activitats: </span><span class="si">${</span><span class="n">getActivityCount</span><span class="p">()</span><span class="si">}</span><span class="s1">'</span><span class="p">);</span>
+</span><span id="__span-10-71"><a href="#__codelineno-10-71" id="__codelineno-10-71" name="__codelineno-10-71"></a><span class="w">    </span><span class="n">print</span><span class="p">(</span><span class="s1">'Distància total: </span><span class="si">${</span><span class="n">getTotalDistance</span><span class="p">().</span><span class="n">toStringAsFixed</span><span class="p">(</span><span class="m">2</span><span class="p">)</span><span class="si">}</span><span class="s1"> km'</span><span class="p">);</span>
+</span><span id="__span-10-72"><a href="#__codelineno-10-72" id="__codelineno-10-72" name="__codelineno-10-72"></a><span class="w">    </span><span class="n">print</span><span class="p">(</span><span class="s1">'Temps total: </span><span class="si">${</span><span class="n">getTotalDuration</span><span class="p">()</span><span class="si">}</span><span class="s1"> min'</span><span class="p">);</span>
+</span><span id="__span-10-73"><a href="#__codelineno-10-73" id="__codelineno-10-73" name="__codelineno-10-73"></a>
+</span><span id="__span-10-74"><a href="#__codelineno-10-74" id="__codelineno-10-74" name="__codelineno-10-74"></a><span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">_activities</span><span class="p">.</span><span class="n">isNotEmpty</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-10-75"><a href="#__codelineno-10-75" id="__codelineno-10-75" name="__codelineno-10-75"></a><span class="w">      </span><span class="n">print</span><span class="p">(</span><span class="s1">'Distància mitjana: </span><span class="si">${</span><span class="n">getAverageDistance</span><span class="p">().</span><span class="n">toStringAsFixed</span><span class="p">(</span><span class="m">2</span><span class="p">)</span><span class="si">}</span><span class="s1"> km'</span><span class="p">);</span>
+</span><span id="__span-10-76"><a href="#__codelineno-10-76" id="__codelineno-10-76" name="__codelineno-10-76"></a><span class="w">    </span><span class="p">}</span>
+</span><span id="__span-10-77"><a href="#__codelineno-10-77" id="__codelineno-10-77" name="__codelineno-10-77"></a><span class="w">  </span><span class="p">}</span>
+</span><span id="__span-10-78"><a href="#__codelineno-10-78" id="__codelineno-10-78" name="__codelineno-10-78"></a>
+</span><span id="__span-10-79"><a href="#__codelineno-10-79" id="__codelineno-10-79" name="__codelineno-10-79"></a><span class="w">  </span><span class="c1">// Obtenir activitats per tipus (retorna llista)</span>
+</span><span id="__span-10-80"><a href="#__codelineno-10-80" id="__codelineno-10-80" name="__codelineno-10-80"></a><span class="w">  </span><span class="n">List</span><span class="o">&lt;</span><span class="n">Activity</span><span class="o">&gt;</span><span class="w"> </span><span class="n">getActivitiesByType</span><span class="p">(</span><span class="kt">String</span><span class="w"> </span><span class="n">type</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-10-81"><a href="#__codelineno-10-81" id="__codelineno-10-81" name="__codelineno-10-81"></a><span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="n">_activities</span>
+</span><span id="__span-10-82"><a href="#__codelineno-10-82" id="__codelineno-10-82" name="__codelineno-10-82"></a><span class="w">        </span><span class="p">.</span><span class="n">where</span><span class="p">((</span><span class="n">activity</span><span class="p">)</span><span class="w"> </span><span class="o">=&gt;</span><span class="w"> </span><span class="n">activity</span><span class="p">.</span><span class="n">type</span><span class="p">.</span><span class="n">toLowerCase</span><span class="p">()</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="n">type</span><span class="p">.</span><span class="n">toLowerCase</span><span class="p">())</span>
+</span><span id="__span-10-83"><a href="#__codelineno-10-83" id="__codelineno-10-83" name="__codelineno-10-83"></a><span class="w">        </span><span class="p">.</span><span class="n">toList</span><span class="p">();</span>
+</span><span id="__span-10-84"><a href="#__codelineno-10-84" id="__codelineno-10-84" name="__codelineno-10-84"></a><span class="w">  </span><span class="p">}</span>
+</span><span id="__span-10-85"><a href="#__codelineno-10-85" id="__codelineno-10-85" name="__codelineno-10-85"></a><span class="p">}</span>
+</span></code></pre></div>
+<h3 id="programa-principal-refactoritzat">Programa Principal Refactoritzat<a class="headerlink" href="#programa-principal-refactoritzat" title="Permanent link">¶</a></h3>
+<div class="language-dart highlight"><pre><span></span><code><span id="__span-11-1"><a href="#__codelineno-11-1" id="__codelineno-11-1" name="__codelineno-11-1"></a><span class="kt">void</span><span class="w"> </span><span class="n">main</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-11-2"><a href="#__codelineno-11-2" id="__codelineno-11-2" name="__codelineno-11-2"></a><span class="w">  </span><span class="c1">// Crear una instància del tracker</span>
+</span><span id="__span-11-3"><a href="#__codelineno-11-3" id="__codelineno-11-3" name="__codelineno-11-3"></a><span class="w">  </span><span class="n">FitnessTracker</span><span class="w"> </span><span class="n">tracker</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">FitnessTracker</span><span class="p">();</span>
+</span><span id="__span-11-4"><a href="#__codelineno-11-4" id="__codelineno-11-4" name="__codelineno-11-4"></a>
+</span><span id="__span-11-5"><a href="#__codelineno-11-5" id="__codelineno-11-5" name="__codelineno-11-5"></a><span class="w">  </span><span class="c1">// Afegir activitats</span>
+</span><span id="__span-11-6"><a href="#__codelineno-11-6" id="__codelineno-11-6" name="__codelineno-11-6"></a><span class="w">  </span><span class="n">tracker</span><span class="p">.</span><span class="n">addActivity</span><span class="p">(</span><span class="s1">'Córrer'</span><span class="p">,</span><span class="w"> </span><span class="m">5.2</span><span class="p">,</span><span class="w"> </span><span class="m">32</span><span class="p">,</span><span class="w"> </span><span class="n">DateTime</span><span class="p">(</span><span class="m">2024</span><span class="p">,</span><span class="w"> </span><span class="m">11</span><span class="p">,</span><span class="w"> </span><span class="m">15</span><span class="p">));</span>
+</span><span id="__span-11-7"><a href="#__codelineno-11-7" id="__codelineno-11-7" name="__codelineno-11-7"></a><span class="w">  </span><span class="n">tracker</span><span class="p">.</span><span class="n">addActivity</span><span class="p">(</span><span class="s1">'Nedar'</span><span class="p">,</span><span class="w"> </span><span class="m">1.5</span><span class="p">,</span><span class="w"> </span><span class="m">45</span><span class="p">,</span><span class="w"> </span><span class="n">DateTime</span><span class="p">(</span><span class="m">2024</span><span class="p">,</span><span class="w"> </span><span class="m">11</span><span class="p">,</span><span class="w"> </span><span class="m">16</span><span class="p">));</span>
+</span><span id="__span-11-8"><a href="#__codelineno-11-8" id="__codelineno-11-8" name="__codelineno-11-8"></a><span class="w">  </span><span class="n">tracker</span><span class="p">.</span><span class="n">addActivity</span><span class="p">(</span><span class="s1">'Ciclisme'</span><span class="p">,</span><span class="w"> </span><span class="m">20.0</span><span class="p">,</span><span class="w"> </span><span class="m">60</span><span class="p">,</span><span class="w"> </span><span class="n">DateTime</span><span class="p">(</span><span class="m">2024</span><span class="p">,</span><span class="w"> </span><span class="m">11</span><span class="p">,</span><span class="w"> </span><span class="m">16</span><span class="p">));</span>
+</span><span id="__span-11-9"><a href="#__codelineno-11-9" id="__codelineno-11-9" name="__codelineno-11-9"></a>
+</span><span id="__span-11-10"><a href="#__codelineno-11-10" id="__codelineno-11-10" name="__codelineno-11-10"></a><span class="w">  </span><span class="c1">// Intentar afegir activitats invàlides (es capturarà l'error)</span>
+</span><span id="__span-11-11"><a href="#__codelineno-11-11" id="__codelineno-11-11" name="__codelineno-11-11"></a><span class="w">  </span><span class="n">print</span><span class="p">(</span><span class="s1">'</span><span class="se">\n</span><span class="s1">--- Provant validacions ---'</span><span class="p">);</span>
+</span><span id="__span-11-12"><a href="#__codelineno-11-12" id="__codelineno-11-12" name="__codelineno-11-12"></a><span class="w">  </span><span class="n">tracker</span><span class="p">.</span><span class="n">addActivity</span><span class="p">(</span><span class="s1">''</span><span class="p">,</span><span class="w"> </span><span class="m">5.0</span><span class="p">,</span><span class="w"> </span><span class="m">30</span><span class="p">,</span><span class="w"> </span><span class="n">DateTime</span><span class="p">.</span><span class="n">now</span><span class="p">());</span><span class="w"> </span><span class="c1">// Error: tipus buit</span>
+</span><span id="__span-11-13"><a href="#__codelineno-11-13" id="__codelineno-11-13" name="__codelineno-11-13"></a><span class="w">  </span><span class="n">tracker</span><span class="p">.</span><span class="n">addActivity</span><span class="p">(</span><span class="s1">'Córrer'</span><span class="p">,</span><span class="w"> </span><span class="o">-</span><span class="m">5.0</span><span class="p">,</span><span class="w"> </span><span class="m">30</span><span class="p">,</span><span class="w"> </span><span class="n">DateTime</span><span class="p">.</span><span class="n">now</span><span class="p">());</span><span class="w"> </span><span class="c1">// Error: distància negativa</span>
+</span><span id="__span-11-14"><a href="#__codelineno-11-14" id="__codelineno-11-14" name="__codelineno-11-14"></a><span class="w">  </span><span class="n">tracker</span><span class="p">.</span><span class="n">addActivity</span><span class="p">(</span><span class="s1">'Córrer'</span><span class="p">,</span><span class="w"> </span><span class="m">5.0</span><span class="p">,</span><span class="w"> </span><span class="m">0</span><span class="p">,</span><span class="w"> </span><span class="n">DateTime</span><span class="p">.</span><span class="n">now</span><span class="p">());</span><span class="w"> </span><span class="c1">// Error: duració 0</span>
+</span><span id="__span-11-15"><a href="#__codelineno-11-15" id="__codelineno-11-15" name="__codelineno-11-15"></a>
+</span><span id="__span-11-16"><a href="#__codelineno-11-16" id="__codelineno-11-16" name="__codelineno-11-16"></a><span class="w">  </span><span class="c1">// Mostrar totes les activitats</span>
+</span><span id="__span-11-17"><a href="#__codelineno-11-17" id="__codelineno-11-17" name="__codelineno-11-17"></a><span class="w">  </span><span class="n">print</span><span class="p">(</span><span class="s1">'</span><span class="se">\n</span><span class="s1">=== ACTIVITATS REGISTRADES ==='</span><span class="p">);</span>
+</span><span id="__span-11-18"><a href="#__codelineno-11-18" id="__codelineno-11-18" name="__codelineno-11-18"></a><span class="w">  </span><span class="n">tracker</span><span class="p">.</span><span class="n">displayAllActivities</span><span class="p">();</span>
+</span><span id="__span-11-19"><a href="#__codelineno-11-19" id="__codelineno-11-19" name="__codelineno-11-19"></a>
+</span><span id="__span-11-20"><a href="#__codelineno-11-20" id="__codelineno-11-20" name="__codelineno-11-20"></a><span class="w">  </span><span class="c1">// Mostrar estadístiques</span>
+</span><span id="__span-11-21"><a href="#__codelineno-11-21" id="__codelineno-11-21" name="__codelineno-11-21"></a><span class="w">  </span><span class="n">print</span><span class="p">(</span><span class="s1">'</span><span class="se">\n</span><span class="s1">=== ESTADÍSTIQUES ==='</span><span class="p">);</span>
+</span><span id="__span-11-22"><a href="#__codelineno-11-22" id="__codelineno-11-22" name="__codelineno-11-22"></a><span class="w">  </span><span class="n">tracker</span><span class="p">.</span><span class="n">displayStatistics</span><span class="p">();</span>
+</span><span id="__span-11-23"><a href="#__codelineno-11-23" id="__codelineno-11-23" name="__codelineno-11-23"></a>
+</span><span id="__span-11-24"><a href="#__codelineno-11-24" id="__codelineno-11-24" name="__codelineno-11-24"></a><span class="w">  </span><span class="c1">// Filtrar per tipus</span>
+</span><span id="__span-11-25"><a href="#__codelineno-11-25" id="__codelineno-11-25" name="__codelineno-11-25"></a><span class="w">  </span><span class="n">print</span><span class="p">(</span><span class="s1">'</span><span class="se">\n</span><span class="s1">=== ACTIVITATS DE CÓRRER ==='</span><span class="p">);</span>
+</span><span id="__span-11-26"><a href="#__codelineno-11-26" id="__codelineno-11-26" name="__codelineno-11-26"></a><span class="w">  </span><span class="n">tracker</span><span class="p">.</span><span class="n">displayActivitiesByType</span><span class="p">(</span><span class="s1">'Córrer'</span><span class="p">);</span>
+</span><span id="__span-11-27"><a href="#__codelineno-11-27" id="__codelineno-11-27" name="__codelineno-11-27"></a>
+</span><span id="__span-11-28"><a href="#__codelineno-11-28" id="__codelineno-11-28" name="__codelineno-11-28"></a><span class="w">  </span><span class="c1">// Utilitzar els objectes directament</span>
+</span><span id="__span-11-29"><a href="#__codelineno-11-29" id="__codelineno-11-29" name="__codelineno-11-29"></a><span class="w">  </span><span class="n">print</span><span class="p">(</span><span class="s1">'</span><span class="se">\n</span><span class="s1">=== ANÀLISI DETALLADA ==='</span><span class="p">);</span>
+</span><span id="__span-11-30"><a href="#__codelineno-11-30" id="__codelineno-11-30" name="__codelineno-11-30"></a><span class="w">  </span><span class="n">List</span><span class="o">&lt;</span><span class="n">Activity</span><span class="o">&gt;</span><span class="w"> </span><span class="n">runningActivities</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">tracker</span><span class="p">.</span><span class="n">getActivitiesByType</span><span class="p">(</span><span class="s1">'Córrer'</span><span class="p">);</span>
+</span><span id="__span-11-31"><a href="#__codelineno-11-31" id="__codelineno-11-31" name="__codelineno-11-31"></a><span class="w">  </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="n">Activity</span><span class="w"> </span><span class="n">activity</span><span class="w"> </span><span class="k">in</span><span class="w"> </span><span class="n">runningActivities</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-11-32"><a href="#__codelineno-11-32" id="__codelineno-11-32" name="__codelineno-11-32"></a><span class="w">    </span><span class="n">print</span><span class="p">(</span><span class="s1">'Activitat: </span><span class="si">${</span><span class="n">activity</span><span class="p">.</span><span class="n">type</span><span class="si">}</span><span class="s1">'</span><span class="p">);</span>
+</span><span id="__span-11-33"><a href="#__codelineno-11-33" id="__codelineno-11-33" name="__codelineno-11-33"></a><span class="w">    </span><span class="n">print</span><span class="p">(</span><span class="s1">'  - Distància: </span><span class="si">${</span><span class="n">activity</span><span class="p">.</span><span class="n">distance</span><span class="si">}</span><span class="s1"> km'</span><span class="p">);</span>
+</span><span id="__span-11-34"><a href="#__codelineno-11-34" id="__codelineno-11-34" name="__codelineno-11-34"></a><span class="w">    </span><span class="n">print</span><span class="p">(</span><span class="s1">'  - Duració: </span><span class="si">${</span><span class="n">activity</span><span class="p">.</span><span class="n">duration</span><span class="si">}</span><span class="s1"> min'</span><span class="p">);</span>
+</span><span id="__span-11-35"><a href="#__codelineno-11-35" id="__codelineno-11-35" name="__codelineno-11-35"></a><span class="w">    </span><span class="n">print</span><span class="p">(</span><span class="s1">'  - Velocitat: </span><span class="si">${</span><span class="n">activity</span><span class="p">.</span><span class="n">getAverageSpeed</span><span class="p">().</span><span class="n">toStringAsFixed</span><span class="p">(</span><span class="m">2</span><span class="p">)</span><span class="si">}</span><span class="s1"> km/h'</span><span class="p">);</span>
+</span><span id="__span-11-36"><a href="#__codelineno-11-36" id="__codelineno-11-36" name="__codelineno-11-36"></a><span class="w">  </span><span class="p">}</span>
+</span><span id="__span-11-37"><a href="#__codelineno-11-37" id="__codelineno-11-37" name="__codelineno-11-37"></a><span class="p">}</span>
+</span></code></pre></div>
+<div class="admonition success">
+<p class="admonition-title">Sortida del programa POO</p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-12-1"><a href="#__codelineno-12-1" id="__codelineno-12-1" name="__codelineno-12-1"></a>✓ Activitat afegida: Córrer - 5.2 km
+</span><span id="__span-12-2"><a href="#__codelineno-12-2" id="__codelineno-12-2" name="__codelineno-12-2"></a>✓ Activitat afegida: Nedar - 1.5 km
+</span><span id="__span-12-3"><a href="#__codelineno-12-3" id="__codelineno-12-3" name="__codelineno-12-3"></a>✓ Activitat afegida: Ciclisme - 20.0 km
+</span><span id="__span-12-4"><a href="#__codelineno-12-4" id="__codelineno-12-4" name="__codelineno-12-4"></a>
+</span><span id="__span-12-5"><a href="#__codelineno-12-5" id="__codelineno-12-5" name="__codelineno-12-5"></a>--- Provant validacions ---
+</span><span id="__span-12-6"><a href="#__codelineno-12-6" id="__codelineno-12-6" name="__codelineno-12-6"></a>✗ Error: Invalid argument(s): El tipus d'activitat no pot estar buit
+</span><span id="__span-12-7"><a href="#__codelineno-12-7" id="__codelineno-12-7" name="__codelineno-12-7"></a>✗ Error: Invalid argument(s): La distància ha de ser positiva
+</span><span id="__span-12-8"><a href="#__codelineno-12-8" id="__codelineno-12-8" name="__codelineno-12-8"></a>✗ Error: Invalid argument(s): La duració ha de ser positiva
+</span><span id="__span-12-9"><a href="#__codelineno-12-9" id="__codelineno-12-9" name="__codelineno-12-9"></a>
+</span><span id="__span-12-10"><a href="#__codelineno-12-10" id="__codelineno-12-10" name="__codelineno-12-10"></a>=== ACTIVITATS REGISTRADES ===
+</span><span id="__span-12-11"><a href="#__codelineno-12-11" id="__codelineno-12-11" name="__codelineno-12-11"></a>1. Córrer - 5.2 km - 32 min - 2024-11-15 - Velocitat: 9.75 km/h
+</span><span id="__span-12-12"><a href="#__codelineno-12-12" id="__codelineno-12-12" name="__codelineno-12-12"></a>2. Nedar - 1.5 km - 45 min - 2024-11-16 - Velocitat: 2.00 km/h
+</span><span id="__span-12-13"><a href="#__codelineno-12-13" id="__codelineno-12-13" name="__codelineno-12-13"></a>3. Ciclisme - 20.0 km - 60 min - 2024-11-16 - Velocitat: 20.00 km/h
+</span><span id="__span-12-14"><a href="#__codelineno-12-14" id="__codelineno-12-14" name="__codelineno-12-14"></a>
+</span><span id="__span-12-15"><a href="#__codelineno-12-15" id="__codelineno-12-15" name="__codelineno-12-15"></a>=== ESTADÍSTIQUES ===
+</span><span id="__span-12-16"><a href="#__codelineno-12-16" id="__codelineno-12-16" name="__codelineno-12-16"></a>Total d'activitats: 3
+</span><span id="__span-12-17"><a href="#__codelineno-12-17" id="__codelineno-12-17" name="__codelineno-12-17"></a>Distància total: 26.70 km
+</span><span id="__span-12-18"><a href="#__codelineno-12-18" id="__codelineno-12-18" name="__codelineno-12-18"></a>Temps total: 137 min
+</span><span id="__span-12-19"><a href="#__codelineno-12-19" id="__codelineno-12-19" name="__codelineno-12-19"></a>Distància mitjana: 8.90 km
+</span><span id="__span-12-20"><a href="#__codelineno-12-20" id="__codelineno-12-20" name="__codelineno-12-20"></a>
+</span><span id="__span-12-21"><a href="#__codelineno-12-21" id="__codelineno-12-21" name="__codelineno-12-21"></a>=== ACTIVITATS DE CÓRRER ===
+</span><span id="__span-12-22"><a href="#__codelineno-12-22" id="__codelineno-12-22" name="__codelineno-12-22"></a>Córrer - 5.2 km - 32 min - 2024-11-15 - Velocitat: 9.75 km/h
+</span></code></pre></div>
+</div>
+<hr/>
+<h2 id="part-5-comparacio-final">📊 Part 5: Comparació Final<a class="headerlink" href="#part-5-comparacio-final" title="Permanent link">¶</a></h2>
+<h3 id="taula-comparativa">Taula Comparativa<a class="headerlink" href="#taula-comparativa" title="Permanent link">¶</a></h3>
+<table>
+<thead>
+<tr>
+<th>Aspecte</th>
+<th>Programació Procedural</th>
+<th>Programació Orientada a Objectes</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Organització de dades</strong></td>
+<td>Variables globals disperses (4 llistes)</td>
+<td>Objectes cohesionats (classe <code>Activity</code>)</td>
+</tr>
+<tr>
+<td><strong>Validació</strong></td>
+<td>❌ Cap validació</td>
+<td>✅ Validació al constructor</td>
+</tr>
+<tr>
+<td><strong>Encapsulació</strong></td>
+<td>❌ Dades públiques</td>
+<td>✅ Dades privades amb getters</td>
+</tr>
+<tr>
+<td><strong>Mantenibilitat</strong></td>
+<td>⚠️ Difícil (variables globals)</td>
+<td>✅ Fàcil (responsabilitats clares)</td>
+</tr>
+<tr>
+<td><strong>Errors potencials</strong></td>
+<td>⚠️ Llistes desincronitzades</td>
+<td>✅ Impossible per disseny</td>
+</tr>
+<tr>
+<td><strong>Reutilització</strong></td>
+<td>⚠️ Difícil</td>
+<td>✅ Classes reutilitzables</td>
+</tr>
+<tr>
+<td><strong>Testabilitat</strong></td>
+<td>⚠️ Difícil testejar funcions</td>
+<td>✅ Fàcil testejar classes</td>
+</tr>
+<tr>
+<td><strong>Escalabilitat</strong></td>
+<td>⚠️ Difícil afegir funcionalitats</td>
+<td>✅ Fàcil estendre classes</td>
+</tr>
+</tbody>
+</table>
+<h3 id="avantatges-de-la-versio-poo">Avantatges de la versió POO<a class="headerlink" href="#avantatges-de-la-versio-poo" title="Permanent link">¶</a></h3>
+<div class="admonition success">
+<p class="admonition-title">Beneficis obtinguts</p>
+<p><strong>1. Encapsulació i Protecció de Dades</strong></p>
+<ul>
+<li>Les dades són privades (<code>_variable</code>)</li>
+<li>Accés controlat mitjançant getters</li>
+<li>Validació automàtica al constructor</li>
+</ul>
+<p><strong>2. Cohesió i Organització</strong></p>
+<ul>
+<li>Dades relacionades agrupades en un objecte</li>
+<li>Mètodes associats a les dades que gestionen</li>
+<li>Codi més llegible i mantenible</li>
+</ul>
+<p><strong>3. Reutilització</strong></p>
+<ul>
+<li>Les classes es poden utilitzar en altres projectes</li>
+<li>Menys codi duplicat</li>
+<li>Mètodes ben definits i documentats</li>
+</ul>
+<p><strong>4. Flexibilitat i Extensibilitat</strong></p>
+<ul>
+<li>Fàcil afegir nous tipus d'activitats</li>
+<li>Fàcil afegir nous càlculs o estadístiques</li>
+<li>Possible heretar i especialitzar classes</li>
+</ul>
+</div>
+<hr/>
+<h2 id="exercicis-practics">🎯 Exercicis Pràctics<a class="headerlink" href="#exercicis-practics" title="Permanent link">¶</a></h2>
+<h3 id="exercici-1-afegir-calories">Exercici 1: Afegir Calories<a class="headerlink" href="#exercici-1-afegir-calories" title="Permanent link">¶</a></h3>
+<p>Modifica la classe <code>Activity</code> per incloure les calories cremades en cada activitat.</p>
+<details class="tip">
+<summary>Pista</summary>
+<ul>
+<li>Afegeix una propietat privada <code>_calories</code></li>
+<li>Actualitza el constructor</li>
+<li>Afegeix validació</li>
+<li>Actualitza el mètode <code>toString()</code></li>
+</ul>
+</details>
+<details class="example">
+<summary>Solució</summary>
+<div class="language-dart highlight"><pre><span></span><code><span id="__span-13-1"><a href="#__codelineno-13-1" id="__codelineno-13-1" name="__codelineno-13-1"></a><span class="kd">class</span><span class="w"> </span><span class="nc">Activity</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-13-2"><a href="#__codelineno-13-2" id="__codelineno-13-2" name="__codelineno-13-2"></a><span class="w">  </span><span class="kt">String</span><span class="w"> </span><span class="n">_type</span><span class="p">;</span>
+</span><span id="__span-13-3"><a href="#__codelineno-13-3" id="__codelineno-13-3" name="__codelineno-13-3"></a><span class="w">  </span><span class="kt">double</span><span class="w"> </span><span class="n">_distance</span><span class="p">;</span>
+</span><span id="__span-13-4"><a href="#__codelineno-13-4" id="__codelineno-13-4" name="__codelineno-13-4"></a><span class="w">  </span><span class="kt">int</span><span class="w"> </span><span class="n">_duration</span><span class="p">;</span>
+</span><span id="__span-13-5"><a href="#__codelineno-13-5" id="__codelineno-13-5" name="__codelineno-13-5"></a><span class="w">  </span><span class="n">DateTime</span><span class="w"> </span><span class="n">_date</span><span class="p">;</span>
+</span><span id="__span-13-6"><a href="#__codelineno-13-6" id="__codelineno-13-6" name="__codelineno-13-6"></a><span class="w">  </span><span class="kt">int</span><span class="w"> </span><span class="n">_calories</span><span class="p">;</span><span class="w"> </span><span class="c1">// Nova propietat</span>
+</span><span id="__span-13-7"><a href="#__codelineno-13-7" id="__codelineno-13-7" name="__codelineno-13-7"></a>
+</span><span id="__span-13-8"><a href="#__codelineno-13-8" id="__codelineno-13-8" name="__codelineno-13-8"></a><span class="w">  </span><span class="n">Activity</span><span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="n">_type</span><span class="p">,</span><span class="w"> </span><span class="k">this</span><span class="p">.</span><span class="n">_distance</span><span class="p">,</span><span class="w"> </span><span class="k">this</span><span class="p">.</span><span class="n">_duration</span><span class="p">,</span><span class="w"> </span><span class="k">this</span><span class="p">.</span><span class="n">_date</span><span class="p">,</span><span class="w"> </span><span class="k">this</span><span class="p">.</span><span class="n">_calories</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-13-9"><a href="#__codelineno-13-9" id="__codelineno-13-9" name="__codelineno-13-9"></a><span class="w">    </span><span class="n">_validateType</span><span class="p">(</span><span class="n">_type</span><span class="p">);</span>
+</span><span id="__span-13-10"><a href="#__codelineno-13-10" id="__codelineno-13-10" name="__codelineno-13-10"></a><span class="w">    </span><span class="n">_validateDistance</span><span class="p">(</span><span class="n">_distance</span><span class="p">);</span>
+</span><span id="__span-13-11"><a href="#__codelineno-13-11" id="__codelineno-13-11" name="__codelineno-13-11"></a><span class="w">    </span><span class="n">_validateDuration</span><span class="p">(</span><span class="n">_duration</span><span class="p">);</span>
+</span><span id="__span-13-12"><a href="#__codelineno-13-12" id="__codelineno-13-12" name="__codelineno-13-12"></a><span class="w">    </span><span class="n">_validateCalories</span><span class="p">(</span><span class="n">_calories</span><span class="p">);</span>
+</span><span id="__span-13-13"><a href="#__codelineno-13-13" id="__codelineno-13-13" name="__codelineno-13-13"></a><span class="w">  </span><span class="p">}</span>
+</span><span id="__span-13-14"><a href="#__codelineno-13-14" id="__codelineno-13-14" name="__codelineno-13-14"></a>
+</span><span id="__span-13-15"><a href="#__codelineno-13-15" id="__codelineno-13-15" name="__codelineno-13-15"></a><span class="w">  </span><span class="kt">int</span><span class="w"> </span><span class="kd">get</span><span class="w"> </span><span class="n">calories</span><span class="w"> </span><span class="o">=&gt;</span><span class="w"> </span><span class="n">_calories</span><span class="p">;</span>
+</span><span id="__span-13-16"><a href="#__codelineno-13-16" id="__codelineno-13-16" name="__codelineno-13-16"></a>
+</span><span id="__span-13-17"><a href="#__codelineno-13-17" id="__codelineno-13-17" name="__codelineno-13-17"></a><span class="w">  </span><span class="kt">void</span><span class="w"> </span><span class="n">_validateCalories</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">calories</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-13-18"><a href="#__codelineno-13-18" id="__codelineno-13-18" name="__codelineno-13-18"></a><span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">calories</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="m">0</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-13-19"><a href="#__codelineno-13-19" id="__codelineno-13-19" name="__codelineno-13-19"></a><span class="w">      </span><span class="k">throw</span><span class="w"> </span><span class="n">ArgumentError</span><span class="p">(</span><span class="s1">'Les calories no poden ser negatives'</span><span class="p">);</span>
+</span><span id="__span-13-20"><a href="#__codelineno-13-20" id="__codelineno-13-20" name="__codelineno-13-20"></a><span class="w">    </span><span class="p">}</span>
+</span><span id="__span-13-21"><a href="#__codelineno-13-21" id="__codelineno-13-21" name="__codelineno-13-21"></a><span class="w">  </span><span class="p">}</span>
+</span><span id="__span-13-22"><a href="#__codelineno-13-22" id="__codelineno-13-22" name="__codelineno-13-22"></a>
+</span><span id="__span-13-23"><a href="#__codelineno-13-23" id="__codelineno-13-23" name="__codelineno-13-23"></a><span class="w">  </span><span class="nd">@override</span>
+</span><span id="__span-13-24"><a href="#__codelineno-13-24" id="__codelineno-13-24" name="__codelineno-13-24"></a><span class="w">  </span><span class="kt">String</span><span class="w"> </span><span class="n">toString</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-13-25"><a href="#__codelineno-13-25" id="__codelineno-13-25" name="__codelineno-13-25"></a><span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="s1">'</span><span class="si">$</span><span class="n">_type</span><span class="s1"> - </span><span class="si">$</span><span class="n">_distance</span><span class="s1"> km - </span><span class="si">$</span><span class="n">_duration</span><span class="s1"> min - '</span>
+</span><span id="__span-13-26"><a href="#__codelineno-13-26" id="__codelineno-13-26" name="__codelineno-13-26"></a><span class="w">           </span><span class="s1">'</span><span class="si">${</span><span class="n">_date</span><span class="p">.</span><span class="n">toString</span><span class="p">().</span><span class="n">split</span><span class="p">(</span><span class="s1">' '</span><span class="p">)[</span><span class="m">0</span><span class="p">]</span><span class="si">}</span><span class="s1"> - '</span>
+</span><span id="__span-13-27"><a href="#__codelineno-13-27" id="__codelineno-13-27" name="__codelineno-13-27"></a><span class="w">           </span><span class="s1">'Velocitat: </span><span class="si">${</span><span class="n">getAverageSpeed</span><span class="p">().</span><span class="n">toStringAsFixed</span><span class="p">(</span><span class="m">2</span><span class="p">)</span><span class="si">}</span><span class="s1"> km/h - '</span>
+</span><span id="__span-13-28"><a href="#__codelineno-13-28" id="__codelineno-13-28" name="__codelineno-13-28"></a><span class="w">           </span><span class="s1">'Calories: </span><span class="si">$</span><span class="n">_calories</span><span class="s1"> kcal'</span><span class="p">;</span>
+</span><span id="__span-13-29"><a href="#__codelineno-13-29" id="__codelineno-13-29" name="__codelineno-13-29"></a><span class="w">  </span><span class="p">}</span>
+</span><span id="__span-13-30"><a href="#__codelineno-13-30" id="__codelineno-13-30" name="__codelineno-13-30"></a><span class="p">}</span>
+</span></code></pre></div>
+</details>
+<h3 id="exercici-2-calcular-calories-totals">Exercici 2: Calcular Calories Totals<a class="headerlink" href="#exercici-2-calcular-calories-totals" title="Permanent link">¶</a></h3>
+<p>Afegeix un mètode a <code>FitnessTracker</code> per calcular el total de calories cremades.</p>
+<details class="example">
+<summary>Solució</summary>
+<div class="language-dart highlight"><pre><span></span><code><span id="__span-14-1"><a href="#__codelineno-14-1" id="__codelineno-14-1" name="__codelineno-14-1"></a><span class="kt">int</span><span class="w"> </span><span class="n">getTotalCalories</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-14-2"><a href="#__codelineno-14-2" id="__codelineno-14-2" name="__codelineno-14-2"></a><span class="w">  </span><span class="k">return</span><span class="w"> </span><span class="n">_activities</span><span class="p">.</span><span class="n">fold</span><span class="p">(</span><span class="m">0</span><span class="p">,</span><span class="w"> </span><span class="p">(</span><span class="n">sum</span><span class="p">,</span><span class="w"> </span><span class="n">activity</span><span class="p">)</span><span class="w"> </span><span class="o">=&gt;</span><span class="w"> </span><span class="n">sum</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">activity</span><span class="p">.</span><span class="n">calories</span><span class="p">);</span>
+</span><span id="__span-14-3"><a href="#__codelineno-14-3" id="__codelineno-14-3" name="__codelineno-14-3"></a><span class="p">}</span>
+</span></code></pre></div>
+</details>
+<h3 id="exercici-3-activitat-mes-llarga">Exercici 3: Activitat més Llarga<a class="headerlink" href="#exercici-3-activitat-mes-llarga" title="Permanent link">¶</a></h3>
+<p>Crea un mètode que retorni l'activitat amb més distància recorreguda.</p>
+<details class="example">
+<summary>Solució</summary>
+<div class="language-dart highlight"><pre><span></span><code><span id="__span-15-1"><a href="#__codelineno-15-1" id="__codelineno-15-1" name="__codelineno-15-1"></a><span class="n">Activity</span><span class="o">?</span><span class="w"> </span><span class="n">getLongestActivity</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-15-2"><a href="#__codelineno-15-2" id="__codelineno-15-2" name="__codelineno-15-2"></a><span class="w">  </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">_activities</span><span class="p">.</span><span class="n">isEmpty</span><span class="p">)</span><span class="w"> </span><span class="k">return</span><span class="w"> </span><span class="kc">null</span><span class="p">;</span>
+</span><span id="__span-15-3"><a href="#__codelineno-15-3" id="__codelineno-15-3" name="__codelineno-15-3"></a>
+</span><span id="__span-15-4"><a href="#__codelineno-15-4" id="__codelineno-15-4" name="__codelineno-15-4"></a><span class="w">  </span><span class="n">Activity</span><span class="w"> </span><span class="n">longest</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">_activities</span><span class="p">[</span><span class="m">0</span><span class="p">];</span>
+</span><span id="__span-15-5"><a href="#__codelineno-15-5" id="__codelineno-15-5" name="__codelineno-15-5"></a><span class="w">  </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="n">Activity</span><span class="w"> </span><span class="n">activity</span><span class="w"> </span><span class="k">in</span><span class="w"> </span><span class="n">_activities</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-15-6"><a href="#__codelineno-15-6" id="__codelineno-15-6" name="__codelineno-15-6"></a><span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">activity</span><span class="p">.</span><span class="n">distance</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="n">longest</span><span class="p">.</span><span class="n">distance</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-15-7"><a href="#__codelineno-15-7" id="__codelineno-15-7" name="__codelineno-15-7"></a><span class="w">      </span><span class="n">longest</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">activity</span><span class="p">;</span>
+</span><span id="__span-15-8"><a href="#__codelineno-15-8" id="__codelineno-15-8" name="__codelineno-15-8"></a><span class="w">    </span><span class="p">}</span>
+</span><span id="__span-15-9"><a href="#__codelineno-15-9" id="__codelineno-15-9" name="__codelineno-15-9"></a><span class="w">  </span><span class="p">}</span>
+</span><span id="__span-15-10"><a href="#__codelineno-15-10" id="__codelineno-15-10" name="__codelineno-15-10"></a><span class="w">  </span><span class="k">return</span><span class="w"> </span><span class="n">longest</span><span class="p">;</span>
+</span><span id="__span-15-11"><a href="#__codelineno-15-11" id="__codelineno-15-11" name="__codelineno-15-11"></a><span class="p">}</span>
+</span></code></pre></div>
+</details>
+<h3 id="exercici-4-activitats-per-setmana">Exercici 4: Activitats per Setmana<a class="headerlink" href="#exercici-4-activitats-per-setmana" title="Permanent link">¶</a></h3>
+<p>Crea un mètode que mostri les activitats d'una setmana específica.</p>
+<details class="tip">
+<summary>Pista</summary>
+<p>Utilitza <code>activity.date</code> per filtrar activitats dins d'un rang de dates.</p>
+</details>
+<details class="example">
+<summary>Solució</summary>
+<div class="language-dart highlight"><pre><span></span><code><span id="__span-16-1"><a href="#__codelineno-16-1" id="__codelineno-16-1" name="__codelineno-16-1"></a><span class="n">List</span><span class="o">&lt;</span><span class="n">Activity</span><span class="o">&gt;</span><span class="w"> </span><span class="n">getActivitiesByWeek</span><span class="p">(</span><span class="n">DateTime</span><span class="w"> </span><span class="n">startDate</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-16-2"><a href="#__codelineno-16-2" id="__codelineno-16-2" name="__codelineno-16-2"></a><span class="w">  </span><span class="n">DateTime</span><span class="w"> </span><span class="n">endDate</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">startDate</span><span class="p">.</span><span class="n">add</span><span class="p">(</span><span class="n">Duration</span><span class="p">(</span><span class="nl">days:</span><span class="w"> </span><span class="m">7</span><span class="p">));</span>
+</span><span id="__span-16-3"><a href="#__codelineno-16-3" id="__codelineno-16-3" name="__codelineno-16-3"></a>
+</span><span id="__span-16-4"><a href="#__codelineno-16-4" id="__codelineno-16-4" name="__codelineno-16-4"></a><span class="w">  </span><span class="k">return</span><span class="w"> </span><span class="n">_activities</span><span class="p">.</span><span class="n">where</span><span class="p">((</span><span class="n">activity</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-16-5"><a href="#__codelineno-16-5" id="__codelineno-16-5" name="__codelineno-16-5"></a><span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="n">activity</span><span class="p">.</span><span class="n">date</span><span class="p">.</span><span class="n">isAfter</span><span class="p">(</span><span class="n">startDate</span><span class="p">)</span><span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span>
+</span><span id="__span-16-6"><a href="#__codelineno-16-6" id="__codelineno-16-6" name="__codelineno-16-6"></a><span class="w">           </span><span class="n">activity</span><span class="p">.</span><span class="n">date</span><span class="p">.</span><span class="n">isBefore</span><span class="p">(</span><span class="n">endDate</span><span class="p">);</span>
+</span><span id="__span-16-7"><a href="#__codelineno-16-7" id="__codelineno-16-7" name="__codelineno-16-7"></a><span class="w">  </span><span class="p">}).</span><span class="n">toList</span><span class="p">();</span>
+</span><span id="__span-16-8"><a href="#__codelineno-16-8" id="__codelineno-16-8" name="__codelineno-16-8"></a><span class="p">}</span>
+</span><span id="__span-16-9"><a href="#__codelineno-16-9" id="__codelineno-16-9" name="__codelineno-16-9"></a>
+</span><span id="__span-16-10"><a href="#__codelineno-16-10" id="__codelineno-16-10" name="__codelineno-16-10"></a><span class="kt">void</span><span class="w"> </span><span class="n">displayWeeklyActivities</span><span class="p">(</span><span class="n">DateTime</span><span class="w"> </span><span class="n">startDate</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-16-11"><a href="#__codelineno-16-11" id="__codelineno-16-11" name="__codelineno-16-11"></a><span class="w">  </span><span class="n">List</span><span class="o">&lt;</span><span class="n">Activity</span><span class="o">&gt;</span><span class="w"> </span><span class="n">weekActivities</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">getActivitiesByWeek</span><span class="p">(</span><span class="n">startDate</span><span class="p">);</span>
+</span><span id="__span-16-12"><a href="#__codelineno-16-12" id="__codelineno-16-12" name="__codelineno-16-12"></a>
+</span><span id="__span-16-13"><a href="#__codelineno-16-13" id="__codelineno-16-13" name="__codelineno-16-13"></a><span class="w">  </span><span class="n">print</span><span class="p">(</span><span class="s1">'Activitats de la setmana </span><span class="si">${</span><span class="n">startDate</span><span class="p">.</span><span class="n">toString</span><span class="p">().</span><span class="n">split</span><span class="p">(</span><span class="s1">' '</span><span class="p">)[</span><span class="m">0</span><span class="p">]</span><span class="si">}</span><span class="s1">:'</span><span class="p">);</span>
+</span><span id="__span-16-14"><a href="#__codelineno-16-14" id="__codelineno-16-14" name="__codelineno-16-14"></a><span class="w">  </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">weekActivities</span><span class="p">.</span><span class="n">isEmpty</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-16-15"><a href="#__codelineno-16-15" id="__codelineno-16-15" name="__codelineno-16-15"></a><span class="w">    </span><span class="n">print</span><span class="p">(</span><span class="s1">'  No hi ha activitats aquesta setmana'</span><span class="p">);</span>
+</span><span id="__span-16-16"><a href="#__codelineno-16-16" id="__codelineno-16-16" name="__codelineno-16-16"></a><span class="w">    </span><span class="k">return</span><span class="p">;</span>
+</span><span id="__span-16-17"><a href="#__codelineno-16-17" id="__codelineno-16-17" name="__codelineno-16-17"></a><span class="w">  </span><span class="p">}</span>
+</span><span id="__span-16-18"><a href="#__codelineno-16-18" id="__codelineno-16-18" name="__codelineno-16-18"></a>
+</span><span id="__span-16-19"><a href="#__codelineno-16-19" id="__codelineno-16-19" name="__codelineno-16-19"></a><span class="w">  </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="n">Activity</span><span class="w"> </span><span class="n">activity</span><span class="w"> </span><span class="k">in</span><span class="w"> </span><span class="n">weekActivities</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-16-20"><a href="#__codelineno-16-20" id="__codelineno-16-20" name="__codelineno-16-20"></a><span class="w">    </span><span class="n">print</span><span class="p">(</span><span class="s1">'  - </span><span class="si">${</span><span class="n">activity</span><span class="si">}</span><span class="s1">'</span><span class="p">);</span>
+</span><span id="__span-16-21"><a href="#__codelineno-16-21" id="__codelineno-16-21" name="__codelineno-16-21"></a><span class="w">  </span><span class="p">}</span>
+</span><span id="__span-16-22"><a href="#__codelineno-16-22" id="__codelineno-16-22" name="__codelineno-16-22"></a><span class="p">}</span>
+</span></code></pre></div>
+</details>
+<hr/>
+<h2 id="resum-de-conceptes">📝 Resum de Conceptes<a class="headerlink" href="#resum-de-conceptes" title="Permanent link">¶</a></h2>
+<div class="admonition abstract">
+<p class="admonition-title">Què hem après</p>
+<p><strong>Programació Procedural:</strong></p>
+<ul>
+<li>Utilitza variables globals</li>
+<li>Funcions independents</li>
+<li>Dades i funcions separades</li>
+<li>Més propensa a errors</li>
+</ul>
+<p><strong>Programació Orientada a Objectes:</strong></p>
+<ul>
+<li><strong>Classe</strong>: Plantilla que defineix propietats i mètodes</li>
+<li><strong>Objecte</strong>: Instància d'una classe</li>
+<li><strong>Encapsulació</strong>: Protegir dades i controlar accés</li>
+<li><strong>Cohesió</strong>: Agrupar dades i funcions relacionades</li>
+<li><strong>Abstracció</strong>: Amagar complexitat interna</li>
+</ul>
+<p><strong>Beneficis de POO:</strong></p>
+<ul>
+<li>Codi més organitzat i llegible</li>
+<li>Menys errors i bugs</li>
+<li>Més fàcil de mantenir i estendre</li>
+<li>Millor reutilització del codi</li>
+</ul>
+</div>
+<hr/>
+<h2 id="pas-seguent">🚀 Pas Següent<a class="headerlink" href="#pas-seguent" title="Permanent link">¶</a></h2>
+<p>En la propera lliçó explorarem:</p>
+<ul>
+<li><strong>Herència</strong>: Crear classes especialitzades</li>
+<li><strong>Polimorfisme</strong>: Diferents comportaments per al mateix mètode</li>
+<li><strong>Classes abstractes</strong>: Plantilles per a altres classes</li>
+<li><strong>Interfícies</strong>: Contractes que les classes han de complir</li>
+</ul>
+<hr/>
+<h2 id="recursos-addicionals">📚 Recursos Addicionals<a class="headerlink" href="#recursos-addicionals" title="Permanent link">¶</a></h2>
+<ul>
+<li><a href="https://dart.dev/guides/language/language-tour#classes">Dart Language Tour - Classes</a></li>
+<li><a href="https://dart.dev/guides/language/effective-dart/design">Effective Dart: Design</a></li>
+<li><a href="https://ocw.mit.edu/">MIT OpenCourseWare - Introduction to Programming</a></li>
+</ul>
+<hr/>
+<div class="admonition question">
+<p class="admonition-title">Preguntes d'Autoavaluació</p>
+<ol>
+<li>Què és una classe i què és un objecte?</li>
+<li>Quins problemes resol l'encapsulació?</li>
+<li>Per què és millor utilitzar objectes que variables globals?</li>
+<li>Com es validen les dades en la versió POO?</li>
+<li>Què significa que una propietat sigui privada (<code>_propietat</code>)?</li>
+<li>Quins avantatges té agrupar dades i mètodes en una classe?</li>
+</ol>
+</div>
+</article>
+</div>
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+</div>
+<button class="md-top md-icon" data-md-component="top" hidden="" type="button">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"></path></svg>
+  Back to top
+</button>
+</main>
+<footer class="md-footer">
+<nav aria-label="Footer" class="md-footer__inner md-grid">
+<a aria-label="Previous: Problemes d'Entrevistes" class="md-footer__link md-footer__link--prev" href="../../99-problemes-entrevistes/">
+<div class="md-footer__button md-icon">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"></path></svg>
+</div>
+<div class="md-footer__title">
+<span class="md-footer__direction">
+                Previous
+              </span>
+<div class="md-ellipsis">
+                Problemes d'Entrevistes
+              </div>
+</div>
+</a>
+<a aria-label="Next: Índex" class="md-footer__link md-footer__link--next" href="../fase-index/">
+<div class="md-footer__title">
+<span class="md-footer__direction">
+                Next
+              </span>
+<div class="md-ellipsis">
+                Índex
+              </div>
+</div>
+<div class="md-footer__button md-icon">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11z"></path></svg>
+</div>
+</a>
+</nav>
+<div class="md-footer-meta md-typeset">
+<div class="md-footer-meta__inner md-grid">
+<div class="md-copyright">
+<div class="md-copyright__highlight">
+      Copyright © 2025 - Curs de Git per a Estudiants
+    </div>
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" rel="noopener" target="_blank">
+      Material for MkDocs
+    </a>
+</div>
+</div>
+</div>
+</footer>
+</div>
+<div class="md-dialog" data-md-component="dialog">
+<div class="md-dialog__inner md-typeset"></div>
+</div>
+<script id="__config" type="application/json">{"base": "../..", "features": ["navigation.tabs", "navigation.instant", "navigation.instant.prefetch", "navigation.tabs.sticky", "navigation.sections", "navigation.path", "navigation.indexes", "navigation.top", "navigation.footer", "navigation.tracking", "toc.integrate", "search.suggest", "search.highlight", "content.code.copy"], "search": "../../assets/javascripts/workers/search.973d3a69.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+<script src="../../assets/javascripts/bundle.f55a23d4.min.js"></script>
+<script src="../../javascripts/quiz.js"></script>
+</body>
+</html>

@@ -1,0 +1,896 @@
+# 🎯 Classe 19: Problemes Integradors
+
+## 📋 Continguts
+
+- Algorismes complets
+- Resolució de problemes reals
+- Optimització de solucions
+- Traça d'algorismes
+
+---
+
+## 🎯 Objectius d'aprenentatge
+
+Després d'aquesta classe seràs capaç de:
+
+- ✅ Resoldre problemes complexos combinant totes les estructures
+- ✅ Dissenyar algorismes complets des de zero
+- ✅ Optimitzar solucions existents
+- ✅ Fer traça de programes per trobar errors
+
+---
+
+## 📖 Introducció
+
+Hem arribat a la penúltima classe del curs! 🎉
+
+Fins ara hem après:
+- ✅ Variables i expressions
+- ✅ Decisions (IF, IF-ELSE)
+- ✅ Bucles (FOR, WHILE, DO-WHILE)
+- ✅ Bucles niuats
+- ✅ Combinació d'estructures
+
+Ara és el moment de **posar-ho tot en pràctica** resolent problemes realistes que combinen tots aquests conceptes.
+
+---
+
+## 🧩 Metodologia de resolució
+
+### Els 5 passos per resoldre qualsevol problema
+
+```
+1️⃣ ENTENDRE el problema
+   ↓
+2️⃣ PLANIFICAR la solució
+   ↓
+3️⃣ ESCRIURE l'algorisme
+   ↓
+4️⃣ PROVAR amb exemples
+   ↓
+5️⃣ OPTIMITZAR si cal
+```
+
+### Pas 1: Entendre el problema ❓
+
+**Pregunta't:**
+- Què em demanen exactament?
+- Quines són les entrades?
+- Quina ha de ser la sortida?
+- Hi ha casos especials?
+
+### Pas 2: Planificar la solució 📝
+
+**Descompon el problema:**
+- Quines variables necessito?
+- Quines estructures faré servir?
+- Quin és el flux principal?
+- Hi ha passos repetitius?
+
+### Pas 3: Escriure l'algorisme 💻
+
+- Comença pel cas més simple
+- Afegeix funcionalitat gradualment
+- Comenta el codi si és complex
+
+### Pas 4: Provar amb exemples 🧪
+
+- Casos normals
+- Casos límit (0, números negatius, etc.)
+- Casos extrems
+
+### Pas 5: Optimitzar 🚀
+
+- Es pot fer més eficient?
+- Es pot simplificar?
+- El codi és llegible?
+
+---
+
+## 🎨 Problema 1: Sistema de notes
+
+### Enunciat
+
+Crea un programa que:
+1. Demani el nombre d'alumnes
+2. Per cada alumne, demani 3 notes
+3. Calculi la mitjana de cada alumne
+4. Mostri si ha aprovat (>=5) o suspès
+5. Al final, mostri la mitjana de la classe
+
+### Solució pas a pas
+
+**Pas 1 - Entendre:**
+- Entrada: N alumnes, 3 notes per alumne
+- Sortida: Mitjana individual, estat (aprovat/suspès), mitjana total
+
+**Pas 2 - Planificar:**
+- Bucle FOR per N alumnes
+- Bucle intern per les 3 notes
+- Acumuladors per la mitjana de classe
+- IF per determinar aprovat/suspès
+
+**Pas 3 - Codi:**
+
+```pseudocode
+ALGORISME SistemaDeNotes
+VARIABLES
+    n_alumnes, i, j: ENTER
+    nota, suma_alumne, mitjana_alumne: REAL
+    suma_classe, mitjana_classe: REAL
+    aprovats, suspesos: ENTER
+    
+INICI
+    // Validar entrada
+    ESCRIURE "Quants alumnes hi ha?"
+    LLEGIR n_alumnes
+    
+    MENTRE n_alumnes <= 0 FER
+        ESCRIURE "El nombre d'alumnes ha de ser positiu!"
+        LLEGIR n_alumnes
+    FI_MENTRE
+    
+    // Inicialitzar comptadors
+    suma_classe ← 0
+    aprovats ← 0
+    suspesos ← 0
+    
+    // Processar cada alumne
+    PER i ← 1 FINS n_alumnes FER
+        ESCRIURE ""
+        ESCRIURE "=== ALUMNE", i, "==="
+        suma_alumne ← 0
+        
+        // Llegir 3 notes
+        PER j ← 1 FINS 3 FER
+            ESCRIURE "Nota", j, ":"
+            LLEGIR nota
+            
+            // Validar nota
+            MENTRE nota < 0 OR nota > 10 FER
+                ESCRIURE "Nota invàlida! Ha d'estar entre 0 i 10:"
+                LLEGIR nota
+            FI_MENTRE
+            
+            suma_alumne ← suma_alumne + nota
+        FI_PER
+        
+        // Calcular mitjana de l'alumne
+        mitjana_alumne ← suma_alumne / 3
+        suma_classe ← suma_classe + mitjana_alumne
+        
+        // Mostrar resultat individual
+        ESCRIURE "Mitjana:", mitjana_alumne
+        
+        SI mitjana_alumne >= 5 LLAVORS
+            ESCRIURE "APROVAT ✓"
+            aprovats ← aprovats + 1
+        SINO
+            ESCRIURE "SUSPÈS ✗"
+            suspesos ← suspesos + 1
+        FI_SI
+    FI_PER
+    
+    // Resultats globals
+    mitjana_classe ← suma_classe / n_alumnes
+    
+    ESCRIURE ""
+    ESCRIURE "=== RESUM DE LA CLASSE ==="
+    ESCRIURE "Mitjana de la classe:", mitjana_classe
+    ESCRIURE "Alumnes aprovats:", aprovats
+    ESCRIURE "Alumnes suspesos:", suspesos
+    ESCRIURE "Percentatge d'aprovats:", (aprovats * 100) / n_alumnes, "%"
+FI
+```
+
+### Optimitzacions possibles
+
+1. **Afegir qualificacions:**
+```pseudocode
+SI mitjana >= 9 LLAVORS
+    ESCRIURE "Excel·lent"
+SINO SI mitjana >= 7 LLAVORS
+    ESCRIURE "Notable"
+SINO SI mitjana >= 5 LLAVORS
+    ESCRIURE "Aprovat"
+SINO
+    ESCRIURE "Suspès"
+FI_SI
+```
+
+2. **Trobar la millor nota:**
+```pseudocode
+millor_nota ← 0
+PER cada alumne FER
+    SI mitjana_alumne > millor_nota LLAVORS
+        millor_nota ← mitjana_alumne
+        millor_alumne ← i
+    FI_SI
+FI_PER
+```
+
+---
+
+## 🎮 Problema 2: Joc d'endevinar números
+
+### Enunciat
+
+Crea un joc on:
+1. El programa genera un número secret entre 1 i 100
+2. L'usuari té 7 intents per endevinar-lo
+3. El programa dona pistes: "més gran" o "més petit"
+4. Al final mostra si ha guanyat i en quants intents
+
+### Solució completa
+
+```pseudocode
+ALGORISME JocEndevinaNumero
+CONSTANTS
+    LIMIT_INFERIOR = 1
+    LIMIT_SUPERIOR = 100
+    MAX_INTENTS = 7
+    
+VARIABLES
+    secret, intent: ENTER
+    num_intents: ENTER
+    encertat: BOOLEAN
+    jugar_mes: CARACTER
+    
+INICI
+    ESCRIURE "🎮 JOC D'ENDEVINAR EL NÚMERO 🎮"
+    ESCRIURE ""
+    
+    jugar_mes ← 'S'
+    
+    MENTRE jugar_mes = 'S' FER
+        // Generar número secret (simulat)
+        secret ← ALEATORI(LIMIT_INFERIOR, LIMIT_SUPERIOR)
+        
+        ESCRIURE "He pensat un número entre", LIMIT_INFERIOR, "i", LIMIT_SUPERIOR
+        ESCRIURE "Tens", MAX_INTENTS, "intents per endevinar-lo!"
+        ESCRIURE ""
+        
+        num_intents ← 0
+        encertat ← FALS
+        
+        // Bucle principal del joc
+        MENTRE num_intents < MAX_INTENTS AND NOT encertat FER
+            num_intents ← num_intents + 1
+            ESCRIURE "Intent", num_intents, "de", MAX_INTENTS, ":"
+            LLEGIR intent
+            
+            // Validar entrada
+            MENTRE intent < LIMIT_INFERIOR OR intent > LIMIT_SUPERIOR FER
+                ESCRIURE "El número ha d'estar entre", LIMIT_INFERIOR, "i", LIMIT_SUPERIOR
+                LLEGIR intent
+            FI_MENTRE
+            
+            // Comprovar
+            SI intent = secret LLAVORS
+                encertat ← CERT
+                ESCRIURE ""
+                ESCRIURE "🎉 FELICITATS! Has encertat!"
+                ESCRIURE "El número era:", secret
+                ESCRIURE "L'has trobat en", num_intents, "intents"
+                
+                // Valorar l'èxit
+                SI num_intents <= 3 LLAVORS
+                    ESCRIURE "⭐⭐⭐ Excel·lent!"
+                SINO SI num_intents <= 5 LLAVORS
+                    ESCRIURE "⭐⭐ Molt bé!"
+                SINO
+                    ESCRIURE "⭐ Bé!"
+                FI_SI
+            SINO
+                // Donar pistes
+                SI intent < secret LLAVORS
+                    ESCRIURE "❌ El número és MÉS GRAN"
+                SINO
+                    ESCRIURE "❌ El número és MÉS PETIT"
+                FI_SI
+                
+                // Mostrar intents restants
+                SI num_intents < MAX_INTENTS LLAVORS
+                    ESCRIURE "Et queden", MAX_INTENTS - num_intents, "intents"
+                FI_SI
+            FI_SI
+            
+            ESCRIURE ""
+        FI_MENTRE
+        
+        // Si no ha encertat
+        SI NOT encertat LLAVORS
+            ESCRIURE "😢 Game Over!"
+            ESCRIURE "El número era:", secret
+        FI_SI
+        
+        // Preguntar si vol jugar més
+        ESCRIURE ""
+        ESCRIURE "Vols jugar una altra vegada? (S/N)"
+        LLEGIR jugar_mes
+        
+        MENTRE jugar_mes ≠ 'S' AND jugar_mes ≠ 'N' FER
+            ESCRIURE "Respon S o N:"
+            LLEGIR jugar_mes
+        FI_MENTRE
+        
+        SI jugar_mes = 'S' LLAVORS
+            ESCRIURE ""
+            ESCRIURE "==================================="
+            ESCRIURE ""
+        FI_SI
+    FI_MENTRE
+    
+    ESCRIURE "Gràcies per jugar! Fins aviat! 👋"
+FI
+```
+
+---
+
+## 📊 Problema 3: Anàlisi de vendes
+
+### Enunciat
+
+Una botiga vol analitzar les vendes setmanals:
+1. Demanar vendes de 7 dies
+2. Calcular total i mitjana
+3. Trobar el millor i pitjor dia
+4. Comptar dies amb vendes superiors a la mitjana
+
+### Solució
+
+```pseudocode
+ALGORISME AnalisiVendes
+CONSTANTS
+    DIES_SETMANA = 7
+    
+VARIABLES
+    vendes: ARRAY[1..7] DE REAL
+    dia: ENTER
+    venda: REAL
+    total, mitjana: REAL
+    millor_venda, pitjor_venda: REAL
+    millor_dia, pitjor_dia: ENTER
+    dies_sobre_mitjana: ENTER
+    
+INICI
+    ESCRIURE "📊 ANÀLISI DE VENDES SETMANALS 📊"
+    ESCRIURE ""
+    
+    // 1. Recollir dades
+    total ← 0
+    PER dia ← 1 FINS DIES_SETMANA FER
+        ESCRIURE "Vendes del dia", dia, "(€):"
+        LLEGIR venda
+        
+        // Validar (no pot ser negativa)
+        MENTRE venda < 0 FER
+            ESCRIURE "Les vendes no poden ser negatives!"
+            LLEGIR venda
+        FI_MENTRE
+        
+        vendes[dia] ← venda
+        total ← total + venda
+    FI_PER
+    
+    // 2. Calcular mitjana
+    mitjana ← total / DIES_SETMANA
+    
+    // 3. Trobar millor i pitjor dia
+    millor_venda ← vendes[1]
+    pitjor_venda ← vendes[1]
+    millor_dia ← 1
+    pitjor_dia ← 1
+    
+    PER dia ← 2 FINS DIES_SETMANA FER
+        SI vendes[dia] > millor_venda LLAVORS
+            millor_venda ← vendes[dia]
+            millor_dia ← dia
+        FI_SI
+        
+        SI vendes[dia] < pitjor_venda LLAVORS
+            pitjor_venda ← vendes[dia]
+            pitjor_dia ← dia
+        FI_SI
+    FI_PER
+    
+    // 4. Comptar dies sobre la mitjana
+    dies_sobre_mitjana ← 0
+    PER dia ← 1 FINS DIES_SETMANA FER
+        SI vendes[dia] > mitjana LLAVORS
+            dies_sobre_mitjana ← dies_sobre_mitjana + 1
+        FI_SI
+    FI_PER
+    
+    // 5. Mostrar resultats
+    ESCRIURE ""
+    ESCRIURE "=== RESUM ==="
+    ESCRIURE "Total de vendes: €", total
+    ESCRIURE "Mitjana diària: €", mitjana
+    ESCRIURE ""
+    ESCRIURE "Millor dia: Dia", millor_dia, "amb €", millor_venda
+    ESCRIURE "Pitjor dia: Dia", pitjor_dia, "amb €", pitjor_venda
+    ESCRIURE ""
+    ESCRIURE "Dies amb vendes sobre la mitjana:", dies_sobre_mitjana
+    
+    // 6. Valoració
+    SI mitjana > 1000 LLAVORS
+        ESCRIURE "✅ Excel·lent setmana!"
+    SINO SI mitjana > 500 LLAVORS
+        ESCRIURE "👍 Bona setmana"
+    SINO
+        ESCRIURE "⚠️ Es pot millorar"
+    FI_SI
+    
+    // 7. Gràfic simple
+    ESCRIURE ""
+    ESCRIURE "=== GRÀFIC DE VENDES ==="
+    PER dia ← 1 FINS DIES_SETMANA FER
+        ESCRIURE "Dia", dia, ":"
+        // Cada * representa 100€
+        PER i ← 1 FINS (vendes[dia] / 100) FER
+            ESCRIURE "*",
+        FI_PER
+        ESCRIURE " (€", vendes[dia], ")"
+    FI_PER
+FI
+```
+
+---
+
+## 🔍 Traça d'algorismes
+
+### Què és fer una traça?
+
+**Traçar un algorisme** és seguir pas a pas la seva execució, anotant els valors de totes les variables en cada moment.
+
+### Exemple de traça
+
+**Algorisme:**
+```pseudocode
+suma ← 0
+PER i ← 1 FINS 4 FER
+    SI i mod 2 = 0 LLAVORS
+        suma ← suma + i
+    FI_SI
+FI_PER
+ESCRIURE suma
+```
+
+**Taula de traça:**
+
+| Pas | i | i mod 2 | Condició | suma | Acció |
+|-----|---|---------|----------|------|-------|
+| 0 | - | - | - | 0 | Inicialització |
+| 1 | 1 | 1 | FALS | 0 | No suma |
+| 2 | 2 | 0 | CERT | 2 | suma = 0 + 2 |
+| 3 | 3 | 1 | FALS | 2 | No suma |
+| 4 | 4 | 0 | CERT | 6 | suma = 2 + 4 |
+| Fi | 5 | - | - | 6 | Surt del bucle |
+
+**Sortida:** 6
+
+### Per què fer traces?
+
+1. ✅ **Entendre el funcionament** d'un algorisme
+2. ✅ **Trobar errors** (debugging)
+3. ✅ **Verificar** que fa el que volem
+4. ✅ **Aprendre** de l'execució
+
+---
+
+## 💡 Activitats Pràctiques
+
+### 🎯 Activitat 1: Traça aquest algorisme
+
+```pseudocode
+x ← 10
+y ← 0
+MENTRE x > 5 FER
+    y ← y + x
+    x ← x - 2
+FI_MENTRE
+ESCRIURE y
+```
+
+Completa la taula:
+
+| Iteració | x | Condició (x > 5) | y | x nou |
+|----------|---|------------------|---|-------|
+| 0 | ? | - | ? | - |
+| 1 | ? | ? | ? | ? |
+| 2 | ? | ? | ? | ? |
+| ... | ? | ? | ? | ? |
+
+??? success "Solució"
+    | Iteració | x | Condició (x > 5) | y | x nou |
+    |----------|---|------------------|---|-------|
+    | 0 | 10 | - | 0 | - |
+    | 1 | 10 | CERT | 10 | 8 |
+    | 2 | 8 | CERT | 18 | 6 |
+    | 3 | 6 | CERT | 24 | 4 |
+    | 4 | 4 | FALS | 24 | - |
+    
+    **Sortida:** 24
+
+---
+
+### 🎯 Activitat 2: Troba l'error
+
+Aquest programa hauria de calcular la suma dels números parells entre 1 i 10, però té un error:
+
+```pseudocode
+suma ← 0
+PER i ← 1 FINS 10 FER
+    suma ← suma + i
+    SI i mod 2 = 0 LLAVORS
+        i ← i + 1
+    FI_SI
+FI_PER
+ESCRIURE suma
+```
+
+??? success "Solució"
+    **Error 1:** Suma TOTS els números, no només els parells.
+    **Error 2:** Modifica `i` dins del bucle FOR (no es pot fer).
+    
+    **Solució correcta:**
+    ```pseudocode
+    suma ← 0
+    PER i ← 1 FINS 10 FER
+        SI i mod 2 = 0 LLAVORS
+            suma ← suma + i
+        FI_SI
+    FI_PER
+    ESCRIURE suma
+    ```
+
+---
+
+### 🎯 Activitat 3: Optimització
+
+Aquest codi funciona però es pot millorar:
+
+```pseudocode
+comptador ← 0
+PER i ← 1 FINS 100 FER
+    SI i mod 2 = 0 LLAVORS
+        comptador ← comptador + 1
+    FI_SI
+FI_PER
+ESCRIURE comptador
+```
+
+Com el pots optimitzar?
+
+??? success "Solució"
+    **Problema:** Comprova cada número si és parell.
+    
+    **Optimització 1:** Salta de 2 en 2
+    ```pseudocode
+    comptador ← 0
+    PER i ← 2 FINS 100 PAS 2 FER
+        comptador ← comptador + 1
+    FI_PER
+    ESCRIURE comptador
+    ```
+    
+    **Optimització 2:** Càlcul directe
+    ```pseudocode
+    comptador ← 100 / 2
+    ESCRIURE comptador
+    ```
+
+---
+
+## 💻 Exercicis Integradors
+
+### Exercici 1: Estadístiques d'examen
+
+Crea un programa que:
+- Demani notes d'examen (finalitza amb -1)
+- Calculi: aprovats, suspesos, mitjana, nota màxima i mínima
+- Mostri un histograma de qualificacions (0-4.9, 5-6.9, 7-8.9, 9-10)
+
+??? tip "Ajuda"
+    - Usa sentinella per acabar
+    - Necessites diversos comptadors
+    - Recorda inicialitzar màxim/mínim correctament
+
+??? success "Solució"
+    ```pseudocode
+    ALGORISME EstadistiquesExamen
+    VARIABLES
+        nota: REAL
+        total_notes, aprovats, suspesos: ENTER
+        suma, mitjana: REAL
+        maxima, minima: REAL
+        primer: BOOLEAN
+        c_suspens, c_aprovat, c_notable, c_excel·lent: ENTER
+        
+    INICI
+        // Inicialitzar
+        total_notes ← 0
+        aprovats ← 0
+        suspesos ← 0
+        suma ← 0
+        primer ← CERT
+        c_suspens ← 0
+        c_aprovat ← 0
+        c_notable ← 0
+        c_excel·lent ← 0
+        
+        ESCRIURE "📝 ESTADÍSTIQUES D'EXAMEN 📝"
+        ESCRIURE "Introdueix notes (0-10, -1 per acabar)"
+        ESCRIURE ""
+        
+        // Llegir notes
+        LLEGIR nota
+        
+        MENTRE nota ≠ -1 FER
+            // Validar
+            SI nota >= 0 AND nota <= 10 LLAVORS
+                total_notes ← total_notes + 1
+                suma ← suma + nota
+                
+                // Aprovats/Suspesos
+                SI nota >= 5 LLAVORS
+                    aprovats ← aprovats + 1
+                SINO
+                    suspesos ← suspesos + 1
+                FI_SI
+                
+                // Màxima/Mínima
+                SI primer LLAVORS
+                    maxima ← nota
+                    minima ← nota
+                    primer ← FALS
+                SINO
+                    SI nota > maxima LLAVORS
+                        maxima ← nota
+                    FI_SI
+                    SI nota < minima LLAVORS
+                        minima ← nota
+                    FI_SI
+                FI_SI
+                
+                // Classificar
+                SI nota < 5 LLAVORS
+                    c_suspens ← c_suspens + 1
+                SINO SI nota < 7 LLAVORS
+                    c_aprovat ← c_aprovat + 1
+                SINO SI nota < 9 LLAVORS
+                    c_notable ← c_notable + 1
+                SINO
+                    c_excel·lent ← c_excel·lent + 1
+                FI_SI
+            SINO
+                ESCRIURE "Nota invàlida, ignorada"
+            FI_SI
+            
+            LLEGIR nota
+        FI_MENTRE
+        
+        // Mostrar resultats
+        SI total_notes > 0 LLAVORS
+            mitjana ← suma / total_notes
+            
+            ESCRIURE ""
+            ESCRIURE "=== RESUM ==="
+            ESCRIURE "Total d'alumnes:", total_notes
+            ESCRIURE "Mitjana:", mitjana
+            ESCRIURE "Nota màxima:", maxima
+            ESCRIURE "Nota mínima:", minima
+            ESCRIURE "Aprovats:", aprovats, "(", (aprovats*100)/total_notes, "%)"
+            ESCRIURE "Suspesos:", suspesos, "(", (suspesos*100)/total_notes, "%)"
+            
+            ESCRIURE ""
+            ESCRIURE "=== HISTOGRAMA ==="
+            ESCRIURE "Suspens (0-4.9)  :", REPETIR("█", c_suspens), " (", c_suspens, ")"
+            ESCRIURE "Aprovat (5-6.9)  :", REPETIR("█", c_aprovat), " (", c_aprovat, ")"
+            ESCRIURE "Notable (7-8.9)  :", REPETIR("█", c_notable), " (", c_notable, ")"
+            ESCRIURE "Excel·lent (9-10):", REPETIR("█", c_excel·lent), " (", c_excel·lent, ")"
+        SINO
+            ESCRIURE "No s'han introduït notes"
+        FI_SI
+    FI
+    ```
+
+---
+
+### Exercici 2: Simulador de caixa registradora
+
+Simula una caixa registradora que:
+- Mostra un menú de productes amb preus
+- Permet afegir productes a la compra
+- Calcula el total
+- Processa el pagament i dona el canvi
+
+??? success "Solució parcial"
+    ```pseudocode
+    ALGORISME CaixaRegistradora
+    CONSTANTS
+        PREU_PA = 1.50
+        PREU_LLET = 1.20
+        PREU_OUS = 2.80
+        PREU_AIGUA = 0.80
+        
+    VARIABLES
+        opcio: ENTER
+        quantitat: ENTER
+        total: REAL
+        continuar: BOOLEAN
+        pagament, canvi: REAL
+        
+    INICI
+        total ← 0
+        continuar ← CERT
+        
+        ESCRIURE "🛒 CAIXA REGISTRADORA 🛒"
+        
+        MENTRE continuar FER
+            ESCRIURE ""
+            ESCRIURE "=== PRODUCTES ==="
+            ESCRIURE "1. Pa (€1.50)"
+            ESCRIURE "2. Llet (€1.20)"
+            ESCRIURE "3. Ous (€2.80)"
+            ESCRIURE "4. Aigua (€0.80)"
+            ESCRIURE "5. Finalitzar compra"
+            ESCRIURE ""
+            ESCRIURE "Tria una opció:"
+            LLEGIR opcio
+            
+            SI opcio >= 1 AND opcio <= 4 LLAVORS
+                ESCRIURE "Quantitat:"
+                LLEGIR quantitat
+                
+                MENTRE quantitat <= 0 FER
+                    ESCRIURE "La quantitat ha de ser positiva:"
+                    LLEGIR quantitat
+                FI_MENTRE
+                
+                SI opcio = 1 LLAVORS
+                    total ← total + (PREU_PA * quantitat)
+                    ESCRIURE "Afegit:", quantitat, "× Pa"
+                SINO SI opcio = 2 LLAVORS
+                    total ← total + (PREU_LLET * quantitat)
+                    ESCRIURE "Afegit:", quantitat, "× Llet"
+                SINO SI opcio = 3 LLAVORS
+                    total ← total + (PREU_OUS * quantitat)
+                    ESCRIURE "Afegit:", quantitat, "× Ous"
+                SINO SI opcio = 4 LLAVORS
+                    total ← total + (PREU_AIGUA * quantitat)
+                    ESCRIURE "Afegit:", quantitat, "× Aigua"
+                FI_SI
+                
+                ESCRIURE "Total actual: €", total
+            SINO SI opcio = 5 LLAVORS
+                continuar ← FALS
+            SINO
+                ESCRIURE "Opció no vàlida"
+            FI_SI
+        FI_MENTRE
+        
+        // Processament de pagament
+        ESCRIURE ""
+        ESCRIURE "=== TOTAL A PAGAR ==="
+        ESCRIURE "€", total
+        ESCRIURE ""
+        ESCRIURE "Import rebut:"
+        LLEGIR pagament
+        
+        MENTRE pagament < total FER
+            ESCRIURE "Import insuficient! Falten €", total - pagament
+            LLEGIR pagament
+        FI_MENTRE
+        
+        canvi ← pagament - total
+        ESCRIURE ""
+        ESCRIURE "Canvi: €", canvi
+        ESCRIURE "Gràcies per la seva compra!"
+    FI
+    ```
+
+---
+
+### Exercici 3: Validador de DNI espanyol
+
+El DNI espanyol té 8 dígits + 1 lletra. La lletra es calcula: `DNI mod 23` → taula de lletres.
+
+Crea un programa que:
+- Demani els 8 dígits del DNI
+- Calculi la lletra correcta
+- La mostri a l'usuari
+
+Taula de lletres: TRWAGMYFPDXBNJZSQVHLCKE (posició 0-22)
+
+??? success "Solució"
+    ```pseudocode
+    ALGORISME ValidadorDNI
+    CONSTANTS
+        LLETRES = "TRWAGMYFPDXBNJZSQVHLCKE"
+        
+    VARIABLES
+        dni: ENTER
+        posicio: ENTER
+        lletra: CARACTER
+        
+    INICI
+        ESCRIURE "VALIDADOR DE DNI ESPANYOL"
+        ESCRIURE ""
+        ESCRIURE "Introdueix els 8 dígits del DNI:"
+        LLEGIR dni
+        
+        // Validar (ha de ser positiu i 8 dígits)
+        MENTRE dni < 10000000 OR dni > 99999999 FER
+            ESCRIURE "El DNI ha de tenir exactament 8 dígits!"
+            ESCRIURE "Torna a introduir-lo:"
+            LLEGIR dni
+        FI_MENTRE
+        
+        // Calcular lletra
+        posicio ← dni mod 23
+        lletra ← LLETRES[posicio]
+        
+        // Mostrar resultat
+        ESCRIURE ""
+        ESCRIURE "El teu DNI complet és:", dni, "-", lletra
+    FI
+    ```
+
+---
+
+## 🎓 Resum de la classe
+
+### Has après a:
+
+1. ✅ **Descompondre problemes** complexos en passos simples
+2. ✅ **Combinar estructures** (IF, FOR, WHILE) de forma efectiva
+3. ✅ **Validar entrada** per fer programes robustos
+4. ✅ **Fer traces** per entendre i debugar algorismes
+5. ✅ **Optimitzar solucions** per fer-les més eficients
+
+### Consells finals
+
+1. 💡 **Practica molt** - la programació s'aprèn programant
+2. 📝 **Comenta el codi** - especialment en parts complexes
+3. 🧪 **Prova casos extrems** - 0, negatius, molt grans, etc.
+4. 🔍 **Fes traces** quan el codi no funcioni com esperaves
+5. 🚀 **Optimitza al final** - primer fes que funcioni, després millora'l
+
+---
+
+## 🏆 Repte Final
+
+Crea un programa complet que sigui útil i combini tots els conceptes apresos. Algunes idees:
+
+1. 📚 **Sistema de biblioteca** - gestionar préstecs de llibres
+2. 🎯 **Joc de Bingo** - generar cartrons i números
+3. 💰 **Gestió de pressupost** - despeses mensuals amb categories
+4. 📊 **Enquesta d'opinió** - recollir i analitzar respostes
+5. 🏃 **Registre d'entrenament** - seguiment d'exercicis setmanals
+
+---
+
+## 🔗 Navegació
+
+- ⬅️ [Classe 18: Combinació de decisions i bucles](bloc5_classe18.md)
+- ➡️ [Classe 20: Projecte Final](bloc5_classe20.md)
+- 🏠 [Torna a l'índex](index.md)
+
+---
+
+## 🎉 Enhorabona!
+
+Has arribat quasi al final del curs de programació estructurada amb pseudocodi. Només et queda la Classe 20 amb el projecte final!
+
+**Recordes el camí recorregut?**
+- ✅ Variables i expressions
+- ✅ Decisions amb IF/ELSE
+- ✅ Bucles FOR, WHILE, DO-WHILE
+- ✅ Bucles niuats
+- ✅ Problemes complexos
+
+Ara estàs preparat/da per resoldre problemes reals amb programació! 💪
+
+A la propera classe, posaràs en pràctica tot el que has après en un projecte integrador. **Estàs preparat/da?** 🚀
