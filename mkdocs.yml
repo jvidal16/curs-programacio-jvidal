@@ -37,6 +37,14 @@ nav:
     - Setmana 07: 02-prog-estructurada/setmana07.md
   - Extra:
     - Problemes d'Entrevistes: 99-problemes-entrevistes.md
+  - POO:
+    - Motivació: 05-poo/motivacio-poo.md
+    - Índex: 05-poo/fase-index.md
+    - Fase 01: 05-poo/fase1.md
+    - Fase 02: 05-poo/fase2.md
+    - Fase 03: 05-poo/fase3.md
+    - Fase 04: 05-poo/fase4.md
+
 
 theme:
   name: material
