@@ -1,0 +1,14 @@
+# pubspec.yaml
+
+name: buclesbucles
+description: Un projecte Dart amb spinner i barra de progres
+version: 1.0.0
+
+environment:
+  sdk: ^3.10.0
+
+dependencies:
+  sprintf: ^7.0.0
+
+dev_dependencies:
+  lints: ^6.0.0

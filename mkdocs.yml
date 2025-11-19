@@ -37,6 +37,8 @@ nav:
     - Setmana 07: 02-prog-estructurada/setmana07.md
   - Extra:
     - Problemes d'Entrevistes: 99-problemes-entrevistes.md
+    - Similaritat: investigacions/similitud_cosinus.md
+    - Wolfram: investigacions/vector_matrius_wolfram.md
   - POO:
     - Motivació: 05-poo/motivacio-poo.md
     - Índex: 05-poo/fase-index.md
@@ -44,6 +46,7 @@ nav:
     - Fase 02: 05-poo/fase2.md
     - Fase 03: 05-poo/fase3.md
     - Fase 04: 05-poo/fase4.md
+
 
 
 theme:
@@ -85,6 +88,9 @@ theme:
 
 extra_css:
   - stylesheets/extra.css
+  - javascripts/mathjax.js
+  - https://polyfill.io/v3/polyfill.min.js?features=es6
+  - https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js
 
 extra_javascript:
   - javascripts/quiz.js

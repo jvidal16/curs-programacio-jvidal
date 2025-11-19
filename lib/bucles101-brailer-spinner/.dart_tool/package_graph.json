@@ -1,0 +1,28 @@
+{
+  "roots": [
+    "buclesbucles"
+  ],
+  "packages": [
+    {
+      "name": "buclesbucles",
+      "version": "1.0.0",
+      "dependencies": [
+        "sprintf"
+      ],
+      "devDependencies": [
+        "lints"
+      ]
+    },
+    {
+      "name": "lints",
+      "version": "6.0.0",
+      "dependencies": []
+    },
+    {
+      "name": "sprintf",
+      "version": "7.0.0",
+      "dependencies": []
+    }
+  ],
+  "configVersion": 1
+}
